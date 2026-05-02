@@ -43,7 +43,7 @@ export default function PortfolioPage() {
             </Link>
             <div className="h-4 w-px bg-gray-200" />
             <div>
-              <h1 className="text-xl font-semibold tracking-tight text-[#1a1a1a]">Elemento</h1>
+              <h1 className="text-xl font-semibold tracking-tight text-[#1a1a1a]">Elemento Alpha</h1>
               <p className="text-xs text-gray-500">Portafolios de inversión · demo</p>
             </div>
           </div>
@@ -75,9 +75,14 @@ export default function PortfolioPage() {
       <footer className="border-t border-gray-100 py-6">
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between">
           <span>Datos de demostración · sin custodia ni ejecución real</span>
-          <Link href="/onboarding" className="font-medium text-[#6abf1a] hover:underline">
-            Ir al onboarding
-          </Link>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/servicio-cliente" className="font-medium text-[#6abf1a] hover:underline">
+              Servicio al cliente · MVP
+            </Link>
+            <Link href="/onboarding" className="font-medium text-[#6abf1a] hover:underline">
+              Ir al onboarding
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

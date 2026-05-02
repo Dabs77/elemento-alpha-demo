@@ -9,6 +9,9 @@ import {
   CreditCard,
   Upload,
   Smartphone,
+  Camera,
+  ScanFace,
+  AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,7 +32,7 @@ interface Props {
   onBack: () => void;
 }
 
-type Phase = "welcome" | "verify" | "success";
+type Phase = "welcome" | "verify" | "face" | "success";
 
 type ExtractedIdentity = {
   numeroCedula: string;
@@ -47,6 +50,15 @@ const VERIFY_MESSAGES = [
 ];
 
 const VERIFY_CHECKS = ["Formato válido", "Datos legibles", "Coincidencia de identidad"];
+
+const FACE_MESSAGES = [
+  "Activando tu cámara…",
+  "Detectando tu rostro…",
+  "Prueba de vida en curso…",
+  "Comparando con foto del documento…",
+];
+
+const FACE_CHECKS = ["Rostro enmarcado correctamente", "Prueba de vida superada", "Coincidencia biométrica"];
 
 function buildMockExtraction(intake: IntakeData, file: File): ExtractedIdentity {
   const baseName = file.name.replace(/\.[^/.]+$/, "");
@@ -88,14 +100,25 @@ function buildMockExtraction(intake: IntakeData, file: File): ExtractedIdentity 
 export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) {
   const [phase, setPhase] = useState<Phase>("welcome");
   const [verifyMsgIdx, setVerifyMsgIdx] = useState(0);
+  const [faceMsgIdx, setFaceMsgIdx] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [faceProgress, setFaceProgress] = useState(0);
   const [identityFile, setIdentityFile] = useState<File | null>(null);
   const [extractedIdentity, setExtractedIdentity] = useState<ExtractedIdentity | null>(null);
+  /** Re-solicitud de mediaDevices cuando el usuario pulsa «Reintentar». */
+  const [faceCameraRetryKey, setFaceCameraRetryKey] = useState(0);
+  const [faceCameraLive, setFaceCameraLive] = useState(false);
+  const [faceCameraError, setFaceCameraError] = useState<string | null>(null);
   const identityInputRef = useRef<HTMLInputElement>(null);
+  const faceVideoRef = useRef<HTMLVideoElement | null>(null);
+  const faceStreamHoldRef = useRef<MediaStream | null>(null);
   const timersRef = useRef<number[]>([]);
 
   const clearTimers = useCallback(() => {
-    timersRef.current.forEach((id) => window.clearInterval(id));
+    timersRef.current.forEach((id) => {
+      window.clearInterval(id);
+      window.clearTimeout(id);
+    });
     timersRef.current = [];
   }, []);
 
@@ -104,29 +127,156 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
   useEffect(() => {
     if (phase !== "verify") return;
     clearTimers();
-    setVerifyMsgIdx(0);
-    setProgress(0);
 
-    const spin = window.setInterval(() => {
-      setVerifyMsgIdx((i) => (i + 1) % VERIFY_MESSAGES.length);
-    }, 850);
-    timersRef.current.push(spin);
+    let cancelled = false;
 
-    const start = performance.now();
-    const duration = 3600;
-    const tick = window.setInterval(() => {
-      const elapsed = performance.now() - start;
-      const p = Math.min(100, Math.round((elapsed / duration) * 100));
-      setProgress(p);
-      if (p >= 100) {
-        clearInterval(tick);
-        window.setTimeout(() => setPhase("success"), 380);
-      }
-    }, 40);
-    timersRef.current.push(tick);
+    queueMicrotask(() => {
+      if (cancelled) return;
+      setVerifyMsgIdx(0);
+      setProgress(0);
 
-    return () => clearTimers();
+      const spin = window.setInterval(() => {
+        setVerifyMsgIdx((i) => (i + 1) % VERIFY_MESSAGES.length);
+      }, 850);
+      timersRef.current.push(spin);
+
+      const start = performance.now();
+      const duration = 3600;
+      const tick = window.setInterval(() => {
+        const elapsed = performance.now() - start;
+        const p = Math.min(100, Math.round((elapsed / duration) * 100));
+        setProgress(p);
+        if (p >= 100) {
+          clearInterval(tick);
+          const tid = window.setTimeout(() => {
+            if (!cancelled) setPhase("face");
+          }, 380);
+          timersRef.current.push(tid);
+        }
+      }, 40);
+      timersRef.current.push(tick);
+    });
+
+    return () => {
+      cancelled = true;
+      clearTimers();
+    };
   }, [phase, clearTimers]);
+
+  useEffect(() => {
+    if (phase !== "face") return;
+    clearTimers();
+
+    let cancelled = false;
+
+    queueMicrotask(() => {
+      if (cancelled) return;
+      setFaceMsgIdx(0);
+      setFaceProgress(0);
+
+      const spin = window.setInterval(() => {
+        setFaceMsgIdx((i) => (i + 1) % FACE_MESSAGES.length);
+      }, 900);
+      timersRef.current.push(spin);
+
+      const start = performance.now();
+      const duration = 4000;
+      const tick = window.setInterval(() => {
+        const elapsed = performance.now() - start;
+        const p = Math.min(100, Math.round((elapsed / duration) * 100));
+        setFaceProgress(p);
+        if (p >= 100) {
+          clearInterval(tick);
+          const tid = window.setTimeout(() => {
+            if (!cancelled) setPhase("success");
+          }, 400);
+          timersRef.current.push(tid);
+        }
+      }, 40);
+      timersRef.current.push(tick);
+    });
+
+    return () => {
+      cancelled = true;
+      clearTimers();
+    };
+  }, [phase, clearTimers]);
+
+  useEffect(() => {
+    if (phase !== "face") return;
+
+    let cancelled = false;
+
+    queueMicrotask(() => {
+      if (!cancelled) {
+        setFaceCameraLive(false);
+        setFaceCameraError(null);
+      }
+    });
+
+    const stopHeldStream = () => {
+      faceStreamHoldRef.current?.getTracks().forEach((t) => t.stop());
+      faceStreamHoldRef.current = null;
+      const el = faceVideoRef.current;
+      if (el) el.srcObject = null;
+    };
+
+    stopHeldStream();
+
+    const attachStream = async () => {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        if (!cancelled) {
+          setFaceCameraError(
+            "Este entorno no expone una cámara accesible. Prueba HTTPS, otro navegador o permisos del sitio."
+          );
+        }
+        return;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: { ideal: "user" },
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
+          audio: false,
+        });
+        if (cancelled) {
+          stream.getTracks().forEach((t) => t.stop());
+          return;
+        }
+        faceStreamHoldRef.current = stream;
+        const el = faceVideoRef.current;
+        if (el) {
+          el.srcObject = stream;
+          try {
+            await el.play();
+          } catch {
+            /* Políticas de autoplay por navegador */
+          }
+        }
+        if (!cancelled) setFaceCameraLive(true);
+      } catch (e) {
+        if (cancelled) return;
+        if (e instanceof DOMException && e.name === "NotAllowedError") {
+          setFaceCameraError(
+            "Permiso de cámara denegado. Permítele acceso en la configuración del navegador o pulsa «Reintentar»."
+          );
+        } else if (e instanceof DOMException && e.name === "NotFoundError") {
+          setFaceCameraError("No se detectó ninguna cámara en este equipo.");
+        } else {
+          setFaceCameraError("No pudimos iniciar la cámara.");
+        }
+      }
+    };
+
+    void attachStream();
+
+    return () => {
+      cancelled = true;
+      stopHeldStream();
+    };
+  }, [phase, faceCameraRetryKey]);
 
   const nombreFinal = useMemo(() => intake.nombre.trim() || DEMO_NOMBRE, [intake.nombre]);
 
@@ -144,7 +294,7 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
   };
 
   const handleBack = () => {
-    if (phase === "success" || phase === "verify") {
+    if (phase === "success" || phase === "verify" || phase === "face") {
       clearTimers();
       setPhase("welcome");
       return;
@@ -164,7 +314,8 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
     }
   };
 
-  const topNextDisabled = (phase === "welcome" && !canStartVerify) || phase === "verify";
+  const topNextDisabled =
+    (phase === "welcome" && !canStartVerify) || phase === "verify" || phase === "face";
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-500">
@@ -180,8 +331,9 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
         >
           {phase === "welcome" && "Verificar"}
           {phase === "verify" && "Verificando…"}
+          {phase === "face" && "Capturando…"}
           {phase === "success" && "Continuar"}
-          {phase !== "verify" && <ChevronRight className="h-4 w-4" />}
+          {(phase === "welcome" || phase === "success") && <ChevronRight className="h-4 w-4" />}
         </Button>
       </div>
 
@@ -194,7 +346,10 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
           {phase === "welcome" &&
             "Sube la cédula del representante legal y validaremos su identidad de forma segura."}
           {phase === "verify" && "Estamos validando la información del documento."}
-          {phase === "success" && "Identidad verificada correctamente."}
+          {phase === "face" &&
+            "Tu navegador solicitará acceso a la cámara frontal. Mantén el rostro dentro del óvalo; el resultado de compatibilidad con la foto del documento sigue siendo de demostración."}
+          {phase === "success" &&
+            "Identidad confirmada con la cédula y la vista previa de cámara. El resultado del cruce biométrico aquí es ilustrativo, no auditoría real."}
         </p>
       </header>
 
@@ -409,6 +564,187 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
         </Card>
       )}
 
+      {phase === "face" && (
+        <Card className="rounded-lg overflow-hidden border border-gray-100 bg-white shadow-sm gap-0 py-0">
+          <CardHeader className="px-6 pt-6 pb-4 border-b border-gray-100 bg-[#fafcf8]">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div className="space-y-1.5 min-w-0 flex-1">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
+                  Captura frontal
+                </p>
+                <p className="text-base font-medium leading-snug text-[#1a1a1a]">{FACE_MESSAGES[faceMsgIdx]}</p>
+                <p className="text-xs text-gray-500">
+                  El vídeo solo se muestra en tu equipo; concede permiso cuando el navegador lo pida (
+                  <span translate="no">HTTPS</span> recomendado en producción).
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-end gap-2 text-xs text-gray-500 shrink-0">
+                {faceCameraLive ? (
+                  <>
+                    <span className="font-medium text-[#4a7c59] hidden sm:inline">Cámara activa</span>
+                    <Camera className="h-4 w-4 text-[#4a7c59]" aria-hidden />
+                    <ScanFace className="h-4 w-4 text-[#6abf1a]" aria-hidden />
+                  </>
+                ) : faceCameraError ? (
+                  <>
+                    <AlertCircle className="h-4 w-4 text-amber-600 shrink-0" aria-hidden />
+                    <span className="font-medium text-amber-800 text-right max-w-[12rem] sm:max-w-none">
+                      No hay señal
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin text-[#4a7c59]" aria-hidden />
+                    <Camera className="h-4 w-4 text-gray-400" aria-hidden />
+                    <ScanFace className="h-4 w-4 text-gray-400" aria-hidden />
+                  </>
+                )}
+              </div>
+            </div>
+          </CardHeader>
+
+          {faceCameraError && (
+            <div className="px-6 pb-4">
+              <div className="flex flex-col gap-3 rounded-lg border border-amber-200/90 bg-amber-50 px-4 py-3 text-sm text-amber-950 sm:flex-row sm:items-center sm:justify-between">
+                <p className="flex gap-2.5 leading-snug text-amber-900/95">
+                  <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-amber-600" aria-hidden />
+                  <span>{faceCameraError}</span>
+                </p>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-9 shrink-0 border-amber-300 bg-white hover:bg-amber-100/50 text-amber-950"
+                  onClick={() => setFaceCameraRetryKey((k) => k + 1)}
+                >
+                  Reintentar
+                </Button>
+              </div>
+            </div>
+          )}
+
+          <CardContent className="px-6 py-6 space-y-6">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-8">
+              <div className="flex justify-center lg:w-[240px] shrink-0 mx-auto lg:mx-0">
+                <div className="relative w-full max-w-[220px] aspect-[10/17] rounded-[1.85rem] bg-black shadow-xl ring-[3px] ring-gray-900/70 overflow-hidden">
+                  <div
+                    aria-hidden
+                    className={`kyc-camera-drift-bg absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_center,oklch(0.78_0.12_142/0.35)_0%,transparent_52%),linear-gradient(125deg,#1e2a21_12%,#2f4d38_42%,#1a2920_88%)] transition-opacity duration-500 ${
+                      faceCameraLive ? "opacity-0" : "opacity-100"
+                    }`}
+                  />
+                  <video
+                    ref={faceVideoRef}
+                    className={`absolute inset-0 z-[2] h-full w-full bg-black object-cover -scale-x-100 transition-opacity duration-500 ${
+                      faceCameraLive ? "opacity-100" : "opacity-0"
+                    }`}
+                    playsInline
+                    muted
+                    autoPlay
+                    aria-label="Vista previa frontal de tu cámara"
+                  />
+
+                  <div className="absolute inset-x-6 top-4 z-[4] flex items-center gap-2">
+                    <div
+                      className={`h-2 w-2 shrink-0 rounded-full shadow-[0_0_0_2px_rgba(255,255,255,0.06)] ${
+                        faceCameraLive ? "bg-red-500 animate-pulse" : "bg-amber-500/95"
+                      }`}
+                      aria-hidden
+                    />
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/85">
+                      {faceCameraLive ? "preview · vivo" : faceCameraError ? "sin cámara" : "conectando…"}
+                    </p>
+                  </div>
+
+                  <div className="pointer-events-none relative z-[4] flex h-full flex-col items-center justify-center pb-12 pt-14">
+                    <div className="relative flex items-center justify-center">
+                      <div
+                        aria-hidden
+                        className={`absolute h-44 w-[7.75rem] rounded-[999px] bg-gradient-to-b blur-[2px] transition-opacity duration-500 ${
+                          faceCameraLive ? "from-white/[0.08] to-transparent opacity-55" : "from-white/35 to-white/[0.12]"
+                        }`}
+                      />
+                      <div className="relative h-52 w-[8.75rem] rounded-[999px] border-2 border-dashed border-white/55 kyc-verify-pulse flex items-start justify-center overflow-hidden pt-8">
+                        <ScanFace
+                          className={`h-[4.75rem] w-[4.75rem] transition-opacity duration-500 ${
+                            faceCameraLive ? "text-white/15" : "text-white/25"
+                          }`}
+                          strokeWidth={1}
+                        />
+                      </div>
+                    </div>
+                    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                      <div
+                        className="kyc-scan-beam absolute left-6 right-6 h-10 -top-14 bg-gradient-to-b from-transparent via-[#BBE795]/55 to-transparent"
+                        aria-hidden
+                      />
+                    </div>
+                  </div>
+                  <div className="pointer-events-none absolute bottom-0 inset-x-0 z-[4] h-28 bg-gradient-to-t from-black/85 to-transparent" />
+                  <p className="pointer-events-none absolute bottom-4 left-0 right-0 z-[4] text-center text-xs font-medium text-white/92 px-4">
+                    Centra tu rostro en el óvalo
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-1 min-w-0 space-y-5">
+                <div>
+                  <div className="flex items-center justify-between text-xs text-gray-500 mb-1.5">
+                    <span>Captura biométrica</span>
+                    <span className="tabular-nums font-medium text-[#1a1a1a]">{faceProgress}%</span>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-[#BBE795] to-[#4a7c59] transition-[width] duration-100 ease-linear"
+                      style={{ width: `${faceProgress}%` }}
+                    />
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm text-gray-600">
+                  {FACE_CHECKS.map((label, i) => {
+                    const done = faceProgress > 33 * (i + 1);
+                    return (
+                      <li
+                        key={label}
+                        className={`flex items-center gap-2.5 transition-all duration-500 ${
+                          done ? "opacity-100" : "opacity-40"
+                        }`}
+                      >
+                        <CheckCircle2
+                          className={`h-4 w-4 shrink-0 ${done ? "text-[#4a7c59]" : "text-gray-300"}`}
+                        />
+                        <span className="leading-snug">{label}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <div className="rounded-lg border border-gray-100 bg-[#fafcf8] p-3">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59] mb-2">
+                    Coincidencia con la cédula
+                  </p>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    {faceProgress >= 45 ? (
+                      <>
+                        {faceCameraLive
+                          ? "Se está usando tu cámara de forma local. Confianza de coincidencia (demostración): "
+                          : "Marco frontal listo sin señal de vídeo. Confianza de coincidencia (demostración): "}
+                        <span className="font-semibold text-[#1a1a1a]">
+                          {Math.min(97, Math.round(faceProgress * 0.85 + 28))}%
+                        </span>
+                        .
+                      </>
+                    ) : (
+                      "Analizando rasgos biométricos…"
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {phase === "success" && (
         <Card className="rounded-lg border border-[#BBE795] shadow-sm gap-0 py-0 overflow-hidden animate-in zoom-in-95 fade-in duration-400">
           <CardHeader className="px-6 pt-6 pb-5 bg-[#F0FEE6]/50 border-b border-[#BBE795]/40">
@@ -424,11 +760,11 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
                   Listo, {nombreFinal.split(/\s+/)[0]}
                 </CardTitle>
                 <CardDescription className="text-sm leading-relaxed">
-                  Hemos validado la cédula del representante legal de{" "}
+                  Hemos validado la cédula y una captura frontal con cámara del representante legal de{" "}
                   <span className="font-medium text-[#1a1a1a]">
                     {intake.empresa.trim() || "tu empresa"}
                   </span>
-                  .
+                  . La comparación automatizada aquí es ilustrativa.
                 </CardDescription>
               </div>
             </div>

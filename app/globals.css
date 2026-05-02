@@ -164,3 +164,20 @@
 .kyc-verify-pulse {
   animation: kyc-pulse-ring 2s ease-out infinite;
 }
+
+/* KYC demo: shimmer en la simulación de cámara (no usa video real). */
+@keyframes kyc-camera-drifts {
+  0% {
+    transform: translate(-18%, -8%);
+  }
+  50% {
+    transform: translate(18%, 8%);
+  }
+  100% {
+    transform: translate(-18%, -8%);
+  }
+}
+
+.kyc-camera-drift-bg {
+  animation: kyc-camera-drifts 5s ease-in-out infinite;
+}

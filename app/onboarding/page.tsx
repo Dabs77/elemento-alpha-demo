@@ -61,16 +61,20 @@ export default function OnboardingPage() {
     [intake]
   );
 
-  const startPortfolioPreparation = useCallback(() => {
-    setSarlaftPkg((prev) => {
-      const base = prev ?? createEmptyPackage();
-      const merged = recommendation ? applyInterviewToSarlaft(base, recommendation) : base;
-      queueMicrotask(() => setSarlaftMissingFields(computeMissingFields(merged)));
-      return merged;
-    });
-    setPreparingPortfolio(true);
-    setPrepProgress(0);
-  }, [recommendation]);
+  const startPortfolioPreparation = useCallback(
+    (rec: PortfolioRecommendation | null) => {
+      const recToUse = rec ?? recommendation;
+      setSarlaftPkg((prev) => {
+        const base = prev ?? createEmptyPackage();
+        const merged = recToUse ? applyInterviewToSarlaft(base, recToUse) : base;
+        queueMicrotask(() => setSarlaftMissingFields(computeMissingFields(merged)));
+        return merged;
+      });
+      setPreparingPortfolio(true);
+      setPrepProgress(0);
+    },
+    [recommendation]
+  );
 
   useEffect(() => {
     if (!preparingPortfolio) return;

@@ -1,11 +1,4 @@
 import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   UserCheck,
@@ -81,18 +74,19 @@ const timelineSteps: {
   {
     phase: 3,
     title: "Reporting & Customer Support",
-    subtitle: "Reportes y Soporte al Cliente",
-    status: "locked" as const,
+    subtitle: "Servicio al cliente · Asesoría personalizada (HNW)",
+    status: "pending" as const,
     date: "Fase 3",
     description:
-      "Generación de reportes financieros detallados y acceso a soporte personalizado para el cliente.",
+      "Centraliza la relación postventa: informe previo a la reunión, sesión trimestral, consultas ad hoc, propuesta de ajustes y cierre documental — con demo MVP del Wealth OS agentic.",
     items: [
       {
         icon: FileBarChart,
-        label: "Reportes Personalizados",
+        label: "Asesoría personalizada · MVP",
         description:
-          "Generación de estados de cuenta y reportes de rendimiento a la medida",
-        link: "Generar reportes",
+          "Flujo Fase 1–5 con informes sintéticos, Q&A demo y propuesta de rebalanceo (sin CRM real)",
+        link: "Explorar demo",
+        href: "/servicio-cliente",
       },
     ],
   },
@@ -159,7 +153,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <div className="w-2 h-2 rounded-full bg-[#BBE795] animate-pulse" />
-              <span>1 de 3 fases completadas</span>
+              <span>Roadmap demo · MVP fase Reporting disponible</span>
             </div>
           </div>
         </div>
@@ -170,7 +164,7 @@ export default function Home() {
         <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-[#BBE795] to-[#7dd83a] rounded-full transition-all duration-700 ease-out"
-            style={{ width: "33%" }}
+            style={{ width: "66%" }}
           />
         </div>
         <div className="flex justify-between mt-2 text-xs text-gray-400">

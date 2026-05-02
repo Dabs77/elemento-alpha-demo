@@ -10,7 +10,7 @@ import { VoicePulse } from "@/components/voice/VoicePulse";
 interface Props {
   intake: IntakeData;
   onRecommendation: (rec: PortfolioRecommendation) => void;
-  onNext: () => void;
+  onNext: (rec: PortfolioRecommendation | null) => void;
   onBack: () => void;
 }
 
@@ -42,7 +42,7 @@ export function VoiceStep({ intake, onRecommendation, onNext, onBack }: Props) {
         </Button>
         <Button
           id="voice-next-top"
-          onClick={onNext}
+          onClick={() => onNext(receivedRec)}
           disabled={!canAdvance}
           className={`h-9 px-5 rounded-lg font-semibold gap-1.5 transition-all duration-200 ${
             canAdvance

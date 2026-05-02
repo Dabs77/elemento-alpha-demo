@@ -9,6 +9,7 @@ import {
 import type { PortfolioTimeSeriesPoint } from "@/lib/portfolio/portfolioHistory";
 import { AnimatedHistoryChart } from "@/components/portfolio/AnimatedHistoryChart";
 import { AssetAllocationChart } from "@/components/portfolio/AssetAllocationChart";
+import { BenchmarkReportActions } from "@/components/portfolio/BenchmarkReportActions";
 
 export interface BenchmarkViewProps {
   timeSeries: PortfolioTimeSeriesPoint[];
@@ -38,6 +39,7 @@ export function BenchmarkView({
         <p className="max-w-2xl text-sm leading-relaxed text-gray-600">
           Distribución de tu portafolio actual de referencia y evolución histórica del índice normalizado (base 100).
         </p>
+        <BenchmarkReportActions className="mt-4 flex flex-wrap items-center gap-2" />
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">

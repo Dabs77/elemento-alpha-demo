@@ -28,7 +28,7 @@ export interface PortfolioRecommendation {
   resp_reaccion?: number;
 }
 
-export type VoiceAgentMode = "onboarding" | "rebalance_advisor";
+export type VoiceAgentMode = "onboarding" | "rebalance_advisor" | "customer_support";
 
 function safeJsonParse<T>(raw: string): T | null {
   try {
@@ -101,6 +101,32 @@ Al iniciar la conversación (cuando el usuario acaba de conectar):
 3) Invita a hacer preguntas libres por voz.
 
 Después responde solo lo que preguntan.`;
+}
+
+function buildCustomerSupportInstruction(clientContext: string): string {
+  return `Eres el agente de voz del Relationship Manager / Servicio al Cliente de ELEMENTO ALPHA (Colombia), en modo consultas ad hoc después de revisar el borrador del informe de cuenta (HNW persona jurídica).
+Habla español colombiano, profesional y cercano. Respuestas concisas por voz; profundiza solo si lo piden.
+NO ejecutes ninguna orden de mercado ni operaciones reales.
+
+DATOS AUTORIZADOS DEL CLIENTE DEMO — úsalos tal cual; si algo no aparece aquí dilo sin inventarlo:
+---
+${clientContext}
+---
+
+Ejemplos de temas típicos (el usuario puede orientarse con estos; no tienes que leerlos todos en voz alta):
+- Estrés de tipo de cambio o escenarios cualitativos sobre el peso vs cartera sintética descrita.
+- Opciones cuando el cliente menciona necesidad de liquidez puntual (~30 días) sin romper líneas de política modelo.
+- Composición cualitativa de riesgo activo vs benchmark referencial.
+
+Reglas:
+- No des asesoría tributaria/legal definitiva ni promesas de rentabilidad; usa marcos del tipo “en esta demo sintética…”.
+- No emitas PORTFOLIO_JSON ni ningún objeto JSON estructurado.
+- Esta es una conversación abierta tipo Q&A: no hagas una encuesta de preguntas fijas.
+
+Al conectar (primer turno después de configurar la sesión):
+1) Saluda en una sola frase y menciona el nombre de la empresa del bloque anterior.
+2) En 2 frases resume el estado sintético (AUM ejemplo, YTD ejemplo, una alerta clave si aplica).
+3) Invita a preguntas libres por voz sobre el portafolio, contexto o escenarios.`;
 }
 
 function buildSystemInstruction(
@@ -250,6 +276,8 @@ interface UseVoiceAgentOptions {
   mode?: VoiceAgentMode;
   /** Bloque JSON/texto con métricas y asignaciones (requerido si mode === "rebalance_advisor"). */
   rebalanceContext?: string;
+  /** Narrativa + tabla resumen cliente demo (mode === "customer_support"). */
+  customerSupportContext?: string;
   financialContext?: string;
   intakeData?: { nombre: string; empresa: string; sector: string };
   onRecommendation?: (rec: PortfolioRecommendation) => void;
@@ -258,12 +286,17 @@ interface UseVoiceAgentOptions {
 function resolveSystemInstruction(opts: {
   mode: VoiceAgentMode;
   rebalanceContext?: string;
+  customerSupportContext?: string;
   financialContext?: string;
   intakeData?: { nombre: string; empresa: string; sector: string };
 }): string {
   if (opts.mode === "rebalance_advisor") {
     const ctx = opts.rebalanceContext?.trim();
     return buildRebalanceAdvisorInstruction(ctx || "(Contexto de portafolio aún no disponible.)");
+  }
+  if (opts.mode === "customer_support") {
+    const ctx = opts.customerSupportContext?.trim();
+    return buildCustomerSupportInstruction(ctx || "(Contexto del cliente demo aún no disponible.)");
   }
   return buildSystemInstruction(opts.financialContext, opts.intakeData);
 }
@@ -272,6 +305,7 @@ export function useVoiceAgent({
   voiceName = "Zephyr",
   mode = "onboarding",
   rebalanceContext,
+  customerSupportContext,
   financialContext,
   intakeData,
   onRecommendation,
@@ -421,6 +455,7 @@ export function useVoiceAgent({
           systemInstruction: resolveSystemInstruction({
             mode,
             rebalanceContext,
+            customerSupportContext,
             financialContext,
             intakeData,
           }),
@@ -472,10 +507,10 @@ export function useVoiceAgent({
               if (part.inlineData?.data) {
                 playBase64Pcm(part.inlineData.data);
               }
-              // Detectar etiqueta PORTFOLIO en la transcripción de texto
+              // Detectar etiqueta PORTFOLIO solo en onboarding
               if (part.text) {
                 transcriptBufferRef.current += part.text;
-                if (modeRef.current !== "rebalance_advisor") {
+                if (modeRef.current === "onboarding") {
                   const jsonSlice = extractPortfolioJsonObject(transcriptBufferRef.current);
                   if (jsonSlice) {
                     const rec = safeJsonParse<PortfolioRecommendation>(jsonSlice);
@@ -517,7 +552,7 @@ export function useVoiceAgent({
       cleanup();
       setIsConnecting(false);
     }
-  }, [voiceName, mode, rebalanceContext, financialContext, intakeData, playBase64Pcm, stopAudioPlayback, cleanup]);
+  }, [voiceName, mode, rebalanceContext, customerSupportContext, financialContext, intakeData, playBase64Pcm, stopAudioPlayback, cleanup]);
 
   // Cleanup al desmontar
   useEffect(() => {

@@ -17,6 +17,7 @@ import { useVoiceAgent } from "@/hooks/useVoiceAgent";
 import { VoicePulse } from "@/components/voice/VoicePulse";
 import { RaceChart } from "@/components/portfolio/RaceChart";
 import { AllocationComparison } from "@/components/portfolio/AllocationComparison";
+import { BenchmarkReportActions } from "@/components/portfolio/BenchmarkReportActions";
 
 export interface RebalanceViewProps {
   timeSeries: PortfolioTimeSeriesPoint[];
@@ -94,6 +95,7 @@ export function RebalanceView({ timeSeries, onBack }: RebalanceViewProps) {
             Gráficos con serie histórica normalizada (base 100). Pulsa el micrófono flotante para hablar con el
             asesor: tiene el contexto de tu portafolio actual y la opción sugerida de esta pantalla.
           </p>
+          <BenchmarkReportActions className="mt-4 flex flex-wrap items-center gap-2" />
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {raceActive && !raceDone && (
@@ -239,7 +241,7 @@ export function RebalanceView({ timeSeries, onBack }: RebalanceViewProps) {
       <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <div>
-            <p className="text-sm font-bold text-[#1a1a1a]">Carrera histórica</p>
+            <p className="text-sm font-bold text-[#1a1a1a]">Cartera histórica</p>
             <p className="text-xs text-gray-500">
               Dos líneas desde base 100: tu portafolio actual vs sugerido
             </p>
