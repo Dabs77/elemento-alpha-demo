@@ -98,14 +98,14 @@ function experienciaFromResp(r: 1 | 2 | 3 | 4): ExperienciaInversion {
   return "Derivados/Capital Privado";
 }
 
-/** Reacción ante desvalorización (pregunta 7 del guion). */
+/** Reacción ante desvalorización (pregunta 6 del guion). */
 function toleranciaFromRespReaccion(r: 1 | 2 | 3 | 4): ToleranciaRiesgo {
   if (r === 1) return "Retirar todo";
   if (r === 2) return "Retirar parte";
   return "Esperar/Invertir más aprovechando precios bajos";
 }
 
-/** Expectativa ante volatilidad (pregunta 6): solo si falta tolerancia por reacción. */
+/** Expectativa ante volatilidad (pregunta 5): solo si falta tolerancia por reacción. */
 function toleranciaFromRespExpectativa(r: 1 | 2 | 3): ToleranciaRiesgo {
   if (r === 1) return "Retirar parte";
   if (r === 2) return "Retirar parte";
@@ -141,6 +141,20 @@ function liquidezFromPortfolio(portfolio: PortfolioRecommendation["portfolio"]):
   if (portfolio === "conservador") return "Muy relevante";
   if (portfolio === "moderado") return "Algo relevante";
   return "Nada relevante";
+}
+
+function isValidVoicePortfolio(
+  p: unknown
+): p is Exclude<PortfolioRecommendation["portfolio"], undefined> {
+  return p === "conservador" || p === "moderado" || p === "agresivo";
+}
+
+/** Etiquetas alineadas al guion de voz onboarding (opción resp_proposito 1-based). */
+function objetivoFromPropositoResp(r: 1 | 2 | 3 | 4): string {
+  if (r === 1) return "Proyecto Productivo / Expansión de Planta";
+  if (r === 2) return "Optimización de Excedentes de Tesorería";
+  if (r === 3) return "Reconversión Tecnológica / Digitalización";
+  return "Fondo de Reserva para Pasivos Laborales";
 }
 
 /**
@@ -183,17 +197,39 @@ export function applyInterviewToSarlaft(
       ? toleranciaFromRespExpectativa(rev)
       : toleranciaFromPortfolio(rec.portfolio);
 
-  if (isEmptyStr(f3.liquidez)) {
+  const rp = asOpt1234(rec.resp_proposito);
+
+  if (typeof f3.objetivo_inversion !== "string") {
+    f3.objetivo_inversion = "";
+  }
+
+  // Con PORTFOLIO_JSON válido siempre aplicamos el perfil de la entrevista (sobre datos de documentos u OCR).
+  const hasVoiceRecommendation = isValidVoicePortfolio(rec.portfolio);
+
+  if (hasVoiceRecommendation) {
     f3.liquidez = liq;
-  }
-  if (isEmptyStr(f3.ciclo_empresa)) {
     f3.ciclo_empresa = ciclo;
-  }
-  if (isEmptyStr(f3.experiencia_inversion)) {
     f3.experiencia_inversion = experiencia;
-  }
-  if (isEmptyStr(f3.tolerancia_riesgo)) {
     f3.tolerancia_riesgo = tolerancia;
+    if (rp) {
+      f3.objetivo_inversion = objetivoFromPropositoResp(rp);
+    }
+  } else {
+    if (isEmptyStr(f3.liquidez)) {
+      f3.liquidez = liq;
+    }
+    if (isEmptyStr(f3.ciclo_empresa)) {
+      f3.ciclo_empresa = ciclo;
+    }
+    if (isEmptyStr(f3.experiencia_inversion)) {
+      f3.experiencia_inversion = experiencia;
+    }
+    if (isEmptyStr(f3.tolerancia_riesgo)) {
+      f3.tolerancia_riesgo = tolerancia;
+    }
+    if (rp && isEmptyStr(f3.objetivo_inversion)) {
+      f3.objetivo_inversion = objetivoFromPropositoResp(rp);
+    }
   }
 
   return next;

@@ -146,6 +146,7 @@ export function patchPackageValue(
     if (ref.fieldKey === "liquidez") f3.liquidez = String(value ?? "") as typeof f3.liquidez;
     if (ref.fieldKey === "experiencia_inversion") f3.experiencia_inversion = String(value ?? "") as typeof f3.experiencia_inversion;
     if (ref.fieldKey === "tolerancia_riesgo") f3.tolerancia_riesgo = String(value ?? "") as typeof f3.tolerancia_riesgo;
+    if (ref.fieldKey === "objetivo_inversion") f3.objetivo_inversion = String(value ?? "");
     if (ref.fieldKey === "representantes_ordenates") f3.representantes_ordenates = String(value ?? "");
     if (ref.fieldKey === "es_pep") f3.es_pep = value as typeof f3.es_pep;
     if (ref.type === "pep" && value && typeof value === "object") {

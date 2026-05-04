@@ -101,6 +101,7 @@ export function getDemoSarlaftPackage(): SarlaftPackage {
     liquidez: "Muy relevante",
     experiencia_inversion: "Cuentas/CDT",
     tolerancia_riesgo: "Esperar/Invertir más aprovechando precios bajos",
+    objetivo_inversion: "",
     representantes_ordenates:
       "Representante Legal: Juan Pérez López, CC 12.345.678, jperez@distandina.com.co. Ordenante: Marta Soto.",
     es_pep: "No",

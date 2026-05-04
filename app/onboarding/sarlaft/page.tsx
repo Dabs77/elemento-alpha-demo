@@ -64,6 +64,7 @@ const DEMO_PACKAGE: SarlaftPackage = {
     liquidez: "Algo relevante",
     experiencia_inversion: "Fondos de Inversión",
     tolerancia_riesgo: "Esperar/Invertir más aprovechando precios bajos",
+    objetivo_inversion: "",
     representantes_ordenates: "Paula Torres — CC 1.020.456.789",
     es_pep: "No",
     accionistas: [{ nombre: "Paula Torres", id: "1.020.456.789", porcentaje: 60, cotiza_en_bolsa: "No" }, { nombre: "Santiago Rueda", id: "1.019.234.567", porcentaje: 40, cotiza_en_bolsa: "No" }],

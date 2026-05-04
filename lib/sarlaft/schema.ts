@@ -154,6 +154,8 @@ export interface VinculacionForm {
   liquidez: Liquidez | "";
   experiencia_inversion: ExperienciaInversion | "";
   tolerancia_riesgo: ToleranciaRiesgo | "";
+  /** Objetivo declarado del capital a invertir (p. ej. respuesta cerrada del asesor por voz). */
+  objetivo_inversion: string;
   representantes_ordenates: string;
   es_pep: "Sí" | "No" | "";
   pep_detalle?: PepDetalle;
@@ -309,6 +311,7 @@ export function createEmptyVinculacionForm(): VinculacionForm {
     liquidez: "",
     experiencia_inversion: "",
     tolerancia_riesgo: "",
+    objetivo_inversion: "",
     representantes_ordenates: "",
     es_pep: "",
     accionistas: [],

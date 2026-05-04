@@ -10,7 +10,11 @@ import { VoicePulse } from "@/components/voice/VoicePulse";
 interface Props {
   intake: IntakeData;
   onRecommendation: (rec: PortfolioRecommendation) => void;
-  onNext: (rec: PortfolioRecommendation | null) => void;
+  /** Incluye transcripción textual acumulada de la sesión Live (modelo ± cliente) para el extractor SARLAFT. */
+  onNext: (payload: {
+    rec: PortfolioRecommendation | null;
+    interviewTranscript: string;
+  }) => void | Promise<void>;
   onBack: () => void;
 }
 
@@ -22,7 +26,15 @@ export function VoiceStep({ intake, onRecommendation, onNext, onBack }: Props) {
     onRecommendation(rec);
   };
 
-  const { startSession, endSession, isConnected, isConnecting, isSpeaking, error } = useVoiceAgent({
+  const {
+    startSession,
+    endSession,
+    getInterviewTranscript,
+    isConnected,
+    isConnecting,
+    isSpeaking,
+    error,
+  } = useVoiceAgent({
     voiceName: "Zephyr",
     intakeData: intake,
     onRecommendation: handleRecommendation,
@@ -42,7 +54,9 @@ export function VoiceStep({ intake, onRecommendation, onNext, onBack }: Props) {
         </Button>
         <Button
           id="voice-next-top"
-          onClick={() => onNext(receivedRec)}
+          onClick={() =>
+            void onNext({ rec: receivedRec, interviewTranscript: getInterviewTranscript() })
+          }
           disabled={!canAdvance}
           className={`h-9 px-5 rounded-lg font-semibold gap-1.5 transition-all duration-200 ${
             canAdvance

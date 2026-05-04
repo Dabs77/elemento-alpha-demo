@@ -18,6 +18,7 @@ export interface PortfolioRecommendation {
   /**
    * Índices de opción elegida en cada pregunta cerrada (1-based), para SARLAFT y auditoría.
    * Deben coincidir con las opciones del guion de voz al cerrar la entrevista.
+   * resp_proposito es la última pregunta (4 opciones); el resto según guion actual.
    */
   resp_proposito?: number;
   resp_ciclo?: number;
@@ -159,13 +160,6 @@ BIENVENIDA:
 - Primera intervención sugerida: "Hola <nombre>, ¿cómo estás hoy? Soy tu asesor virtual de Elemento Alpha y quiero conocerte mejor para recomendarte una buena alternativa de inversión para tu empresa. Si algo no queda claro, me preguntas con total confianza."
 
 PRIMERA PREGUNTA (debe ir de primeras):
-¿Cuál es el propósito principal de esta inversión para la empresa?
-Opciones:
-1) Preservar caja y mantener alta disponibilidad.
-2) Obtener un retorno moderado sin comprometer mucha liquidez.
-3) Maximizar crecimiento del capital, aceptando más variación.
-
-Luego pregunta:
 ¿Cómo definirías el ciclo en el que se encuentra hoy la empresa?
 Opciones:
 1) Empresa joven, que está creciendo y su foco está 100% en el negocio y reinversión.
@@ -209,6 +203,14 @@ Opciones:
 3) Esperar a que el portafolio se recupere.
 4) Esperar e invertir más para aprovechar precios bajos.
 
+ÚLTIMA PREGUNTA (cierra el perfilamiento):
+¿Cuál es el propósito principal de esta inversión para la empresa?
+Opciones:
+1) Proyecto Productivo / Expansión de Planta
+2) Optimización de Excedentes de Tesorería
+3) Reconversión Tecnológica / Digitalización
+4) Fondo de Reserva para Pasivos Laborales
+
 REGLAS DE CONDUCCIÓN:
 - Si el usuario responde ambiguo, repregunta SOLO esa pregunta, mostrando opciones resumidas.
 - Si el usuario responde con texto libre, mapea su respuesta a la opción más cercana y confírmala brevemente.
@@ -218,8 +220,8 @@ REGLAS DE CONDUCCIÓN:
 - No uses frases como "recuerda que esto es para perfilar" ni variantes similares.
 
 SCORING INTERNO (no lo expliques salvo que te lo pidan):
-- Para propósito/ciclo/liquidez/horizonte/expectativa: opción 1=1 punto, 2=2 puntos, 3=3 puntos.
-- Para experiencia y reacción ante desvalorización: opción 1=1 punto, 2=2 puntos, 3=3 puntos, 4=4 puntos.
+- Para ciclo/liquidez/horizonte/expectativa: opción 1=1 punto, 2=2 puntos, 3=3 puntos.
+- Para propósito, experiencia en inversiones y reacción ante desvalorización: opción 1=1 punto, 2=2 puntos, 3=3 puntos, 4=4 puntos.
 - Suma total esperada: mínimo 7, máximo 24.
 
 CATÁLOGO APROBADO PARA PERSONA JURÍDICA (usa solo estos nombres):
@@ -242,15 +244,15 @@ ROUTING:
 AL FINAL (después de la última respuesta o si el usuario decide terminar):
 - Da una conclusión breve en voz (máx 2 frases).
 - En una línea aparte, agrega SOLO este metadato en texto plano (un único objeto JSON válido; incluye SIEMPRE las claves resp_* con el número entero de la opción elegida por el cliente en cada pregunta, 1-based):
-PORTFOLIO_JSON:{"portfolio":"conservador|moderado|agresivo","nombre":"FIC líquido|FIC Horizontes|FIC ESTABLE","perfil":"Conservador|Moderado|Agresivo","plazo":"corto plazo|mediano plazo|largo plazo","razon":"razón concreta en 1 frase","monto":"monto mencionado o no especificado","productosRecomendados":["producto 1","producto 2","producto 3"],"resp_proposito":1,"resp_ciclo":2,"resp_liquidez":3,"resp_horizonte":1,"resp_experiencia":2,"resp_expectativa_vol":2,"resp_reaccion":3}
+PORTFOLIO_JSON:{"portfolio":"conservador|moderado|agresivo","nombre":"FIC líquido|FIC Horizontes|FIC ESTABLE","perfil":"Conservador|Moderado|Agresivo","plazo":"corto plazo|mediano plazo|largo plazo","razon":"razón concreta en 1 frase","monto":"monto mencionado o no especificado","productosRecomendados":["producto 1","producto 2","producto 3"],"resp_ciclo":2,"resp_liquidez":3,"resp_horizonte":1,"resp_experiencia":2,"resp_expectativa_vol":2,"resp_reaccion":3,"resp_proposito":4}
 Donde resp_* DEBEN reflejar las respuestas reales del cliente en este mismo orden del guion:
-- resp_proposito: pregunta propósito de la inversión (opciones 1–3).
 - resp_ciclo: pregunta ciclo de la empresa (1–3).
 - resp_liquidez: pregunta disponer dinero de forma inmediata (1–3).
 - resp_horizonte: pregunta periodo de liquidez esperado (1–3).
 - resp_experiencia: pregunta nivel de experiencia en inversiones (1–4).
 - resp_expectativa_vol: pregunta expectativa ante volatilidad (1–3).
 - resp_reaccion: pregunta reacción ante desvalorización (1–4).
+- resp_proposito: propósito de la inversión para la empresa, última pregunta (1–4).
 Si el usuario cortó antes de terminar, estima resp_* coherente con lo dicho hasta ese momento y dilo en razon.
 - No expliques ni repitas el JSON.
 - Nunca cierres la llamada abruptamente; despídete con una frase breve y cordial.
@@ -323,6 +325,8 @@ export function useVoiceAgent({
   const activeSourcesRef = useRef<AudioBufferSourceNode[]>([]);
   const nextPlayTimeRef = useRef<number>(0);
   const transcriptBufferRef = useRef<string>("");
+  /** Transcripción acumulada (texto del modelo en Live) para extracción SARLAFT posterior. */
+  const fullInterviewTranscriptRef = useRef<string>("");
   const onRecommendationRef = useRef(onRecommendation);
   onRecommendationRef.current = onRecommendation;
   const modeRef = useRef(mode);
@@ -397,6 +401,8 @@ export function useVoiceAgent({
   }, [stopAudioPlayback]);
 
   // ── Finalizar sesión ─────────────────────────────────────────────────────
+  const getInterviewTranscript = useCallback(() => fullInterviewTranscriptRef.current.trim(), []);
+
   const endSession = useCallback(() => {
     cleanup();
     setIsConnected(false);
@@ -408,6 +414,7 @@ export function useVoiceAgent({
     setIsConnecting(true);
     setError(null);
     transcriptBufferRef.current = "";
+    fullInterviewTranscriptRef.current = "";
 
     try {
       // 1. Contexto de reproducción a 24kHz
@@ -511,6 +518,7 @@ export function useVoiceAgent({
               if (part.text) {
                 transcriptBufferRef.current += part.text;
                 if (modeRef.current === "onboarding") {
+                  fullInterviewTranscriptRef.current += part.text;
                   const jsonSlice = extractPortfolioJsonObject(transcriptBufferRef.current);
                   if (jsonSlice) {
                     const rec = safeJsonParse<PortfolioRecommendation>(jsonSlice);
@@ -520,6 +528,14 @@ export function useVoiceAgent({
                     }
                   }
                 }
+              }
+            }
+
+            if (modeRef.current === "onboarding") {
+              const raw = message.serverContent as Record<string, unknown> | undefined;
+              const inp = raw?.inputTranscription as { text?: string } | undefined;
+              if (inp?.text?.trim()) {
+                fullInterviewTranscriptRef.current += `\n[Cliente]: ${inp.text.trim()}\n`;
               }
             }
           },
@@ -559,5 +575,5 @@ export function useVoiceAgent({
     return () => { cleanup(); };
   }, [cleanup]);
 
-  return { startSession, endSession, isConnected, isConnecting, isSpeaking, error };
+  return { startSession, endSession, isConnected, isConnecting, isSpeaking, error, getInterviewTranscript };
 }

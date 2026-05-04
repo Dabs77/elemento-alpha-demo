@@ -19,6 +19,13 @@ import {
   applyIntakeToSarlaft,
   applyInterviewToSarlaft,
 } from "@/lib/sarlaft/onboardingSarlaftMerge";
+import {
+  applyDefaultInterviewProfileWhereMissing,
+  applyLlmInterviewProfileToSarlaft,
+  parseSarlaftInterviewProfileJson,
+  stripPortfolioJsonFromTranscript,
+  type SarlaftInterviewProfileFields,
+} from "@/lib/sarlaft/interviewToSarlaftProfile";
 
 export type IntakeData = {
   nombre: string;
@@ -62,16 +69,44 @@ export default function OnboardingPage() {
   );
 
   const startPortfolioPreparation = useCallback(
-    (rec: PortfolioRecommendation | null) => {
-      const recToUse = rec ?? recommendation;
-      setSarlaftPkg((prev) => {
-        const base = prev ?? createEmptyPackage();
-        const merged = recToUse ? applyInterviewToSarlaft(base, recToUse) : base;
-        queueMicrotask(() => setSarlaftMissingFields(computeMissingFields(merged)));
-        return merged;
-      });
+    async (payload: {
+      rec: PortfolioRecommendation | null;
+      interviewTranscript: string;
+    }) => {
       setPreparingPortfolio(true);
       setPrepProgress(0);
+
+      const recToUse = payload.rec ?? recommendation;
+
+      let llmPatch: Partial<SarlaftInterviewProfileFields> = {};
+      const cleanTranscript = stripPortfolioJsonFromTranscript(payload.interviewTranscript).trim();
+
+      if (cleanTranscript.length >= 40) {
+        try {
+          const res = await fetch("/api/onboarding/interview-to-sarlaft", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ transcript: cleanTranscript }),
+          });
+          if (res.ok) {
+            const rawJson: unknown = await res.json();
+            llmPatch = parseSarlaftInterviewProfileJson(rawJson);
+          }
+        } catch (e) {
+          console.warn("Extracción SARLAFT desde entrevista omitida:", e);
+        }
+      }
+
+      setSarlaftPkg((prev) => {
+        let base = prev ?? createEmptyPackage();
+        base = recToUse ? applyInterviewToSarlaft(base, recToUse) : base;
+        if (Object.keys(llmPatch).length > 0) {
+          base = applyLlmInterviewProfileToSarlaft(base, llmPatch);
+        }
+        base = applyDefaultInterviewProfileWhereMissing(base);
+        queueMicrotask(() => setSarlaftMissingFields(computeMissingFields(base)));
+        return base;
+      });
     },
     [recommendation]
   );

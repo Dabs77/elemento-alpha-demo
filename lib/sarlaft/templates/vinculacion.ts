@@ -66,6 +66,7 @@ export function buildVinculacionHtml(f: VinculacionForm): string {
     <tr><td>Liquidez</td><td>${escapeHtml(f.liquidez)}</td></tr>
     <tr><td>Experiencia en inversiones</td><td>${escapeHtml(f.experiencia_inversion)}</td></tr>
     <tr><td>Tolerancia al riesgo</td><td>${escapeHtml(f.tolerancia_riesgo)}</td></tr>
+    <tr><td>Objetivo de la inversión</td><td>${escapeHtml(f.objetivo_inversion || "—")}</td></tr>
   </table>
   <h2>3. Representantes, ordenantes y PEPs</h2>
   <p>${escapeHtml(f.representantes_ordenates)}</p>
