@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 
 const GEMINI_MODEL = "gemini-2.0-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -36,7 +37,7 @@ export async function POST(request: NextRequest) {
     message: string;
   };
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = getGeminiServerApiKey();
   if (!apiKey) {
     return new Response("GEMINI_API_KEY not configured", { status: 500 });
   }

@@ -7,6 +7,7 @@ import {
   SARLAFT_INTERVIEW_TOLERANCIA,
   stripPortfolioJsonFromTranscript,
 } from "@/lib/sarlaft/interviewToSarlaftProfile";
+import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 
 const GEMINI_MODEL = "gemini-2.0-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -57,7 +58,7 @@ interface GeminiGeneratePart {
 }
 
 export async function POST(request: NextRequest) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = getGeminiServerApiKey();
   if (!apiKey) {
     return Response.json({ error: "GEMINI_API_KEY no configurada" }, { status: 500 });
   }

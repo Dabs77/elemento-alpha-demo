@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 import * as XLSX from "xlsx";
 import { deepMergeSarlaft, ensurePackageShape } from "@/lib/sarlaft/mergePackage";
 import { computeMissingFields } from "@/lib/sarlaft/missingFields";
@@ -311,9 +312,15 @@ async function extractOneDoc(
 }
 
 export async function POST(request: NextRequest) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = getGeminiServerApiKey();
   if (!apiKey) {
-    return NextResponse.json({ error: "GEMINI_API_KEY not configured" }, { status: 500 });
+    return NextResponse.json(
+      {
+        error:
+          "Sin clave de Gemini en el servidor. En Vercel define GEMINI_API_KEY o NEXT_PUBLIC_GEMINI_API_KEY (Settings → Environment Variables).",
+      },
+      { status: 500 }
+    );
   }
 
   try {

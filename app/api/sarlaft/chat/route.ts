@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 
 export const runtime = "nodejs";
 
@@ -221,7 +222,7 @@ async function callGemini(
 }
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = getGeminiServerApiKey();
   if (!apiKey) {
     return NextResponse.json({ error: "GEMINI_API_KEY not configured" }, { status: 500 });
   }

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 
 const GEMINI_MODEL = "gemini-2.0-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -21,7 +22,7 @@ Tu tarea es analizar los documentos y generar un RESUMEN EJECUTIVO CONCISO en es
 Formato de respuesta: un párrafo de máximo 300 palabras, directo, sin listas ni markdown. Usa cifras concretas. Si algún dato no está disponible, omítelo sin mencionar que falta.`;
 
 export async function POST(request: NextRequest) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = getGeminiServerApiKey();
   if (!apiKey) {
     return NextResponse.json(
       { error: "GEMINI_API_KEY not configured" },
