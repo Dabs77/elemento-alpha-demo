@@ -1,16 +1,26 @@
 export type RenderedPage = { index: number; buffer: Buffer; mimeType: "image/png" };
 
+function hasPdfJsBrowserGlobals(): boolean {
+  const g = globalThis as typeof globalThis & {
+    DOMMatrix?: new (...args: unknown[]) => unknown;
+  };
+  return typeof g.DOMMatrix === "function";
+}
+
 /**
  * Render each PDF page to a PNG buffer. Usa `pdf-to-img` (pdfjs + @napi-rs/canvas).
  *
- * Importación dinámica: en Vercel el binario `@napi-rs/canvas` puede fallar al cargar el
- * módulo; si cargamos esto solo al rasterizar y devolvemos `[]`, el extractor hace fallback
- * a PDF en bruto (inlineData).
+ * En Node/Vercel `DOMMatrix` no existe por defecto: **cargar** `pdf-to-img` revienta con
+ * `ReferenceError: DOMMatrix is not defined` antes de ejecutar código nuestro. Si faltan
+ * esos globales, devolvemos `[]` y el extractor usa PDF en bruto (`inlineData`) en Gemini.
  */
 export async function renderPdfToPngPages(
   buf: Buffer,
   opts: { maxPages?: number; scale?: number } = {}
 ): Promise<RenderedPage[]> {
+  if (!hasPdfJsBrowserGlobals()) {
+    return [];
+  }
   try {
     const { pdf } = await import("pdf-to-img");
     const maxPages = opts.maxPages ?? 20;

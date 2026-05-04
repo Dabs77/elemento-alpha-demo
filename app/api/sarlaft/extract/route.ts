@@ -16,6 +16,9 @@ import { createEmptyPackage, type SarlaftPackage } from "@/lib/sarlaft/schema";
 
 export const runtime = "nodejs";
 
+/** Vercel: máximo habitual en Hobby (60s); evita cortes con varios PDFs + Gemini. */
+export const maxDuration = 60;
+
 const GEMINI_MODEL = "gemini-3.1-pro-preview";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 

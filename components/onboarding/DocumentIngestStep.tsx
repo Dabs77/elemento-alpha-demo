@@ -321,8 +321,16 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
       });
 
       if (!res.ok) {
-        const errData = (await res.json().catch(() => ({}))) as { error?: string };
-        throw new Error(errData.error || `Error ${res.status}`);
+        const raw = await res.text().catch(() => "");
+        let message = "";
+        try {
+          const errData = JSON.parse(raw) as { error?: string };
+          message = typeof errData.error === "string" ? errData.error.trim() : "";
+        } catch {
+          /* cuerpo no JSON (p. ej. HTML de fallo en Vercel) */
+        }
+        if (!message && raw.trim()) message = raw.trim().slice(0, 400);
+        throw new Error(message || `Error ${res.status}`);
       }
 
       const reader = res.body?.getReader();
