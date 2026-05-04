@@ -1,4 +1,3 @@
-import pdf from "pdf-parse";
 import type { SarlaftPackage } from "./schema";
 import type { ExtractionTarget } from "./targets";
 import { formatTargetsForPrompt } from "./targets";
@@ -108,7 +107,8 @@ export async function detectScannedPdf(
   buf: Buffer
 ): Promise<{ scanned: boolean; chars: number; pages: number; failed?: boolean }> {
   try {
-    const data = await pdf(buf);
+    const pdfParse = (await import("pdf-parse")).default as (b: Buffer) => Promise<{ text?: string; numpages?: number }>;
+    const data = await pdfParse(buf);
     const text = (data.text || "").trim();
     const numpages = Math.max(1, data.numpages || 1);
     const chars = text.length;
