@@ -52,7 +52,7 @@ export function stripPortfolioJsonFromTranscript(text: string): string {
   const idx = text.indexOf("PORTFOLIO_JSON:");
   if (idx < 0) return text.trim();
 
-  let scanFrom = idx + "PORTFOLIO_JSON:".length;
+  const scanFrom = idx + "PORTFOLIO_JSON:".length;
   const open = text.indexOf("{", scanFrom);
   if (open === -1) return (text.slice(0, idx) + text.slice(scanFrom)).trim();
 

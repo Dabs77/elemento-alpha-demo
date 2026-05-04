@@ -665,7 +665,7 @@ function AccionistasEditor({
   );
 }
 
-function TinEditor({
+function TinEditorSingle({
   ref_,
   pkg,
   onApply,
@@ -674,33 +674,37 @@ function TinEditor({
   pkg: SarlaftPackage;
   onApply: (r: MissingFieldRef, v: unknown) => void;
 }) {
-  const isSingleRow = /^ubo\.paises_tin\[\d+\]$/.test(ref_.fieldKey);
-
-  if (isSingleRow) {
-    const m = ref_.fieldKey.match(/\[(\d+)\]/);
-    const i = m ? Number(m[1]) : 0;
-    const row = pkg.formulario_2.ubo.paises_tin[i] ?? { pais: "", tin: "" };
-    return (
-      <div className="space-y-4">
-        <Label className="text-base font-semibold text-[#1a1a1a]">{ref_.label}</Label>
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <Label className="text-xs text-gray-500">País</Label>
-            <Input value={row.pais} onChange={(e) => onApply(ref_, { pais: e.target.value, tin: row.tin })} className="h-10" />
-          </div>
-          <div>
-            <Label className="text-xs text-gray-500">TIN / NIT</Label>
-            <Input value={row.tin} onChange={(e) => onApply(ref_, { pais: row.pais, tin: e.target.value })} className="h-10" />
-          </div>
+  const m = ref_.fieldKey.match(/\[(\d+)\]/);
+  const i = m ? Number(m[1]) : 0;
+  const row = pkg.formulario_2.ubo.paises_tin[i] ?? { pais: "", tin: "" };
+  return (
+    <div className="space-y-4">
+      <Label className="text-base font-semibold text-[#1a1a1a]">{ref_.label}</Label>
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <Label className="text-xs text-gray-500">País</Label>
+          <Input value={row.pais} onChange={(e) => onApply(ref_, { pais: e.target.value, tin: row.tin })} className="h-10" />
+        </div>
+        <div>
+          <Label className="text-xs text-gray-500">TIN / NIT</Label>
+          <Input value={row.tin} onChange={(e) => onApply(ref_, { pais: row.pais, tin: e.target.value })} className="h-10" />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
+function TinEditorMulti({
+  ref_,
+  pkg,
+  onApply,
+}: {
+  ref_: MissingFieldRef;
+  pkg: SarlaftPackage;
+  onApply: (r: MissingFieldRef, v: unknown) => void;
+}) {
   const [rows, setRows] = useState(() =>
-    pkg.formulario_2.ubo.paises_tin.length
-      ? pkg.formulario_2.ubo.paises_tin
-      : [{ pais: "", tin: "" }]
+    pkg.formulario_2.ubo.paises_tin.length ? pkg.formulario_2.ubo.paises_tin : [{ pais: "", tin: "" }]
   );
 
   useEffect(() => {
@@ -744,18 +748,27 @@ function TinEditor({
           </div>
         ))}
       </div>
-      <Button
-        type="button"
-        variant="outline"
-        size="sm"
-        onClick={() => setRows((p) => [...p, { pais: "", tin: "" }])}
-        className="gap-1"
-      >
+      <Button type="button" variant="outline" size="sm" onClick={() => setRows((p) => [...p, { pais: "", tin: "" }])} className="gap-1">
         <Plus className="w-4 h-4" />
         Añadir país/TIN
       </Button>
     </div>
   );
+}
+
+function TinEditor({
+  ref_,
+  pkg,
+  onApply,
+}: {
+  ref_: MissingFieldRef;
+  pkg: SarlaftPackage;
+  onApply: (r: MissingFieldRef, v: unknown) => void;
+}) {
+  if (/^ubo\.paises_tin\[\d+\]$/.test(ref_.fieldKey)) {
+    return <TinEditorSingle ref_={ref_} pkg={pkg} onApply={onApply} />;
+  }
+  return <TinEditorMulti ref_={ref_} pkg={pkg} onApply={onApply} />;
 }
 
 function getF1F2F3String(pkg: SarlaftPackage, r: MissingFieldRef): string {

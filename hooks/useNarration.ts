@@ -8,6 +8,8 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
 
+type LiveVoiceSession = { close: () => void };
+
 const ai = new GoogleGenAI({
   apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY!,
 });
@@ -42,7 +44,7 @@ export function useNarration(options: UseNarrationOptions = {}) {
   const [error, setError] = useState<string | null>(null);
 
   // ── Refs de recursos (IGUAL que useVoiceAgent) ────────────────────────────
-  const sessionRef = useRef<any>(null);
+  const sessionRef = useRef<Promise<LiveVoiceSession> | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);      // captura 16kHz
   const playAudioContextRef = useRef<AudioContext | null>(null);  // reproducción 24kHz
@@ -106,7 +108,13 @@ export function useNarration(options: UseNarrationOptions = {}) {
       timeoutRef.current = null;
     }
     if (sessionRef.current) {
-      sessionRef.current.then?.((s: any) => { try { s.close(); } catch { /* ignorar */ } });
+      void sessionRef.current.then((s) => {
+        try {
+          s.close();
+        } catch {
+          /* ignorar */
+        }
+      });
       sessionRef.current = null;
     }
     if (streamRef.current) {
@@ -309,7 +317,7 @@ export function useNarration(options: UseNarrationOptions = {}) {
           },
         });
 
-        sessionRef.current = sessionPromise;
+        sessionRef.current = sessionPromise as Promise<LiveVoiceSession>;
         await endedPromise;
       } catch (e) {
         const msg = e instanceof Error ? e.message : "No se pudo generar la narración.";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { buildSagrilaftHtml } from "@/lib/sarlaft/templates/sagrilaft";
@@ -183,19 +183,13 @@ function PreviewFrame({ html, title }: { html: string; title: string }) {
 }
 
 function QuickEdit({ value, onChange }: { value: SarlaftPackage; onChange: (p: SarlaftPackage) => void }) {
-  const [local, setLocal] = useState<SarlaftPackage>(value);
-  useEffect(() => setLocal(value), [value]);
-
   const patch = useCallback(
     (updater: (d: SarlaftPackage) => void) => {
-      setLocal((prev) => {
-        const n = JSON.parse(JSON.stringify(prev)) as SarlaftPackage;
-        updater(n);
-        onChange(n);
-        return n;
-      });
+      const n = JSON.parse(JSON.stringify(value)) as SarlaftPackage;
+      updater(n);
+      onChange(n);
     },
-    [onChange]
+    [value, onChange]
   );
 
   return (
@@ -204,7 +198,7 @@ function QuickEdit({ value, onChange }: { value: SarlaftPackage; onChange: (p: S
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
         <Field
           label="Razón social (F.1 y F.2)"
-          value={local.formulario_1.nombre_completo_razon_social}
+          value={value.formulario_1.nombre_completo_razon_social}
           onValue={(v) =>
             patch((d) => {
               d.formulario_1.nombre_completo_razon_social = v;
@@ -214,7 +208,7 @@ function QuickEdit({ value, onChange }: { value: SarlaftPackage; onChange: (p: S
         />
         <Field
           label="NIT (F.1 / F.2)"
-          value={local.formulario_1.tipo_y_numero_identificacion}
+          value={value.formulario_1.tipo_y_numero_identificacion}
           onValue={(v) =>
             patch((d) => {
               d.formulario_1.tipo_y_numero_identificacion = v;
@@ -224,12 +218,12 @@ function QuickEdit({ value, onChange }: { value: SarlaftPackage; onChange: (p: S
         />
         <Field
           label="País constitución fiscal (F.2)"
-          value={local.formulario_2.pais_constitucion_fiscal}
+          value={value.formulario_2.pais_constitucion_fiscal}
           onValue={(v) => patch((d) => (d.formulario_2.pais_constitucion_fiscal = v))}
         />
         <Field
           label="Representante / ordenantes (F.3)"
-          value={local.formulario_3.representantes_ordenates}
+          value={value.formulario_3.representantes_ordenates}
           onValue={(v) => patch((d) => (d.formulario_3.representantes_ordenates = v))}
         />
       </div>

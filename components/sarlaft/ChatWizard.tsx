@@ -194,19 +194,16 @@ function MultiFieldComposer({
   fields,
   disabled,
   onSubmit,
-  initial,
   submitLabel = "Guardar",
 }: {
   fields: { key: string; label: string; type?: "text" | "number" | "date" | "email" | "tel"; placeholder?: string; colSpan?: 1 | 2 }[];
-  initial?: Record<string, string>;
   disabled: boolean;
   onSubmit: (v: Record<string, string>) => void;
   submitLabel?: string;
 }) {
-  const [state, setState] = useState<Record<string, string>>(() => initial ?? {});
-  useEffect(() => {
-    setState(initial ?? {});
-  }, [initial]);
+  const [state, setState] = useState<Record<string, string>>(() =>
+    fields.reduce((acc, f) => ({ ...acc, [f.key]: "" }), {})
+  );
   const canSubmit = fields.every((f) => (state[f.key] ?? "").trim().length > 0);
   return (
     <div className="space-y-3">
@@ -1152,11 +1149,6 @@ export function ChatWizard({
         field: toFieldInfo(ref),
         userText: text,
       });
-
-      if (typeof window !== "undefined") {
-        // eslint-disable-next-line no-console
-        console.log("[ChatWizard] parse response:", parsed);
-      }
 
       const hasValue =
         parsed.value !== undefined &&

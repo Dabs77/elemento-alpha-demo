@@ -331,8 +331,7 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
       const decoder = new TextDecoder();
       let buffer = "";
 
-      // eslint-disable-next-line no-constant-condition
-      while (true) {
+      for (;;) {
         const { done, value } = await reader.read();
         if (done) break;
 

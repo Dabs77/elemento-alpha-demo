@@ -3,6 +3,10 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
 
+type LiveVoiceSession = { close: () => void };
+
+type VoiceCloseReason = { code?: number; reason?: string };
+
 const ai = new GoogleGenAI({
   apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY!,
 });
@@ -318,7 +322,7 @@ export function useVoiceAgent({
   const [error, setError] = useState<string | null>(null);
 
   // ── Refs de recursos ──────────────────────────────────────────────────────
-  const sessionRef = useRef<any>(null);
+  const sessionRef = useRef<Promise<LiveVoiceSession> | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);      // captura 16kHz
   const playAudioContextRef = useRef<AudioContext | null>(null);  // reproducción 24kHz
@@ -328,9 +332,15 @@ export function useVoiceAgent({
   /** Transcripción acumulada (texto del modelo en Live) para extracción SARLAFT posterior. */
   const fullInterviewTranscriptRef = useRef<string>("");
   const onRecommendationRef = useRef(onRecommendation);
-  onRecommendationRef.current = onRecommendation;
   const modeRef = useRef(mode);
-  modeRef.current = mode;
+
+  useEffect(() => {
+    onRecommendationRef.current = onRecommendation;
+  }, [onRecommendation]);
+
+  useEffect(() => {
+    modeRef.current = mode;
+  }, [mode]);
 
   // ── Reproducción de audio PCM base64 (24kHz) ─────────────────────────────
   const playBase64Pcm = useCallback((base64: string) => {
@@ -371,7 +381,13 @@ export function useVoiceAgent({
 
   // ── Detener reproducción (interrupciones) ────────────────────────────────
   const stopAudioPlayback = useCallback(() => {
-    activeSourcesRef.current.forEach((s) => { try { s.stop(); } catch (_e) {} });
+    activeSourcesRef.current.forEach((s) => {
+      try {
+        s.stop();
+      } catch {
+        /* ignore */
+      }
+    });
     activeSourcesRef.current = [];
     if (playAudioContextRef.current) {
       nextPlayTimeRef.current = playAudioContextRef.current.currentTime;
@@ -382,7 +398,13 @@ export function useVoiceAgent({
   // ── Limpieza completa ────────────────────────────────────────────────────
   const cleanup = useCallback(() => {
     if (sessionRef.current) {
-      sessionRef.current.then((s: any) => { try { s.close(); } catch (_e) {} });
+      void sessionRef.current.then((s) => {
+        try {
+          s.close();
+        } catch {
+          /* ignore */
+        }
+      });
       sessionRef.current = null;
     }
     if (streamRef.current) {
@@ -487,7 +509,9 @@ export function useVoiceAgent({
                   session.sendRealtimeInput({
                     audio: { data: window.btoa(binary), mimeType: "audio/pcm;rate=16000" },
                   });
-                } catch (_e) {}
+                } catch {
+                  /* envío rechazado si la sesión ya cerró */
+                }
               });
             };
 
@@ -548,7 +572,7 @@ export function useVoiceAgent({
             setIsConnecting(false);
           },
 
-          onclose: (event: any) => {
+          onclose: (event: VoiceCloseReason) => {
             console.warn("Sesión Gemini cerrada:", event?.code, event?.reason);
             cleanup();
             if (event?.code && event.code !== 1000) {
@@ -560,7 +584,7 @@ export function useVoiceAgent({
         },
       });
 
-      sessionRef.current = sessionPromise;
+      sessionRef.current = sessionPromise as Promise<LiveVoiceSession>;
 
     } catch (err) {
       console.error("Error al iniciar sesión:", err);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback, useEffect } from "react";
+import { useMemo, useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -46,9 +46,7 @@ export function FormWizard({
   const [pkg, setPkg] = useState<SarlaftPackage>(initial);
   const steps = useMemo(() => buildSteps(missing), [missing]);
   const [ix, setIx] = useState(0);
-  useEffect(() => {
-    if (ix > 0 && ix >= steps.length) setIx(Math.max(0, steps.length - 1));
-  }, [ix, steps.length]);
+  const boundedIx = steps.length === 0 ? 0 : Math.min(ix, steps.length - 1);
 
   const apply = useCallback(
     (ref: MissingFieldRef, value: unknown) => {
@@ -72,14 +70,14 @@ export function FormWizard({
     );
   }
 
-  const step = steps[ix];
-  const isLast = ix === steps.length - 1;
+  const step = steps[boundedIx];
+  const isLast = boundedIx === steps.length - 1;
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between text-sm text-gray-500">
         <span>
-          Paso {ix + 1} de {steps.length}
+          Paso {boundedIx + 1} de {steps.length}
         </span>
         <span className="font-medium text-[#1a1a1a]">{step.label}</span>
       </div>
@@ -89,7 +87,12 @@ export function FormWizard({
         ))}
       </div>
       <div className="flex justify-between gap-2 pt-2 border-t">
-        <Button type="button" variant="outline" disabled={ix === 0} onClick={() => setIx((i) => i - 1)}>
+        <Button
+          type="button"
+          variant="outline"
+          disabled={boundedIx === 0}
+          onClick={() => setIx((i) => Math.max(0, i - 1))}
+        >
           <ChevronLeft className="w-4 h-4" /> Atrás
         </Button>
         {isLast ? (
@@ -102,7 +105,7 @@ export function FormWizard({
             <ChevronRight className="w-4 h-4" />
           </Button>
         ) : (
-          <Button type="button" onClick={() => setIx((i) => i + 1)}>
+          <Button type="button" onClick={() => setIx((i) => Math.min(i + 1, steps.length - 1))}>
             Siguiente
             <ChevronRight className="w-4 h-4" />
           </Button>
