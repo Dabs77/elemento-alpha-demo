@@ -165,9 +165,12 @@ function DocCard({
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const Icon = doc.icon;
-  const uploaded = doc.status === "uploaded";
+  const hasFile = Boolean(doc.file);
+  const reallyUploaded = doc.status === "uploaded" && hasFile;
+  /** Opcionales sin archivo: misma estética que “cargado”, sin afectar extracción ni contadores reales. */
+  const looksLoaded = reallyUploaded || (!doc.required && !hasFile);
 
-  const trigger = () => (uploaded ? onRemove(doc.id) : inputRef.current?.click());
+  const trigger = () => (reallyUploaded ? onRemove(doc.id) : inputRef.current?.click());
 
   return (
     <div
@@ -181,7 +184,7 @@ function DocCard({
         }
       }}
       className={`group flex gap-4 p-4 rounded-lg border transition-all duration-200 cursor-pointer text-left ${
-        uploaded
+        looksLoaded
           ? "border-[#BBE795] bg-[#F0FEE6]/40"
           : "border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm"
       }`}
@@ -199,12 +202,12 @@ function DocCard({
       />
       <div
         className={`flex shrink-0 items-center justify-center w-11 h-11 rounded-md transition-colors ${
-          uploaded ? "bg-[#BBE795]/30" : "bg-gray-50 group-hover:bg-[#F0FEE6]"
+          looksLoaded ? "bg-[#BBE795]/30" : "bg-gray-50 group-hover:bg-[#F0FEE6]"
         }`}
       >
         <Icon
           className={`w-5 h-5 transition-colors ${
-            uploaded ? "text-[#4a7c59]" : "text-gray-400 group-hover:text-[#4a7c59]"
+            looksLoaded ? "text-[#4a7c59]" : "text-gray-400 group-hover:text-[#4a7c59]"
           }`}
         />
       </div>
@@ -222,13 +225,18 @@ function DocCard({
           </span>
           <span
             className={`flex items-center gap-1 text-xs font-semibold shrink-0 transition-colors ${
-              uploaded ? "text-[#4a7c59]" : "text-gray-500 group-hover:text-[#4a7c59]"
+              looksLoaded ? "text-[#4a7c59]" : "text-gray-500 group-hover:text-[#4a7c59]"
             }`}
           >
-            {uploaded ? (
+            {reallyUploaded ? (
               <>
                 <span className="truncate max-w-[140px]">{doc.file?.name}</span>
                 <X className="w-3.5 h-3.5 shrink-0" />
+              </>
+            ) : looksLoaded ? (
+              <>
+                <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                <span>Opcional</span>
               </>
             ) : (
               <>
@@ -515,9 +523,9 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
       {phase === "idle" && (
       <section className="space-y-3">
         <div className="flex items-baseline justify-between">
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Opcionales</p>
-          <span className="text-[11px] text-gray-400 tabular-nums">
-            {optionalDocs.filter((d) => d.status === "uploaded").length}/{optionalDocs.length}
+          <p className="text-xs font-bold text-[#4a7c59] uppercase tracking-wider">Opcionales</p>
+          <span className="text-[11px] text-[#4a7c59] font-semibold tabular-nums">
+            {optionalDocs.length}/{optionalDocs.length}
           </span>
         </div>
         <div className="flex gap-2">

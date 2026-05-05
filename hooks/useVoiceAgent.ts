@@ -2,6 +2,11 @@
 
 import { useRef, useState, useCallback, useEffect } from "react";
 import { GoogleGenAI, LiveServerMessage, Modality } from "@google/genai";
+import {
+  SKILL_PROFILES_FOR_PROMPTS,
+  SKILL_ROLE_LABELS,
+  type SkillRoleId,
+} from "@/lib/servicio-cliente/knowledgeBase";
 
 type LiveVoiceSession = { close: () => void };
 
@@ -109,7 +114,7 @@ Después responde solo lo que preguntan.`;
 }
 
 function buildCustomerSupportInstruction(clientContext: string): string {
-  return `Eres el agente de voz del Relationship Manager / Servicio al Cliente de ELEMENTO ALPHA (Colombia), en modo consultas ad hoc después de revisar el borrador del informe de cuenta (HNW persona jurídica).
+  return `Eres el agente de voz del Relationship Manager / Servicio al Cliente de ELEMENTO ALPHA (Colombia), en modo consultas ad hoc después de revisar el borrador del informe de cuenta (cliente persona jurídica demo).
 Habla español colombiano, profesional y cercano. Respuestas concisas por voz; profundiza solo si lo piden.
 NO ejecutes ninguna orden de mercado ni operaciones reales.
 
@@ -119,19 +124,52 @@ ${clientContext}
 ---
 
 Ejemplos de temas típicos (el usuario puede orientarse con estos; no tienes que leerlos todos en voz alta):
-- Estrés de tipo de cambio o escenarios cualitativos sobre el peso vs cartera sintética descrita.
-- Opciones cuando el cliente menciona necesidad de liquidez puntual (~30 días) sin romper líneas de política modelo.
-- Composición cualitativa de riesgo activo vs benchmark referencial.
+- ACWI COP, fortalecimiento del peso y cobertura cambiaria vs reducción marginal de global.
+- RF global USD, Fed en ciclo alto y acortar duración / T-Bills vs bonos 3–7Y.
+- ICOLCAP fuerte YTD y tomar utilidades parciales para financiar rebalanceo hacia IBR sin romper techo RV.
+- Cómo se relacionan restricciones IPS (liquidez ≥15%, USD 15–35%, RV ≤25%, duración 0,5–2,5 años) con el estado del informe.
 
 Reglas:
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad; usa marcos del tipo “en esta demo sintética…”.
 - No emitas PORTFOLIO_JSON ni ningún objeto JSON estructurado.
 - Esta es una conversación abierta tipo Q&A: no hagas una encuesta de preguntas fijas.
+- Respeta el benchmark compuesto del briefing (IBR/COLTES/ICOLCAP+ACWI) y las restricciones IPS del fragmento de política.
 
 Al conectar (primer turno después de configurar la sesión):
-1) Saluda en una sola frase y menciona el nombre de la empresa del bloque anterior.
-2) En 2 frases resume el estado sintético (AUM ejemplo, YTD ejemplo, una alerta clave si aplica).
-3) Invita a preguntas libres por voz sobre el portafolio, contexto o escenarios.`;
+1) Saluda en una sola frase y menciona la razón social del cliente del bloque anterior.
+2) En 2 frases resume el estado sintético (patrimonio ejemplo, alpha YTD vs benchmark si está en el bloque, una alerta clave si aplica).
+3) Invita a preguntas libres por voz sobre el portafolio, contexto macro o escenarios`;
+}
+
+/** Consultas SKILLS por voz: el usuario habla como asesor comercial ante el experto simulado. */
+function buildSkillsConsultVoiceInstruction(clientContext: string, skillRole: SkillRoleId): string {
+  const label = SKILL_ROLE_LABELS[skillRole];
+  const persona = SKILL_PROFILES_FOR_PROMPTS[skillRole];
+
+  return `Simulas por VOZ al profesional interno de ELEMENTO ALPHA: "${label}" (consulta tipo SKILLS).
+El interlocutor por micrófono es un asesor comercial que prepara la reunión con el cliente; NO es el cliente final salvo que lo diga explícitamente.
+Responde con la mirada, vocabulario y límites de ese rol. Español colombiano, profesional, respuestas breves por voz; amplía solo si piden profundidad.
+NO ejecutes órdenes de mercado ni prometas rentabilidades.
+
+PERFIL / FRONTERAS DEL ROL:
+---
+${persona}
+---
+
+DATOS AUTORIZADOS DEL CLIENTE DEMO — úsalos tal cual; si algo no aparece dilo sin inventarlo:
+---
+${clientContext}
+---
+
+Reglas:
+- Respeta IPS/benchmark del briefing cuando el asesor pregunta por argumentos frente al cliente Acropolis Labs SAS (PJ).
+- Si la pregunta pertenece claramente a otro rol del sistema SKILLS, indica en una frase a quién escalarías y responde solo lo que toca tu perfil.
+- No emitas PORTFOLIO_JSON ni JSON estructurado.
+
+Al conectar (primer turno):
+1) Saluda en una frase como ese perfil interno (sin lecturas largas).
+2) En una frase resume que escucharás consultas por voz para ayudar al asesor.
+3) Invita a la primera pregunta por voz.`;
 }
 
 function buildSystemInstruction(
@@ -284,6 +322,8 @@ interface UseVoiceAgentOptions {
   rebalanceContext?: string;
   /** Narrativa + tabla resumen cliente demo (mode === "customer_support"). */
   customerSupportContext?: string;
+  /** Si se define con mode customer_support, instrucción = perfil SKILLS (PM, estratega, etc.). */
+  skillConsultRole?: SkillRoleId;
   financialContext?: string;
   intakeData?: { nombre: string; empresa: string; sector: string };
   onRecommendation?: (rec: PortfolioRecommendation) => void;
@@ -293,6 +333,7 @@ function resolveSystemInstruction(opts: {
   mode: VoiceAgentMode;
   rebalanceContext?: string;
   customerSupportContext?: string;
+  skillConsultRole?: SkillRoleId;
   financialContext?: string;
   intakeData?: { nombre: string; empresa: string; sector: string };
 }): string {
@@ -302,7 +343,11 @@ function resolveSystemInstruction(opts: {
   }
   if (opts.mode === "customer_support") {
     const ctx = opts.customerSupportContext?.trim();
-    return buildCustomerSupportInstruction(ctx || "(Contexto del cliente demo aún no disponible.)");
+    const safeCtx = ctx || "(Contexto del cliente demo aún no disponible.)";
+    if (opts.skillConsultRole) {
+      return buildSkillsConsultVoiceInstruction(safeCtx, opts.skillConsultRole);
+    }
+    return buildCustomerSupportInstruction(safeCtx);
   }
   return buildSystemInstruction(opts.financialContext, opts.intakeData);
 }
@@ -312,6 +357,7 @@ export function useVoiceAgent({
   mode = "onboarding",
   rebalanceContext,
   customerSupportContext,
+  skillConsultRole,
   financialContext,
   intakeData,
   onRecommendation,
@@ -485,6 +531,7 @@ export function useVoiceAgent({
             mode,
             rebalanceContext,
             customerSupportContext,
+            skillConsultRole,
             financialContext,
             intakeData,
           }),
@@ -592,7 +639,7 @@ export function useVoiceAgent({
       cleanup();
       setIsConnecting(false);
     }
-  }, [voiceName, mode, rebalanceContext, customerSupportContext, financialContext, intakeData, playBase64Pcm, stopAudioPlayback, cleanup]);
+  }, [voiceName, mode, rebalanceContext, customerSupportContext, skillConsultRole, financialContext, intakeData, playBase64Pcm, stopAudioPlayback, cleanup]);
 
   // Cleanup al desmontar
   useEffect(() => {

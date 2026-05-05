@@ -18,6 +18,7 @@ import type { OcrReportItem } from "@/lib/sarlaft/ocrTypes";
 import {
   applyIntakeToSarlaft,
   applyInterviewToSarlaft,
+  applyOnboardingSarlaftSeeds,
 } from "@/lib/sarlaft/onboardingSarlaftMerge";
 import {
   applyDefaultInterviewProfileWhereMissing,
@@ -59,7 +60,7 @@ export default function OnboardingPage() {
 
   const handleDocumentIngestContinue = useCallback(
     (payload: { package: SarlaftPackage; missing: MissingFieldRef[]; ocrReport: OcrReportItem[] | null }) => {
-      const merged = applyIntakeToSarlaft(payload.package, intake);
+      const merged = applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(payload.package, intake));
       setSarlaftPkg(merged);
       setSarlaftMissingFields(computeMissingFields(merged));
       setSarlaftOcrReport(payload.ocrReport);
@@ -99,6 +100,7 @@ export default function OnboardingPage() {
 
       setSarlaftPkg((prev) => {
         let base = prev ?? createEmptyPackage();
+        base = applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(base, intake));
         base = recToUse ? applyInterviewToSarlaft(base, recToUse) : base;
         if (Object.keys(llmPatch).length > 0) {
           base = applyLlmInterviewProfileToSarlaft(base, llmPatch);
@@ -108,7 +110,7 @@ export default function OnboardingPage() {
         return base;
       });
     },
-    [recommendation]
+    [recommendation, intake]
   );
 
   useEffect(() => {
@@ -254,7 +256,7 @@ export default function OnboardingPage() {
                 const nextIntake = { ...i, nombre: nombre.trim() || i.nombre };
                 setSarlaftPkg((p) => {
                   if (!p) return p;
-                  const merged = applyIntakeToSarlaft(p, nextIntake);
+                  const merged = applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(p, nextIntake));
                   queueMicrotask(() => setSarlaftMissingFields(computeMissingFields(merged)));
                   return merged;
                 });

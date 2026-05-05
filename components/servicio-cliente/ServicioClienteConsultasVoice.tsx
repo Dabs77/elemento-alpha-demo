@@ -5,42 +5,24 @@ import { VoicePulse } from "@/components/voice/VoicePulse";
 import { useVoiceAgent } from "@/hooks/useVoiceAgent";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { buildCustomerSupportContextFromHnw } from "@/lib/servicio-cliente/customerSupportVoiceContext";
 
-/** Debe mantenerse alineado al borrador sintético de Fase 1 (informe de cuenta demo). */
-const SERVICIO_CLIENTE_VOICE_CONTEXT = `
-Cliente / expediente CRM simulado: ORN-8842
-Nombre: Inversiones Orinoquia S.A.S.
-Segmento: HNW · persona jurídica · período informe Ene–Mar 2026
-Activos consolidados (ejemplo sintético): $4.872M COP equivalente
-Perfil modelo declarado (demo): Moderado · techo soberano revisable trimestral
-
-Saldo por producto y rendimiento YTD ejemplo:
-- FIC Horizontes Balanceado: saldo ~$1,982M · YTD +4,1% vs benchmark modelo +2,2% (alfa relativo ejemplo +1,9 pp).
-- FIC Renta FI Corto Plazo: saldo ~$1,641M · YTD +2,8% vs modelo +2,4% (+0,4 pp).
-- CDT Ladder corporativo: saldo ~$1,249M · YTD ~+11,7% nominal · sin benchmark FI directo comparable en este paquete.
-Portafolio consolidado YTD ejemplo: +3,6%. Benchmark MSCI Colombia Select (serie demo sintética) usada como referencia informativa: +2,5% mismo período (Δ ejemplo +1,1 pp consolidado).
-
-Alertas operativas (ejemplo MVP):
-1) CDT tramo ven. 15 may 2026: sin instrucción de rollo definida.
-2) Sesgo país / soberano: exposición local ~68% vs objetivo modelo 62% · monitoreo mensual recomendado en narrativa demo.
-
-Politica de comunicación demo: sin órdenes de mercado, sin ejecutar trasladar titulos; sólo orientación y síntesis.
-`.trim();
+const SERVICIO_CLIENTE_VOICE_CONTEXT = buildCustomerSupportContextFromHnw();
 
 type FAQHint = { q: string; hint: string };
 
 const FAQ_VOICE_HINTS: FAQHint[] = [
   {
-    q: "Estrés de tipo de cambio",
-    hint: 'Ej.: "¿Qué pasaría si el peso se deprecia un 8% adicional este trimestre?"',
+    q: "ACWI COP y TRM",
+    hint: 'Ej.: "¿Qué opciones tengo si quiero mitigar el golpe del peso fuerte sobre mi global?"',
   },
   {
-    q: "Liquidez corto plazo",
-    hint: 'Ej.: "¿Tengo opciones si necesito ~$420M en unos 30 días para capex sin romper el perfil modelo?"',
+    q: "Utilidades ICOLCAP",
+    hint: 'Ej.: "¿Cómo explico tomar utilidades parciales sin que suene a timing de mercado?"',
   },
   {
-    q: "Riesgo vs benchmark",
-    hint: 'Ej.: "¿Cómo ves hoy mi riesgo activo frente al benchmark sintético del informe?"',
+    q: "IPS vs emoción",
+    hint: 'Ej.: "¿Cómo le digo que salirse de todo lo global rompe su perfil moderado?"',
   },
 ];
 

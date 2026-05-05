@@ -1,5 +1,6 @@
 import type { PortfolioRecommendation } from "@/hooks/useVoiceAgent";
 import type {
+  Accionista,
   CicloEmpresa,
   ExperienciaInversion,
   FatcaActividad,
@@ -7,6 +8,22 @@ import type {
   SarlaftPackage,
   ToleranciaRiesgo,
 } from "./schema";
+
+/** Cifras demo (ingresos no venían en la petición; valor redondo compatible con el resto). */
+export const ONBOARDING_SARLAFT_SEED_CIFRAS = {
+  ingresos: 3_000_000,
+  egresos: 2_558_644,
+  total_activos: 14_684_561,
+  total_pasivos: 646_000,
+  total_patrimonio: 14_038_561,
+} as const;
+
+export const ONBOARDING_SARLAFT_SEED_ACCIONISTAS: Accionista[] = [
+  { nombre: "David Sebastián Galeano Arias", id: "C.C. 1.034.277.398", porcentaje: 25, cotiza_en_bolsa: "No" },
+  { nombre: "Exabyte Company SAS", id: "NIT 901.529.728", porcentaje: 25, cotiza_en_bolsa: "No" },
+  { nombre: "Paula Sofía Torres Rodríguez", id: "C.C. 1.013.104.278", porcentaje: 25, cotiza_en_bolsa: "No" },
+  { nombre: "Daniel Andrés Becerra Sierra", id: "C.C. 1.000.077.160", porcentaje: 25, cotiza_en_bolsa: "No" },
+];
 
 /** Datos de empresa / RL recopilados en el paso de intake (sin depender de `app/`). */
 export type IntakeSarlaftInput = {
@@ -53,6 +70,31 @@ export function applyIntakeToSarlaft(pkg: SarlaftPackage, intake: IntakeSarlaftI
   }
   if (nombre && isEmptyStr(next.formulario_2.ubo.datos_personales)) {
     next.formulario_2.ubo.datos_personales = `${nombre} — Representante Legal`;
+  }
+
+  return next;
+}
+
+/**
+ * Valores demo por defecto en onboarding: pregunta FATCA de ≥50% pasivos (Sí), cifras financieras
+ * y composición accionaria. Solo completa huecos; no sustituye datos ya extraídos o editados.
+ */
+export function applyOnboardingSarlaftSeeds(pkg: SarlaftPackage): SarlaftPackage {
+  const next: SarlaftPackage = JSON.parse(JSON.stringify(pkg));
+  const f2 = next.formulario_2;
+  if (f2.ingresos_activos_pasivos_50 !== "Sí" && f2.ingresos_activos_pasivos_50 !== "No") {
+    f2.ingresos_activos_pasivos_50 = "Sí";
+  }
+
+  const c = next.formulario_3.cifras_financieras;
+  (["ingresos", "egresos", "total_activos", "total_pasivos", "total_patrimonio"] as const).forEach((k) => {
+    if (c[k] === null || c[k] === undefined) {
+      c[k] = ONBOARDING_SARLAFT_SEED_CIFRAS[k];
+    }
+  });
+
+  if (next.formulario_3.accionistas.length === 0) {
+    next.formulario_3.accionistas = ONBOARDING_SARLAFT_SEED_ACCIONISTAS.map((a) => ({ ...a }));
   }
 
   return next;
