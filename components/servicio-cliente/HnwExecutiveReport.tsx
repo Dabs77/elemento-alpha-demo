@@ -27,12 +27,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { PORTFOLIO_METRICS } from "@/lib/portfolio/portfolioData";
+import { HnwReportStructuredInputDialog } from "@/components/servicio-cliente/HnwReportStructuredInputDialog";
 
 export function HnwExecutiveReport() {
   const bmk = PORTFOLIO_METRICS.benchmark;
 
   return (
     <div className="space-y-8">
+      <div className="flex flex-wrap items-center gap-2">
+        <HnwReportStructuredInputDialog />
+        <span className="text-[11px] text-gray-500">
+          Política IPS y restricciones mostradas como base del informe (demo).
+        </span>
+      </div>
       <section>
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
           1 · Ficha y estado del cliente

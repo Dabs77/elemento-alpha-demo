@@ -68,14 +68,14 @@ export const PORTFOLIO_OPTIONS: PortfolioOption[] = [
   },
   {
     id: "portfolio33",
-    name: "Portfolio 33",
+    name: "Sugerido 2",
     description: "Opción de rebalanceo balanceada",
     metrics: PORTFOLIO_METRICS.portfolio33,
     allocation: ASSET_ALLOCATION,
   },
   {
     id: "portfolio36",
-    name: "Portfolio 36",
+    name: "Sugerido 3",
     description: "Opción de rebalanceo con mayor retorno esperado",
     metrics: PORTFOLIO_METRICS.portfolio36,
     allocation: ASSET_ALLOCATION,

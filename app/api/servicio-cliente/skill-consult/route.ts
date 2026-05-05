@@ -9,6 +9,10 @@ import {
   SKILL_ROLE_IDS,
   SKILL_ROLE_LABELS,
 } from "@/lib/servicio-cliente/knowledgeBase";
+import {
+  getSkillsPredefinedExactReply,
+  SKILLS_PREDEFINED_QA_PROMPT_BLOCK,
+} from "@/lib/servicio-cliente/skillConsultPredefinedQA";
 
 const GEMINI_URL = geminiGenerateContentUrl(GEMINI_3_FLASH_PREVIEW);
 
@@ -26,11 +30,6 @@ function isSkillRoleId(x: string): x is SkillRoleId {
 }
 
 export async function POST(request: NextRequest) {
-  const apiKey = getGeminiServerApiKey();
-  if (!apiKey) {
-    return Response.json({ error: "GEMINI_API_KEY not configured" }, { status: 500 });
-  }
-
   const body = (await request.json()) as {
     role?: string;
     question?: string;
@@ -48,6 +47,16 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: "Pregunta vacía" }, { status: 400 });
   }
 
+  const predefinedReply = getSkillsPredefinedExactReply(question);
+  if (predefinedReply !== null) {
+    return Response.json({ reply: predefinedReply });
+  }
+
+  const apiKey = getGeminiServerApiKey();
+  if (!apiKey) {
+    return Response.json({ error: "GEMINI_API_KEY not configured" }, { status: 500 });
+  }
+
   const roleLabel = SKILL_ROLE_LABELS[roleRaw];
   const persona = SKILL_PROFILES_FOR_PROMPTS[roleRaw];
   const kb = getKnowledgeBaseFull();
@@ -61,6 +70,8 @@ BASE DE CONOCIMIENTO AUTORIZADA (no contradigas; si falta data dilo):
 ---
 ${kb}
 ---
+
+${SKILLS_PREDEFINED_QA_PROMPT_BLOCK}
 
 REGLAS OPERATIVAS ADICIONALES:
 ${GOVERNANCE_RULES}
@@ -87,7 +98,7 @@ Formato:
         parts: [{ text: systemInstruction }],
       },
       generationConfig: {
-        temperature: 0.35,
+        temperature: 0.22,
         maxOutputTokens: 2048,
         topP: 0.9,
       },

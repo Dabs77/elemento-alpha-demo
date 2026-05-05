@@ -8,9 +8,9 @@ import {
   type SkillRoleId,
 } from "@/lib/servicio-cliente/knowledgeBase";
 
-type LiveVoiceSession = { close: () => void };
-
 type VoiceCloseReason = { code?: number; reason?: string };
+
+type LiveVoiceSession = { close: () => void };
 
 const ai = new GoogleGenAI({
   apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY!,
@@ -585,18 +585,15 @@ export function useVoiceAgent({
               if (part.inlineData?.data) {
                 playBase64Pcm(part.inlineData.data);
               }
-              // Detectar etiqueta PORTFOLIO solo en onboarding
-              if (part.text) {
+              if (part.text && modeRef.current === "onboarding") {
                 transcriptBufferRef.current += part.text;
-                if (modeRef.current === "onboarding") {
-                  fullInterviewTranscriptRef.current += part.text;
-                  const jsonSlice = extractPortfolioJsonObject(transcriptBufferRef.current);
-                  if (jsonSlice) {
-                    const rec = safeJsonParse<PortfolioRecommendation>(jsonSlice);
-                    if (rec?.portfolio) {
-                      onRecommendationRef.current?.(rec);
-                      transcriptBufferRef.current = "";
-                    }
+                fullInterviewTranscriptRef.current += part.text;
+                const jsonSlice = extractPortfolioJsonObject(transcriptBufferRef.current);
+                if (jsonSlice) {
+                  const rec = safeJsonParse<PortfolioRecommendation>(jsonSlice);
+                  if (rec?.portfolio) {
+                    onRecommendationRef.current?.(rec);
+                    transcriptBufferRef.current = "";
                   }
                 }
               }
@@ -639,7 +636,18 @@ export function useVoiceAgent({
       cleanup();
       setIsConnecting(false);
     }
-  }, [voiceName, mode, rebalanceContext, customerSupportContext, skillConsultRole, financialContext, intakeData, playBase64Pcm, stopAudioPlayback, cleanup]);
+  }, [
+    voiceName,
+    mode,
+    rebalanceContext,
+    customerSupportContext,
+    skillConsultRole,
+    financialContext,
+    intakeData,
+    playBase64Pcm,
+    stopAudioPlayback,
+    cleanup,
+  ]);
 
   // Cleanup al desmontar
   useEffect(() => {

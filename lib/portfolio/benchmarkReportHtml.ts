@@ -30,9 +30,9 @@ function fmtPct2(n: number): string {
 type PFKey = "portfolio32" | "portfolio33" | "portfolio36";
 
 const PF_LABEL: Record<PFKey, string> = {
-  portfolio32: "Portfolio 32",
-  portfolio33: "Portfolio 33",
-  portfolio36: "Portfolio 36",
+  portfolio32: "Sugerido",
+  portfolio33: "Sugerido 2",
+  portfolio36: "Sugerido 3",
 };
 
 function frontierSvg(): string {

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Bot, MessageCircleQuestion, Sparkles, Video } from "lucide-react";
+import { ArrowLeft, Bot, MessageCircleQuestion, Scale, Sparkles, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -15,6 +15,7 @@ import { ReunionSimuladaChat } from "@/components/servicio-cliente/ReunionSimula
 import { HnwExecutiveReport } from "@/components/servicio-cliente/HnwExecutiveReport";
 import { HnwReportActions } from "@/components/servicio-cliente/HnwReportActions";
 import { ServicioClienteFase3Bundle } from "@/components/servicio-cliente/ServicioClienteFase3Bundle";
+import { ServicioClienteFase4Rebalance } from "@/components/servicio-cliente/ServicioClienteFase4Rebalance";
 import { HNW_CLIENT_DEMO } from "@/lib/servicio-cliente/hnwAlejandroReport";
 
 export default function ServicioClientePage() {
@@ -32,8 +33,9 @@ export default function ServicioClientePage() {
             </Link>
             <div className="hidden h-4 w-px bg-gray-200 sm:block" />
             <div>
-              <h1 className="text-xl font-semibold tracking-tight text-[#1a1a1a]">Elemento Alpha</h1>
-              <p className="text-xs text-gray-500">Reporting &amp; Customer Support · MVP agentic Wealth OS</p>
+              <h1 className="text-xl font-semibold tracking-tight text-[#1a1a1a]">
+                Reporting &amp; Customer Support
+              </h1>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -48,13 +50,9 @@ export default function ServicioClientePage() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-8 sm:py-10">
-        <div className="mb-8 max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#6abf1a]">Servicio al cliente · HNW</p>
-          <h2 className="text-2xl font-bold tracking-tight text-[#1a1a1a] sm:text-3xl">
-            Demo del flujo con automatización agentica
-          </h2>
-          <p className="text-sm leading-relaxed text-gray-600">
-            Informe ejecutivo, reunión simulada y consultas SKILLS por voz con síntesis — demo sin CRM ni ejecución real.
+        <div className="mb-8 max-w-3xl">
+          <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+            Informe ejecutivo, reunión simulada, consultas SKILLS y comparativa de rebalanceo
           </p>
         </div>
 
@@ -92,6 +90,10 @@ export default function ServicioClientePage() {
             <TabsTrigger value="fase3" className="gap-2 text-xs sm:text-sm">
               <MessageCircleQuestion className="h-4 w-4 shrink-0" />
               <span>Fase 3 · Consultas</span>
+            </TabsTrigger>
+            <TabsTrigger value="fase4" className="gap-2 text-xs sm:text-sm">
+              <Scale className="h-4 w-4 shrink-0" />
+              <span>Fase 4 · Rebalanceo</span>
             </TabsTrigger>
           </TabsList>
 
@@ -141,6 +143,10 @@ export default function ServicioClientePage() {
 
           <TabsContent value="fase3" className="space-y-4 animate-in fade-in duration-300">
             <ServicioClienteFase3Bundle />
+          </TabsContent>
+
+          <TabsContent value="fase4" className="space-y-4 animate-in fade-in duration-300">
+            <ServicioClienteFase4Rebalance />
           </TabsContent>
         </Tabs>
       </main>
