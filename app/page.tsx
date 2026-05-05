@@ -78,13 +78,13 @@ const timelineSteps: {
     status: "pending" as const,
     date: "Fase 3",
     description:
-      "Centraliza la relación postventa: informe previo a la reunión, sesión trimestral, consultas ad hoc, propuesta de ajustes y cierre documental — con demo MVP del Wealth OS agentic.",
+      "Centraliza la relación postventa: informe previo a la reunión, sesión trimestral y consultas SKILLS por voz — con demo MVP del Wealth OS agentic.",
     items: [
       {
         icon: FileBarChart,
         label: "Asesoría personalizada · MVP",
         description:
-          "Flujo Fase 1–5 con informes sintéticos, Q&A demo y propuesta de rebalanceo (sin CRM real)",
+          "Flujo en tres pestañas: informe ejecutivo, reunión simulada y consultas por voz (sin CRM real)",
         link: "Explorar demo",
         href: "/servicio-cliente",
       },
