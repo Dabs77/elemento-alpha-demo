@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Check, Scale } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { Mic, Scale, Square, X } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -19,355 +19,141 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { VoicePulse } from "@/components/voice/VoicePulse";
+import { HnwRebalanceInteractivePanels } from "@/components/servicio-cliente/HnwRebalanceInteractivePanels";
+import { useVoiceAgent } from "@/hooks/useVoiceAgent";
 import { cn } from "@/lib/utils";
-import { ASSET_ALLOCATION, PORTFOLIO_OPTIONS } from "@/lib/portfolio/portfolioData";
-
-const benchmarkOption = PORTFOLIO_OPTIONS.find((o) => o.id === "benchmark")!;
-const scenarioOptions = PORTFOLIO_OPTIONS.filter((o) => o.id !== "benchmark");
-
-function formatPct(n: number): string {
-  return `${new Intl.NumberFormat("es-CO", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n)} %`;
-}
-
-function formatPp(delta: number): string {
-  const sign = delta > 0 ? "+" : "";
-  return `${sign}${new Intl.NumberFormat("es-CO", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(delta)} pp`;
-}
-
-function formatSignedMetricDelta(delta: number): string {
-  if (delta === 0) return formatPct(0);
-  const sign = delta > 0 ? "+" : "−";
-  const abs = Math.abs(delta);
-  return `${sign}${formatPct(abs)}`;
-}
-
-function weightRow(row: (typeof ASSET_ALLOCATION)[number], scenarioId: string): number {
-  switch (scenarioId) {
-    case "benchmark":
-      return row.bmkActual;
-    case "portfolio32":
-      return row.portfolio32;
-    case "portfolio33":
-      return row.portfolio33;
-    case "portfolio36":
-      return row.portfolio36;
-    default:
-      return 0;
-  }
-}
-
-const METRIC_LABELS: { key: keyof (typeof benchmarkOption)["metrics"]; label: string }[] = [
-  { key: "expectedReturn", label: "Retorno esperado" },
-  { key: "volatility", label: "Volatilidad" },
-  { key: "maxDrawdown", label: "Max. caída" },
-  { key: "trm", label: "TRM (escenario)" },
-];
-
-function useRevealTrigger(dep: string | null) {
-  const [reveal, setReveal] = React.useState(false);
-
-  React.useEffect(() => {
-    setReveal(false);
-    const t = window.setTimeout(() => setReveal(true), 80);
-    return () => window.clearTimeout(t);
-  }, [dep]);
-
-  return reveal;
-}
-
-function ComparativaAnimada({
-  selectedId,
-  selectedName,
-  visibleAssets,
-}: {
-  selectedId: string;
-  selectedName: string;
-  visibleAssets: typeof ASSET_ALLOCATION;
-}) {
-  const reveal = useRevealTrigger(selectedId);
-  const selected = scenarioOptions.find((o) => o.id === selectedId)!;
-
-  return (
-    <div
-      key={selectedId}
-      className="overflow-hidden rounded-2xl border-2 border-[#BBE795]/40 bg-gradient-to-br from-[#fafcf8] via-white to-[#F0FEE6]/35 p-4 shadow-inner shadow-[#BBE795]/10 sm:p-6"
-    >
-      <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
-            Comparativa animada
-          </p>
-          <p className="mt-1 text-sm font-semibold text-[#1a1a1a]">
-            Actual vs <span className="text-[#4a7c59]">{selectedName}</span>
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[#BBE795]/35 bg-white/90 px-3 py-2 text-xs shadow-sm">
-          <span className="rounded-lg bg-gray-200/90 px-2.5 py-1 font-semibold text-gray-800">Portafolio actual</span>
-          <ArrowRight className="h-4 w-4 shrink-0 text-[#6abf1a] motion-safe:animate-pulse" aria-hidden />
-          <span className="rounded-lg bg-[#4a7c59] px-2.5 py-1 font-semibold text-white">{selectedName}</span>
-        </div>
-      </div>
-
-      <div className="mb-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        {METRIC_LABELS.map(({ key, label }, i) => {
-          const cur = benchmarkOption.metrics[key];
-          const next = selected.metrics[key];
-          const delta = next - cur;
-          return (
-            <div
-              key={key}
-              className={cn(
-                "rounded-xl border border-gray-100 bg-white/95 p-3 shadow-sm motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:fill-mode-both",
-              )}
-              style={{
-                animationDelay: reveal ? `${i * 70}ms` : "0ms",
-                animationDuration: "450ms",
-              }}
-            >
-              <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500">{label}</p>
-              <div className="mt-1 flex flex-wrap items-baseline gap-2">
-                <span className="tabular-nums text-lg font-bold text-[#4a7c59]">{formatPct(next)}</span>
-                <span className="text-[11px] text-gray-400">{formatPct(cur)} actual</span>
-              </div>
-              <p
-                className={cn(
-                  "mt-1 text-[11px] font-semibold tabular-nums",
-                  delta > 0 ? "text-emerald-700" : delta < 0 ? "text-amber-800" : "text-gray-500",
-                )}
-              >
-                {formatSignedMetricDelta(delta)} vs actual
-              </p>
-            </div>
-          );
-        })}
-      </div>
-
-      <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
-        Asignación por activo (barras)
-      </p>
-      <ul className="space-y-3">
-        {visibleAssets.map((row, rowIdx) => {
-          const base = weightRow(row, "benchmark");
-          const prop = weightRow(row, selectedId);
-          const delayMs = rowIdx * 45;
-          return (
-            <li key={row.asset} className="rounded-xl border border-white/80 bg-white/70 px-3 py-2.5 shadow-sm">
-              <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                <span className="text-xs font-medium text-[#1a1a1a]">{row.asset}</span>
-                <span className="text-[11px] tabular-nums text-gray-500">
-                  {formatPct(base)} → <span className="font-semibold text-[#4a7c59]">{formatPct(prop)}</span>
-                  <span className="ml-1 text-gray-400">({formatPp(prop - base)})</span>
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-                <div className="flex flex-1 flex-col gap-1">
-                  <span className="text-[9px] font-semibold uppercase tracking-wide text-gray-400">Actual</span>
-                  <div className="h-2.5 overflow-hidden rounded-full bg-gray-100">
-                    <div
-                      className="h-full rounded-full bg-gray-500 transition-[width] duration-700 ease-out"
-                      style={{
-                        width: reveal ? `${Math.min(100, Math.max(0, base))}%` : "0%",
-                        transitionDelay: `${delayMs}ms`,
-                      }}
-                    />
-                  </div>
-                </div>
-                <ArrowRight className="mx-auto hidden h-4 w-4 shrink-0 text-[#BBE795] sm:block" aria-hidden />
-                <div className="flex flex-1 flex-col gap-1">
-                  <span className="text-[9px] font-semibold uppercase tracking-wide text-[#4a7c59]">{selectedName}</span>
-                  <div className="h-2.5 overflow-hidden rounded-full bg-[#F0FEE6] ring-1 ring-[#BBE795]/40">
-                    <div
-                      className="h-full rounded-full bg-[#4a7c59] transition-[width] duration-700 ease-out"
-                      style={{
-                        width: reveal ? `${Math.min(100, Math.max(0, prop))}%` : "0%",
-                        transitionDelay: `${delayMs + 120}ms`,
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-}
+import { HNW_CLIENT_DEMO } from "@/lib/servicio-cliente/hnwAlejandroReport";
+import {
+  buildHnwRebalanceQ2VoiceContext,
+  HNW_REBALANCE_Q2_COSTS,
+  HNW_REBALANCE_Q2_COSTS_TOTAL,
+  HNW_REBALANCE_Q2_COSTS_TOTAL_ROW,
+  HNW_REBALANCE_Q2_INTRO,
+  HNW_REBALANCE_Q2_JUSTIFICATION_BULLETS,
+  HNW_REBALANCE_Q2_JUSTIFICATION_LEAD,
+  HNW_REBALANCE_Q2_JUSTIFICATION_TITLE,
+  HNW_REBALANCE_Q2_SCHEDULE,
+  HNW_REBALANCE_Q2_TITLE,
+} from "@/lib/servicio-cliente/hnwRebalanceQ2FormalProposal";
 
 export function ServicioClienteFase4Rebalance() {
-  const [selectedId, setSelectedId] = React.useState<string | null>(scenarioOptions[0]?.id ?? null);
+  const [voicePanelOpen, setVoicePanelOpen] = React.useState(false);
 
-  const visibleAssets = React.useMemo(
-    () =>
-      ASSET_ALLOCATION.filter(
-        (row) =>
-          row.bmkActual > 0.01 ||
-          row.portfolio32 > 0.01 ||
-          row.portfolio33 > 0.01 ||
-          row.portfolio36 > 0.01
-      ),
-    []
-  );
+  const rebalanceContext = React.useMemo(() => buildHnwRebalanceQ2VoiceContext(), []);
 
-  const selected = scenarioOptions.find((o) => o.id === selectedId);
+  const { startSession, endSession, isConnected, isConnecting, isSpeaking, error: voiceError } =
+    useVoiceAgent({
+      mode: "rebalance_advisor",
+      rebalanceContext,
+      voiceName: "Zephyr",
+    });
+
+  React.useEffect(() => {
+    if (isConnected) setVoicePanelOpen(true);
+  }, [isConnected]);
+
+  React.useEffect(() => {
+    return () => {
+      endSession();
+    };
+  }, [endSession]);
 
   return (
-    <div className="space-y-6">
-      <Card className="border-[#BBE795]/35 shadow-sm">
+    <div className="relative space-y-6 pb-28 md:pb-24">
+      <Card className="overflow-visible border-[#BBE795]/35 shadow-sm">
         <CardHeader className="border-b border-[#BBE795]/20 bg-[#fafcf8] pb-4">
           <div className="flex flex-wrap items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#F0FEE6] ring-1 ring-[#BBE795]/40">
               <Scale className="h-5 w-5 text-[#4a7c59]" aria-hidden />
             </div>
             <div className="min-w-0 flex-1">
-              <CardTitle className="text-lg">Rebalanceo · comparativa de escenarios (Q2 2026 demo)</CardTitle>
-              <CardDescription className="mt-1.5 text-sm">
-                Elige un portafolio sugerido; se resalta en tarjeta y aparece la comparativa animada frente al actual.
+              <CardTitle className="text-lg leading-snug">{HNW_REBALANCE_Q2_TITLE}</CardTitle>
+              <CardDescription className="mt-2 text-sm leading-relaxed">
+                Cliente demo: <span className="font-medium text-foreground">{HNW_CLIENT_DEMO.nombre}</span>. Una única
+                propuesta formal para Q2 2026. Pulsa el micrófono flotante para preguntas por voz sobre actual vs
+                propuesto (igual que la vista de rebalanceo en Portafolios).
               </CardDescription>
             </div>
           </div>
         </CardHeader>
         <CardContent className="space-y-8 pt-6">
-          <div>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
-              Selecciona un portafolio
-            </p>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {scenarioOptions.map((opt) => {
-                const active = selectedId === opt.id;
-                return (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => setSelectedId(opt.id)}
-                    className={cn(
-                      "relative flex aspect-square max-h-[200px] flex-col justify-between rounded-2xl border-2 bg-white p-4 text-left shadow-sm transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4a7c59]/45 motion-safe:animate-in motion-safe:fade-in motion-safe:zoom-in-95 motion-safe:fill-mode-both sm:aspect-auto sm:max-h-none sm:min-h-[168px]",
-                      active
-                        ? "scale-[1.02] border-[#4a7c59] shadow-lg shadow-[#BBE795]/25 ring-2 ring-[#BBE795]/60 ring-offset-2 ring-offset-[#fafcf8]"
-                        : "border-gray-200/90 hover:scale-[1.01] hover:border-[#BBE795]/80 hover:shadow-md",
-                    )}
-                  >
-                    {active ? (
-                      <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-xl bg-[#4a7c59] text-white shadow-md motion-safe:animate-in motion-safe:zoom-in motion-safe:duration-300">
-                        <Check className="h-4 w-4" strokeWidth={3} aria-hidden />
-                      </span>
-                    ) : null}
-                    <div>
-                      <p className="pr-10 text-sm font-bold text-[#1a1a1a]">{opt.name}</p>
-                      <p className="mt-2 text-xs leading-snug text-gray-600">{opt.description}</p>
-                    </div>
-                    <span
-                      className={cn(
-                        "mt-3 inline-flex w-fit rounded-lg px-2 py-1 text-[10px] font-bold uppercase tracking-wide",
-                        active ? "bg-[#F0FEE6] text-[#2d5a3d] ring-1 ring-[#BBE795]/50" : "bg-gray-100 text-gray-500",
-                      )}
-                    >
-                      {active ? "Seleccionado" : "Toca para comparar"}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-            {selected && (
-              <p className="mt-4 rounded-xl border border-dashed border-[#BBE795]/50 bg-[#F0FEE6]/20 px-4 py-3 text-sm text-gray-700">
-                <span className="font-semibold text-[#1a1a1a]">Propuesta activa: </span>
-                {selected.name}
-                <span className="text-gray-500"> — </span>
-                {selected.description}
-              </p>
-            )}
-          </div>
+          <section className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm sm:p-5">
+            <p className="text-sm leading-relaxed text-gray-700">{HNW_REBALANCE_Q2_INTRO}</p>
+          </section>
 
-          {selectedId && selected ? (
-            <ComparativaAnimada
-              selectedId={selectedId}
-              selectedName={selected.name}
-              visibleAssets={visibleAssets}
-            />
-          ) : null}
+          <section>
+            <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
+              {HNW_REBALANCE_Q2_JUSTIFICATION_TITLE}
+            </h3>
+            <p className="mb-2 text-sm font-medium text-[#1a1a1a]">{HNW_REBALANCE_Q2_JUSTIFICATION_LEAD}</p>
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-700">
+              {HNW_REBALANCE_Q2_JUSTIFICATION_BULLETS.map((line) => (
+                <li key={line.slice(0, 48)}>{line}</li>
+              ))}
+            </ul>
+          </section>
 
-          <div className="overflow-x-auto rounded-xl border border-gray-100">
+          <HnwRebalanceInteractivePanels />
+
+          <section className="overflow-x-auto rounded-xl border border-gray-100">
             <p className="border-b border-gray-100 bg-[#fafcf8] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
-              Métricas del escenario (fuente · portfolioMetrics.json)
+              5.4 Costos de transacción estimados
             </p>
             <Table>
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
-                  <TableHead>Métrica</TableHead>
-                  <TableHead className="text-right">Actual</TableHead>
-                  {scenarioOptions.map((opt) => (
-                    <TableHead key={opt.id} className="text-right">
-                      {opt.name}
-                    </TableHead>
-                  ))}
+                  <TableHead>Operación</TableHead>
+                  <TableHead className="text-right">Monto</TableHead>
+                  <TableHead className="text-right">Costo est.</TableHead>
+                  <TableHead className="text-right">Impacto %</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {METRIC_LABELS.map(({ key, label }) => (
-                  <TableRow key={key}>
-                    <TableCell className="font-medium">{label}</TableCell>
-                    <TableCell className="text-right tabular-nums text-gray-600">
-                      {formatPct(benchmarkOption.metrics[key])}
-                    </TableCell>
-                    {scenarioOptions.map((opt) => (
-                      <TableCell key={opt.id} className="text-right tabular-nums">
-                        <span className={opt.id === selectedId ? "font-semibold text-[#4a7c59]" : "text-gray-800"}>
-                          {formatPct(opt.metrics[key])}
-                        </span>
-                      </TableCell>
-                    ))}
+                {HNW_REBALANCE_Q2_COSTS.map((row) => (
+                  <TableRow key={row.operacion}>
+                    <TableCell className="font-medium">{row.operacion}</TableCell>
+                    <TableCell className="text-right text-sm">{row.monto}</TableCell>
+                    <TableCell className="text-right tabular-nums">{row.costoEst}</TableCell>
+                    <TableCell className="text-right tabular-nums">{row.impactoPct}</TableCell>
+                  </TableRow>
+                ))}
+                <TableRow className="bg-[#fafcf8] font-semibold">
+                  <TableCell>{HNW_REBALANCE_Q2_COSTS_TOTAL_ROW.operacion}</TableCell>
+                  <TableCell className="text-right">{HNW_REBALANCE_Q2_COSTS_TOTAL_ROW.monto}</TableCell>
+                  <TableCell className="text-right tabular-nums">{HNW_REBALANCE_Q2_COSTS_TOTAL_ROW.costoEst}</TableCell>
+                  <TableCell className="text-right tabular-nums">{HNW_REBALANCE_Q2_COSTS_TOTAL_ROW.impactoPct}</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <p className="border-t border-gray-100 px-4 py-3 text-sm leading-relaxed text-gray-700">
+              {HNW_REBALANCE_Q2_COSTS_TOTAL}
+            </p>
+          </section>
+
+          <section className="overflow-x-auto rounded-xl border border-gray-100">
+            <p className="border-b border-gray-100 bg-[#fafcf8] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
+              5.5 Cronograma de implementación
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow className="hover:bg-transparent">
+                  <TableHead className="w-[8rem]">Día</TableHead>
+                  <TableHead>Acción</TableHead>
+                  <TableHead className="min-w-[10rem]">Responsable</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {HNW_REBALANCE_Q2_SCHEDULE.map((row) => (
+                  <TableRow key={row.dia}>
+                    <TableCell className="whitespace-nowrap font-medium">{row.dia}</TableCell>
+                    <TableCell className="text-sm">{row.accion}</TableCell>
+                    <TableCell className="text-sm text-gray-700">{row.responsable}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
-          </div>
-
-          <div className="overflow-x-auto rounded-xl border border-gray-100">
-            <p className="border-b border-gray-100 bg-[#fafcf8] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">
-              Asignación por activo vs actual (fuente · assetAllocation.json)
-            </p>
-            <Table>
-              <TableHeader>
-                <TableRow className="hover:bg-transparent">
-                  <TableHead className="min-w-[12rem]">Activo</TableHead>
-                  <TableHead className="text-right">Actual</TableHead>
-                  {scenarioOptions.map((opt) => (
-                    <TableHead key={opt.id} className="text-right">
-                      {opt.name}
-                    </TableHead>
-                  ))}
-                  <TableHead className="w-[6rem] text-right text-[11px] font-normal text-gray-500">
-                    Δ vs actual ({selected?.name ?? "—"})
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {visibleAssets.map((row) => {
-                  const base = weightRow(row, "benchmark");
-                  return (
-                    <TableRow key={row.asset}>
-                      <TableCell className="font-medium">{row.asset}</TableCell>
-                      <TableCell className="text-right tabular-nums text-gray-600">{formatPct(base)}</TableCell>
-                      {scenarioOptions.map((opt) => {
-                        const w = weightRow(row, opt.id);
-                        const isSel = opt.id === selectedId;
-                        return (
-                          <TableCell key={opt.id} className="text-right tabular-nums">
-                            <span className={isSel ? "font-semibold text-[#4a7c59]" : "text-gray-800"}>
-                              {formatPct(w)}
-                            </span>
-                          </TableCell>
-                        );
-                      })}
-                      <TableCell className="text-right tabular-nums text-sm text-gray-600">
-                        {selected ? formatPp(weightRow(row, selected.id) - base) : "—"}
-                      </TableCell>
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          </div>
+          </section>
 
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-4 py-3 text-xs text-gray-500">
             <span>Demo ilustrativa · sin ejecución ni envío a mesa.</span>
@@ -375,11 +161,103 @@ export function ServicioClienteFase4Rebalance() {
               href="/portfolio"
               className={cn(buttonVariants({ variant: "outline", size: "sm" }), "rounded-lg text-[11px]")}
             >
-              Abrir portafolios (Front Office)
+              Ver rebalanceo en Portafolios (Front Office)
             </Link>
           </div>
         </CardContent>
       </Card>
+
+      {voicePanelOpen ? (
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-[2px] md:bg-black/10"
+            aria-label="Cerrar panel del asesor"
+            onClick={() => setVoicePanelOpen(false)}
+          />
+          <div className="fixed bottom-24 left-4 right-4 z-50 mx-auto max-w-sm rounded-2xl border border-gray-100 bg-white p-4 shadow-xl ring-1 ring-gray-100 animate-in fade-in slide-in-from-bottom-4 duration-200 md:left-auto md:right-8 md:mx-0">
+            <div className="mb-3 flex items-start justify-between gap-2">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-[#6abf1a]">Asesor por voz</p>
+                <p className="text-sm font-bold leading-snug text-[#1a1a1a]">
+                  Actual vs propuesto · rebalanceo Q2 2026
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setVoicePanelOpen(false)}
+                className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-[#1a1a1a]"
+                aria-label="Cerrar"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <div className="flex flex-col items-center gap-4 text-center">
+              <VoicePulse speaking={isSpeaking} />
+              <div className="flex flex-wrap justify-center gap-2">
+                {voiceError ? (
+                  <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-600 ring-1 ring-red-200">
+                    Error de conexión
+                  </span>
+                ) : isConnecting ? (
+                  <span className="flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 ring-1 ring-amber-200">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-500" /> Conectando…
+                  </span>
+                ) : isConnected ? (
+                  <span className="flex items-center gap-1.5 rounded-full bg-[#F0FEE6] px-3 py-1 text-xs font-semibold text-[#4a7c59] ring-1 ring-[#BBE795]/40">
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#4a7c59]" />
+                    {isSpeaking ? "Hablando · LIVE" : "Escuchando · LIVE"}
+                  </span>
+                ) : (
+                  <span className="rounded-full bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-500 ring-1 ring-gray-200">
+                    Pulsa activar y permite el micrófono
+                  </span>
+                )}
+              </div>
+              {voiceError ? <p className="text-xs text-red-600">{voiceError}</p> : null}
+              <div className="flex w-full justify-center gap-2 pt-1">
+                {isConnecting ? (
+                  <Button disabled variant="outline" className="h-10 flex-1 rounded-xl">
+                    <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-gray-600" />
+                    Conectando…
+                  </Button>
+                ) : !isConnected ? (
+                  <Button
+                    type="button"
+                    onClick={() => void startSession()}
+                    className="h-10 flex-1 gap-2 rounded-xl bg-[#4a7c59] font-semibold text-white hover:bg-[#3f6b4c]"
+                  >
+                    <Mic className="h-4 w-4" /> Activar micrófono
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    onClick={() => endSession()}
+                    variant="outline"
+                    className="h-10 flex-1 gap-2 rounded-xl border-red-200 bg-red-50 font-semibold text-red-600 hover:bg-red-100"
+                  >
+                    <Square className="h-3 w-3 fill-current" /> Finalizar
+                  </Button>
+                )}
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
+
+      <button
+        type="button"
+        onClick={() => setVoicePanelOpen((open) => !open)}
+        className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition-all hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6abf1a] focus-visible:ring-offset-2 ${
+          isConnected
+            ? "bg-[#4a7c59] shadow-[0_4px_24px_rgba(106,191,26,0.35)] ring-2 ring-[#BBE795]/90"
+            : "bg-[#4a7c59] shadow-[0_8px_30px_rgba(74,124,89,0.35)] hover:bg-[#3f6b4c]"
+        } ${isSpeaking ? "animate-pulse" : ""}`}
+        aria-label={voicePanelOpen ? "Ocultar panel del asesor" : "Abrir preguntas por voz sobre rebalanceo"}
+        aria-expanded={voicePanelOpen}
+      >
+        <Mic className="h-6 w-6 shrink-0" strokeWidth={2.25} />
+      </button>
     </div>
   );
 }

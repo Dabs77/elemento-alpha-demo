@@ -19,6 +19,30 @@ export const SKILL_ROLE_LABELS: Record<SkillRoleId, string> = {
   chief_economist: "Director de Investigaciones Económicas",
 };
 
+/** Copia corta para la UI de selección (título + descripción del rol). */
+export const SKILL_ROLE_SELECTION_CARD: Record<SkillRoleId, { headline: string; summary: string }> = {
+  portfolio_manager_senior: {
+    headline: "Portfolio Manager Senior",
+    summary:
+      "Toma y defiende decisiones de inversión. Atribución de performance, lectura de posicionamiento y razonamiento de rebalanceo.",
+  },
+  wealth_advisor_senior: {
+    headline: "Asesor Patrimonial Senior",
+    summary:
+      "Conoce al cliente como persona. Traduce situaciones de vida a parámetros de portafolio y portafolio a lenguaje cliente.",
+  },
+  investment_strategist: {
+    headline: "Estratega de Inversiones",
+    summary:
+      "Construye y defiende la tesis de inversión y el view de la casa, conectando macro con decisiones de portafolio.",
+  },
+  chief_economist: {
+    headline: "Director de Investigaciones Económicas",
+    summary:
+      "Genera el outlook macroeconómico, las proyecciones y el marco coyuntural para comunicación institucional.",
+  },
+};
+
 /** Política, filosofía y restricciones (IPS demo Andrés). */
 export const INVESTMENT_POLICY_AND_CONSTRAINTS = `
 ## Objetivo general

@@ -1,17 +1,29 @@
 "use client";
 
 import * as React from "react";
-import { Loader2, MessageSquare, Mic, MicOff, SendHorizontal, Sparkles, Users } from "lucide-react";
+import { HelpCircle, Loader2, MessageSquare, Mic, MicOff, SendHorizontal, Sparkles, Users } from "lucide-react";
 import { Streamdown } from "streamdown";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
-import { SKILL_ROLE_IDS, SKILL_ROLE_LABELS, type SkillRoleId } from "@/lib/servicio-cliente/knowledgeBase";
+import { cn } from "@/lib/utils";
+import { SKILL_ROLE_IDS, SKILL_ROLE_LABELS, SKILL_ROLE_SELECTION_CARD, type SkillRoleId } from "@/lib/servicio-cliente/knowledgeBase";
 import { SKILL_VOICE_HINTS } from "@/lib/servicio-cliente/skillsVoiceHints";
 import {
   getSkillsPredefinedExactReply,
   SKILLS_PREDEFINED_QUESTION_LABELS,
 } from "@/lib/servicio-cliente/skillConsultPredefinedQA";
+import {
+  PredefinedIdeasMiniChat,
+  type PredefinedIdeasMiniChatHandle,
+} from "@/components/servicio-cliente/PredefinedIdeasMiniChat";
 
 type ChatMsg =
   | { id: string; role: "user"; content: string }
@@ -76,6 +88,7 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
   const recognitionRef = React.useRef<SpeechRecognitionLike | null>(null);
   /** Texto del campo al iniciar el dictado (se concatena con lo reconocido). */
   const dictationBaselineRef = React.useRef("");
+  const predefinedMiniChatRef = React.useRef<PredefinedIdeasMiniChatHandle>(null);
 
   const hints = SKILL_VOICE_HINTS[selectedRole];
 
@@ -242,27 +255,68 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
           </span>
         </div>
         <p className="mb-3 text-sm text-gray-600">
-          Chat de texto con el rol seleccionado. Opcional: micrófono solo para dictar en el campo de mensaje (no hay llamada
-          ni audio del modelo).
+          Chat de texto con el rol seleccionado. Pulsa el{" "}
+          <HelpCircle className="inline-block size-3.5 align-text-bottom text-[#4a7c59]/80" aria-hidden /> junto a cada perfil
+          para ver la descripción (mismo patrón que las métricas con ayuda en rebalanceo). Opcional: micrófono solo para dictar
+          en el campo de mensaje (no hay llamada ni audio del modelo).
         </p>
         <div className="flex flex-wrap gap-2">
-          {SKILL_ROLE_IDS.map((id) => (
-            <Button
-              key={id}
-              type="button"
-              variant={selectedRole === id ? "default" : "outline"}
-              size="sm"
-              disabled={isReplying}
-              className={
-                selectedRole === id
-                  ? "rounded-full bg-[#4a7c59] font-semibold hover:bg-[#3f6b4c]"
-                  : "rounded-full font-medium"
-              }
-              onClick={() => onRoleChange(id)}
-            >
-              {SKILL_ROLE_LABELS[id]}
-            </Button>
-          ))}
+          {SKILL_ROLE_IDS.map((id) => {
+            const card = SKILL_ROLE_SELECTION_CARD[id];
+            const isSel = selectedRole === id;
+            return (
+              <div
+                key={id}
+                className={cn(
+                  "inline-flex items-stretch overflow-hidden rounded-full shadow-sm ring-1 transition-[box-shadow,transform] active:scale-[0.99]",
+                  isSel ? "ring-[#6abf1a]/55 ring-offset-0" : "ring-gray-200 hover:ring-gray-300"
+                )}
+              >
+                <Button
+                  type="button"
+                  variant={isSel ? "default" : "outline"}
+                  size="sm"
+                  disabled={isReplying}
+                  className={cn(
+                    "h-9 rounded-none rounded-l-full border-0 px-4 shadow-none",
+                    isSel ? "bg-[#4a7c59] font-semibold hover:bg-[#3f6b4c]" : "font-medium"
+                  )}
+                  onClick={() => onRoleChange(id)}
+                >
+                  {SKILL_ROLE_LABELS[id]}
+                </Button>
+                <Popover>
+                  <PopoverTrigger
+                    type="button"
+                    disabled={isReplying}
+                    className={cn(
+                      "inline-flex min-h-9 min-w-9 shrink-0 items-center justify-center border-l px-2.5 outline-none transition-[colors,box-shadow] hover:opacity-95 focus-visible:ring-2 focus-visible:ring-[#6abf1a] focus-visible:ring-offset-2",
+                      isSel
+                        ? "border-white/25 bg-[#4a7c59] text-white hover:bg-[#3f6b4c]"
+                        : "border-gray-200 bg-background text-muted-foreground hover:bg-muted/70"
+                    )}
+                    aria-label={`Qué significa el perfil ${SKILL_ROLE_LABELS[id]}`}
+                  >
+                    <HelpCircle
+                      className={cn("size-4 shrink-0", isSel ? "opacity-90" : "opacity-60")}
+                      aria-hidden
+                    />
+                  </PopoverTrigger>
+                  <PopoverContent
+                    side="bottom"
+                    align="center"
+                    sideOffset={6}
+                    className="w-[min(22rem,calc(100vw-2rem))] border-gray-100 bg-white p-4 text-[#1a1a1a] shadow-lg ring-1 ring-gray-100"
+                  >
+                    <PopoverTitle className="text-sm font-semibold leading-snug text-[#1a1a1a]">{card.headline}</PopoverTitle>
+                    <PopoverDescription className="mt-2 text-xs leading-relaxed text-gray-600">
+                      {card.summary}
+                    </PopoverDescription>
+                  </PopoverContent>
+                </Popover>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -282,9 +336,11 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
             <li key={item.id}>
               <button
                 type="button"
-                disabled={isReplying}
-                className="group w-full rounded-lg border border-[#BBE795]/35 bg-white px-3 py-3 text-left shadow-sm ring-1 ring-transparent transition hover:border-[#BBE795]/60 hover:bg-[#F0FEE6]/40 hover:ring-[#BBE795]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4a7c59]/35 disabled:pointer-events-none disabled:opacity-50"
-                onClick={() => setDraft(item.prompt)}
+                className="group h-full w-full rounded-lg border border-[#BBE795]/35 bg-white px-3 py-3 text-left shadow-sm ring-1 ring-transparent transition hover:border-[#BBE795]/60 hover:bg-[#F0FEE6]/40 hover:ring-[#BBE795]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4a7c59]/35"
+                onClick={() => {
+                  setDraft("");
+                  predefinedMiniChatRef.current?.submitPrompt(item.prompt, item.reply);
+                }}
               >
                 <Badge
                   variant="secondary"
@@ -296,6 +352,13 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
               </button>
             </li>
           ))}
+          <li className="flex max-h-[min(380px,52vh)] min-h-[220px] flex-col">
+            <PredefinedIdeasMiniChat
+              ref={predefinedMiniChatRef}
+              selectedRole={selectedRole}
+              onClearMainDraft={() => setDraft("")}
+            />
+          </li>
         </ul>
 
         <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">Más ideas por perfil</p>
@@ -321,15 +384,16 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
             Consulta SKILLS · solo chat
           </div>
           <p className="mt-1 text-xs text-gray-500">
-            Pulsa una idea de preguntas para llevarla al campo y envía con Enter. Micrófono = dictado al texto.
+            Las tarjetas de ideas envían la consulta al mini chat lateral; aquí escribe o dicta consultas libres y envía con Enter.
           </p>
         </div>
 
-        <div className="flex max-h-[min(420px,52vh)] flex-col">
-          <div className="min-h-[200px] flex-1 space-y-3 overflow-y-auto px-4 py-4 sm:px-5">
+        <div className="flex min-h-0 max-h-[min(520px,60vh)] flex-col">
+          <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-y-contain scroll-smooth px-4 py-4 sm:px-5">
             {messages.length === 0 && (
               <p className="rounded-lg border border-dashed border-[#BBE795]/40 bg-[#F0FEE6]/20 px-4 py-8 text-center text-sm text-gray-500">
-                Usa las ideas de preguntas arriba, dicta o escribe aquí; al enviar, el SKILL responde en el hilo.
+                Escribe o dicta una consulta abajo y envía; el SKILL responde aquí. Las ideas guiadas van al mini chat de la
+                derecha.
               </p>
             )}
             {messages.map((m, i) => {
@@ -378,7 +442,7 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
             <div ref={bottomRef} />
           </div>
 
-          <div className="border-t border-gray-100 bg-white px-4 py-3 sm:px-5">
+          <div className="shrink-0 border-t border-gray-100 bg-white px-4 py-3 sm:px-5">
             <div className="flex gap-2">
               <Button
                 type="button"
@@ -400,6 +464,9 @@ export function AdvisorSkillsVoice({ selectedRole, onRoleChange }: Props) {
                 placeholder="Escribe o dicta una consulta… (Enter envía, Shift+Enter salto)"
                 disabled={isReplying}
                 rows={2}
+                autoComplete="off"
+                data-1p-ignore
+                data-form-type="other"
                 className="min-h-[72px] flex-1 resize-none rounded-xl border-gray-200 bg-[#fafafa] text-sm focus-visible:ring-[#BBE795]"
                 onKeyDown={(ev) => {
                   if (ev.key === "Enter" && !ev.shiftKey) {
