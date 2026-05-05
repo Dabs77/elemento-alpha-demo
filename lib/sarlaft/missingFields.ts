@@ -7,6 +7,49 @@ import {
 const isEmpty = (s: string | null | undefined) => !s || !String(s).trim();
 const isNullNum = (n: number | null | undefined) => n === null || n === undefined;
 
+function normTrim(s: string | null | undefined): string {
+  return !s ? "" : String(s).trim().replace(/\s+/g, " ");
+}
+
+/** OCR u otros pueden escribir texto libre; si no coincide con el catálogo FATCA, se vuelve a preguntar. */
+function isValidFatcaActividad(v: string | ""): boolean {
+  const t = normTrim(v);
+  return FATCA_ACTIVIDAD_OPTIONS.some((o) => o === t);
+}
+
+function isValidFatcaClasificacion(v: string | ""): boolean {
+  const t = normTrim(v);
+  return FATCA_CLASIFICACION_OPTIONS.some((o) => o === t);
+}
+
+/**
+ * Prioriza identificación + bloque FATCA (II–IV, incl. Clasificación FATCA/CRS) antes que políticas SAGRILAFT
+ * y formulario 3, para que esas preguntas salgan entre las iniciales del wizard.
+ */
+function missingFieldSortTier(r: MissingFieldRef): number {
+  if (r.formId === "1" && r.sectionKey === "info_general") return 0;
+  if (r.formId === "2" && r.sectionKey === "identificacion") return 1;
+  if (r.formId === "2" && r.sectionKey === "actividad") return 2;
+  if (r.formId === "2" && r.sectionKey === "clasificacion") return 3;
+  if (r.formId === "2" && r.sectionKey === "ubo") return 4;
+  if (r.formId === "1" && r.sectionKey === "politicas") return 10;
+  if (r.formId === "3") return 20;
+  return 30;
+}
+
+function sortMissingStableByTier(m: MissingFieldRef[]): MissingFieldRef[] {
+  const scored = m.map((ref, originalIndex) => ({
+    ref,
+    originalIndex,
+    tier: missingFieldSortTier(ref),
+  }));
+  scored.sort((a, b) => {
+    if (a.tier !== b.tier) return a.tier - b.tier;
+    return a.originalIndex - b.originalIndex;
+  });
+  return scored.map((x) => x.ref);
+}
+
 function isInvalidSiNoNA(v: string): boolean {
   return v !== "Sí" && v !== "No" && v !== "N/A";
 }
@@ -234,7 +277,7 @@ export function computeMissingFields(pkg: SarlaftPackage): MissingFieldRef[] {
   if (isEmpty(f2.pais_constitucion_fiscal)) {
     m.push({ formId: "2", sectionKey: "identificacion", sectionLabel: "I. Identificación de la Entidad", fieldKey: "pais_constitucion_fiscal", label: "País de constitución/residencia fiscal", type: "text" });
   }
-  if (isEmpty(f2.actividad_principal)) {
+  if (!isValidFatcaActividad(f2.actividad_principal)) {
     m.push({
       formId: "2",
       sectionKey: "actividad",
@@ -256,7 +299,7 @@ export function computeMissingFields(pkg: SarlaftPackage): MissingFieldRef[] {
       options: ["Sí", "No"],
     });
   }
-  if (isEmpty(f2.clasificacion_fatca_crs)) {
+  if (!isValidFatcaClasificacion(f2.clasificacion_fatca_crs)) {
     m.push({
       formId: "2",
       sectionKey: "clasificacion",
@@ -266,7 +309,7 @@ export function computeMissingFields(pkg: SarlaftPackage): MissingFieldRef[] {
       type: "select",
       options: [...FATCA_CLASIFICACION_OPTIONS],
     });
-  } else if (f2.clasificacion_fatca_crs === "Otra" && isEmpty(f2.clasificacion_otra)) {
+  } else if (normTrim(f2.clasificacion_fatca_crs) === "Otra" && isEmpty(f2.clasificacion_otra)) {
     m.push({
       formId: "2",
       sectionKey: "clasificacion",
@@ -359,7 +402,7 @@ export function computeMissingFields(pkg: SarlaftPackage): MissingFieldRef[] {
     });
   }
 
-  return m;
+  return sortMissingStableByTier(m);
 }
 
 export function hasMissingFields(pkg: SarlaftPackage): boolean {

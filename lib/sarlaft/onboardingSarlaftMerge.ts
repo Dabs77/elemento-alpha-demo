@@ -1,12 +1,13 @@
 import type { PortfolioRecommendation } from "@/hooks/useVoiceAgent";
-import type {
-  Accionista,
-  CicloEmpresa,
-  ExperienciaInversion,
-  FatcaActividad,
-  Liquidez,
-  SarlaftPackage,
-  ToleranciaRiesgo,
+import {
+  DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT,
+  type Accionista,
+  type CicloEmpresa,
+  type ExperienciaInversion,
+  type FatcaActividad,
+  type Liquidez,
+  type SarlaftPackage,
+  type ToleranciaRiesgo,
 } from "./schema";
 
 /** Cifras demo (ingresos no venían en la petición; valor redondo compatible con el resto). */
@@ -90,6 +91,14 @@ export function applyOnboardingSarlaftSeeds(pkg: SarlaftPackage): SarlaftPackage
     f2.ingresos_activos_pasivos_50 = "Sí";
   }
 
+  if (
+    typeof f2.clasificacion_fatca_crs === "string" &&
+    f2.clasificacion_fatca_crs.trim() === "Otra" &&
+    isEmptyStr(f2.clasificacion_otra)
+  ) {
+    f2.clasificacion_otra = DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT;
+  }
+
   const c = next.formulario_3.cifras_financieras;
   (["ingresos", "egresos", "total_activos", "total_pasivos", "total_patrimonio"] as const).forEach((k) => {
     if (c[k] === null || c[k] === undefined) {
@@ -104,6 +113,9 @@ export function applyOnboardingSarlaftSeeds(pkg: SarlaftPackage): SarlaftPackage
   const f3s = next.formulario_3;
   if (isEmptyStr(f3s.objetivo_inversion)) {
     f3s.objetivo_inversion = ONBOARDING_DEFAULT_OBJETIVO_INVERSION;
+  }
+  if (f3s.es_pep !== "Sí" && f3s.es_pep !== "No") {
+    f3s.es_pep = "No";
   }
 
   return next;

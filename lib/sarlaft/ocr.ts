@@ -25,6 +25,7 @@ Mapeo sugerido según el tipo de documento (rellena lo que aplique a ESTE archiv
 - Estados financieros / notas: formulario_3.cifras_financieras (ingresos, egresos, total_activos, total_pasivos, total_patrimonio) según balance/estado de resultados; formulario_3.grupo_contable_niif si se deduce con claridad; ciclo_empresa, liquidez, experiencia, tolerancia_riesgo solo si el documento o anexo de perfil lo menciona (si no, omite o null).
 - Composición accionaria / accionistas / socios: formulario_3.accionistas como array; por cada fila: nombre, id (Cédula/NIT/identificación si consta), porcentaje (número), cotiza_en_bolsa "Sí" o "No" si aplica, si no "".
 - Cédula: formulario_2.ubo o datos de representante; nombre e identificación en campos adecuados.
+- Cuestionario SARLAFT / políticas LA-FT (formulario papel o PDF del cuestionario SAGRILAFT): cuando el docId sea \`sagrilaft\`, extrae únicamente con evidencia en el texto: formulario_1.politicas (preguntas principales Sí/No y detalle_programa/detalle_regulacion/detalle_oficial/detalle_cripto/detalle_sancion solo si cuadra con respuesta Sí). otras_14_preguntas: para cada etiqueta conocida devuelve Sí o No según el formulario visible; si no aparece esa línea explícita, omite ese ítem.
 - Múltiples secciones en un solo PDF: combina en un solo JSON parcial con todos los hechos leíbles.
 
 Listas: incluye TODOS los accionistas o filas visibles, no solo el primero.
@@ -92,6 +93,7 @@ Mapeo rápido según tipo de documento:
 - RUT: NIT, razón social, actividad económica, dirección fiscal.
 - Estados financieros: cifras_financieras (ingresos, egresos, total_activos, total_pasivos, total_patrimonio), grupo_contable_niif si consta.
 - Cédula: UBO (datos_personales, identificación) y/o representante legal.
+- Cuestionario / documento SARLAFT (LA-FT, docId sagrilaft): formulario_1.politicas y otras 14 declaraciones cuando consten literalmente en el archivo; respuestas Sí/No y subcampos de detalle solo cuando el formulario así lo muestre.
 - Accionistas / composición accionaria: array completo con {nombre, id, porcentaje, cotiza_en_bolsa}.
 
 No respondas con markdown ni explicaciones. Solo el JSON.`;

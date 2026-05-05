@@ -203,17 +203,11 @@ export function RebalanceView({ timeSeries, onBack }: RebalanceViewProps) {
         <Mic className="h-6 w-6 shrink-0" strokeWidth={2.25} />
       </button>
 
-      <div className="grid gap-4 md:grid-cols-4">
-        <MetricTile
-          label="TRM estimado"
-          value={`${opt32.trm}%`}
-          accent
-          description="La TRM (Tasa Representativa del Mercado) es la tasa de referencia cambiaria oficial. Aquí ves una estimación incorporada al escenario del portafolio rebalanceado para contextualizar rentabilidades."
-          comparison={{ benchmark: bench.trm, portfolio: opt32.trm }}
-        />
+      <div className="grid gap-4 md:grid-cols-3">
         <MetricTile
           label="Retorno esperado"
           value={`${opt32.expectedReturn}%`}
+          accent
           description="Rentabilidad anual esperada según el modelo y la información histórica disponible. Es una proyección orientativa; los resultados reales pueden diferir."
           comparison={{ benchmark: bench.expectedReturn, portfolio: opt32.expectedReturn }}
         />
@@ -320,7 +314,7 @@ function MetricTile({
           />
         ) : null}
 
-        <span className="sr-only">Pulsa para leer qué significa esta métrica</span>
+        <span className="sr-only">Pulsa para leer más detalle</span>
       </PopoverTrigger>
       <PopoverContent className="w-[min(22rem,calc(100vw-2rem))] border-gray-100 bg-white p-4 text-[#1a1a1a] shadow-lg ring-1 ring-gray-100">
         <PopoverTitle className="text-sm font-semibold leading-snug text-[#1a1a1a]">{label}</PopoverTitle>

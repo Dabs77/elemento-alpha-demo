@@ -4,8 +4,8 @@ Script para generar datos JSON de portafolios desde archivos Excel.
 Archivos de entrada:
 - assetgrafica.xlsx: Datos históricos con columnas Date, Provided, Portafolio 32, Portafolio 33, Portafolio 36
 - rebalanceoopciones.xlsx: Allocaciones de assets con columnas Asset, BMK Actual, Portafolio 32, Portafolio 33, Portafolio 36
-  - Filas 1-15: Assets
-  - Filas 16-19: TRM, Expected Return, Volatility, Max Drawdown
+  - Filas 1-15: Assets (instrumentos nominalmente distintos a TRM en la práctica anterior)
+  - Tras esos instrumentos viene una fila TRM (peso en cartera COP/USD) y después Expected Return, Volatility, Max Drawdown como métricas de escenario
 """
 
 import pandas as pd
@@ -78,6 +78,33 @@ def generate_asset_allocation_json(assets_df):
     
     return allocations
 
+
+def append_trm_allocation_from_metrics(allocations, metrics_df):
+    """Primera fila del bloque de métricas que sea TRM pasa al JSON de asset allocation."""
+    col_names = metrics_df.columns.tolist()
+    asset_col = col_names[0]
+    bmk_col = col_names[1]
+    p32_col = col_names[2]
+    p33_col = col_names[3]
+    p36_col = col_names[4]
+
+    for _, row in metrics_df.iterrows():
+        name_raw = str(row[asset_col]).strip().lower()
+        first_token = name_raw.split()[0] if name_raw else ""
+        if first_token != "trm":
+            continue
+        allocations.append(
+            {
+                "asset": "TRM COP/USD",
+                "bmkActual": float(row[bmk_col]) if pd.notna(row[bmk_col]) else 0.0,
+                "portfolio32": float(row[p32_col]) if pd.notna(row[p32_col]) else 0.0,
+                "portfolio33": float(row[p33_col]) if pd.notna(row[p33_col]) else 0.0,
+                "portfolio36": float(row[p36_col]) if pd.notna(row[p36_col]) else 0.0,
+            }
+        )
+        return
+
+
 def generate_portfolio_metrics_json(metrics_df):
     """Genera JSON de métricas de portafolios."""
     col_names = metrics_df.columns.tolist()
@@ -89,33 +116,28 @@ def generate_portfolio_metrics_json(metrics_df):
     
     metrics = {
         "benchmark": {
-            "trm": None,
             "expectedReturn": None,
             "volatility": None,
             "maxDrawdown": None,
         },
         "portfolio32": {
-            "trm": None,
             "expectedReturn": None,
             "volatility": None,
             "maxDrawdown": None,
         },
         "portfolio33": {
-            "trm": None,
             "expectedReturn": None,
             "volatility": None,
             "maxDrawdown": None,
         },
         "portfolio36": {
-            "trm": None,
             "expectedReturn": None,
             "volatility": None,
             "maxDrawdown": None,
         },
     }
-    
+
     metric_mapping = {
-        "trm": "trm",
         "expected return": "expectedReturn",
         "expectedreturn": "expectedReturn",
         "volatility": "volatility",
@@ -125,7 +147,10 @@ def generate_portfolio_metrics_json(metrics_df):
     
     for _, row in metrics_df.iterrows():
         metric_name = str(row[asset_col]).strip().lower()
-        
+        tokens = metric_name.split()
+        if tokens and tokens[0] == "trm":
+            continue
+
         for key, json_key in metric_mapping.items():
             if key in metric_name:
                 # Benchmark
@@ -265,6 +290,7 @@ def main():
     
     # Generar JSONs
     asset_allocation = generate_asset_allocation_json(assets_df)
+    append_trm_allocation_from_metrics(asset_allocation, metrics_df)
     portfolio_metrics = generate_portfolio_metrics_json(metrics_df)
     historical_data = generate_historical_data_json(grafica_df)
     portfolio_history = generate_portfolio_history_json(grafica_df)

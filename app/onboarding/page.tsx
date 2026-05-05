@@ -8,6 +8,7 @@ import { KycValidationStep } from "@/components/onboarding/KycValidationStep";
 import { VoiceStep } from "@/components/onboarding/VoiceStep";
 import { PortfolioStep } from "@/components/onboarding/PortfolioStep";
 import { SarlaftStep } from "@/components/onboarding/SarlaftStep";
+import { RestrictedListsSimulationStep } from "@/components/onboarding/RestrictedListsSimulationStep";
 import type { PortfolioRecommendation } from "@/hooks/useVoiceAgent";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -39,9 +40,10 @@ const STEPS = [
   { id: 2, label: "Empresa", desc: "Representante legal y datos PJ" },
   { id: 3, label: "Ingesta", desc: "Documentación corporativa" },
   { id: 4, label: "KYC", desc: "Representante legal" },
-  { id: 5, label: "Asesor", desc: "Perfil y objetivos" },
-  { id: 6, label: "Portafolio", desc: "Recomendación de inversión" },
-  { id: 7, label: "SARLAFT", desc: "Formularios y envío regulatorio" },
+  { id: 5, label: "Listas", desc: "SARLAFT · listas restrictivas + PEP" },
+  { id: 6, label: "Asesor", desc: "Perfil y objetivos" },
+  { id: 7, label: "Portafolio", desc: "Recomendación de inversión" },
+  { id: 8, label: "SARLAFT", desc: "Formularios y envío regulatorio" },
 ];
 
 export default function OnboardingPage() {
@@ -55,7 +57,7 @@ export default function OnboardingPage() {
   const [preparingPortfolio, setPreparingPortfolio] = useState(false);
   const [prepProgress, setPrepProgress] = useState(0);
 
-  const next = () => setStep((s) => Math.min(s + 1, 7));
+  const next = () => setStep((s) => Math.min(s + 1, STEPS.length));
   const back = () => setStep((s) => Math.max(s - 1, 1));
 
   const handleDocumentIngestContinue = useCallback(
@@ -125,7 +127,7 @@ export default function OnboardingPage() {
       if (progress >= 100) {
         window.clearInterval(tick);
         setPreparingPortfolio(false);
-        setStep(6);
+        setStep(7);
       }
     }, 100);
 
@@ -269,6 +271,14 @@ export default function OnboardingPage() {
         )}
 
         {step === 5 && (
+          <RestrictedListsSimulationStep
+            razonSocial={intake.empresa}
+            onNext={next}
+            onBack={back}
+          />
+        )}
+
+        {step === 6 && (
           preparingPortfolio ? (
             <div className="space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-500">
               <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
@@ -314,7 +324,7 @@ export default function OnboardingPage() {
           )
         )}
 
-        {step === 6 &&
+        {step === 7 &&
           (sarlaftPkg ? (
             <PortfolioStep
               intake={intake}
@@ -337,7 +347,7 @@ export default function OnboardingPage() {
             </div>
           ))}
 
-        {step === 7 &&
+        {step === 8 &&
           (sarlaftPkg ? (
             <SarlaftStep
               sarlaftPkg={sarlaftPkg}

@@ -37,21 +37,30 @@ export function BenchmarkView({
           Tu portafolio de referencia
         </h1>
         <p className="max-w-2xl text-sm leading-relaxed text-gray-600">
-          Distribución de tu portafolio actual de referencia y evolución histórica del índice normalizado (base 100).
+          Distribución de tu portafolio actual de referencia y evolución histórica del índice normalizado (base 100). Solo hay{" "}
+          <span className="font-medium text-[#1a1a1a]">tres métricas</span> de modelo (retorno esperado, volatilidad, max drawdown)
+          sobre el escenario completo; el{" "}
+          <span className="font-semibold text-[#1a1a1a]">retorno esperado ({bm.expectedReturn}% anual, estimación modelo)</span>{" "}
+          sintetiza la proyección. La exposición tipo de cambio aparece como un{" "}
+          <span className="font-medium text-[#1a1a1a]">activo asignado (TRM COP/USD)</span> dentro del asset allocation, no como métrica
+          adicional.
         </p>
         <BenchmarkReportActions className="mt-4 flex flex-wrap items-center gap-2" />
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">TRM referencia</p>
-          <p className="mt-1 text-3xl font-bold tabular-nums text-[#1a1a1a]">{bm.trm}%</p>
-          <p className="mt-2 text-xs text-gray-500">Tasa representativa del mercado</p>
-        </div>
         <div className="rounded-2xl bg-[#F0FEE6] p-5 shadow-sm ring-1 ring-[#BBE795]/40">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">Activos en cartera</p>
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#4a7c59]">Retorno esperado (estimación)</p>
+          <p className="mt-1 text-3xl font-bold tabular-nums text-[#1a1a1a]">{bm.expectedReturn}%</p>
+          <p className="mt-2 text-xs text-[#4a7c59]/95 leading-snug">
+            Proyección anual del modelo a partir del histórico; no garantiza resultado futuro. Es el foco principal frente al riesgo
+            declarado del portafolio de referencia.
+          </p>
+        </div>
+        <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Activos en cartera</p>
           <p className="mt-1 text-3xl font-bold tabular-nums text-[#1a1a1a]">{benchmarkAssets.length}</p>
-          <p className="mt-2 text-xs text-[#4a7c59]/90">Instrumentos con peso mayor a cero</p>
+          <p className="mt-2 text-xs text-gray-500">Instrumentos con peso mayor a cero</p>
         </div>
         <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">Último dato serie</p>

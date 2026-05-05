@@ -103,5 +103,12 @@
     "portfolio32": 6.8373,
     "portfolio33": 6.6403,
     "portfolio36": 6.8151
+  },
+  {
+    "asset": "TRM COP/USD",
+    "bmkActual": 8.0,
+    "portfolio32": 3.3087,
+    "portfolio33": 3.9437,
+    "portfolio36": 3.4674
   }
 ]

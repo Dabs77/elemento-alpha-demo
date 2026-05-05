@@ -1,9 +1,5 @@
-import type { SarlaftPackage, SiNoNA } from "./schema";
-import { createEmptyPackage, SAGRILAFT_OTRAS_14_LABELS, createEmptySagrilaftPregunta } from "./schema";
-
-function seedOtras14(): { etiqueta: string; respuesta: SiNoNA }[] {
-  return SAGRILAFT_OTRAS_14_LABELS.map((etiqueta) => ({ etiqueta, respuesta: "Sí" as SiNoNA }));
-}
+import type { SarlaftPackage } from "./schema";
+import { createEmptyPackage, createEmptyOtras14, createEmptySagrilaftPregunta, DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT } from "./schema";
 
 /**
  * Demostración: empresa ficticia pre-llenada. Los datos reales de documentos
@@ -65,7 +61,7 @@ export function getDemoSarlaftPackage(): SarlaftPackage {
         ),
         respuesta: "No",
       },
-      otras_14_preguntas: seedOtras14(),
+      otras_14_preguntas: createEmptyOtras14(),
     },
   };
 
@@ -77,7 +73,7 @@ export function getDemoSarlaftPackage(): SarlaftPackage {
     actividad_principal: "e) Ninguna de las anteriores",
     ingresos_activos_pasivos_50: "No",
     clasificacion_fatca_crs: "Otra",
-    clasificacion_otra: "Empresa de distribución comercial",
+    clasificacion_otra: DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT,
     ubo: {
       datos_personales: "Juan Pérez López, CC 12.345.678, 1980-02-10, Colombia",
       paises_tin: [{ pais: "Colombia", tin: "900.123.456-1" }],

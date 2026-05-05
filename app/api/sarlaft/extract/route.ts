@@ -22,7 +22,7 @@ export const maxDuration = 60;
 const GEMINI_MODEL = "gemini-3.1-pro-preview";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const DOC_IDS = ["camara", "rut", "cedula", "accionaria", "estados", "renta"] as const;
+const DOC_IDS = ["camara", "rut", "cedula", "accionaria", "estados", "renta", "sagrilaft"] as const;
 
 const MAX_PDF_PAGES = 20;
 

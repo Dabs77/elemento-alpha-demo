@@ -8,6 +8,7 @@ import {
   BarChart2,
   Landmark,
   FileText,
+  Shield,
   Upload,
   X,
   ArrowLeft,
@@ -30,7 +31,7 @@ type DocStatus = "pending" | "uploaded";
 type Phase = "idle" | "analyzing";
 
 /** Claves reconocidas por `/api/sarlaft/extract` */
-const SARLAFT_FORM_KEYS = new Set(["camara", "rut", "cedula", "accionaria", "estados", "renta"]);
+const SARLAFT_FORM_KEYS = new Set(["camara", "rut", "cedula", "accionaria", "estados", "renta", "sagrilaft"]);
 
 interface Doc {
   id: string;
@@ -95,6 +96,15 @@ const INITIAL_DOCS: Doc[] = [
     title: "Declaración de renta",
     desc: "Último periodo gravable.",
     req: "PDF · Último periodo",
+    status: "pending",
+    required: false,
+  },
+  {
+    id: "sagrilaft",
+    icon: Shield,
+    title: "Documento SARLAFT",
+    desc: "Cuestionario/políticas LA-FT o formulario SARLAFT firmado si aplica.",
+    req: "PDF o imagen",
     status: "pending",
     required: false,
   },
@@ -562,7 +572,7 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
       {phase === "idle" && (
         <p className="text-[11px] text-gray-400 leading-relaxed">
           Tip: solo los documentos con tipo reconocido (RUT, cámara, cédula RL, accionariado, estados,
-          renta) se envían al motor de extracción. Los adjuntos personalizados sirven como respaldo pero no
+          renta, SARLAFT) se envían al motor de extracción. Los adjuntos personalizados sirven como respaldo pero no
           se analizan automáticamente en este paso.
         </p>
       )}

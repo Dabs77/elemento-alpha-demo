@@ -1,4 +1,5 @@
 import type { SarlaftPackage } from "./schema";
+import { FATCA_ACTIVIDAD_OPTIONS, FATCA_CLASIFICACION_OPTIONS } from "./fieldOptions";
 
 /** Variable pendiente que se manda a Gemini para guiar la extracción. */
 export type ExtractionTarget = {
@@ -9,6 +10,19 @@ export type ExtractionTarget = {
 
 const isEmpty = (v: unknown) => v === null || v === undefined || (typeof v === "string" && !v.trim());
 const isNum = (v: unknown) => typeof v === "number" && Number.isFinite(v);
+
+function normTrim(v: unknown): string {
+  if (typeof v !== "string") return "";
+  return v.trim().replace(/\s+/g, " ");
+}
+
+function isValidFatcaActividad(v: unknown): boolean {
+  return FATCA_ACTIVIDAD_OPTIONS.some((o) => o === normTrim(v));
+}
+
+function isValidFatcaClasificacion(v: unknown): boolean {
+  return FATCA_CLASIFICACION_OPTIONS.some((o) => o === normTrim(v));
+}
 
 /**
  * Dado un paquete parcial, devuelve los campos aún vacíos en un formato compacto,
@@ -38,13 +52,13 @@ export function buildTargets(pkg: SarlaftPackage): ExtractionTarget[] {
     t.push({ path: "formulario_2.identificacion_tributaria", label: "NIT / identificación tributaria" });
   if (isEmpty(f2.pais_constitucion_fiscal))
     t.push({ path: "formulario_2.pais_constitucion_fiscal", label: "País de constitución / residencia fiscal" });
-  if (isEmpty(f2.actividad_principal))
+  if (!isValidFatcaActividad(f2.actividad_principal))
     t.push({
       path: "formulario_2.actividad_principal",
       label: "Actividad principal FATCA",
       hint: "Una de: a) Acepta depósitos (Bancos); b) Custodia activos financieros; c) Emite seguros con valor en efectivo; d) Negocios de instrumentos de inversión; e) Ninguna de las anteriores.",
     });
-  if (isEmpty(f2.clasificacion_fatca_crs))
+  if (!isValidFatcaClasificacion(f2.clasificacion_fatca_crs))
     t.push({
       path: "formulario_2.clasificacion_fatca_crs",
       label: "Clasificación FATCA/CRS",

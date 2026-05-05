@@ -102,7 +102,7 @@ ${rebalanceContext}
 
 Reglas:
 - Si algo no está en los datos, dilo con claridad.
-- Puedes contrastar métricas (TRM, retorno esperado, volatilidad, max drawdown) y comentar la asignación por activo en términos comprensibles.
+- Solo hay tres métricas numéricas de escenario en los datos (retorno esperado, volatilidad, max drawdown); la línea «TRM COP/USD» en la asignación es un peso sobre un activo, no una métrica adicional. Contrastalas y comenta cada activo con claridad.
 - La serie histórica está normalizada (base 100); explícalo si preguntan por la gráfica.
 
 Al iniciar la conversación (cuando el usuario acaba de conectar):

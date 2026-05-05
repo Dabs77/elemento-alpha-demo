@@ -10,6 +10,8 @@ export function buildRebalanceVoiceContext(timeSeries: PortfolioTimeSeriesPoint[
 
   const payload = {
     escenario: "Comparación entre tu portafolio actual y el portafolio sugerido (rebalanceo)",
+    notaAsignacion:
+      "Hay tres métricas de modelo (expectedReturn, volatility, maxDrawdown). La exposición tipo de cambio TRM aparece solo como línea «TRM COP/USD» en asignacionPorActivo (pesos %), no duplicada en métricas.",
     metricas: {
       benchmark: {
         etiqueta: "Tu portafolio actual (referencia)",

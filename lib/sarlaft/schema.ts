@@ -169,6 +169,10 @@ export interface SarlaftPackage {
   formulario_3: VinculacionForm;
 }
 
+/** Texto inicial para “especifique otra clasificación” FATCA cuando la clase es «Otra» (PJ comercial típica). */
+export const DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT =
+  "Empresa comercial / operadora sin calidad de institución financiera al tenor de FATCA; actividades propias del giro ordinario.";
+
 export const SAGRILAFT_OTRAS_14_LABELS: string[] = [
   "Auditorías internas/externas documentadas (LA/FT)",
   "Listas restrictivas (OFAC, ONU) actualizadas",
@@ -218,8 +222,67 @@ export interface MissingFieldRef {
   options?: string[];
 }
 
+/** Respuesta aleatoria Sí/No por ítem (otras 14 preguntas de control LA/FT). */
+function randomSiNoOtras14(): SiNoNA {
+  return Math.random() < 0.5 ? "Sí" : "No";
+}
+
 export function createEmptyOtras14(): { etiqueta: string; respuesta: SiNoNA }[] {
-  return SAGRILAFT_OTRAS_14_LABELS.map((etiqueta) => ({ etiqueta, respuesta: "N/A" as SiNoNA }));
+  return SAGRILAFT_OTRAS_14_LABELS.map((etiqueta) => ({
+    etiqueta,
+    respuesta: randomSiNoOtras14(),
+  }));
+}
+
+/**
+ * Políticas SAGRILAFT con valores por defecto tipo empresa (solo Sí / No, sin N/A).
+ * Los textos de detalle son genéricos hasta que el OCR o el usuario los sustituyan.
+ */
+export function createDefaultSagrilaftPoliticas(): SagrilaftForm["politicas"] {
+  return {
+    programa_laft_documentado: {
+      pregunta:
+        "¿Su entidad tiene un programa/sistema LA/FT documentado y actualizado?",
+      respuesta: "Sí",
+      detalle_programa: {
+        organo_aprobacion: "Órgano de administración conforme a estatutos (Junta Directiva o Asamblea)",
+        fecha_aprobacion: "2024-06-01",
+      },
+    },
+    regulacion_gubernamental_laft: {
+      pregunta: "¿Su entidad está sujeta a regulación gubernamental LA/FT?",
+      respuesta: "Sí",
+      detalle_regulacion: {
+        normatividad: "Normativa sectorial y marco LA/FT aplicable en Colombia",
+      },
+    },
+    oficial_cumplimiento: {
+      pregunta: "¿Tiene Oficial de Cumplimiento designado?",
+      respuesta: "Sí",
+      detalle_oficial: {
+        nombre: "Según certificación o acta de designación aportada",
+        identificacion: "Por confirmar con documento de identidad",
+        cargo: "Oficial de Cumplimiento LA/FT",
+        email: "cumplimiento@empresa.com.co",
+        telefono: "+57 601 0000000",
+      },
+    },
+    operaciones_efectivo: {
+      pregunta: "¿Realiza operaciones en efectivo?",
+      respuesta: "No",
+    },
+    activos_virtuales: {
+      pregunta:
+        "¿Realiza transacciones o posee activos virtuales (criptomonedas)?",
+      respuesta: "No",
+    },
+    sancionada_investigada: {
+      pregunta:
+        "¿La entidad ha sido sancionada o investigada por procesos de lavado de activos?",
+      respuesta: "No",
+    },
+    otras_14_preguntas: createEmptyOtras14(),
+  };
 }
 
 export function createEmptySagrilaftPregunta(
@@ -228,7 +291,7 @@ export function createEmptySagrilaftPregunta(
 ): SagrilaftPoliticasPregunta {
   const base: SagrilaftPoliticasPregunta = {
     pregunta,
-    respuesta: "N/A",
+    respuesta: "No",
   };
   if (needsDetalle === "programa") {
     base.detalle_programa = { organo_aprobacion: "", fecha_aprobacion: "" };
@@ -256,27 +319,7 @@ export function createEmptySagrilaftForm(): SagrilaftForm {
     num_oficinas_pais: null,
     num_oficinas_exterior: null,
     ciudades_paises_operacion: "",
-    politicas: {
-      programa_laft_documentado: createEmptySagrilaftPregunta(
-        "¿Su entidad tiene un programa/sistema LA/FT documentado y actualizado?",
-        "programa"
-      ),
-      regulacion_gubernamental_laft: createEmptySagrilaftPregunta(
-        "¿Su entidad está sujeta a regulación gubernamental LA/FT?",
-        "regulacion"
-      ),
-      oficial_cumplimiento: createEmptySagrilaftPregunta("¿Tiene Oficial de Cumplimiento designado?", "oficial"),
-      operaciones_efectivo: createEmptySagrilaftPregunta("¿Realiza operaciones en efectivo?"),
-      activos_virtuales: createEmptySagrilaftPregunta(
-        "¿Realiza transacciones o posee activos virtuales (criptomonedas)?",
-        "cripto"
-      ),
-      sancionada_investigada: createEmptySagrilaftPregunta(
-        "¿La entidad ha sido sancionada o investigada por procesos de lavado de activos?",
-        "sancion"
-      ),
-      otras_14_preguntas: createEmptyOtras14(),
-    },
+    politicas: createDefaultSagrilaftPoliticas(),
   };
 }
 
@@ -289,7 +332,7 @@ export function createEmptyFatcaForm(): FatcaCrsForm {
     actividad_principal: "",
     ingresos_activos_pasivos_50: "",
     clasificacion_fatca_crs: "",
-    clasificacion_otra: "",
+    clasificacion_otra: DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT,
     ubo: { datos_personales: "", paises_tin: [], tipo_control: "" },
   };
 }
@@ -313,7 +356,7 @@ export function createEmptyVinculacionForm(): VinculacionForm {
     tolerancia_riesgo: "",
     objetivo_inversion: "",
     representantes_ordenates: "",
-    es_pep: "",
+    es_pep: "No",
     accionistas: [],
     calidad_beneficiario_final: [],
   };

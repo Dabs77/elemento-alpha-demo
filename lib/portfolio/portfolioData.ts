@@ -11,7 +11,6 @@ export interface AssetAllocation {
 }
 
 export interface PortfolioMetrics {
-  trm: number;
   expectedReturn: number;
   volatility: number;
   maxDrawdown: number;

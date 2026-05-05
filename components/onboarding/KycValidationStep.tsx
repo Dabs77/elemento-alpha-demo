@@ -60,6 +60,11 @@ const FACE_MESSAGES = [
 
 const FACE_CHECKS = ["Rostro enmarcado correctamente", "Prueba de vida superada", "Coincidencia biométrica"];
 
+/** Simulación KYC: cuánto dura la verificación biométrica (cámara / prueba de vida). */
+const FACE_VERIFY_DURATION_MS = 9000;
+const FACE_VERIFY_MESSAGE_INTERVAL_MS = 1150;
+const FACE_VERIFY_COMPLETE_PAUSE_MS = 600;
+
 function buildMockExtraction(intake: IntakeData, file: File): ExtractedIdentity {
   const baseName = file.name.replace(/\.[^/.]+$/, "");
   const cleaned = baseName.replace(/[_-]+/g, " ").trim();
@@ -176,11 +181,11 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
 
       const spin = window.setInterval(() => {
         setFaceMsgIdx((i) => (i + 1) % FACE_MESSAGES.length);
-      }, 900);
+      }, FACE_VERIFY_MESSAGE_INTERVAL_MS);
       timersRef.current.push(spin);
 
       const start = performance.now();
-      const duration = 4000;
+      const duration = FACE_VERIFY_DURATION_MS;
       const tick = window.setInterval(() => {
         const elapsed = performance.now() - start;
         const p = Math.min(100, Math.round((elapsed / duration) * 100));
@@ -189,7 +194,7 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
           clearInterval(tick);
           const tid = window.setTimeout(() => {
             if (!cancelled) setPhase("success");
-          }, 400);
+          }, FACE_VERIFY_COMPLETE_PAUSE_MS);
           timersRef.current.push(tid);
         }
       }, 40);

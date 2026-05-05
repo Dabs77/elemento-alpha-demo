@@ -166,7 +166,6 @@ function allocationTableRows(): string {
     ["Max drawdown", (m) => fmtPct(m.maxDrawdown, 4)],
     ["Drawdown duración (días est.)", (m) => String(Math.round(18 + m.maxDrawdown * 2.2))],
     ["Retorno / Volatilidad", (m) => (m.expectedReturn / m.volatility).toFixed(2)],
-    ["TRM ref.", (m) => `${m.trm.toFixed(2)}%`],
   ];
 
   const sumRows = summaries
