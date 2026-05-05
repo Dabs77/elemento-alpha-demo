@@ -14,6 +14,7 @@ const DOCUMENT_ITEMS = [
   "Paquete SARLAFT / FATCA / CRS / Vinculación (PDF editables y ZIP)",
   "Documentación cargada en ingesta (RUT, cámara de comercio, otros)",
   "Verificación KYC del representante legal",
+  "Firma digital simulada antes del envío a fiduciaria",
 ];
 
 interface Props {

@@ -11,6 +11,10 @@ import type { SarlaftPackage, MissingFieldRef } from "@/lib/sarlaft/schema";
 import { computeMissingFields, hasMissingFields } from "@/lib/sarlaft/missingFields";
 import { patchPackageValue } from "@/lib/sarlaft/patchPackage";
 import { MissingFieldInput } from "@/components/sarlaft/FieldByFieldForm";
+import {
+  SimulatedDigitalSignature,
+  type SimulatedSignature,
+} from "@/components/sarlaft/SimulatedDigitalSignature";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
@@ -30,13 +34,15 @@ export function FormsPreview({
 }) {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [simulatedSignature, setSimulatedSignature] = useState<SimulatedSignature | null>(null);
   const ocrCount = ocrReport?.filter((r) => r.ocrUsed).length ?? 0;
   const h1 = useMemo(() => buildSagrilaftHtml(value.formulario_1), [value.formulario_1]);
   const h2 = useMemo(() => buildFatcaCrsHtml(value.formulario_2), [value.formulario_2]);
   const h3 = useMemo(() => buildVinculacionHtml(value.formulario_3), [value.formulario_3]);
   const missing = useMemo(() => computeMissingFields(value), [value]);
   const canPdf = !hasMissingFields(value);
-  const canSend = !hasMissingFields(value) && !sending && !generating;
+  const canSend =
+    !hasMissingFields(value) && !sending && !generating && simulatedSignature !== null;
 
   const handleSendToFiduciaria = useCallback(async () => {
     if (!canSend) return;
@@ -75,38 +81,6 @@ export function FormsPreview({
           </p>
         </div>
       ) : null}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-white ring-1 ring-gray-100">
-        <div>
-          <p className="text-sm font-semibold text-[#1a1a1a]">Vista previa (formato PDF)</p>
-          <p className="text-xs text-gray-500">
-            {missing.length
-              ? `Faltan ${missing.length} campo(s) obligatorio(s). Complétalos en el bloque siguiente antes de enviar a la fiduciaria.`
-              : "Puedes ajustar datos clave abajo y luego enviar a la fiduciaria. La descarga en ZIP queda como respaldo."}
-          </p>
-          {sent ? (
-            <p className="text-[11px] text-[#4a7c59] mt-1">Envío simulado a fiduciaria completado.</p>
-          ) : null}
-        </div>
-        <div className="flex flex-col sm:flex-row gap-2 shrink-0">
-          <Button
-            className="bg-[#4a7c59] text-white"
-            disabled={!canSend}
-            onClick={handleSendToFiduciaria}
-          >
-            {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-            Enviar a fiduciaria
-          </Button>
-          <Button
-            variant="outline"
-            disabled={!canPdf || generating || sending}
-            onClick={onGeneratePdf}
-          >
-            {generating ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-            Descargar ZIP
-          </Button>
-        </div>
-      </div>
-
       {missing.length > 0 ? (
         <div
           className="rounded-xl border border-amber-200 bg-amber-50/60 p-4 ring-1 ring-amber-100/80"
@@ -138,6 +112,49 @@ export function FormsPreview({
           </div>
         </div>
       ) : null}
+
+      {!missing.length ? (
+        <SimulatedDigitalSignature
+          value={simulatedSignature}
+          onChange={setSimulatedSignature}
+          disabled={Boolean(generating || sending)}
+        />
+      ) : null}
+
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-white ring-1 ring-gray-100">
+        <div>
+          <p className="text-sm font-semibold text-[#1a1a1a]">Vista previa (formato PDF)</p>
+          <p className="text-xs text-gray-500">
+            {missing.length
+              ? `Faltan ${missing.length} campo(s) obligatorio(s). Complétalos arriba antes de firmar y enviar.`
+              : canSend
+                ? "Puedes ajustar datos clave más abajo, luego enviar a la fiduciaria. La descarga en ZIP queda como respaldo."
+                : "Confirma la firma digital simulada arriba para habilitar el envío a fiduciaria."}
+          </p>
+          {sent ? (
+            <p className="text-[11px] text-[#4a7c59] mt-1">Envío simulado a fiduciaria completado.</p>
+          ) : null}
+        </div>
+        <div className="flex flex-col sm:flex-row gap-2 shrink-0">
+          <Button
+            className="bg-[#4a7c59] text-white"
+            disabled={!canSend}
+            onClick={handleSendToFiduciaria}
+            title={!simulatedSignature && !missing.length ? "Primero confirma la firma digital simulada" : undefined}
+          >
+            {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
+            Enviar a fiduciaria
+          </Button>
+          <Button
+            variant="outline"
+            disabled={!canPdf || generating || sending}
+            onClick={onGeneratePdf}
+          >
+            {generating ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
+            Descargar ZIP
+          </Button>
+        </div>
+      </div>
 
       <QuickEdit value={value} onChange={onChange} />
 
