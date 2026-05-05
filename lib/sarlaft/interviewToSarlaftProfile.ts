@@ -1,4 +1,5 @@
 import type { CicloEmpresa, ExperienciaInversion, Liquidez, SarlaftPackage, ToleranciaRiesgo, VinculacionForm } from "./schema";
+import { ONBOARDING_DEFAULT_OBJETIVO_INVERSION } from "./onboardingSarlaftMerge";
 
 /** Valores exactos del formulario 3 (perfil de inversión) — deben coincidir con el esquema SARLAFT. */
 export const SARLAFT_INTERVIEW_CICLO: readonly CicloEmpresa[] = [
@@ -152,6 +153,10 @@ export function applyDefaultInterviewProfileWhereMissing(pkg: SarlaftPackage): S
   }
   if (!pickFromList(f3.tolerancia_riesgo, SARLAFT_INTERVIEW_TOLERANCIA)) {
     f3.tolerancia_riesgo = d.tolerancia_riesgo;
+  }
+
+  if (!norm(String(f3.objetivo_inversion ?? ""))) {
+    f3.objetivo_inversion = ONBOARDING_DEFAULT_OBJETIVO_INVERSION;
   }
 
   return next;

@@ -101,6 +101,8 @@ function defaultConservativeRecommendation(): PortfolioRecommendation {
     plazo: "corto plazo",
     razon: "Perfil orientado a preservar capital y priorizar liquidez en el corto plazo.",
     productosRecomendados: ["FIC líquido", "Fondo Ahorro Empresarial", "Fiducia de Garantía"],
+    /** Alineado al guion de voz: última opción (propósito de la inversión). */
+    resp_proposito: 4,
   };
 }
 

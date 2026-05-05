@@ -25,6 +25,10 @@ export const ONBOARDING_SARLAFT_SEED_ACCIONISTAS: Accionista[] = [
   { nombre: "Daniel Andrés Becerra Sierra", id: "C.C. 1.000.077.160", porcentaje: 25, cotiza_en_bolsa: "No" },
 ];
 
+/** Opción 4 del guion de voz (última pregunta — propósito de la inversión). Predefinida en onboarding hasta otra `resp_proposito`. */
+export const ONBOARDING_DEFAULT_OBJETIVO_INVERSION =
+  "Fondo de Reserva para Pasivos Laborales" as const;
+
 /** Datos de empresa / RL recopilados en el paso de intake (sin depender de `app/`). */
 export type IntakeSarlaftInput = {
   nombre: string;
@@ -95,6 +99,11 @@ export function applyOnboardingSarlaftSeeds(pkg: SarlaftPackage): SarlaftPackage
 
   if (next.formulario_3.accionistas.length === 0) {
     next.formulario_3.accionistas = ONBOARDING_SARLAFT_SEED_ACCIONISTAS.map((a) => ({ ...a }));
+  }
+
+  const f3s = next.formulario_3;
+  if (isEmptyStr(f3s.objetivo_inversion)) {
+    f3s.objetivo_inversion = ONBOARDING_DEFAULT_OBJETIVO_INVERSION;
   }
 
   return next;
@@ -196,7 +205,7 @@ function objetivoFromPropositoResp(r: 1 | 2 | 3 | 4): string {
   if (r === 1) return "Proyecto Productivo / Expansión de Planta";
   if (r === 2) return "Optimización de Excedentes de Tesorería";
   if (r === 3) return "Reconversión Tecnológica / Digitalización";
-  return "Fondo de Reserva para Pasivos Laborales";
+  return ONBOARDING_DEFAULT_OBJETIVO_INVERSION;
 }
 
 /**
@@ -255,6 +264,8 @@ export function applyInterviewToSarlaft(
     f3.tolerancia_riesgo = tolerancia;
     if (rp) {
       f3.objetivo_inversion = objetivoFromPropositoResp(rp);
+    } else if (isEmptyStr(f3.objetivo_inversion)) {
+      f3.objetivo_inversion = ONBOARDING_DEFAULT_OBJETIVO_INVERSION;
     }
   } else {
     if (isEmptyStr(f3.liquidez)) {
