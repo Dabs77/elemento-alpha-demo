@@ -309,33 +309,61 @@ export default function SarlaftPage() {
 
         for (const line of lines) {
           if (!line.trim()) continue;
+          let msg: {
+            type: string;
+            phase?: string;
+            fileName?: string;
+            index?: number;
+            total?: number;
+            package?: SarlaftPackage;
+            missing?: unknown;
+            ocrReport?: unknown;
+            message?: string;
+          };
           try {
-            const msg = JSON.parse(line);
-            if (msg.type === "doc_start") {
-              setAnalysisProgress({
-                currentDoc: msg.fileName,
-                currentIndex: msg.index,
-                total: msg.total,
-                status: "extracting",
-              });
-            } else if (msg.type === "doc_done") {
-              setAnalysisProgress((prev) => ({ ...prev, currentIndex: prev.currentIndex }));
-            } else if (msg.type === "complete") {
-              setPkg(msg.package);
-              setMissingFields(msg.missing || []);
-              setOcrReport(msg.ocrReport || null);
-              setPhase(msg.missing?.length > 0 ? "form" : "preview");
-            } else if (msg.type === "error") {
-              throw new Error(msg.message);
-            }
-          } catch (parseErr) {
-            console.warn("Error parsing stream line:", parseErr);
+            msg = JSON.parse(line) as typeof msg;
+          } catch {
+            console.warn("NDJSON omitido:", line.slice(0, 60));
+            continue;
+          }
+          if (msg.type === "error") {
+            throw new Error(typeof msg.message === "string" ? msg.message : "Error en extracción");
+          }
+          if (msg.type === "status" && msg.phase === "preparing" && msg.fileName) {
+            setAnalysisProgress({
+              currentDoc: `Preparando ${msg.fileName}…`,
+              currentIndex: (msg.index ?? 1) - 1,
+              total: msg.total ?? uploadedDocs.length,
+              status: "extracting",
+            });
+          } else if (msg.type === "doc_start") {
+            setAnalysisProgress({
+              currentDoc: msg.fileName ?? "Documento",
+              currentIndex: msg.index ?? 0,
+              total: msg.total ?? uploadedDocs.length,
+              status: "extracting",
+            });
+          } else if (msg.type === "doc_done") {
+            setAnalysisProgress((prev) => ({ ...prev, currentIndex: prev.currentIndex }));
+          } else if (msg.type === "complete" && msg.package) {
+            setPkg(msg.package);
+            setMissingFields((msg.missing as MissingFieldRef[]) || []);
+            setOcrReport((msg.ocrReport as OcrReportItem[] | null) || null);
+            setPhase(((msg.missing as MissingFieldRef[]) || []).length > 0 ? "form" : "preview");
           }
         }
       }
     } catch (err) {
       console.error("Analysis error:", err);
-      setError(err instanceof Error ? err.message : "Error desconocido");
+      let msg = err instanceof Error ? err.message : "Error desconocido";
+      if (
+        err instanceof TypeError &&
+        (err.message === "Failed to fetch" || err.message.includes("fetch"))
+      ) {
+        msg =
+          "Conexión cerrada o tiempo de espera (Vercel Hobby ~60s). Prueba con menos PDFs o sube de plan.";
+      }
+      setError(msg);
       setPhase("upload");
     }
   }, [canAnalyze, uploadedDocs]);

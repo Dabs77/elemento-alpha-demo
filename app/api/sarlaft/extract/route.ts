@@ -16,8 +16,8 @@ import { createEmptyPackage, type SarlaftPackage } from "@/lib/sarlaft/schema";
 
 export const runtime = "nodejs";
 
-/** Vercel: máximo habitual en Hobby (60s); evita cortes con varios PDFs + Gemini. */
-export const maxDuration = 60;
+/** Vercel Pro: hasta 300s; Hobby se limita a 60s aunque declares más. */
+export const maxDuration = 300;
 
 const GEMINI_MODEL = "gemini-3.1-pro-preview";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -25,6 +25,21 @@ const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GE
 const DOC_IDS = ["camara", "rut", "cedula", "accionaria", "estados", "renta", "sagrilaft"] as const;
 
 const MAX_PDF_PAGES = 20;
+
+type QueuedFile = { id: (typeof DOC_IDS)[number]; file: File };
+
+function collectQueuedFiles(formData: FormData): QueuedFile[] {
+  const queue: QueuedFile[] = [];
+  for (const id of DOC_IDS) {
+    const entries = formData.getAll(id);
+    for (const entry of entries) {
+      if (entry instanceof File && entry.size > 0) {
+        queue.push({ id, file: entry });
+      }
+    }
+  }
+  return queue;
+}
 
 type PreparedDoc = {
   id: (typeof DOC_IDS)[number];
@@ -329,19 +344,9 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const financialSummary = (formData.get("financialSummary") as string) || undefined;
+    const queue = collectQueuedFiles(formData);
 
-    const prepared: PreparedDoc[] = [];
-    for (const id of DOC_IDS) {
-      const entries = formData.getAll(id);
-      for (const entry of entries) {
-        if (entry instanceof File && entry.size > 0) {
-          const p = await prepareOneDoc(id, entry);
-          if (p) prepared.push(p);
-        }
-      }
-    }
-
-    if (prepared.length === 0) {
+    if (queue.length === 0) {
       return NextResponse.json(
         { error: "No se recibió ningún documento. Sube al menos un archivo." },
         { status: 400 }
@@ -349,18 +354,40 @@ export async function POST(request: NextRequest) {
     }
 
     const encoder = new TextEncoder();
-    const total = prepared.length;
+    const total = queue.length;
+
     const stream = new ReadableStream<Uint8Array>({
       async start(controller) {
         const send = (obj: object) => {
           controller.enqueue(encoder.encode(`${JSON.stringify(obj)}\n`));
         };
         try {
+          send({ type: "status", phase: "start", total, message: "Iniciando análisis por documento…" });
+
           const ocrReport: OcrReportItem[] = [];
           let merged = createEmptyPackage();
 
-          for (let i = 0; i < prepared.length; i++) {
-            const d = prepared[i];
+          for (let i = 0; i < queue.length; i++) {
+            const q = queue[i];
+            send({
+              type: "status",
+              phase: "preparing",
+              docId: q.id,
+              fileName: q.file.name,
+              index: i + 1,
+              total,
+            });
+
+            const d = await prepareOneDoc(q.id, q.file);
+            if (!d) {
+              send({
+                type: "error",
+                message: `No se pudo preparar el archivo: ${q.file.name}`,
+              });
+              controller.close();
+              return;
+            }
+
             const pendingCount = buildTargets(merged).length;
             send({
               type: "doc_start",
@@ -372,9 +399,11 @@ export async function POST(request: NextRequest) {
               kind: d.kind,
               pendingCount,
             });
+
             const { partial, report } = await extractOneDoc(d, apiKey, merged, financialSummary);
             ocrReport.push(report);
             merged = ensurePackageShape(deepMergeSarlaft(merged, partial));
+
             send({
               type: "doc_done",
               docId: d.id,

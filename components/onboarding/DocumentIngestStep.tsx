@@ -369,6 +369,7 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
           if (!line.trim()) continue;
           let msg: {
             type: string;
+            phase?: string;
             fileName?: string;
             index?: number;
             total?: number;
@@ -383,7 +384,16 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
             console.warn("Línea NDJSON inválida:", line.slice(0, 80));
             continue;
           }
-          if (msg.type === "doc_start") {
+          if (msg.type === "error") {
+            throw new Error(typeof msg.message === "string" ? msg.message : "Error en extracción");
+          }
+          if (msg.type === "status" && msg.phase === "preparing" && msg.fileName) {
+            setAnalysisProgress({
+              currentDoc: `Preparando ${msg.fileName}…`,
+              currentIndex: (msg.index ?? 1) - 1,
+              total: msg.total ?? uploadedForExtract.length,
+            });
+          } else if (msg.type === "doc_start") {
             setAnalysisProgress({
               currentDoc: msg.fileName || "Documento",
               currentIndex: msg.index ?? 0,
@@ -397,15 +407,21 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
             });
             setPhase("idle");
             return;
-          } else if (msg.type === "error") {
-            throw new Error(msg.message || "Error en extracción");
           }
         }
       }
       throw new Error("La extracción terminó sin resultado");
     } catch (err) {
       console.error(err);
-      setExtractError(err instanceof Error ? err.message : "Error desconocido");
+      let message = err instanceof Error ? err.message : "Error desconocido";
+      if (
+        err instanceof TypeError &&
+        (err.message === "Failed to fetch" || err.message.includes("fetch"))
+      ) {
+        message =
+          "La conexión con el servidor se cerró (tiempo de espera o carga muy pesada). En Vercel el plan gratuito limita ~60s por solicitud; analizar muchos PDFs puede superarlo. Prueba con menos archivos o menos páginas, o sube de plan. Si es local, revisa que el dev server siga en marcha.";
+      }
+      setExtractError(message);
       setPhase("idle");
     }
   }, [uploadedForExtract, canContinue, onContinue]);
