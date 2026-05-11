@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 
 interface Props {
   razonSocial: string;
+  nit: string;
   onNext: () => void;
   onBack: () => void;
 }
@@ -32,7 +33,7 @@ const SOURCES: { key: string; title: string; detail: string }[] = [
   { key: "gafilat", title: "GAFILAT / AML regional", detail: "Referencias LA/FT" },
 ];
 
-export function RestrictedListsSimulationStep({ razonSocial, onNext, onBack }: Props) {
+export function RestrictedListsSimulationStep({ razonSocial, nit, onNext, onBack }: Props) {
   const [phase, setPhase] = useState<Phase>("pulse");
   const [scanningIdx, setScanningIdx] = useState<number | null>(null);
   const [clearedThru, setClearedThru] = useState(-1);
@@ -98,15 +99,14 @@ export function RestrictedListsSimulationStep({ razonSocial, onNext, onBack }: P
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#BBE795]/90">
-                Fase 4 · SARLAFT
+                Paso 3 · Listas restrictivas
               </p>
               <h2 className="mt-1 text-xl sm:text-2xl font-bold tracking-tight text-white">
-                Consulta listas restrictivas + verificación PEP
+                Consulta de empresa en listas
               </h2>
               <p className="mt-2 text-sm text-white/65 leading-relaxed max-w-xl">
-                Consulta paralela simulada en OFAC, ONU, INTERPOL, Fiscalía, Clinton, FONDELIBERTAD, UE y
-                GAFILAT. PEP y debida diligencia reforzada (EDD) con referencias a Circular 026/2008 y decreto de
-                estructura de administración financiera relacionado — Decreto 1674 de 2021 (demostración).
+                Simulación paralela en OFAC, ONU, INTERPOL, Fiscalía, Clinton, FONDELIBERTAD, UE y GAFILAT,
+                complementada con verificación PEP para el representante legal y estructura societaria declarada.
               </p>
             </div>
             <Sparkles className="h-5 w-5 text-[#BBE795] shrink-0 opacity-80 sarlaft-icon-pulse" aria-hidden />
@@ -114,8 +114,10 @@ export function RestrictedListsSimulationStep({ razonSocial, onNext, onBack }: P
 
           <div className="rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-xs font-mono text-[#BBE795]/85 space-y-1">
             <p>
-              &gt; sujeto:{" "}
-              <span className="text-white/90">{razonSocial.trim() || "[razón social]"}</span>
+              &gt; sujeto: <span className="text-white/90">{razonSocial.trim() || "[razón social]"}</span>
+            </p>
+            <p>
+              &gt; NIT: <span className="text-white/90">{nit.trim() || "[NIT]"}</span>
             </p>
             <p className="text-white/50">
               &gt; motor: paralelo simulado · latencia efectiva{" "}
@@ -199,7 +201,7 @@ export function RestrictedListsSimulationStep({ razonSocial, onNext, onBack }: P
           onClick={onNext}
           className="gap-1.5 rounded-xl bg-[#4a7c59] hover:bg-[#3d6949] disabled:opacity-40"
         >
-          Continuar al asesor
+          Continuar a ingesta documental
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>

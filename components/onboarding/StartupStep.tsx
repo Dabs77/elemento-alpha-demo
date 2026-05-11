@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, ChevronRight, ClipboardList, FileText, IdCard, Building2, Sparkles } from "lucide-react";
+import { ArrowLeft, ChevronRight, ClipboardList, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
@@ -9,37 +9,23 @@ interface Props {
   onNext: () => void;
 }
 
-const DOC_CATEGORIES = [
-  {
-    title: "Representante legal",
-    icon: IdCard,
-    points: [
-      "Cédula o pasaporte del representante legal.",
-      "Documento legible por ambas caras (si aplica).",
-    ],
-  },
-  {
-    title: "Documentación corporativa",
-    icon: Building2,
-    points: ["RUT actualizado.", "Certificado de cámara de comercio vigente."],
-  },
-  {
-    title: "Soportes adicionales",
-    icon: FileText,
-    points: ["Estados financieros o soportes complementarios (si aplican)."],
-  },
+const HAVE_READY = [
+  "Nombre completo del representante legal.",
+  "Razón social de la empresa.",
+  "NIT de la empresa (se usa en consultas y carga automática de documentos).",
 ];
 
 const FLOW_POINTS = [
-  "Datos de la empresa y del representante legal.",
-  "Ingesta de documentación corporativa.",
-  "Validación KYC del representante legal.",
-  "Asesor por voz y recomendación de portafolio.",
+  "Bienvenida y datos de empresa (representante legal, razón social y NIT).",
+  "Consulta de la empresa en listas restrictivas (simulación).",
+  "Ingesta documental desde fuentes externas precargada para la demo.",
+  "Validación de identidad del representante legal.",
+  "Entrevista con el asesor y recomendación de portafolio.",
+  "Revisión SARLAFT precargada y firma final.",
 ];
 
 export function StartupStep({ onNext }: Props) {
   const [introStep, setIntroStep] = useState<1 | 2>(1);
-  const [activeCategory, setActiveCategory] = useState<number>(0);
   const isLast = introStep === 2;
   const canGoBackInside = introStep > 1;
 
@@ -125,41 +111,14 @@ export function StartupStep({ onNext }: Props) {
               ))}
             </ol>
           ) : (
-            <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-2">
-              {DOC_CATEGORIES.map((category, idx) => {
-                const Icon = category.icon;
-                const isOpen = activeCategory === idx;
-                return (
-                  <details
-                    key={category.title}
-                    className="group rounded-lg border border-gray-100 bg-white open:bg-[#fcfef8] open:border-[#dcecd0]"
-                    open={isOpen}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActiveCategory(isOpen ? -1 : idx);
-                    }}
-                  >
-                    <summary className="list-none cursor-pointer flex items-center justify-between gap-3 px-3 py-2.5">
-                      <span className="flex items-center gap-2 text-sm font-medium text-[#1a1a1a]">
-                        <Icon className="h-4 w-4 text-[#4a7c59] shrink-0" />
-                        {category.title}
-                      </span>
-                      <span className={`text-xs text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`}>⌄</span>
-                    </summary>
-                    <div className="px-3 pb-3">
-                      <ul className="space-y-2">
-                        {category.points.map((point) => (
-                          <li key={point} className="flex items-start gap-2 text-sm text-gray-600">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#4a7c59] shrink-0" />
-                            <span className="leading-relaxed">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </details>
-                );
-              })}
-            </div>
+            <ul className="animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-2.5">
+              {HAVE_READY.map((line) => (
+                <li key={line} className="flex items-start gap-3 text-sm text-gray-700">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#4a7c59] shrink-0" />
+                  <span className="leading-relaxed">{line}</span>
+                </li>
+              ))}
+            </ul>
           )}
         </CardContent>
       </Card>

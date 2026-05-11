@@ -24,6 +24,7 @@ import { FieldByFieldForm } from "@/components/sarlaft/FieldByFieldForm";
 import { FormsPreview } from "@/components/sarlaft/FormsPreview";
 import type { SarlaftPackage, MissingFieldRef } from "@/lib/sarlaft/schema";
 import type { OcrReportItem } from "@/lib/sarlaft/ocrTypes";
+import { fetchSarlaftPackageZip } from "@/lib/sarlaft/fetchPackageZip";
 
 type Phase = "upload" | "analyzing" | "form" | "preview";
 
@@ -381,17 +382,11 @@ export default function SarlaftPage() {
     if (!pkg) return;
     setGenerating(true);
     try {
-      const res = await fetch("/api/sarlaft/pdf", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ package: pkg }),
-      });
-      if (!res.ok) throw new Error("Error generando PDFs");
-      const blob = await res.blob();
+      const { blob, filename } = await fetchSarlaftPackageZip(pkg);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "sarlaft-formularios.zip";
+      a.download = filename;
       a.click();
       URL.revokeObjectURL(url);
     } catch (err) {

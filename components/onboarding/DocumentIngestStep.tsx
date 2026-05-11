@@ -1,118 +1,84 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useEffect, useState } from "react";
 import {
   Building2,
   Receipt,
   Users,
   BarChart2,
   Landmark,
-  FileText,
   Shield,
-  Upload,
-  X,
   ArrowLeft,
   CheckCircle2,
-  Plus,
   CreditCard,
+  FileText,
   Loader2,
-  ScanLine,
-  Sparkles,
+  Database,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import type { IntakeData } from "@/app/onboarding/page";
-import { createEmptyPackage, type MissingFieldRef, type SarlaftPackage } from "@/lib/sarlaft/schema";
-import { computeMissingFields } from "@/lib/sarlaft/missingFields";
+import type { MissingFieldRef, SarlaftPackage } from "@/lib/sarlaft/schema";
 import type { OcrReportItem } from "@/lib/sarlaft/ocrTypes";
+import { computeMissingFields } from "@/lib/sarlaft/missingFields";
+import { buildOnboardingPackageFromExternalIngest } from "@/lib/sarlaft/onboardingSarlaftMerge";
 
-type DocStatus = "pending" | "uploaded";
-
-type Phase = "idle" | "analyzing";
-
-/** Claves reconocidas por `/api/sarlaft/extract` */
-const SARLAFT_FORM_KEYS = new Set(["camara", "rut", "cedula", "accionaria", "estados", "renta", "sagrilaft"]);
-
-interface Doc {
+interface ExternalDocRow {
   id: string;
   icon: React.ElementType;
   title: string;
-  desc: string;
-  req: string;
-  status: DocStatus;
-  file?: File;
-  required: boolean;
+  /** Subtítulo corto */
+  detail: string;
 }
 
-const INITIAL_DOCS: Doc[] = [
+const EXTERNAL_DOCS: ExternalDocRow[] = [
   {
     id: "rut",
     icon: Receipt,
     title: "RUT",
-    desc: "Registro Único Tributario actualizado.",
-    req: "PDF · Actualizado",
-    status: "pending",
-    required: true,
+    detail: "Registro Único Tributario.",
   },
   {
     id: "camara",
     icon: Building2,
-    title: "Cámara de Comercio",
-    desc: "Certificado de existencia con vigencia ≤ 90 días.",
-    req: "PDF · Vigencia 90 días",
-    status: "pending",
-    required: true,
+    title: "Certificado de Cámara de Comercio",
+    detail: "Existencia y representación legal vigente.",
   },
   {
     id: "cedula",
     icon: CreditCard,
     title: "Cédula del representante legal",
-    desc: "Opcional aquí si ya la tienes; también podrás cargarla en el paso KYC.",
-    req: "PDF o imagen",
-    status: "pending",
-    required: false,
+    detail: "Documento de identidad del RL.",
   },
   {
     id: "estados",
     icon: BarChart2,
     title: "Estados financieros",
-    desc: "Último corte anual certificado por contador.",
-    req: "PDF · Certificados",
-    status: "pending",
-    required: false,
+    detail: "Último corte anual certificado.",
   },
   {
     id: "accionaria",
     icon: Users,
-    title: "Composición accionaria",
-    desc: "Socios con participación ≥ 5%.",
-    req: "PDF · Firmado",
-    status: "pending",
-    required: false,
+    title: "Certificado de composición accionaria",
+    detail: "Composición societaria y participaciones.",
   },
   {
     id: "renta",
     icon: Landmark,
     title: "Declaración de renta",
-    desc: "Último periodo gravable.",
-    req: "PDF · Último periodo",
-    status: "pending",
-    required: false,
+    detail: "Último periodo gravable.",
   },
   {
     id: "sagrilaft",
     icon: Shield,
-    title: "Documento SARLAFT",
-    desc: "Cuestionario/políticas LA-FT o formulario SARLAFT firmado si aplica.",
-    req: "PDF o imagen",
-    status: "pending",
-    required: false,
+    title: "Políticas / documento SARLAFT",
+    detail: "Referencia LA/FT cuando aplica.",
   },
 ];
 
+type Phase = "loading" | "done";
+
 interface Props {
   intake: IntakeData;
-  /** Después del análisis IA (o al omitir), devuelve paquete y metadatos al padre. */
   onContinue: (payload: {
     package: SarlaftPackage;
     missing: MissingFieldRef[];
@@ -121,330 +87,50 @@ interface Props {
   onBack?: () => void;
 }
 
-interface AnalysisProgress {
-  currentDoc: string;
-  currentIndex: number;
-  total: number;
-}
-
-function AnalyzingScreen({ progress }: { progress: AnalysisProgress }) {
-  const pct = progress.total > 0 ? Math.round((progress.currentIndex / progress.total) * 100) : 0;
-
-  return (
-    <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm animate-in fade-in">
-      <div className="text-center mb-6">
-        <div className="w-16 h-16 rounded-full bg-[#F0FEE6] flex items-center justify-center mx-auto mb-4 ring-4 ring-[#BBE795]/20">
-          <ScanLine className="w-8 h-8 text-[#6abf1a] animate-pulse" />
-        </div>
-        <h2 className="text-xl font-bold text-[#1a1a1a] tracking-tight">Analizando documentos SARLAFT</h2>
-        <p className="text-sm text-gray-500 mt-1">Extraemos datos para tus formularios regulatorios</p>
-      </div>
-
-      <div className="space-y-4">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-gray-500">Progreso</span>
-          <span className="font-semibold text-[#1a1a1a]">
-            {progress.currentIndex} de {progress.total}
-          </span>
-        </div>
-        <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-[#BBE795] to-[#7dd83a] rounded-full transition-all duration-500"
-            style={{ width: `${pct}%` }}
-          />
-        </div>
-        <div className="flex items-center gap-2 p-3 rounded-lg bg-gray-50 border border-gray-100">
-          <Loader2 className="w-4 h-4 text-[#6abf1a] animate-spin shrink-0" />
-          <p className="text-sm text-gray-600 truncate">
-            Procesando: <span className="font-medium">{progress.currentDoc}</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function DocCard({
-  doc,
-  onSelect,
-  onRemove,
-}: {
-  doc: Doc;
-  onSelect: (id: string, f: File) => void;
-  onRemove: (id: string) => void;
-}) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const Icon = doc.icon;
-  const hasFile = Boolean(doc.file);
-  const reallyUploaded = doc.status === "uploaded" && hasFile;
-  /** Opcionales sin archivo: misma estética que “cargado”, sin afectar extracción ni contadores reales. */
-  const looksLoaded = reallyUploaded || (!doc.required && !hasFile);
-
-  const trigger = () => (reallyUploaded ? onRemove(doc.id) : inputRef.current?.click());
-
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={trigger}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          trigger();
-        }
-      }}
-      className={`group flex gap-4 p-4 rounded-lg border transition-all duration-200 cursor-pointer text-left ${
-        looksLoaded
-          ? "border-[#BBE795] bg-[#F0FEE6]/40"
-          : "border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm"
-      }`}
-    >
-      <input
-        ref={inputRef}
-        type="file"
-        accept=".pdf,.png,.jpg,.jpeg,.xlsx,.xls"
-        className="hidden"
-        onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) onSelect(doc.id, f);
-          e.target.value = "";
-        }}
-      />
-      <div
-        className={`flex shrink-0 items-center justify-center w-11 h-11 rounded-md transition-colors ${
-          looksLoaded ? "bg-[#BBE795]/30" : "bg-gray-50 group-hover:bg-[#F0FEE6]"
-        }`}
-      >
-        <Icon
-          className={`w-5 h-5 transition-colors ${
-            looksLoaded ? "text-[#4a7c59]" : "text-gray-400 group-hover:text-[#4a7c59]"
-          }`}
-        />
-      </div>
-      <div className="min-w-0 flex-1 flex flex-col justify-center">
-        <div className="flex flex-wrap items-center gap-2">
-          <p className="text-sm font-semibold text-[#1a1a1a]">{doc.title}</p>
-          {doc.required && (
-            <span className="text-[10px] font-bold text-red-500 uppercase tracking-wider">Requerido</span>
-          )}
-        </div>
-        <p className="text-xs text-gray-500 mt-0.5">{doc.desc}</p>
-        <div className="flex items-center justify-between gap-3 mt-2">
-          <span className="inline-flex items-center gap-1 text-[11px] text-gray-400">
-            <FileText className="w-3 h-3 shrink-0" /> {doc.req}
-          </span>
-          <span
-            className={`flex items-center gap-1 text-xs font-semibold shrink-0 transition-colors ${
-              looksLoaded ? "text-[#4a7c59]" : "text-gray-500 group-hover:text-[#4a7c59]"
-            }`}
-          >
-            {reallyUploaded ? (
-              <>
-                <span className="truncate max-w-[140px]">{doc.file?.name}</span>
-                <X className="w-3.5 h-3.5 shrink-0" />
-              </>
-            ) : looksLoaded ? (
-              <>
-                <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                <span>Opcional</span>
-              </>
-            ) : (
-              <>
-                <Upload className="w-3.5 h-3.5" />
-                <span>Cargar</span>
-              </>
-            )}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
-  const [phase, setPhase] = useState<Phase>("idle");
-  const [extractError, setExtractError] = useState<string | null>(null);
-  const [analysisProgress, setAnalysisProgress] = useState<AnalysisProgress>({
-    currentDoc: "",
-    currentIndex: 0,
-    total: 0,
-  });
-
-  const [docs, setDocs] = useState<Doc[]>(INITIAL_DOCS);
-  const [newDocName, setNewDocName] = useState("");
-
-  const onSelect = useCallback((id: string, file: File) => {
-    setDocs((prev) => prev.map((d) => (d.id === id ? { ...d, status: "uploaded" as DocStatus, file } : d)));
-  }, []);
-
-  const onRemove = useCallback((id: string) => {
-    setDocs((prev) =>
-      prev.map((d) => (d.id === id ? { ...d, status: "pending" as DocStatus, file: undefined } : d))
-    );
-  }, []);
-
-  const uploaded = docs.filter((d) => d.status === "uploaded");
-  const requiredDocs = docs.filter((d) => d.required);
-  const optionalDocs = docs.filter((d) => !d.required);
-  const requiredDone = requiredDocs.filter((d) => d.status === "uploaded").length;
-  const requiredTotal = requiredDocs.length;
-  const canContinue = requiredDone === requiredTotal;
-  const requiredPct = Math.round((requiredDone / requiredTotal) * 100);
-
-  const addOptionalDoc = () => {
-    const trimmed = newDocName.trim();
-    if (!trimmed) return;
-    const safeId = `custom-${Date.now()}`;
-    setDocs((prev) => [
-      ...prev,
-      {
-        id: safeId,
-        icon: FileText,
-        title: trimmed,
-        desc: "Documento adicional editable.",
-        req: "PDF o imagen",
-        status: "pending",
-        required: false,
-      },
-    ]);
-    setNewDocName("");
-  };
+  const [phase, setPhase] = useState<Phase>("loading");
+  const [pct, setPct] = useState(0);
 
   const empresa = intake.empresa.trim() || "tu empresa";
+  const nitDisplay = intake.nit.trim() || "—";
 
-  const uploadedForExtract = docs.filter(
-    (d) => d.status === "uploaded" && d.file && SARLAFT_FORM_KEYS.has(d.id)
-  );
+  useEffect(() => {
+    if (phase !== "loading") return;
+    const totalMs = 3800;
+    const start = performance.now();
+    const tick = () => {
+      const elapsed = performance.now() - start;
+      const next = Math.min(100, Math.round((elapsed / totalMs) * 100));
+      setPct(next);
+      if (next >= 100) {
+        setPhase("done");
+        return;
+      }
+      requestAnimationFrame(tick);
+    };
+    const id = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(id);
+  }, [phase]);
 
-  const runExtract = useCallback(async () => {
-    if (uploadedForExtract.length === 0 || !canContinue) return;
-    setPhase("analyzing");
-    setExtractError(null);
-
-    const formData = new FormData();
-    for (const doc of uploadedForExtract) {
-      if (doc.file) formData.append(doc.id, doc.file);
-    }
-
-    setAnalysisProgress({
-      currentDoc: "Preparando…",
-      currentIndex: 0,
-      total: uploadedForExtract.length,
+  const handleContinue = () => {
+    const pkg = buildOnboardingPackageFromExternalIngest({
+      nombre: intake.nombre,
+      empresa: intake.empresa,
+      nit: intake.nit,
+      sector: intake.sector ?? "",
     });
-
-    try {
-      const res = await fetch("/api/sarlaft/extract", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!res.ok) {
-        const raw = await res.text().catch(() => "");
-        let message = "";
-        try {
-          const errData = JSON.parse(raw) as { error?: string };
-          message = typeof errData.error === "string" ? errData.error.trim() : "";
-        } catch {
-          /* cuerpo no JSON (p. ej. HTML de fallo en Vercel) */
-        }
-        if (!message && raw.trim()) message = raw.trim().slice(0, 400);
-        throw new Error(message || `Error ${res.status}`);
-      }
-
-      const reader = res.body?.getReader();
-      if (!reader) throw new Error("No se pudo leer la respuesta");
-
-      const decoder = new TextDecoder();
-      let buffer = "";
-
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || "";
-
-        for (const line of lines) {
-          if (!line.trim()) continue;
-          let msg: {
-            type: string;
-            phase?: string;
-            fileName?: string;
-            index?: number;
-            total?: number;
-            package?: SarlaftPackage;
-            missing?: MissingFieldRef[];
-            ocrReport?: OcrReportItem[] | null;
-            message?: string;
-          };
-          try {
-            msg = JSON.parse(line) as typeof msg;
-          } catch {
-            console.warn("Línea NDJSON inválida:", line.slice(0, 80));
-            continue;
-          }
-          if (msg.type === "error") {
-            throw new Error(typeof msg.message === "string" ? msg.message : "Error en extracción");
-          }
-          if (msg.type === "status" && msg.phase === "preparing" && msg.fileName) {
-            setAnalysisProgress({
-              currentDoc: `Preparando ${msg.fileName}…`,
-              currentIndex: (msg.index ?? 1) - 1,
-              total: msg.total ?? uploadedForExtract.length,
-            });
-          } else if (msg.type === "doc_start") {
-            setAnalysisProgress({
-              currentDoc: msg.fileName || "Documento",
-              currentIndex: msg.index ?? 0,
-              total: msg.total ?? uploadedForExtract.length,
-            });
-          } else if (msg.type === "complete" && msg.package) {
-            onContinue({
-              package: msg.package,
-              missing: msg.missing ?? [],
-              ocrReport: msg.ocrReport ?? null,
-            });
-            setPhase("idle");
-            return;
-          }
-        }
-      }
-      throw new Error("La extracción terminó sin resultado");
-    } catch (err) {
-      console.error(err);
-      let message = err instanceof Error ? err.message : "Error desconocido";
-      if (
-        err instanceof TypeError &&
-        (err.message === "Failed to fetch" || err.message.includes("fetch"))
-      ) {
-        message =
-          "La conexión con el servidor se cerró (tiempo de espera o carga muy pesada). En Vercel el plan gratuito limita ~60s por solicitud; analizar muchos PDFs puede superarlo. Prueba con menos archivos o menos páginas, o sube de plan. Si es local, revisa que el dev server siga en marcha.";
-      }
-      setExtractError(message);
-      setPhase("idle");
-    }
-  }, [uploadedForExtract, canContinue, onContinue]);
-
-  const continueWithoutAnalysis = useCallback(() => {
-    const empty = createEmptyPackage();
     onContinue({
-      package: empty,
-      missing: computeMissingFields(empty),
+      package: pkg,
+      missing: computeMissingFields(pkg),
       ocrReport: null,
     });
-  }, [onContinue]);
+  };
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-3 duration-500">
       <div className="flex items-center justify-between">
         {onBack ? (
-          <Button
-            variant="ghost"
-            onClick={onBack}
-            className="h-9 px-0 text-gray-500"
-            disabled={phase === "analyzing"}
-          >
+          <Button variant="ghost" onClick={onBack} className="h-9 px-0 text-gray-500" disabled={phase === "loading"}>
             <ArrowLeft className="h-4 w-4 mr-1.5" /> Volver
           </Button>
         ) : (
@@ -453,144 +139,107 @@ export function DocumentIngestStep({ intake, onContinue, onBack }: Props) {
         <Button
           id="ingest-next-top"
           type="button"
-          onClick={runExtract}
-          disabled={!canContinue || phase === "analyzing" || uploadedForExtract.length === 0}
+          onClick={handleContinue}
+          disabled={phase === "loading"}
           className={`h-9 px-5 rounded-lg font-semibold gap-1.5 transition-all duration-200 ${
-            canContinue && uploadedForExtract.length > 0 && phase !== "analyzing"
+            phase === "done"
               ? "bg-[#4a7c59] text-white hover:bg-[#3f6b4c] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               : "bg-gray-100 text-gray-400 cursor-not-allowed"
           }`}
         >
-          {phase === "analyzing" ? (
+          {phase === "loading" ? (
             <>
-              <Loader2 className="h-4 w-4 animate-spin" /> Analizando…
+              <Loader2 className="h-4 w-4 animate-spin" /> Cargando fuentes…
             </>
           ) : (
-            <>
-              <Sparkles className="h-4 w-4" /> Continuar con IA
-            </>
+            <>Continuar a validación de identidad</>
           )}
         </Button>
       </div>
 
       <header>
-        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 3 · Ingesta</p>
-        <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">
-          Documentación corporativa
-        </h2>
+        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 4 · Ingesta</p>
+        <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">Documentación corporativa</h2>
         <p className="text-sm text-gray-500 mt-2 leading-relaxed max-w-xl">
-          Sube los documentos de <span className="font-medium text-[#1a1a1a]">{empresa}</span>
-          {intake.sector.trim() ? <> · sector <span className="font-medium text-[#1a1a1a]">{intake.sector}</span></> : null}.
-          Al continuar analizamos con IA los archivos estándar (RUT, cámara, etc.) para adelantar tus
-          formularios SARLAFT. Los marcados como requeridos son obligatorios para avanzar.
+          El modelo integra <span className="font-medium text-[#1a1a1a]">fuentes externas</span> para obtener y
+          estructurar la documentación de{" "}
+          <span className="font-medium text-[#1a1a1a]">{empresa}</span> conforme al NIT registrado. En esta demo
+          todos los soportes aparecen completos al finalizar la sincronización simulada.
         </p>
       </header>
 
-      {extractError && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 space-y-2">
-          <p>{extractError}</p>
-          <Button type="button" variant="outline" size="sm" className="border-red-300" onClick={continueWithoutAnalysis}>
-            Continuar sin análisis IA
-          </Button>
-        </div>
-      )}
-
-      {phase === "analyzing" && <AnalyzingScreen progress={analysisProgress} />}
-
-      {phase === "idle" && (
-      <div className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm">
-        <div className="flex items-center justify-between gap-4 text-sm">
-          <span className="font-medium text-[#1a1a1a]">
-            Documentos requeridos
-          </span>
-          <span
-            className={`tabular-nums font-bold shrink-0 ${
-              canContinue ? "text-[#4a7c59]" : "text-gray-500"
-            }`}
-          >
-            {requiredDone} / {requiredTotal}
-          </span>
-        </div>
-        <div className="mt-2 h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-          <div
-            className="h-full rounded-full bg-gradient-to-r from-[#BBE795] to-[#4a7c59] transition-all duration-700"
-            style={{ width: `${requiredPct}%` }}
-          />
-        </div>
-        <p className="text-xs text-gray-500 mt-2 leading-relaxed">
-          {canContinue ? (
-            <span className="inline-flex items-center gap-1.5 text-[#4a7c59] font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5" /> Listo para continuar.
-              Esta información personaliza tu recomendación de inversión y completa los formularios regulatorios.
-            </span>
-          ) : (
-            <>Completa los obligatorios para avanzar. {uploaded.length} archivo{uploaded.length === 1 ? "" : "s"} cargado{uploaded.length === 1 ? "" : "s"} en total.</>
-          )}
-        </p>
-      </div>
-      )}
-
-      {phase === "idle" && (
-      <section className="space-y-3">
-        <div className="flex items-baseline justify-between">
-          <p className="text-xs font-bold text-red-500 uppercase tracking-wider">
-            Obligatorios
+      <div className="rounded-lg border border-[#BBE795]/50 bg-[#F0FEE6]/40 px-4 py-3 flex gap-3 items-start">
+        <Database className="w-5 h-5 text-[#4a7c59] shrink-0 mt-0.5" aria-hidden />
+        <div>
+          <p className="text-sm font-semibold text-[#1a1a1a]">Carga de fuentes externas</p>
+          <p className="text-sm text-gray-600 mt-1 leading-relaxed">
+            (consulta que se hace con el NIT:{" "}
+            <span className="font-mono text-[#1a1a1a] font-medium">{nitDisplay}</span>)
           </p>
-          <span className="text-[11px] text-gray-400 tabular-nums">{requiredDone}/{requiredTotal}</span>
+          <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+            Fuentes: <span className="font-medium text-[#1a1a1a]">CONFECAMARAS</span> e{" "}
+            <span className="font-medium text-[#1a1a1a]">Informa Colombia</span>.
+          </p>
         </div>
-        <div className="grid gap-3">
-          {requiredDocs.map((d) => (
-            <DocCard key={d.id} doc={d} onSelect={onSelect} onRemove={onRemove} />
-          ))}
+      </div>
+
+      {phase === "loading" && (
+        <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm space-y-4">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <Loader2 className="h-4 w-4 animate-spin text-[#6abf1a] shrink-0" />
+            <span>Sincronizando documentos desde integraciones…</span>
+          </div>
+          <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-[#BBE795] to-[#4a7c59] transition-[width] duration-100 ease-linear"
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+          <p className="text-xs text-gray-400 tabular-nums text-right">{pct}%</p>
         </div>
-      </section>
       )}
 
-      {phase === "idle" && (
-      <section className="space-y-3">
-        <div className="flex items-baseline justify-between">
-          <p className="text-xs font-bold text-[#4a7c59] uppercase tracking-wider">Opcionales</p>
-          <span className="text-[11px] text-[#4a7c59] font-semibold tabular-nums">
-            {optionalDocs.length}/{optionalDocs.length}
-          </span>
-        </div>
-        <div className="flex gap-2">
-          <Input
-            value={newDocName}
-            onChange={(e) => setNewDocName(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                addOptionalDoc();
-              }
-            }}
-            placeholder="Agregar documento adicional"
-            className="h-9"
-          />
-          <Button
-            type="button"
-            variant="outline"
-            className="h-9 gap-1.5"
-            onClick={addOptionalDoc}
-            disabled={!newDocName.trim()}
-          >
-            <Plus className="w-3.5 h-3.5" /> Agregar
-          </Button>
-        </div>
-        <div className="grid gap-3">
-          {optionalDocs.map((d) => (
-            <DocCard key={d.id} doc={d} onSelect={onSelect} onRemove={onRemove} />
-          ))}
-        </div>
-      </section>
-      )}
+      {phase === "done" && (
+        <>
+          <div className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 min-w-0">
+              <CheckCircle2 className="w-5 h-5 text-[#4a7c59] shrink-0" />
+              <p className="text-sm font-semibold text-[#1a1a1a] truncate">Documentación al 100%</p>
+            </div>
+            <span className="text-xs font-bold tabular-nums text-[#4a7c59] shrink-0">100%</span>
+          </div>
 
-      {phase === "idle" && (
-        <p className="text-[11px] text-gray-400 leading-relaxed">
-          Tip: solo los documentos con tipo reconocido (RUT, cámara, cédula RL, accionariado, estados,
-          renta, SARLAFT) se envían al motor de extracción. Los adjuntos personalizados sirven como respaldo pero no
-          se analizan automáticamente en este paso.
-        </p>
+          <section className="space-y-3">
+            <p className="text-xs font-bold text-[#4a7c59] uppercase tracking-wider">
+              Documentos obtenidos / precargados
+            </p>
+            <div className="grid gap-2">
+              {EXTERNAL_DOCS.map((row) => {
+                const Icon = row.icon;
+                return (
+                  <div
+                    key={row.id}
+                    className="flex gap-3 items-center p-3 rounded-lg border border-[#BBE795]/40 bg-[#F0FEE6]/25"
+                  >
+                    <div className="flex shrink-0 items-center justify-center w-10 h-10 rounded-md bg-[#BBE795]/30">
+                      <Icon className="w-5 h-5 text-[#4a7c59]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-semibold text-[#1a1a1a] leading-snug">{row.title}</p>
+                      <p className="text-xs text-gray-500 mt-0.5">{row.detail}</p>
+                    </div>
+                    <CheckCircle2 className="w-5 h-5 text-[#4a7c59] shrink-0" aria-label="Cargado" />
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          <div className="flex items-center gap-2 text-[11px] text-gray-400">
+            <FileText className="w-3.5 h-3.5 shrink-0" />
+            <span>Los datos inferidos alimentan los formularios SARLAFT en pasos posteriores.</span>
+          </div>
+        </>
       )}
     </div>
   );

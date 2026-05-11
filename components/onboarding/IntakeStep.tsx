@@ -5,11 +5,6 @@ import { ChevronRight, ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { IntakeData } from "@/app/onboarding/page";
 
-const SECTORS = [
-  "Tecnología", "Salud", "Manufactura", "Comercio", "Finanzas",
-  "Construcción", "Agroindustria", "Educación", "Servicios", "Otro",
-];
-
 interface Props {
   data: IntakeData;
   onChange: (d: IntakeData) => void;
@@ -17,14 +12,14 @@ interface Props {
   onBack?: () => void;
 }
 
-type QuestionId = "nombre" | "empresa" | "sector";
+type QuestionId = "nombre" | "empresa" | "nit";
 
 interface Question {
   id: QuestionId;
   index: number;
   question: string;
   hint: string;
-  type: "text" | "chips";
+  type: "text";
   placeholder?: string;
 }
 
@@ -41,16 +36,17 @@ const QUESTIONS: Question[] = [
     id: "empresa",
     index: 2,
     question: "¿Razón social de la empresa?",
-    hint: "Persona jurídica tal como figura en cámara de comercio o RUT.",
+    hint: "Persona jurídica tal como figura en Cámara de Comercio o RUT.",
     type: "text",
     placeholder: "Ej. Acrópolis Labs S.A.S.",
   },
   {
-    id: "sector",
+    id: "nit",
     index: 3,
-    question: "¿En qué sector opera la empresa?",
-    hint: "Selecciona el sector principal de la compañía.",
-    type: "chips",
+    question: "¿NIT de la empresa?",
+    hint: "Número de identificación tributaria usado en consultas regulatorias y fuentes externas.",
+    type: "text",
+    placeholder: "Ej. 900.123.456-7",
   },
 ];
 
@@ -66,26 +62,27 @@ export function IntakeStep({ data, onChange, onNext, onBack }: Props) {
   const progressDone = ((currentQ + 1) / QUESTIONS.length) * 100;
 
   useEffect(() => {
-    if (q.type === "text") {
-      const t = setTimeout(() => inputRef.current?.focus(), 320);
-      return () => clearTimeout(t);
-    }
-  }, [currentQ, q.type]);
+    const t = setTimeout(() => inputRef.current?.focus(), 320);
+    return () => clearTimeout(t);
+  }, [currentQ]);
 
-  const validate = useCallback((qId: QuestionId): boolean => {
-    const val = data[qId];
-    if (!val || !val.trim()) {
-      setErrors((e) => ({ ...e, [qId]: "Este campo es requerido" }));
-      return false;
-    }
-    setErrors((e) => ({ ...e, [qId]: undefined }));
-    return true;
-  }, [data]);
+  const validate = useCallback(
+    (qId: QuestionId): boolean => {
+      const val = data[qId];
+      if (!val || !val.trim()) {
+        setErrors((e) => ({ ...e, [qId]: "Este campo es requerido" }));
+        return false;
+      }
+      setErrors((e) => ({ ...e, [qId]: undefined }));
+      return true;
+    },
+    [data]
+  );
 
   const goNext = useCallback(() => {
     if (!validate(q.id)) return;
     if (isLast) {
-      onNext(data);
+      onNext({ ...data, sector: data.sector ?? "" });
       return;
     }
     setDirection("forward");
@@ -134,15 +131,16 @@ export function IntakeStep({ data, onChange, onNext, onBack }: Props) {
           onClick={goNext}
           className="h-9 px-5 rounded-lg font-semibold gap-1.5 bg-[#4a7c59] text-white hover:bg-[#3f6b4c] transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
         >
-          {isLast ? "Continuar a documentación" : "Continuar"} <ChevronRight className="h-4 w-4" />
+          {isLast ? "Continuar a listas" : "Continuar"} <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
 
       <header>
         <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 2 · Empresa</p>
-        <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">Datos básicos de la persona jurídica</h2>
+        <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">Datos para la vinculación</h2>
         <p className="text-sm text-gray-500 mt-2 leading-relaxed max-w-xl">
-          Tres preguntas rápidas para identificar a la empresa y a su representante legal.
+          Tres datos para identificar al representante legal, la persona jurídica y el NIT usado en las consultas y
+          cargas automáticas posteriores.
         </p>
       </header>
 
@@ -176,71 +174,33 @@ export function IntakeStep({ data, onChange, onNext, onBack }: Props) {
         </div>
 
         <div className="ml-10">
-          {q.type === "text" ? (
-            <div className="space-y-2">
-              <div className="border-b-2 border-gray-200 focus-within:border-[#4a7c59] transition-colors duration-200 pb-2">
-                <input
-                  ref={inputRef}
-                  id={`intake-${q.id}`}
-                  type="text"
-                  placeholder={q.placeholder}
-                  value={data[q.id]}
-                  onChange={(e) => {
-                    onChange({ ...data, [q.id]: e.target.value });
-                    if (errors[q.id]) setErrors((er) => ({ ...er, [q.id]: undefined }));
-                  }}
-                  onKeyDown={handleKeyDown}
-                  className="w-full text-lg text-[#1a1a1a] placeholder-gray-300 bg-transparent outline-none font-medium"
-                />
-              </div>
-              {errors[q.id] && (
-                <p className="text-xs text-red-500 animate-in fade-in duration-200">{errors[q.id]}</p>
-              )}
-              <p className="text-xs text-gray-400">
-                Presiona{" "}
-                <kbd className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-gray-200 bg-gray-50 text-[10px] font-semibold text-gray-500">
-                  Enter ↵
-                </kbd>{" "}
-                para continuar
-              </p>
+          <div className="space-y-2">
+            <div className="border-b-2 border-gray-200 focus-within:border-[#4a7c59] transition-colors duration-200 pb-2">
+              <input
+                ref={inputRef}
+                id={`intake-${q.id}`}
+                type="text"
+                placeholder={q.placeholder}
+                value={data[q.id]}
+                onChange={(e) => {
+                  onChange({ ...data, [q.id]: e.target.value });
+                  if (errors[q.id]) setErrors((er) => ({ ...er, [q.id]: undefined }));
+                }}
+                onKeyDown={handleKeyDown}
+                className="w-full text-lg text-[#1a1a1a] placeholder-gray-300 bg-transparent outline-none font-medium"
+              />
             </div>
-          ) : (
-            <div className="space-y-2">
-              <div className="flex flex-wrap gap-2">
-                {SECTORS.map((s, i) => {
-                  const selected = data.sector === s;
-                  return (
-                    <button
-                      key={s}
-                      id={`sector-${s.toLowerCase()}`}
-                      onClick={() => {
-                        onChange({ ...data, sector: s });
-                        setErrors((er) => ({ ...er, sector: undefined }));
-                      }}
-                      className={`group flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium border transition-all duration-200 ${
-                        selected
-                          ? "border-[#4a7c59] bg-[#F0FEE6] text-[#1a1a1a]"
-                          : "border-gray-200 text-gray-600 hover:border-gray-300 hover:text-[#1a1a1a]"
-                      }`}
-                    >
-                      <span className="text-[10px] text-gray-400 font-bold tabular-nums">
-                        {String.fromCharCode(65 + i)}
-                      </span>
-                      {s}
-                      {selected && (
-                        <span className="flex items-center justify-center w-4 h-4 rounded-full bg-[#4a7c59] text-white shrink-0">
-                          <Check className="w-2.5 h-2.5" strokeWidth={3} />
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-              {errors[q.id] && (
-                <p className="text-xs text-red-500 animate-in fade-in duration-200">{errors[q.id]}</p>
-              )}
-            </div>
-          )}
+            {errors[q.id] && (
+              <p className="text-xs text-red-500 animate-in fade-in duration-200">{errors[q.id]}</p>
+            )}
+            <p className="text-xs text-gray-400">
+              Presiona{" "}
+              <kbd className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-gray-200 bg-gray-50 text-[10px] font-semibold text-gray-500">
+                Enter ↵
+              </kbd>{" "}
+              para continuar
+            </p>
+          </div>
         </div>
       </div>
 
@@ -253,14 +213,15 @@ export function IntakeStep({ data, onChange, onNext, onBack }: Props) {
                 i === currentQ
                   ? "w-5 h-1.5 bg-[#1a1a1a]"
                   : i < currentQ
-                  ? "w-1.5 h-1.5 bg-[#BBE795]"
-                  : "w-1.5 h-1.5 bg-gray-200"
+                    ? "w-1.5 h-1.5 bg-[#BBE795]"
+                    : "w-1.5 h-1.5 bg-gray-200"
               }`}
             />
           ))}
         </div>
-        <span className="text-xs text-gray-400 tabular-nums">
+        <span className="flex items-center gap-1 text-xs text-gray-400 tabular-nums">
           {currentQ + 1} / {QUESTIONS.length}
+          {isLast ? <Check className="w-3.5 h-3.5 text-[#4a7c59]" /> : null}
         </span>
       </div>
     </div>

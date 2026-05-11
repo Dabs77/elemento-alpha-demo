@@ -139,7 +139,7 @@ export function PortfolioStep({
       </div>
 
       <header>
-        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 6 · Portafolio</p>
+        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 7 · Portafolio</p>
         <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">
           Recomendación para {intake.empresa.trim() || "tu empresa"}
         </h2>
@@ -301,7 +301,7 @@ export function PortfolioStep({
           className="w-full h-11 rounded-lg font-semibold text-sm gap-1.5 bg-[#4a7c59] text-white hover:bg-[#3f6b4c] shadow-sm hover:shadow-md transition-all duration-200"
           onClick={onNext}
         >
-          Continuar con SARLAFT <ChevronRight className="w-4 h-4" />
+          Continuar: revisión SARLAFT <ChevronRight className="w-4 h-4" />
         </Button>
         <Button
           id="portfolio-restart"

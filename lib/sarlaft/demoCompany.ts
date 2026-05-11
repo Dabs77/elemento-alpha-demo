@@ -1,20 +1,24 @@
 import type { SarlaftPackage } from "./schema";
-import { createEmptyPackage, createEmptyOtras14, createEmptySagrilaftPregunta, DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT } from "./schema";
+import { createEmptyPackage, createEmptyOtras14, createEmptySagrilaftPregunta } from "./schema";
+
+const CLASIFICACION_OTRA_ACROPOLIS =
+  "Empresa tecnológica: desarrollo de software empresarial e IA asistida — diseño de bases de datos, interfaces y aplicaciones web (CIIU 6201). No institución financiera al tenor de FATCA/CRS salvo clasificación oficial distinta expedida por la autoridad competente.";
 
 /**
- * Demostración: empresa ficticia pre-llenada. Los datos reales de documentos
- * se superponen desde la API de extracción.
+ * Demo Acropolis AI SAS: datos alineados a extracción “rectificada” desde RUT,
+ * Certificado de Existencia y Estados Financieros (Dic. 2025).
  */
 export function getDemoSarlaftPackage(): SarlaftPackage {
   const base = createEmptyPackage();
 
   base.formulario_1 = {
     id_formulario: "1",
-    nombre_completo_razon_social: "Distribuidora Andina S.A.S.",
-    tipo_y_numero_identificacion: "NIT 900.123.456-1",
-    num_oficinas_pais: 3,
+    nombre_completo_razon_social: "ACROPOLIS AI SAS",
+    tipo_y_numero_identificacion: "NIT 901.741.921-6",
+    num_oficinas_pais: 1,
     num_oficinas_exterior: 0,
-    ciudades_paises_operacion: "Bogotá, Medellín, Cali; Colombia",
+    ciudades_paises_operacion:
+      "Domicilio principal: Bogotá D.C., Colombia. Operación efectiva Bogotá D.C.; informante de Beneficiarios Finales, lleva contabilidad, Régimen Simple de Tributación.",
     politicas: {
       programa_laft_documentado: {
         ...createEmptySagrilaftPregunta(
@@ -23,24 +27,27 @@ export function getDemoSarlaftPackage(): SarlaftPackage {
         ),
         respuesta: "Sí",
         detalle_programa: {
-          organo_aprobacion: "Asamblea de Accionistas",
-          fecha_aprobacion: "2023-11-15",
+          organo_aprobacion: "Órgano de administración (Junta Societaria / Representante Legal)",
+          fecha_aprobacion: "2024-03-01",
         },
       },
       regulacion_gubernamental_laft: {
         ...createEmptySagrilaftPregunta("¿Su entidad está sujeta a regulación gubernamental LA/FT?", "regulacion"),
         respuesta: "Sí",
-        detalle_regulacion: { normatividad: "Circular Básica Jurídica SFC" },
+        detalle_regulacion: {
+          normatividad:
+            "Marco LA/FT colombiano; obligaciones tributarias declaradas ante DIAN incl. información de BF y contabilidad según objeto social societario.",
+        },
       },
       oficial_cumplimiento: {
         ...createEmptySagrilaftPregunta("¿Tiene Oficial de Cumplimiento designado?", "oficial"),
         respuesta: "Sí",
         detalle_oficial: {
-          nombre: "Laura Méndez Gómez",
-          identificacion: "CC 52.345.678",
-          cargo: "Oficial de Cumplimiento",
-          email: "cumplimiento@distandina.com.co",
-          telefono: "+57 601 300 1234",
+          nombre: "Conforme nombramiento/certificación soporte institucional (política LA/FT)",
+          identificacion: "Según soporte técnico y designación institucional",
+          cargo: "Oficial de Cumplimiento LA/FT",
+          email: "cumplimiento@acropolisai.demo",
+          telefono: "+57 601 —",
         },
       },
       operaciones_efectivo: {
@@ -67,17 +74,18 @@ export function getDemoSarlaftPackage(): SarlaftPackage {
 
   base.formulario_2 = {
     id_formulario: "2",
-    razon_social: "Distribuidora Andina S.A.S.",
-    identificacion_tributaria: "900.123.456-1",
+    razon_social: "ACROPOLIS AI SAS",
+    identificacion_tributaria: "901.741.921-6",
     pais_constitucion_fiscal: "Colombia",
     actividad_principal: "e) Ninguna de las anteriores",
     ingresos_activos_pasivos_50: "No",
     clasificacion_fatca_crs: "Otra",
-    clasificacion_otra: DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT,
+    clasificacion_otra: CLASIFICACION_OTRA_ACROPOLIS,
     ubo: {
-      datos_personales: "Juan Pérez López, CC 12.345.678, 1980-02-10, Colombia",
-      paises_tin: [{ pais: "Colombia", tin: "900.123.456-1" }],
-      tipo_control: "Control por propiedad",
+      datos_personales:
+        "David Sebastian Galeano Arias, C.C. 1.034.277.398 — Representante Legal. Beneficiario final con participación directa estimada ~25%; ejerce control político institucional en calidad directiva.",
+      paises_tin: [{ pais: "Colombia", tin: "901.741.921-6" }],
+      tipo_control: "Administrador (Directivo)",
     },
   };
 
@@ -85,29 +93,53 @@ export function getDemoSarlaftPackage(): SarlaftPackage {
     id_formulario: "3",
     tipo_empresa: "S.A.S.",
     cifras_financieras: {
-      ingresos: 1_200_000_000,
-      egresos: 900_000_000,
-      total_activos: 2_100_000_000,
-      total_pasivos: 800_000_000,
-      total_patrimonio: 1_300_000_000,
+      ingresos: 15_597_205,
+      egresos: 1_838_644,
+      total_activos: 14_684_561,
+      total_pasivos: 646_000,
+      total_patrimonio: 14_038_561,
     },
     administra_recursos_publicos: "No",
     grupo_contable_niif: "Grupo 2 (Pymes)",
-    ciclo_empresa: "Trayectoria/Rentabilizar",
-    liquidez: "Muy relevante",
-    experiencia_inversion: "Cuentas/CDT",
+    ciclo_empresa: "Joven/Crecimiento",
+    liquidez: "Algo relevante",
+    experiencia_inversion: "Fondos de Inversión",
     tolerancia_riesgo: "Esperar/Invertir más aprovechando precios bajos",
-    objetivo_inversion: "",
+    objetivo_inversion:
+      "Formalización/reinversión de utilidades; estados muestran utilidad del periodo cercana a COP $13.038.561.",
     representantes_ordenates:
-      "Representante Legal: Juan Pérez López, CC 12.345.678, jperez@distandina.com.co. Ordenante: Marta Soto.",
+      "Representante Legal Principal: David Sebastian Galeano Arias (C.C. 1.034.277.398). Primer suplente: Paula Sofía Torres Rodríguez. Segundo suplente: Daniel Andrés Becerra Sierra.",
     es_pep: "No",
     accionistas: [
-      { nombre: "Holding Andina S.A.S.", id: "NIT 900.999.000-1", porcentaje: 60, cotiza_en_bolsa: "No" },
-      { nombre: "Inversores Minoritarios (varios)", id: "Varios", porcentaje: 40, cotiza_en_bolsa: "No" },
+      {
+        nombre: "David Sebastian Galeano Arias",
+        id: "C.C. 1.034.277.398",
+        porcentaje: 25,
+        cotiza_en_bolsa: "No",
+      },
+      {
+        nombre: "Exabyte Company SAS",
+        id:
+          "NIT 901.529.728 — BF indirectos referidos: Juan David López Becerra (~50%); Miguel Ángel Tirado Álvarez (~50%)",
+        porcentaje: 25,
+        cotiza_en_bolsa: "No",
+      },
+      {
+        nombre: "Paula Sofía Torres Rodríguez",
+        id: "C.C. 1.013.104.278",
+        porcentaje: 25,
+        cotiza_en_bolsa: "No",
+      },
+      {
+        nombre: "Daniel Andrés Becerra Sierra",
+        id: "C.C. 1.000.077.160",
+        porcentaje: 25,
+        cotiza_en_bolsa: "No",
+      },
     ],
     calidad_beneficiario_final: [
       "Por Titularidad (Capital / Derechos de voto)",
-      "Por Beneficio (Activos / Rendimientos / Utilidades)",
+      "Por Control (Representante legal / Mayor autoridad)",
     ],
   };
 

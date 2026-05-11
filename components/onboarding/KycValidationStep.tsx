@@ -343,7 +343,7 @@ export function KycValidationStep({ intake, onConfirmIdentity, onBack }: Props) 
       </div>
 
       <header>
-        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 4 · KYC</p>
+        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 5 · KYC</p>
         <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">
           Verificación del representante legal
         </h2>

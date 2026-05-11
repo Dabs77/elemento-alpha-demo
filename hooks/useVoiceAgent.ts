@@ -172,16 +172,22 @@ Al conectar (primer turno):
 3) Invita a la primera pregunta por voz.`;
 }
 
+export type VoiceIntakeData = { nombre: string; empresa: string; nit?: string; sector?: string };
+
 function buildSystemInstruction(
   financialContext?: string,
-  intakeData?: { nombre: string; empresa: string; sector: string }
+  intakeData?: VoiceIntakeData
 ): string {
   const financialBlock = financialContext
     ? `\n\nCONTEXTO FINANCIERO DEL CLIENTE (extraído de sus estados financieros):\n---\n${financialContext}\n---\nUsa estos datos para personalizar y justificar la recomendación de portafolio.`
     : "";
 
   const clientBlock = intakeData
-    ? `\n\nINFORMACIÓN DEL CLIENTE:\n- Nombre: ${intakeData.nombre}\n- Empresa: ${intakeData.empresa}\n- Sector: ${intakeData.sector}\nDirigete al cliente por su nombre y menciona su empresa cuando sea relevante.`
+    ? `\n\nINFORMACIÓN DEL CLIENTE:\n- Nombre (representante legal): ${intakeData.nombre}\n- Empresa: ${intakeData.empresa}\n- NIT: ${intakeData.nit?.trim() || "No indicado"}${
+        intakeData.sector?.trim()
+          ? `\n- Sector: ${intakeData.sector.trim()}`
+          : ""
+      }\nDirige al cliente por su nombre y menciona su empresa cuando sea relevante.`
     : "";
 
   return `Eres el asesor virtual de Elemento Alpha, plataforma colombiana de Fondos de Inversión Colectiva (FIC).
@@ -325,7 +331,7 @@ interface UseVoiceAgentOptions {
   /** Si se define con mode customer_support, instrucción = perfil SKILLS (PM, estratega, etc.). */
   skillConsultRole?: SkillRoleId;
   financialContext?: string;
-  intakeData?: { nombre: string; empresa: string; sector: string };
+  intakeData?: VoiceIntakeData;
   onRecommendation?: (rec: PortfolioRecommendation) => void;
 }
 
@@ -335,7 +341,7 @@ function resolveSystemInstruction(opts: {
   customerSupportContext?: string;
   skillConsultRole?: SkillRoleId;
   financialContext?: string;
-  intakeData?: { nombre: string; empresa: string; sector: string };
+  intakeData?: VoiceIntakeData;
 }): string {
   if (opts.mode === "rebalance_advisor") {
     const ctx = opts.rebalanceContext?.trim();

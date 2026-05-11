@@ -70,7 +70,7 @@ export function VoiceStep({ intake, onRecommendation, onNext, onBack }: Props) {
       </div>
 
       <header>
-        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 5 · Asesor</p>
+        <p className="text-xs font-semibold text-[#6abf1a] uppercase tracking-wider mb-1">Paso 6 · Asesor</p>
         <h2 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">
           Hola{intake.nombre.trim() ? `, ${intake.nombre.trim().split(/\s+/)[0]}` : ""}
         </h2>

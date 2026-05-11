@@ -9,12 +9,14 @@ import { VoiceStep } from "@/components/onboarding/VoiceStep";
 import { PortfolioStep } from "@/components/onboarding/PortfolioStep";
 import { SarlaftStep } from "@/components/onboarding/SarlaftStep";
 import { RestrictedListsSimulationStep } from "@/components/onboarding/RestrictedListsSimulationStep";
+import { FinalSignatureStep } from "@/components/onboarding/FinalSignatureStep";
 import type { PortfolioRecommendation } from "@/hooks/useVoiceAgent";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import type { MissingFieldRef, SarlaftPackage } from "@/lib/sarlaft/schema";
 import { createEmptyPackage } from "@/lib/sarlaft/schema";
 import { computeMissingFields } from "@/lib/sarlaft/missingFields";
+import { fetchSarlaftPackageZip } from "@/lib/sarlaft/fetchPackageZip";
 import type { OcrReportItem } from "@/lib/sarlaft/ocrTypes";
 import {
   applyIntakeToSarlaft,
@@ -32,23 +34,26 @@ import {
 export type IntakeData = {
   nombre: string;
   empresa: string;
-  sector: string;
+  nit: string;
+  /** Opcional; ya no se solicita en UI de demo. */
+  sector?: string;
 };
 
 const STEPS = [
   { id: 1, label: "Bienvenida", desc: "Preparación del proceso" },
-  { id: 2, label: "Empresa", desc: "Representante legal y datos PJ" },
-  { id: 3, label: "Ingesta", desc: "Documentación corporativa" },
-  { id: 4, label: "KYC", desc: "Representante legal" },
-  { id: 5, label: "Listas", desc: "SARLAFT · listas restrictivas + PEP" },
-  { id: 6, label: "Asesor", desc: "Perfil y objetivos" },
+  { id: 2, label: "Empresa", desc: "Representante legal, razón social y NIT" },
+  { id: 3, label: "Listas", desc: "Consulta listas restrictivas (simulación)" },
+  { id: 4, label: "Ingesta", desc: "Documentación vía fuentes externas" },
+  { id: 5, label: "KYC", desc: "Validación identidad del RL" },
+  { id: 6, label: "Asesor", desc: "Entrevista de perfil" },
   { id: 7, label: "Portafolio", desc: "Recomendación de inversión" },
-  { id: 8, label: "SARLAFT", desc: "Formularios y envío regulatorio" },
+  { id: 8, label: "SARLAFT", desc: "Paquete regulatorio precargado" },
+  { id: 9, label: "Firma", desc: "Firma final y envío" },
 ];
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(1);
-  const [intake, setIntake] = useState<IntakeData>({ nombre: "", empresa: "", sector: "" });
+  const [intake, setIntake] = useState<IntakeData>({ nombre: "", empresa: "", nit: "", sector: "" });
   const [recommendation, setRecommendation] = useState<PortfolioRecommendation | null>(null);
   const [sarlaftPkg, setSarlaftPkg] = useState<SarlaftPackage | null>(null);
   const [sarlaftMissingFields, setSarlaftMissingFields] = useState<MissingFieldRef[]>([]);
@@ -62,7 +67,9 @@ export default function OnboardingPage() {
 
   const handleDocumentIngestContinue = useCallback(
     (payload: { package: SarlaftPackage; missing: MissingFieldRef[]; ocrReport: OcrReportItem[] | null }) => {
-      const merged = applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(payload.package, intake));
+      const merged = applyOnboardingSarlaftSeeds(
+        applyIntakeToSarlaft(payload.package, { ...intake, sector: intake.sector ?? "" })
+      );
       setSarlaftPkg(merged);
       setSarlaftMissingFields(computeMissingFields(merged));
       setSarlaftOcrReport(payload.ocrReport);
@@ -102,7 +109,9 @@ export default function OnboardingPage() {
 
       setSarlaftPkg((prev) => {
         let base = prev ?? createEmptyPackage();
-        base = applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(base, intake));
+        base = applyOnboardingSarlaftSeeds(
+          applyIntakeToSarlaft(base, { ...intake, sector: intake.sector ?? "" })
+        );
         base = recToUse ? applyInterviewToSarlaft(base, recToUse) : base;
         if (Object.keys(llmPatch).length > 0) {
           base = applyLlmInterviewProfileToSarlaft(base, llmPatch);
@@ -138,17 +147,11 @@ export default function OnboardingPage() {
     if (!sarlaftPkg) return;
     setGenerating(true);
     try {
-      const res = await fetch("/api/sarlaft/pdf", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ package: sarlaftPkg }),
-      });
-      if (!res.ok) throw new Error("Error generando PDFs");
-      const blob = await res.blob();
+      const { blob, filename } = await fetchSarlaftPackageZip(sarlaftPkg);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "sarlaft-formularios.zip";
+      a.download = filename;
       a.click();
       URL.revokeObjectURL(url);
     } catch (err) {
@@ -247,10 +250,19 @@ export default function OnboardingPage() {
         )}
 
         {step === 3 && (
-          <DocumentIngestStep intake={intake} onContinue={handleDocumentIngestContinue} onBack={back} />
+          <RestrictedListsSimulationStep
+            razonSocial={intake.empresa}
+            nit={intake.nit}
+            onNext={next}
+            onBack={back}
+          />
         )}
 
         {step === 4 && (
+          <DocumentIngestStep intake={intake} onContinue={handleDocumentIngestContinue} onBack={back} />
+        )}
+
+        {step === 5 && (
           <KycValidationStep
             intake={intake}
             onConfirmIdentity={(nombre) => {
@@ -258,7 +270,9 @@ export default function OnboardingPage() {
                 const nextIntake = { ...i, nombre: nombre.trim() || i.nombre };
                 setSarlaftPkg((p) => {
                   if (!p) return p;
-                  const merged = applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(p, nextIntake));
+                  const merged = applyOnboardingSarlaftSeeds(
+                    applyIntakeToSarlaft(p, { ...nextIntake, sector: nextIntake.sector ?? "" })
+                  );
                   queueMicrotask(() => setSarlaftMissingFields(computeMissingFields(merged)));
                   return merged;
                 });
@@ -266,14 +280,6 @@ export default function OnboardingPage() {
               });
               next();
             }}
-            onBack={back}
-          />
-        )}
-
-        {step === 5 && (
-          <RestrictedListsSimulationStep
-            razonSocial={intake.empresa}
-            onNext={next}
             onBack={back}
           />
         )}
@@ -333,7 +339,7 @@ export default function OnboardingPage() {
               onBack={back}
               onRestart={() => {
                 setStep(1);
-                setIntake({ nombre: "", empresa: "", sector: "" });
+                setIntake({ nombre: "", empresa: "", nit: "", sector: "" });
                 setRecommendation(null);
                 setSarlaftPkg(null);
                 setSarlaftMissingFields([]);
@@ -351,16 +357,39 @@ export default function OnboardingPage() {
           (sarlaftPkg ? (
             <SarlaftStep
               sarlaftPkg={sarlaftPkg}
-              missingFields={sarlaftMissingFields}
               ocrReport={sarlaftOcrReport}
               onSarlaftChange={setSarlaftPkg}
-              onMissingResolved={(missing) => setSarlaftMissingFields(missing)}
+              onGeneratePdf={handleGeneratePdf}
+              generating={generating}
+              onBack={back}
+              onNext={next}
+              onRestart={() => {
+                setStep(1);
+                setIntake({ nombre: "", empresa: "", nit: "", sector: "" });
+                setRecommendation(null);
+                setSarlaftPkg(null);
+                setSarlaftMissingFields([]);
+                setSarlaftOcrReport(null);
+              }}
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center gap-3 py-24 text-gray-500">
+              <Loader2 className="h-8 w-8 animate-spin text-[#6abf1a]" aria-hidden />
+              <p className="text-sm">Preparando formularios…</p>
+            </div>
+          ))}
+
+        {step === 9 &&
+          (sarlaftPkg ? (
+            <FinalSignatureStep
+              sarlaftPkg={sarlaftPkg}
+              empresaLabel={intake.empresa.trim() || "tu empresa"}
               onGeneratePdf={handleGeneratePdf}
               generating={generating}
               onBack={back}
               onRestart={() => {
                 setStep(1);
-                setIntake({ nombre: "", empresa: "", sector: "" });
+                setIntake({ nombre: "", empresa: "", nit: "", sector: "" });
                 setRecommendation(null);
                 setSarlaftPkg(null);
                 setSarlaftMissingFields([]);

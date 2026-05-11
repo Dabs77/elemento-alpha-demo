@@ -25,12 +25,20 @@ export function FormsPreview({
   onGeneratePdf,
   generating,
   ocrReport,
+  deferSignature = false,
+  showQuickEdit = true,
+  showMissingInline = true,
 }: {
   value: SarlaftPackage;
   onChange: (p: SarlaftPackage) => void;
   onGeneratePdf: () => Promise<void>;
   generating?: boolean;
   ocrReport?: OcrReportItem[] | null;
+  /** Si es true, oculta firma simulada y el envío — se usa un paso posterior dedicado. */
+  deferSignature?: boolean;
+  showQuickEdit?: boolean;
+  /** En onboarding demo se puede ocultar la edición inline de faltantes. */
+  showMissingInline?: boolean;
 }) {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -42,7 +50,11 @@ export function FormsPreview({
   const missing = useMemo(() => computeMissingFields(value), [value]);
   const canPdf = !hasMissingFields(value);
   const canSend =
-    !hasMissingFields(value) && !sending && !generating && simulatedSignature !== null;
+    !deferSignature &&
+    !hasMissingFields(value) &&
+    !sending &&
+    !generating &&
+    simulatedSignature !== null;
 
   const handleSendToFiduciaria = useCallback(async () => {
     if (!canSend) return;
@@ -81,7 +93,7 @@ export function FormsPreview({
           </p>
         </div>
       ) : null}
-      {missing.length > 0 ? (
+      {missing.length > 0 && showMissingInline ? (
         <div
           className="rounded-xl border border-amber-200 bg-amber-50/60 p-4 ring-1 ring-amber-100/80"
           role="region"
@@ -113,7 +125,7 @@ export function FormsPreview({
         </div>
       ) : null}
 
-      {!missing.length ? (
+      {!deferSignature && !missing.length ? (
         <SimulatedDigitalSignature
           value={simulatedSignature}
           onChange={setSimulatedSignature}
@@ -125,38 +137,43 @@ export function FormsPreview({
         <div>
           <p className="text-sm font-semibold text-[#1a1a1a]">Vista previa (formato PDF)</p>
           <p className="text-xs text-gray-500">
-            {missing.length
-              ? `Faltan ${missing.length} campo(s) obligatorio(s). Complétalos arriba antes de firmar y enviar.`
-              : canSend
-                ? "Puedes ajustar datos clave más abajo, luego enviar a la fiduciaria. La descarga en ZIP queda como respaldo."
-                : "Confirma la firma digital simulada arriba para habilitar el envío a fiduciaria."}
+            {deferSignature ? (
+              <>
+                Revisa el paquete regulatorio. Descarga el ZIP si necesitas un respaldo antes de continuar a{" "}
+                <span className="font-medium text-[#1a1a1a]">firma final</span>.
+              </>
+            ) : missing.length ? (
+              `Faltan ${missing.length} campo(s) obligatorio(s). Complétalos arriba antes de firmar y enviar.`
+            ) : canSend ? (
+              "Puedes ajustar datos clave más abajo, luego enviar a la fiduciaria. La descarga en ZIP queda como respaldo."
+            ) : (
+              "Confirma la firma digital simulada arriba para habilitar el envío a fiduciaria."
+            )}
           </p>
           {sent ? (
             <p className="text-[11px] text-[#4a7c59] mt-1">Envío simulado a fiduciaria completado.</p>
           ) : null}
         </div>
         <div className="flex flex-col sm:flex-row gap-2 shrink-0">
-          <Button
-            className="bg-[#4a7c59] text-white"
-            disabled={!canSend}
-            onClick={handleSendToFiduciaria}
-            title={!simulatedSignature && !missing.length ? "Primero confirma la firma digital simulada" : undefined}
-          >
-            {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-            Enviar a fiduciaria
-          </Button>
-          <Button
-            variant="outline"
-            disabled={!canPdf || generating || sending}
-            onClick={onGeneratePdf}
-          >
+          {!deferSignature ? (
+            <Button
+              className="bg-[#4a7c59] text-white"
+              disabled={!canSend}
+              onClick={handleSendToFiduciaria}
+              title={!simulatedSignature && !missing.length ? "Primero confirma la firma digital simulada" : undefined}
+            >
+              {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
+              Enviar a fiduciaria
+            </Button>
+          ) : null}
+          <Button variant="outline" disabled={!canPdf || generating || sending} onClick={onGeneratePdf}>
             {generating ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
             Descargar ZIP
           </Button>
         </div>
       </div>
 
-      <QuickEdit value={value} onChange={onChange} />
+      {showQuickEdit ? <QuickEdit value={value} onChange={onChange} /> : null}
 
       <Tabs defaultValue="f1" className="w-full">
         <TabsList className="w-full flex flex-wrap h-auto gap-1">

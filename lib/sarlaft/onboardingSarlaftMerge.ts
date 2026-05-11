@@ -1,4 +1,5 @@
 import type { PortfolioRecommendation } from "@/hooks/useVoiceAgent";
+import { getDemoSarlaftPackage } from "./demoCompany";
 import {
   DEFAULT_CLASIFICACION_OTRA_FATCA_TEXT,
   type Accionista,
@@ -12,16 +13,22 @@ import {
 
 /** Cifras demo (ingresos no venían en la petición; valor redondo compatible con el resto). */
 export const ONBOARDING_SARLAFT_SEED_CIFRAS = {
-  ingresos: 3_000_000,
-  egresos: 2_558_644,
+  ingresos: 15_597_205,
+  egresos: 1_838_644,
   total_activos: 14_684_561,
   total_pasivos: 646_000,
   total_patrimonio: 14_038_561,
 } as const;
 
 export const ONBOARDING_SARLAFT_SEED_ACCIONISTAS: Accionista[] = [
-  { nombre: "David Sebastián Galeano Arias", id: "C.C. 1.034.277.398", porcentaje: 25, cotiza_en_bolsa: "No" },
-  { nombre: "Exabyte Company SAS", id: "NIT 901.529.728", porcentaje: 25, cotiza_en_bolsa: "No" },
+  { nombre: "David Sebastian Galeano Arias", id: "C.C. 1.034.277.398", porcentaje: 25, cotiza_en_bolsa: "No" },
+  {
+    nombre: "Exabyte Company SAS",
+    id:
+      "NIT 901.529.728 — BF indirectos: Juan David López Becerra (~50%); Miguel Ángel Tirado Álvarez (~50%)",
+    porcentaje: 25,
+    cotiza_en_bolsa: "No",
+  },
   { nombre: "Paula Sofía Torres Rodríguez", id: "C.C. 1.013.104.278", porcentaje: 25, cotiza_en_bolsa: "No" },
   { nombre: "Daniel Andrés Becerra Sierra", id: "C.C. 1.000.077.160", porcentaje: 25, cotiza_en_bolsa: "No" },
 ];
@@ -34,7 +41,9 @@ export const ONBOARDING_DEFAULT_OBJETIVO_INVERSION =
 export type IntakeSarlaftInput = {
   nombre: string;
   empresa: string;
+  /** Opcional: si no aplica, usar cadena vacía. */
   sector: string;
+  nit?: string;
 };
 
 const isEmptyStr = (s: string | null | undefined) => !s || !String(s).trim();
@@ -77,7 +86,67 @@ export function applyIntakeToSarlaft(pkg: SarlaftPackage, intake: IntakeSarlaftI
     next.formulario_2.ubo.datos_personales = `${nombre} — Representante Legal`;
   }
 
+  const nit = (intake.nit ?? "").trim();
+  if (nit) {
+    const compact = nit.replace(/^NIT\.?\s*/i, "").replace(/\s+/g, " ").trim();
+    if (compact && isEmptyStr(next.formulario_1.tipo_y_numero_identificacion)) {
+      next.formulario_1.tipo_y_numero_identificacion = `NIT ${compact}`;
+    }
+    if (compact && isEmptyStr(next.formulario_2.identificacion_tributaria)) {
+      next.formulario_2.identificacion_tributaria = compact;
+    }
+    if (compact && next.formulario_2.ubo.paises_tin.length === 0) {
+      next.formulario_2.ubo.paises_tin = [{ pais: "Colombia", tin: compact }];
+    } else if (compact && next.formulario_2.ubo.paises_tin[0]) {
+      next.formulario_2.ubo.paises_tin[0].tin = compact;
+    }
+  }
+
   return next;
+}
+
+/**
+ * Sustituye identidad PJ/RL en el paquete demo (ingesta simulada por fuentes externas).
+ * Siempre aplica los valores del intake aunque el demo ya tuviera texto.
+ */
+function applyDemoIntakeOverlay(pkg: SarlaftPackage, input: IntakeSarlaftInput): SarlaftPackage {
+  const next: SarlaftPackage = JSON.parse(JSON.stringify(pkg));
+  const empresa = input.empresa.trim();
+  const nombre = input.nombre.trim();
+  const nit = (input.nit ?? "").trim();
+  if (empresa) {
+    next.formulario_1.nombre_completo_razon_social = empresa;
+    next.formulario_2.razon_social = empresa;
+  }
+  if (nit) {
+    const compact = nit.replace(/^NIT\.?\s*/i, "").replace(/\s+/g, " ").trim();
+    next.formulario_1.tipo_y_numero_identificacion = `NIT ${compact}`;
+    next.formulario_2.identificacion_tributaria = compact;
+    if (!next.formulario_2.ubo.paises_tin.length) {
+      next.formulario_2.ubo.paises_tin = [{ pais: "Colombia", tin: compact }];
+    } else {
+      const row = next.formulario_2.ubo.paises_tin[0];
+      row.pais = row.pais?.trim() || "Colombia";
+      row.tin = compact;
+    }
+  }
+  if (nombre) {
+    next.formulario_3.representantes_ordenates = `Representante Legal: ${nombre}.`;
+    next.formulario_2.ubo.datos_personales = `${nombre} — Representante Legal`;
+  }
+  const sector = input.sector.trim();
+  if (sector) {
+    const act = inferActividadFromSector(sector);
+    if (act) next.formulario_2.actividad_principal = act;
+  }
+  return next;
+}
+
+/** Paquete SARLAFT completo para la demo tras “ingesta” desde fuentes externas (sin extracción por PDF). */
+export function buildOnboardingPackageFromExternalIngest(input: IntakeSarlaftInput): SarlaftPackage {
+  const base = getDemoSarlaftPackage();
+  const overlaid = applyDemoIntakeOverlay(base, input);
+  return applyOnboardingSarlaftSeeds(applyIntakeToSarlaft(overlaid, input));
 }
 
 /**
