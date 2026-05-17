@@ -8,6 +8,7 @@ import {
   stripPortfolioJsonFromTranscript,
 } from "@/lib/sarlaft/interviewToSarlaftProfile";
 import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
+import { geminiServerFetch } from "@/lib/geminiServerFetch";
 
 const GEMINI_MODEL = "gemini-2.0-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -80,7 +81,7 @@ export async function POST(request: NextRequest) {
 
   const userText = `${EXTRACTION_PROMPT}\n\n--- TRANSCRIPCIÓN ---\n${raw.slice(0, 120000)}`;
 
-  const geminiResponse = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+  const geminiResponse = await geminiServerFetch(`${GEMINI_URL}?key=${apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

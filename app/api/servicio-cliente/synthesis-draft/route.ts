@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 import { GEMINI_3_FLASH_PREVIEW, geminiGenerateContentUrl } from "@/lib/geminiGenerateContentModel";
+import { geminiServerFetch } from "@/lib/geminiServerFetch";
 import {
   getKnowledgeBaseFull,
   SKILL_ROLE_IDS,
@@ -78,7 +79,7 @@ Salida OBLIGATORIA en markdown con exactamente dos secciones con estos encabezad
 Reglas: español CO; sin orden de mercado; sin asesoría legal/tributaria definitiva; marca "demo sintética" en una frase.
 `.trim();
 
-  const geminiResponse = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+    const geminiResponse = await geminiServerFetch(`${GEMINI_URL}?key=${apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

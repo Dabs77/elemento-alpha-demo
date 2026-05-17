@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
+import { geminiServerFetch } from "@/lib/geminiServerFetch";
 
 export const runtime = "nodejs";
 
@@ -190,7 +191,7 @@ async function callGemini(
   apiKey: string,
   opts?: { system?: string; temperature?: number }
 ): Promise<Record<string, unknown>> {
-  const res = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+  const res = await geminiServerFetch(`${GEMINI_URL}?key=${apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

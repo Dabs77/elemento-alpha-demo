@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
 import { GEMINI_3_FLASH_PREVIEW, geminiGenerateContentUrl } from "@/lib/geminiGenerateContentModel";
+import { geminiServerFetch } from "@/lib/geminiServerFetch";
 import {
   getKnowledgeBaseFull,
   GOVERNANCE_RULES,
@@ -88,7 +89,7 @@ Formato:
     { role: "user", parts: [{ text: question }] },
   ];
 
-  const geminiResponse = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+  const geminiResponse = await geminiServerFetch(`${GEMINI_URL}?key=${apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

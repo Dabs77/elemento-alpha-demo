@@ -7,6 +7,7 @@ import {
   SKILL_ROLE_LABELS,
   type SkillRoleId,
 } from "@/lib/servicio-cliente/knowledgeBase";
+import { buildFundAdvisoryVoiceInstruction } from "@/lib/asesoria/advisoryKnowledgeBase";
 
 type VoiceCloseReason = { code?: number; reason?: string };
 
@@ -38,7 +39,7 @@ export interface PortfolioRecommendation {
   resp_reaccion?: number;
 }
 
-export type VoiceAgentMode = "onboarding" | "rebalance_advisor" | "customer_support";
+export type VoiceAgentMode = "onboarding" | "rebalance_advisor" | "customer_support" | "fund_advisory";
 
 function safeJsonParse<T>(raw: string): T | null {
   try {
@@ -330,6 +331,10 @@ interface UseVoiceAgentOptions {
   customerSupportContext?: string;
   /** Si se define con mode customer_support, instrucción = perfil SKILLS (PM, estratega, etc.). */
   skillConsultRole?: SkillRoleId;
+  /** Contexto adicional del cliente para asesoría de fondos (mode === "fund_advisory"). */
+  fundAdvisoryContext?: string;
+  /** Markdown concatenado de todos los digests VLM en /info (mode === "fund_advisory"). */
+  fundAdvisoryDigestMarkdown?: string;
   financialContext?: string;
   intakeData?: VoiceIntakeData;
   onRecommendation?: (rec: PortfolioRecommendation) => void;
@@ -340,6 +345,8 @@ function resolveSystemInstruction(opts: {
   rebalanceContext?: string;
   customerSupportContext?: string;
   skillConsultRole?: SkillRoleId;
+  fundAdvisoryContext?: string;
+  fundAdvisoryDigestMarkdown?: string;
   financialContext?: string;
   intakeData?: VoiceIntakeData;
 }): string {
@@ -355,6 +362,12 @@ function resolveSystemInstruction(opts: {
     }
     return buildCustomerSupportInstruction(safeCtx);
   }
+  if (opts.mode === "fund_advisory") {
+    return buildFundAdvisoryVoiceInstruction(
+      opts.fundAdvisoryContext,
+      opts.fundAdvisoryDigestMarkdown,
+    );
+  }
   return buildSystemInstruction(opts.financialContext, opts.intakeData);
 }
 
@@ -364,6 +377,8 @@ export function useVoiceAgent({
   rebalanceContext,
   customerSupportContext,
   skillConsultRole,
+  fundAdvisoryContext,
+  fundAdvisoryDigestMarkdown,
   financialContext,
   intakeData,
   onRecommendation,
@@ -538,6 +553,8 @@ export function useVoiceAgent({
             rebalanceContext,
             customerSupportContext,
             skillConsultRole,
+            fundAdvisoryContext,
+            fundAdvisoryDigestMarkdown,
             financialContext,
             intakeData,
           }),
@@ -648,6 +665,8 @@ export function useVoiceAgent({
     rebalanceContext,
     customerSupportContext,
     skillConsultRole,
+    fundAdvisoryContext,
+    fundAdvisoryDigestMarkdown,
     financialContext,
     intakeData,
     playBase64Pcm,

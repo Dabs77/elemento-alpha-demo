@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getGeminiServerApiKey } from "@/lib/geminiServerKey";
+import { geminiServerFetch } from "@/lib/geminiServerFetch";
 import * as XLSX from "xlsx";
 import { deepMergeSarlaft, ensurePackageShape } from "@/lib/sarlaft/mergePackage";
 import { computeMissingFields } from "@/lib/sarlaft/missingFields";
@@ -125,7 +126,7 @@ function parseGeminiJson(raw: string): unknown {
 }
 
 async function callGeminiJson(parts: GeminiPart[], apiKey: string, temperature: number): Promise<unknown> {
-  const res = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+  const res = await geminiServerFetch(`${GEMINI_URL}?key=${apiKey}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

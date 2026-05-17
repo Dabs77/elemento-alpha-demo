@@ -8,6 +8,8 @@ import {
   CheckCircle2,
   Clock,
   Lock,
+  Sparkles,
+  LineChart,
 } from "lucide-react";
 
 interface TimelineItem {
@@ -83,6 +85,25 @@ const timelineSteps: {
       },
     ],
   },
+  {
+    phase: 4,
+    title: "Asesoría Especializada",
+    subtitle: "Fondos FIC Abierto y FIC CxC · Estrés histórico · Voz",
+    status: "pending" as const,
+    date: "Fase 4",
+    description:
+      "Módulo para el asesor: cliente existente o nuevo, comparativas Alianza, composición y rentabilidad, señales y alertas simuladas, estrés histórico colapsable y consultas por voz con base en la documentación de fondos.",
+    items: [
+      {
+        icon: LineChart,
+        label: "Abrir módulo de asesoría especializada",
+        description:
+          "FIC Abierto vs FIC CxC, alertas, estrés histórico y asistente por voz",
+        link: "Entrar",
+        href: "/asesoria-especializada",
+      },
+    ],
+  },
 ];
 
 function StatusIcon({ status }: { status: "active" | "pending" | "locked" }) {
@@ -146,7 +167,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <div className="w-2 h-2 rounded-full bg-[#BBE795] animate-pulse" />
-              <span>Roadmap demo · MVP fase Reporting disponible</span>
+              <span>Roadmap demo · 4 fases · Asesoría especializada en Fase 4</span>
             </div>
           </div>
         </div>
@@ -157,14 +178,29 @@ export default function Home() {
         <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-[#BBE795] to-[#7dd83a] rounded-full transition-all duration-700 ease-out"
-            style={{ width: "66%" }}
+            style={{ width: "50%" }}
           />
         </div>
-        <div className="flex justify-between mt-2 text-xs text-gray-400">
-          <span>Onboarding</span>
-          <span>Front Office</span>
-          <span>Reporting</span>
+        <div className="flex justify-between gap-1 mt-2 text-xs text-gray-400">
+          <span className="truncate">Onboarding</span>
+          <span className="truncate text-center">Front Office</span>
+          <span className="truncate text-center">Reporting</span>
+          <span className="truncate text-right">Asesoría esp.</span>
         </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-6 pt-4 space-y-3">
+        <Link
+          href="/extras/pdf-vlm"
+          className="flex items-center gap-3 rounded-xl border border-[#BBE795]/45 bg-[#F0FEE6]/40 px-4 py-3 text-sm text-[#1a1a1a] hover:bg-[#F0FEE6]/65 hover:border-[#BBE795]/70 transition-colors"
+        >
+          <Sparkles className="w-4 h-4 text-[#4a7c59] shrink-0" aria-hidden />
+          <span className="leading-snug flex-1 min-w-0">
+            <span className="font-semibold">Extra</span>
+            {": PDF página por página con modelo de visión (Gemini). No forma parte del roadmap por fases."}
+          </span>
+          <ChevronRight className="w-4 h-4 text-[#6abf1a] shrink-0" aria-hidden />
+        </Link>
       </div>
 
       {/* Timeline */}
