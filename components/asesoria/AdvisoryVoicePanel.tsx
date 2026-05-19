@@ -204,6 +204,7 @@ export function AdvisoryVoicePanel() {
               <li>• ¿Qué dice el prospecto sobre comisiones?</li>
               <li>• ¿Cómo se comportó el fondo en el COVID?</li>
             </ul>
+            <p className="mt-2 text-gray-400">Tómate tu tiempo — el asesor espera a que preguntes.</p>
           </div>
         </div>
       </div>
