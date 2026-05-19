@@ -20,8 +20,10 @@ export function AdvisoryVoicePanel() {
     truncated: boolean;
   } | null>(null);
 
-  const loadDigests = useCallback(() => {
-    setDigestStatus("loading");
+  const loadDigests = useCallback((opts?: { showLoadingPulse?: boolean }) => {
+    if (opts?.showLoadingPulse) {
+      setDigestStatus("loading");
+    }
     fetch("/api/fund-advisory-digests")
       .then(async (r) => {
         if (!r.ok) {
@@ -128,7 +130,7 @@ export function AdvisoryVoicePanel() {
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={loadDigests}
+                onClick={() => loadDigests({ showLoadingPulse: true })}
                 className="inline-flex items-center gap-1.5 rounded-md bg-white px-2.5 py-1.5 text-xs font-medium ring-1 ring-amber-300 hover:bg-amber-50"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
