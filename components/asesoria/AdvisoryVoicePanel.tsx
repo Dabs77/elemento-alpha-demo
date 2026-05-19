@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { Mic, Square, Info, RefreshCw } from "lucide-react";
 import { VoicePulse } from "@/components/voice/VoicePulse";
 import { useVoiceAgent } from "@/hooks/useVoiceAgent";
-import { FUND_ADVISORY_CONTEXT } from "@/lib/asesoria/advisoryKnowledgeBase";
 import { Button } from "@/components/ui/button";
 
 type VoiceContextApiOk = {
@@ -12,13 +11,15 @@ type VoiceContextApiOk = {
   sourceFiles: string[];
   totalChars: number;
   truncated: boolean;
-  mode?: "full" | "compact";
+  mode?: "full" | "compact" | "rag";
+  ragProvider?: "brainbox" | "local";
 };
 
 const FALLBACK_CONTEXT = JSON.stringify(
   {
-    escenario: "Asesoría especializada · resumen (sin extractos PDF)",
-    resumen: FUND_ADVISORY_CONTEXT,
+    escenario: "Asesoría especializada · resumen",
+    fuenteUnica: "Solo JSON digest VLM en /info — sin corpus cargado aún.",
+    nota: "Reintenta cargar el contexto o inicia sesión de voz.",
   },
   null,
   2,
@@ -30,7 +31,8 @@ export function AdvisoryVoicePanel() {
     sourceFiles: string[];
     totalChars: number;
     truncated: boolean;
-    mode: "full" | "compact";
+    mode: "full" | "compact" | "rag";
+    ragProvider?: "brainbox" | "local";
   } | null>(null);
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
 
@@ -51,6 +53,7 @@ export function AdvisoryVoicePanel() {
           totalChars: data.totalChars,
           truncated: data.truncated,
           mode: data.mode ?? "compact",
+          ragProvider: data.ragProvider,
         });
         setLoadState("ready");
       })
@@ -70,11 +73,15 @@ export function AdvisoryVoicePanel() {
     [fundContext],
   );
 
+  const useRag = contextMeta?.mode === "rag";
+
   const { startSession, endSession, isConnected, isConnecting, isSpeaking, error } =
     useVoiceAgent({
       voiceName: "Zephyr",
       mode: "fund_advisory",
       fundAdvisoryContext: voiceContext,
+      fundAdvisoryRag: useRag,
+      fundAdvisoryRagProvider: contextMeta?.ragProvider ?? "local",
     });
 
   const canStart = loadState === "ready" || loadState === "error";
@@ -86,7 +93,11 @@ export function AdvisoryVoicePanel() {
         <p className="text-xs text-gray-500 mt-0.5">
           {loadState === "loading"
             ? "Preparando contexto de documentación…"
-            : contextMeta?.mode === "full"
+            : contextMeta?.mode === "rag"
+              ? contextMeta.ragProvider === "brainbox"
+                ? "FIC Abierto · FIC CxC · RAG con BrainBox (búsqueda semántica)"
+                : "FIC Abierto · FIC CxC · RAG sobre JSON en /info (única fuente)"
+              : contextMeta?.mode === "full"
               ? "FIC Abierto · FIC CxC · JSON íntegro (modo full — alto consumo de cuota)"
               : "FIC Abierto · FIC CxC · extractos clave de documentación (modo compacto)"}
         </p>
@@ -160,7 +171,14 @@ export function AdvisoryVoicePanel() {
         {contextMeta && loadState === "ready" && (
           <p className="text-[11px] text-gray-500 text-center leading-relaxed">
             {contextMeta.sourceFiles.length} documentos · ~{(contextMeta.totalChars / 1000).toFixed(0)}k
-            caracteres · modo {contextMeta.mode === "full" ? "JSON completo" : "compacto"}
+            caracteres · modo{" "}
+            {contextMeta.mode === "rag"
+              ? contextMeta.ragProvider === "brainbox"
+                ? "RAG · BrainBox"
+                : "RAG · local"
+              : contextMeta.mode === "full"
+                ? "JSON completo"
+                : "compacto"}
             {contextMeta.truncated ? " · truncado" : ""}
           </p>
         )}

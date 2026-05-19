@@ -9,7 +9,7 @@ import {
   formatNumber,
   type SimulatedClientPosition,
 } from "@/lib/asesoria/simulatedClientData";
-import { FIC_ABIERTO_DATA } from "@/lib/asesoria/fundDataService";
+import { FIC_ABIERTO_DATA, FIC_CXC_DATA } from "@/lib/asesoria/fundDataService";
 import { StressHistoryModule } from "./StressHistoryModule";
 import { RecommendationsModule } from "./RecommendationsModule";
 
@@ -110,9 +110,12 @@ export function ClienteExistenteView() {
               <div className="bg-white/60 rounded-lg p-3">
                 <div className="flex items-center gap-2 text-gray-600 mb-1">
                   <BarChart3 className="w-4 h-4" />
-                  <span className="text-xs font-medium">Rentabilidad</span>
+                  <span className="text-xs font-medium">Rentabilidad fondo</span>
                 </div>
-                <p className="text-sm font-semibold text-green-600">{cliente.rentabilidadObtenida}%</p>
+                <p className="text-sm font-semibold text-green-600">
+                  {(cliente.fondo === "FIC CxC" ? FIC_CXC_DATA : FIC_ABIERTO_DATA).performance
+                    .rentabilidadAnoCorrido}
+                </p>
               </div>
             </div>
           </div>

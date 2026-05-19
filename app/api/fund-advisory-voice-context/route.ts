@@ -3,7 +3,7 @@ import { buildFundAdvisoryVoiceContext } from "@/lib/asesoria/fundAdvisoryVoiceC
 
 export async function GET() {
   try {
-    const result = buildFundAdvisoryVoiceContext();
+    const result = await buildFundAdvisoryVoiceContext();
     return NextResponse.json(result);
   } catch (err) {
     console.error("[fund-advisory-voice-context]", err);

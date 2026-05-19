@@ -1,7 +1,17 @@
 import type { PdfVlmDigestResult } from "@/lib/onboarding/pdfVlmDigestTypes";
-import { FIC_ABIERTO_DATA, FIC_CXC_DATA, FUND_COMPARISON_TABLE } from "./fundDataService";
-import { STRESS_EPISODES, STRESS_SUMMARY } from "./stressTestData";
 import { listVlmDigestJsonFiles, readVlmDigestJson } from "./collectFundDigestMarkdown";
+import {
+  buildFundAdvisoryRagSeedContext,
+  buildRagSourceMetaPayload,
+  getFundAdvisoryRagProvider,
+} from "./fundAdvisoryRag";
+
+/** RAG activo por defecto; desactivar con FUND_ADVISORY_VOICE_RAG=0 */
+export function isFundAdvisoryVoiceRagMode(): boolean {
+  const v = process.env.FUND_ADVISORY_VOICE_RAG?.trim().toLowerCase();
+  if (v === "0" || v === "false" || v === "no") return false;
+  return !isFundAdvisoryVoiceFullJsonMode();
+}
 
 /** Modo compacto ampliado (~120 KB). Full JSON ~1,8M chars (requiere cuota). */
 export function isFundAdvisoryVoiceFullJsonMode(): boolean {
@@ -12,7 +22,6 @@ export function isFundAdvisoryVoiceFullJsonMode(): boolean {
 const COMPACT_MAX_CHARS =
   Number(process.env.FUND_ADVISORY_VOICE_MAX_CHARS) || 120_000;
 
-/** Páginas clave por digest — orden de prioridad al truncar (último = se recorta primero). */
 const KEY_PAGES_BY_FILE: Record<string, number[] | "all"> = {
   "Desempe_o_FIC_Abierto_.pdf-vlm-digest.json": [2, 7, 8, 13],
   "Update_FIC_CxC_Marzo_2026.pdf-vlm-digest.json": [2, 3],
@@ -25,7 +34,6 @@ const KEY_PAGES_BY_FILE: Record<string, number[] | "all"> = {
   "Reglamento_Fondo_Abierto_2026-3_.pdf-vlm-digest.json": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 };
 
-/** Prioridad de truncado: menor número = se conserva más tiempo. */
 const FILE_TRUNCATION_PRIORITY: Record<string, number> = {
   "Prospecto_FIC_Abierto_2026-03_.pdf-vlm-digest.json": 1,
   "Reglamento_Fondo_Abierto_2026-3_.pdf-vlm-digest.json": 2,
@@ -41,7 +49,8 @@ export type FundAdvisoryVoiceContextResult = {
   sourceFiles: string[];
   totalChars: number;
   truncated: boolean;
-  mode: "full" | "compact";
+  mode: "full" | "compact" | "rag";
+  ragProvider?: "brainbox" | "local";
 };
 
 function pageMarkdown(digest: PdfVlmDigestResult, pageNumber: number): string | null {
@@ -69,21 +78,6 @@ type DigestExcerpt = {
   documento: string;
   paginas: { numero: number; titulo?: string; contenido: string }[];
 };
-
-function buildMetricsPayload() {
-  return {
-    escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
-    nota:
-      "Datos demo Marzo 2026. Responde con precisión usando ficAbierto, ficCxC, comparativa, estresHistorico y corpusDocumental.",
-    ficAbierto: FIC_ABIERTO_DATA,
-    ficCxC: FIC_CXC_DATA,
-    comparativa: FUND_COMPARISON_TABLE,
-    estresHistorico: {
-      resumen: STRESS_SUMMARY,
-      episodios: STRESS_EPISODES,
-    },
-  };
-}
 
 function buildDigestExcerpts(): DigestExcerpt[] {
   const excerpts: DigestExcerpt[] = [];
@@ -124,17 +118,18 @@ function buildCorpusMarkdown(excerpts: DigestExcerpt[]): string {
           return `${header}\n\n${p.contenido}`;
         })
         .join("\n\n");
-      return `### ${doc.documento}\n*Archivo: ${doc.archivo}*\n\n${body}`;
+      return `### ${doc.documento}\n*Archivo JSON: ${doc.archivo}*\n\n${body}`;
     })
     .join("\n\n---\n\n");
 }
 
-function serializeCompactPayload(
-  excerpts: DigestExcerpt[],
-  corpusMarkdown: string,
-): string {
+function serializeJsonOnlyPayload(corpusMarkdown: string, excerpts: DigestExcerpt[]): string {
   return JSON.stringify({
-    ...buildMetricsPayload(),
+    escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
+    fuenteUnica:
+      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info. " +
+      "NO uses cifras de memoria del modelo ni datos fuera de esos JSON.",
+    archivosIndexados: excerpts.map((e) => e.archivo),
     corpusDocumental: excerpts.map((e) => ({
       archivo: e.archivo,
       documento: e.documento,
@@ -151,7 +146,8 @@ function truncateExcerptsToFit(excerpts: DigestExcerpt[], maxChars: number): {
   let working = excerpts.map((e) => ({ ...e, paginas: [...e.paginas] }));
   let truncated = false;
 
-  const fits = () => serializeCompactPayload(working, buildCorpusMarkdown(working)).length <= maxChars;
+  const fits = () =>
+    serializeJsonOnlyPayload(buildCorpusMarkdown(working), working).length <= maxChars;
 
   if (fits()) return { excerpts: working, truncated: false };
 
@@ -195,7 +191,11 @@ function buildFullJsonContext(): FundAdvisoryVoiceContextResult {
   }
 
   const context = JSON.stringify({
-    ...buildMetricsPayload(),
+    escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
+    fuenteUnica:
+      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info. " +
+      "NO uses cifras de memoria del modelo ni datos fuera de esos JSON.",
+    archivosIndexados: sourceFiles,
     documentosVlmDigest,
   });
 
@@ -213,7 +213,7 @@ function buildCompactContext(): FundAdvisoryVoiceContextResult {
   const sourceFiles = allExcerpts.map((e) => e.archivo);
   const { excerpts, truncated } = truncateExcerptsToFit(allExcerpts, COMPACT_MAX_CHARS);
   const corpusMarkdown = buildCorpusMarkdown(excerpts);
-  const context = serializeCompactPayload(excerpts, corpusMarkdown);
+  const context = serializeJsonOnlyPayload(corpusMarkdown, excerpts);
 
   return {
     context,
@@ -224,13 +224,46 @@ function buildCompactContext(): FundAdvisoryVoiceContextResult {
   };
 }
 
+async function buildRagBaseContext(): Promise<FundAdvisoryVoiceContextResult> {
+  const [seedCorpus, meta] = await Promise.all([
+    buildFundAdvisoryRagSeedContext(),
+    buildRagSourceMetaPayload(),
+  ]);
+  const provider = getFundAdvisoryRagProvider();
+  const notaRag =
+    provider === "brainbox"
+      ? "Corpus indexado en BrainBox (búsqueda semántica). Recibirás [FRAGMENTOS RAG] por pregunta. " +
+        "Responde SOLO con esos extractos; si no está, di que no tienes el dato."
+      : "Corpus indexado desde JSON digest VLM. Recibirás [FRAGMENTOS RAG] por pregunta. " +
+        "Responde SOLO con texto de esos JSON; si no está, di que no tienes el dato.";
+
+  const context = JSON.stringify({
+    ...meta,
+    modo: "rag",
+    notaRag,
+    corpusInicialRag: seedCorpus,
+  });
+
+  const sourceFiles = Array.isArray(meta.archivosIndexados)
+    ? (meta.archivosIndexados as string[])
+    : listVlmDigestJsonFiles();
+
+  return {
+    context,
+    sourceFiles,
+    totalChars: context.length,
+    truncated: false,
+    mode: "rag",
+    ragProvider: provider,
+  };
+}
+
 /**
  * Contexto para asesoría por voz.
- * Por defecto: compacto (~120 KB, markdown + métricas).
- * Full JSON: FUND_ADVISORY_VOICE_FULL_JSON=1 (~1,8M chars, requiere cuota).
+ * RAG por defecto (BrainBox si está configurado; si no, JSON local en /info).
  */
-export function buildFundAdvisoryVoiceContext(): FundAdvisoryVoiceContextResult {
-  return isFundAdvisoryVoiceFullJsonMode()
-    ? buildFullJsonContext()
-    : buildCompactContext();
+export async function buildFundAdvisoryVoiceContext(): Promise<FundAdvisoryVoiceContextResult> {
+  if (isFundAdvisoryVoiceFullJsonMode()) return buildFullJsonContext();
+  if (isFundAdvisoryVoiceRagMode()) return buildRagBaseContext();
+  return buildCompactContext();
 }

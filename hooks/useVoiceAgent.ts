@@ -52,6 +52,52 @@ function formatLiveCloseError(code?: number, reason?: string): string {
   return `Conexión cerrada (${code ?? "?"}): ${reason || "sin razón"}`;
 }
 
+function sendFundAdvisoryRagChunks(
+  session: LiveVoiceSession,
+  query: string,
+  context: string,
+  provider: "brainbox" | "local" = "local",
+): void {
+  const sourceLabel =
+    provider === "brainbox"
+      ? "BrainBox (búsqueda semántica sobre documentos indexados)"
+      : "JSON digest VLM en /info";
+  session.sendClientContent({
+    turns: [
+      {
+        role: "user",
+        parts: [
+          {
+            text:
+              `[FRAGMENTOS RAG — pregunta: "${query}"]\n\n` +
+              `Fuente: ${sourceLabel}. Responde SOLO con estos extractos; si la respuesta no está aquí, di que no tienes el dato:\n\n${context}`,
+          },
+        ],
+      },
+    ],
+    turnComplete: false,
+  });
+}
+
+async function fetchFundAdvisoryRagContext(
+  query: string,
+): Promise<{ context: string; provider: "brainbox" | "local" } | null> {
+  try {
+    const res = await fetch("/api/fund-advisory-rag", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { context?: string; provider?: "brainbox" | "local" };
+    const context = data.context?.trim();
+    if (!context) return null;
+    return { context, provider: data.provider ?? "local" };
+  } catch {
+    return null;
+  }
+}
+
 function sendFundAdvisoryContextChunks(session: LiveVoiceSession, context: string): void {
   const chunks = chunkFundAdvisoryContext(context);
   const total = chunks.length;
@@ -190,8 +236,9 @@ Estilo de voz:
 - No encadenes varias preguntas seguidas al final; una sola genérica basta, o calla y espera.
 - Habla como experto que domina el tema: transmite las cifras y hechos con naturalidad, como conocimiento propio. NUNCA digas que estás consultando, revisando, leyendo datos, mirando un documento, un JSON, un extracto, un corpus o "lo que tienes a mano".
 - Evita frases meta como "según los datos", "en la información que tengo", "de acuerdo al prospecto/reglamento", "en los documentos", "veo que aquí dice", "en el contexto". Di directamente el hecho (ej.: "El fondo c por c rindió diez punto siete por ciento en marzo", no "según los datos rindió...").
-- Si algo no lo sabes, dilo en simple: "No tengo ese dato" o "No estoy seguro de eso" — sin mencionar fuentes, archivos ni sistema. Pero ANTES de decir eso, revisa ficAbierto, ficCxC, comparativa, estresHistorico y corpusDocumentalMarkdown; muchas respuestas están ahí.
-- Prioriza cifras exactas del bloque de datos. Si hay tabla o párrafo en corpusDocumentalMarkdown que responde la pregunta, úsalo con precisión.`;
+- Si algo no lo sabes, dilo en simple: "No tengo ese dato" o "No estoy seguro de eso" — sin mencionar fuentes, archivos ni sistema. Pero ANTES de decir eso, revisa corpusInicialRag y los [FRAGMENTOS RAG].
+- Responde SOLO con cifras y hechos que aparezcan en corpusInicialRag o [FRAGMENTOS RAG]. PROHIBIDO inventar o usar conocimiento general del modelo si no está en esos textos.
+- Si hay contradicción, prevalece el fragmento JSON más específico a la pregunta.`;
 
 function buildFundAdvisoryAdvisorInstruction(fundContext: string): string {
   return `Eres el asesor de voz de Elemento Alpha y Alianza Fiduciaria (Colombia) en el módulo de asesoría de fondos (demo).
@@ -200,22 +247,59 @@ ${FUND_ADVISORY_VOICE_STYLE}
 Tu trabajo es responder por voz sobre FIC Abierto Alianza y FIC CxC Alianza: rentabilidad, riesgo, composición, liquidez, comisiones, prospectos, reglamentos y comparativas.
 NO emitas bloques JSON ni etiquetas técnicas en voz.
 
-DATOS OFICIALES — tu memoria interna; úsalos tal cual en voz sin decir que los consultas. No inventes cifras fuera de este bloque:
+DATOS — extractos de JSON digest VLM en /info (única fuente autorizada):
 ---
 ${fundContext}
 ---
 
 Reglas:
-- Usa el bloque de datos como fuente interna; en voz nunca reveles que estás leyendo de ahí.
-- Si algo no está en los datos, dilo sin mencionar documentos ni sistema.
+- Responde SOLO con cifras y hechos de corpusDocumentalMarkdown en este bloque. Si no está, di "No tengo ese dato".
+- PROHIBIDO inventar rentabilidades, comisiones, AUMs o cualquier dato no presente en los JSON.
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
-- Cuando pregunten por láminas, prospecto, reglamento o comisiones, busca primero en corpusDocumentalMarkdown y responde con el contenido como si lo conocieras.
+- Cuando pregunten por láminas, prospecto, reglamento o comisiones, busca en corpusDocumentalMarkdown.
 - Compara FIC Abierto vs el fondo c por c con naturalidad cuando sea útil.
 
 Al conectar (primer turno):
 1) Saluda en una frase corta, tuteando (ej.: "Hola, ¿cómo estás? Soy tu asesor de fondos.").
 2) Pregunta qué te gustaría saber — FIC Abierto, el fondo c por c o una comparativa — y espera.
 3) No des datos ni resumen hasta que te pregunten.
+
+En cada turno siguiente: responde lo que te pregunten. Opcionalmente cierra con una pregunta genérica ("¿Te interesa algo más?", "¿Tienes otra duda?"), nunca sugiriendo un tema concreto.`;
+}
+
+function buildFundAdvisoryAdvisorInstructionRag(
+  fundContext: string,
+  ragProvider: "brainbox" | "local" = "local",
+): string {
+  const sourceDesc =
+    ragProvider === "brainbox"
+      ? "documentos indexados en BrainBox (búsqueda semántica + reranking)"
+      : "archivos JSON digest VLM en /info (prospectos, reglamentos, desempeño, updates)";
+
+  return `Eres el asesor de voz de Elemento Alpha y Alianza Fiduciaria (Colombia) en el módulo de asesoría de fondos (demo).
+${FUND_ADVISORY_VOICE_STYLE}
+
+Tu trabajo es responder por voz sobre FIC Abierto Alianza y FIC CxC Alianza: rentabilidad, riesgo, composición, liquidez, comisiones, prospectos, reglamentos y comparativas.
+NO emitas bloques JSON ni etiquetas técnicas en voz.
+
+MODO RAG: la ÚNICA fuente autorizada son ${sourceDesc}. Recibirás [FRAGMENTOS RAG] por cada pregunta. NO uses cifras de memoria del modelo.
+
+DATOS BASE — metadatos + corpus inicial:
+---
+${fundContext}
+---
+
+Reglas:
+- Responde SOLO con texto de corpusInicialRag o [FRAGMENTOS RAG]. Si la cifra no está ahí, di "No tengo ese dato".
+- PROHIBIDO inventar rentabilidades, comisiones, AUMs o cualquier dato no presente en los fragmentos.
+- No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
+- Cuando pregunten por láminas, prospecto, reglamento o comisiones, busca en los fragmentos RAG y responde con precisión.
+- Compara FIC Abierto vs el fondo c por c con naturalidad cuando sea útil.
+
+Al conectar (primer turno):
+1) Saluda en una frase corta, tuteando.
+2) Pregunta qué te gustaría saber — FIC Abierto, el fondo c por c o una comparativa — y espera.
+3) No des monólogo ni cifras hasta que te pregunten.
 
 En cada turno siguiente: responde lo que te pregunten. Opcionalmente cierra con una pregunta genérica ("¿Te interesa algo más?", "¿Tienes otra duda?"), nunca sugiriendo un tema concreto.`;
 }
@@ -227,12 +311,11 @@ ${FUND_ADVISORY_VOICE_STYLE}
 Tu trabajo es responder por voz sobre FIC Abierto Alianza y FIC CxC Alianza: rentabilidad, riesgo, composición, liquidez, comisiones, prospectos, reglamentos y comparativas.
 NO emitas bloques JSON ni etiquetas técnicas en voz.
 
-La base de conocimiento completa llegará en uno o más mensajes de contexto antes de que hables.
-Intégrala como conocimiento propio; en voz nunca digas que la estás leyendo, consultando ni revisando.
+La base de conocimiento (JSON digest VLM en /info) llegará en uno o más mensajes de contexto antes de que hables.
+Responde SOLO con cifras de esos JSON; PROHIBIDO inventar o usar conocimiento general del modelo.
 
 Reglas:
-- Usa el corpus como fuente interna; en voz nunca digas que lo estás consultando.
-- Si algo no está en los datos, dilo sin mencionar archivos ni sistema.
+- Si algo no está en los JSON recibidos, di "No tengo ese dato" sin mencionar archivos ni sistema.
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
 - Responde sobre prospecto, reglamento o láminas como conocimiento propio, sin citar "el JSON" ni "el digest".
 - Compara FIC Abierto vs el fondo c por c con naturalidad cuando sea útil.
@@ -462,8 +545,12 @@ interface UseVoiceAgentOptions {
   customerSupportContext?: string;
   /** Si se define con mode customer_support, instrucción = perfil SKILLS (PM, estratega, etc.). */
   skillConsultRole?: SkillRoleId;
-  /** Contexto compacto de fondos + extractos JSON (mode === "fund_advisory"). Igual que rebalanceContext. */
+  /** Contexto base fondos (mode === "fund_advisory"). */
   fundAdvisoryContext?: string;
+  /** Modo RAG: inyecta fragmentos por pregunta vía /api/fund-advisory-rag */
+  fundAdvisoryRag?: boolean;
+  /** Proveedor RAG activo (BrainBox o índice local JSON). */
+  fundAdvisoryRagProvider?: "brainbox" | "local";
   financialContext?: string;
   intakeData?: VoiceIntakeData;
   onRecommendation?: (rec: PortfolioRecommendation) => void;
@@ -475,6 +562,8 @@ function resolveSystemInstruction(opts: {
   customerSupportContext?: string;
   skillConsultRole?: SkillRoleId;
   fundAdvisoryContext?: string;
+  fundAdvisoryRag?: boolean;
+  fundAdvisoryRagProvider?: "brainbox" | "local";
   financialContext?: string;
   intakeData?: VoiceIntakeData;
 }): string {
@@ -492,6 +581,12 @@ function resolveSystemInstruction(opts: {
   }
   if (opts.mode === "fund_advisory") {
     const ctx = opts.fundAdvisoryContext?.trim();
+    if (opts.fundAdvisoryRag) {
+      return buildFundAdvisoryAdvisorInstructionRag(
+        ctx || "(Contexto base de fondos aún no disponible.)",
+        opts.fundAdvisoryRagProvider ?? "local",
+      );
+    }
     if (ctx && ctx.length <= FUND_ADVISORY_INLINE_CONTEXT_MAX) {
       return buildFundAdvisoryAdvisorInstruction(ctx);
     }
@@ -507,6 +602,8 @@ export function useVoiceAgent({
   customerSupportContext,
   skillConsultRole,
   fundAdvisoryContext,
+  fundAdvisoryRag = false,
+  fundAdvisoryRagProvider = "local",
   financialContext,
   intakeData,
   onRecommendation,
@@ -529,6 +626,10 @@ export function useVoiceAgent({
   const onRecommendationRef = useRef(onRecommendation);
   const modeRef = useRef(mode);
   const fundAdvisoryContextRef = useRef(fundAdvisoryContext);
+  const fundAdvisoryRagRef = useRef(fundAdvisoryRag);
+  const fundAdvisoryRagProviderRef = useRef(fundAdvisoryRagProvider);
+  const lastRagQueryRef = useRef<string>("");
+  const ragFetchInFlightRef = useRef(false);
 
   useEffect(() => {
     onRecommendationRef.current = onRecommendation;
@@ -541,6 +642,14 @@ export function useVoiceAgent({
   useEffect(() => {
     fundAdvisoryContextRef.current = fundAdvisoryContext;
   }, [fundAdvisoryContext]);
+
+  useEffect(() => {
+    fundAdvisoryRagRef.current = fundAdvisoryRag;
+  }, [fundAdvisoryRag]);
+
+  useEffect(() => {
+    fundAdvisoryRagProviderRef.current = fundAdvisoryRagProvider;
+  }, [fundAdvisoryRagProvider]);
 
   // ── Reproducción de audio PCM base64 (24kHz) ─────────────────────────────
   const playBase64Pcm = useCallback((base64: string) => {
@@ -637,6 +746,8 @@ export function useVoiceAgent({
     setError(null);
     transcriptBufferRef.current = "";
     fullInterviewTranscriptRef.current = "";
+    lastRagQueryRef.current = "";
+    ragFetchInFlightRef.current = false;
 
     try {
       // 1. Contexto de reproducción a 24kHz
@@ -672,25 +783,38 @@ export function useVoiceAgent({
       const recorderNode = new AudioWorkletNode(audioContextRef.current, "audio-recorder");
 
       // 3. Conectar a Gemini Live
+      const liveConfig: {
+        responseModalities: Modality[];
+        speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: string } } };
+        systemInstruction: string;
+        inputAudioTranscription?: Record<string, never>;
+      } = {
+        responseModalities: [Modality.AUDIO],
+        speechConfig: {
+          voiceConfig: {
+            prebuiltVoiceConfig: { voiceName },
+          },
+        },
+        systemInstruction: resolveSystemInstruction({
+          mode,
+          rebalanceContext,
+          customerSupportContext,
+          skillConsultRole,
+          fundAdvisoryContext,
+          fundAdvisoryRag,
+          fundAdvisoryRagProvider,
+          financialContext,
+          intakeData,
+        }),
+      };
+
+      if (mode === "fund_advisory" && fundAdvisoryRag) {
+        liveConfig.inputAudioTranscription = {};
+      }
+
       const sessionPromise = ai.live.connect({
         model: "gemini-3.1-flash-live-preview",
-        config: {
-          responseModalities: [Modality.AUDIO],
-          speechConfig: {
-            voiceConfig: {
-              prebuiltVoiceConfig: { voiceName },
-            },
-          },
-          systemInstruction: resolveSystemInstruction({
-            mode,
-            rebalanceContext,
-            customerSupportContext,
-            skillConsultRole,
-            fundAdvisoryContext,
-            financialContext,
-            intakeData,
-          }),
-        },
+        config: liveConfig,
         callbacks: {
           onopen: () => {
             setIsConnecting(false);
@@ -701,6 +825,7 @@ export function useVoiceAgent({
               const ctx = fundAdvisoryContextRef.current?.trim();
               if (
                 modeRef.current === "fund_advisory" &&
+                !fundAdvisoryRagRef.current &&
                 ctx &&
                 ctx.length > FUND_ADVISORY_INLINE_CONTEXT_MAX
               ) {
@@ -764,6 +889,31 @@ export function useVoiceAgent({
               }
             }
 
+            if (modeRef.current === "fund_advisory" && fundAdvisoryRagRef.current) {
+              const raw = message.serverContent as Record<string, unknown> | undefined;
+              const inp = raw?.inputTranscription as { text?: string; finished?: boolean } | undefined;
+              const query = inp?.text?.trim();
+              if (query && inp?.finished && query !== lastRagQueryRef.current && !ragFetchInFlightRef.current) {
+                lastRagQueryRef.current = query;
+                ragFetchInFlightRef.current = true;
+                void sessionPromise.then(async (session) => {
+                  try {
+                    const ragResult = await fetchFundAdvisoryRagContext(query);
+                    if (ragResult) {
+                      sendFundAdvisoryRagChunks(
+                        session as LiveVoiceSession,
+                        query,
+                        ragResult.context,
+                        ragResult.provider,
+                      );
+                    }
+                  } finally {
+                    ragFetchInFlightRef.current = false;
+                  }
+                });
+              }
+            }
+
             if (modeRef.current === "onboarding") {
               const raw = message.serverContent as Record<string, unknown> | undefined;
               const inp = raw?.inputTranscription as { text?: string } | undefined;
@@ -808,6 +958,8 @@ export function useVoiceAgent({
     customerSupportContext,
     skillConsultRole,
     fundAdvisoryContext,
+    fundAdvisoryRag,
+    fundAdvisoryRagProvider,
     financialContext,
     intakeData,
     playBase64Pcm,
