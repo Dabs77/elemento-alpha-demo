@@ -1,239 +1,186 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
-import { Mic, MicOff, Loader2, Volume2, Info, RefreshCw } from "lucide-react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { Mic, Square, Info, RefreshCw } from "lucide-react";
+import { VoicePulse } from "@/components/voice/VoicePulse";
 import { useVoiceAgent } from "@/hooks/useVoiceAgent";
+import { FUND_ADVISORY_CONTEXT } from "@/lib/asesoria/advisoryKnowledgeBase";
+import { Button } from "@/components/ui/button";
 
-type DigestApiOk = {
-  markdown: string;
+type VoiceContextApiOk = {
+  context: string;
   sourceFiles: string[];
   totalChars: number;
   truncated: boolean;
 };
 
+const FALLBACK_CONTEXT = JSON.stringify(
+  {
+    escenario: "Asesoría especializada · resumen (sin extractos PDF)",
+    resumen: FUND_ADVISORY_CONTEXT,
+  },
+  null,
+  2,
+);
+
 export function AdvisoryVoicePanel() {
-  const [digestMarkdown, setDigestMarkdown] = useState<string | undefined>(undefined);
-  const [digestStatus, setDigestStatus] = useState<"loading" | "ready" | "error">("loading");
-  const [digestMeta, setDigestMeta] = useState<{
+  const [fundContext, setFundContext] = useState<string | null>(null);
+  const [contextMeta, setContextMeta] = useState<{
     sourceFiles: string[];
     totalChars: number;
     truncated: boolean;
   } | null>(null);
+  const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
 
-  const loadDigests = useCallback((opts?: { showLoadingPulse?: boolean }) => {
-    if (opts?.showLoadingPulse) {
-      setDigestStatus("loading");
-    }
-    fetch("/api/fund-advisory-digests")
+  const loadContext = useCallback((opts?: { showLoading?: boolean }) => {
+    if (opts?.showLoading) setLoadState("loading");
+    fetch("/api/fund-advisory-voice-context")
       .then(async (r) => {
         if (!r.ok) {
           const err = await r.json().catch(() => ({}));
           throw new Error(typeof err?.error === "string" ? err.error : r.statusText);
         }
-        return r.json() as Promise<DigestApiOk>;
+        return r.json() as Promise<VoiceContextApiOk>;
       })
       .then((data) => {
-        setDigestMarkdown(data.markdown.trim() || undefined);
-        setDigestMeta({
+        setFundContext(data.context.trim() || FALLBACK_CONTEXT);
+        setContextMeta({
           sourceFiles: data.sourceFiles,
           totalChars: data.totalChars,
           truncated: data.truncated,
         });
-        setDigestStatus("ready");
+        setLoadState("ready");
       })
       .catch(() => {
-        setDigestStatus("error");
-        setDigestMeta(null);
-        setDigestMarkdown(undefined);
+        setFundContext(FALLBACK_CONTEXT);
+        setContextMeta(null);
+        setLoadState("error");
       });
   }, []);
 
   useEffect(() => {
-    loadDigests();
-  }, [loadDigests]);
+    loadContext();
+  }, [loadContext]);
 
-  const useSummaryOnly = useCallback(() => {
-    setDigestMarkdown(undefined);
-    setDigestMeta(null);
-    setDigestStatus("ready");
-  }, []);
+  const voiceContext = useMemo(
+    () => fundContext ?? FALLBACK_CONTEXT,
+    [fundContext],
+  );
 
-  const {
-    startSession,
-    endSession,
-    isConnected,
-    isConnecting,
-    isSpeaking,
-    error,
-  } = useVoiceAgent({
-    voiceName: "Zephyr",
-    mode: "fund_advisory",
-    fundAdvisoryDigestMarkdown: digestMarkdown,
-  });
+  const { startSession, endSession, isConnected, isConnecting, isSpeaking, error } =
+    useVoiceAgent({
+      voiceName: "Zephyr",
+      mode: "fund_advisory",
+      fundAdvisoryContext: voiceContext,
+    });
 
-  const canConnect = digestStatus === "ready";
-
-  const handleToggle = useCallback(() => {
-    if (isConnected) {
-      endSession();
-    } else {
-      startSession();
-    }
-  }, [isConnected, endSession, startSession]);
+  const canStart = loadState === "ready" || loadState === "error";
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-      {/* Header */}
       <div className="px-4 py-3 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="flex items-center gap-2">
-          <div
-            className={`w-8 h-8 rounded-full flex items-center justify-center ${
-              isConnected
-                ? isSpeaking
-                  ? "bg-green-100 animate-pulse"
-                  : "bg-blue-100"
-                : "bg-gray-100"
-            }`}
-          >
-            {isSpeaking ? (
-              <Volume2 className="w-4 h-4 text-green-600" />
-            ) : isConnected ? (
-              <Mic className="w-4 h-4 text-blue-600" />
-            ) : (
-              <MicOff className="w-4 h-4 text-gray-400" />
-            )}
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">Asesor de Fondos por Voz</h3>
-            <p className="text-xs text-gray-500">
-              {digestStatus === "loading"
-                ? "Cargando documentación (JSON /info)…"
-                : isConnected
-                  ? isSpeaking
-                    ? "Respondiendo…"
-                    : "Escuchando…"
-                  : digestStatus === "error"
-                    ? "No se cargó el corpus PDF"
-                    : digestMarkdown
-                      ? `Corpus listo · ${digestMeta?.sourceFiles.length ?? 0} archivos`
-                      : "Modo resumen (sin corpus)"}
-            </p>
-          </div>
-        </div>
+        <h3 className="text-sm font-semibold text-gray-900">Asesor de Fondos por Voz</h3>
+        <p className="text-xs text-gray-500 mt-0.5">
+          {loadState === "loading"
+            ? "Preparando contexto…"
+            : "FIC Abierto · FIC CxC · extractos de documentación"}
+        </p>
       </div>
 
-      {/* Content */}
       <div className="p-4 space-y-4">
-        {digestStatus === "error" && (
-          <div className="rounded-lg border border-amber-200 bg-amber-50/80 p-3 text-xs text-amber-900 space-y-2">
-            <p>No se pudo leer la carpeta <code className="text-[11px]">info/</code>. Reintenta o conecta solo con el resumen.</p>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => loadDigests({ showLoadingPulse: true })}
-                className="inline-flex items-center gap-1.5 rounded-md bg-white px-2.5 py-1.5 text-xs font-medium ring-1 ring-amber-300 hover:bg-amber-50"
-              >
-                <RefreshCw className="w-3.5 h-3.5" />
-                Reintentar
-              </button>
-              <button
-                type="button"
-                onClick={useSummaryOnly}
-                className="rounded-md bg-amber-800/10 px-2.5 py-1.5 text-xs font-medium text-amber-950 hover:bg-amber-800/15"
-              >
-                Solo resumen
-              </button>
-            </div>
+        <VoicePulse speaking={isSpeaking} />
+
+        <div className="flex justify-center">
+          {error ? (
+            <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-600 ring-1 ring-red-200">
+              Error de conexión
+            </span>
+          ) : isConnecting ? (
+            <span className="flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 ring-1 ring-amber-200">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-500" />
+              Conectando con Gemini Live…
+            </span>
+          ) : isConnected ? (
+            <span className="flex items-center gap-1.5 rounded-full bg-[#F0FEE6] px-3 py-1 text-xs font-semibold text-[#4a7c59] ring-1 ring-[#BBE795]/40">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#4a7c59]" />
+              {isSpeaking ? "Asistente · hablando" : "Micrófono · escucha activa"}
+            </span>
+          ) : loadState === "loading" ? (
+            <span className="rounded-full bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-500 ring-1 ring-gray-200">
+              Cargando base de conocimiento…
+            </span>
+          ) : (
+            <span className="rounded-full bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-600 ring-1 ring-gray-200">
+              Listo para iniciar
+            </span>
+          )}
+        </div>
+
+        {error && <p className="text-center text-xs text-red-600">{error}</p>}
+
+        {loadState === "error" && (
+          <div className="rounded-lg border border-amber-200 bg-amber-50/80 p-3 text-xs text-amber-900 flex items-center justify-between gap-2">
+            <span>Contexto reducido (sin extractos PDF).</span>
+            <button
+              type="button"
+              onClick={() => loadContext({ showLoading: true })}
+              className="inline-flex items-center gap-1 rounded-md bg-white px-2 py-1 text-xs font-medium ring-1 ring-amber-300"
+            >
+              <RefreshCw className="w-3 h-3" />
+              Reintentar
+            </button>
           </div>
         )}
 
-        {digestStatus === "ready" && digestMeta && digestMarkdown && (
-          <p className="text-[11px] text-gray-500 leading-relaxed">
-            Incluye VLM de: {digestMeta.sourceFiles.join(", ")}
-            {digestMeta.truncated && " · corpus truncado por límite de tamaño"}
-            {digestMeta.totalChars > 0 && ` · ~${(digestMeta.totalChars / 1000).toFixed(0)}k caracteres`}
+        {contextMeta && loadState === "ready" && (
+          <p className="text-[11px] text-gray-500 text-center leading-relaxed">
+            {contextMeta.sourceFiles.length} documentos · ~{(contextMeta.totalChars / 1000).toFixed(0)}k
+            caracteres
+            {contextMeta.truncated ? " · truncado al límite Live" : ""}
           </p>
         )}
 
-        {/* Connection Button */}
-        <button
-          onClick={handleToggle}
-          disabled={isConnecting || (!isConnected && !canConnect)}
-          className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium text-sm transition-all ${
-            isConnected
-              ? "bg-red-100 text-red-700 hover:bg-red-200"
-              : isConnecting || !canConnect
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "bg-[#4a7c59] text-white hover:bg-[#3d6549]"
-          }`}
-        >
+        <div className="flex justify-center gap-2">
           {isConnecting ? (
-            <>
-              <Loader2 className="w-4 h-4 animate-spin" />
+            <Button disabled variant="outline" className="h-10 rounded-lg px-6 w-full">
+              <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-gray-600" />
               Conectando…
-            </>
-          ) : isConnected ? (
-            <>
-              <MicOff className="w-4 h-4" />
-              Desconectar
-            </>
-          ) : digestStatus === "loading" ? (
-            <>
-              <Loader2 className="w-4 h-4 animate-spin" />
-              Esperando documentación…
-            </>
+            </Button>
+          ) : !isConnected ? (
+            <Button
+              type="button"
+              onClick={() => void startSession()}
+              disabled={!canStart}
+              className="h-10 w-full rounded-lg bg-[#4a7c59] px-6 font-semibold text-white hover:bg-[#3f6b4c] disabled:opacity-50"
+            >
+              <Mic className="mr-2 h-4 w-4" />
+              Hablar con el asesor
+            </Button>
           ) : (
-            <>
-              <Mic className="w-4 h-4" />
-              Iniciar consulta por voz
-            </>
+            <Button
+              type="button"
+              onClick={() => endSession()}
+              variant="outline"
+              className="h-10 w-full rounded-lg border-red-200 bg-red-50 px-5 font-semibold text-red-700 hover:bg-red-100"
+            >
+              <Square className="mr-2 h-3 w-3 fill-current" />
+              Finalizar llamada
+            </Button>
           )}
-        </button>
+        </div>
 
-        {/* Error Display */}
-        {error && (
-          <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-            <p className="text-xs text-red-700">{error}</p>
-          </div>
-        )}
-
-        {/* Voice Activity Indicator */}
-        {isConnected && (
-          <div className="flex items-center justify-center gap-1 py-2">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className={`w-1 rounded-full transition-all duration-150 ${
-                  isSpeaking ? "bg-green-500 animate-pulse" : "bg-blue-300"
-                }`}
-                style={{
-                  height: isSpeaking ? `${12 + (i % 4) * 3}px` : "8px",
-                  animationDelay: `${i * 100}ms`,
-                }}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Info Box */}
         <div className="flex items-start gap-2 p-3 bg-blue-50/50 rounded-lg">
           <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
           <div className="text-xs text-gray-600 leading-relaxed">
             <p className="font-medium text-gray-700 mb-1">Preguntas sugeridas:</p>
             <ul className="space-y-0.5 text-gray-500">
+              <li>• ¿Qué rentabilidad tuvo el FIC CxC en marzo?</li>
+              <li>• ¿Cuál tiene mejor liquidez, Abierto o CxC?</li>
               <li>• ¿Qué dice el prospecto sobre comisiones?</li>
-              <li>• ¿Cuál fondo coincide más con necesidad de liquidez vista?</li>
-              <li>• Detalle de la lámina de composición del FIC Abierto</li>
-              <li>• Qué establece el reglamento del fondo abierto sobre retiros</li>
+              <li>• ¿Cómo se comportó el fondo en el COVID?</li>
             </ul>
           </div>
         </div>
-
-        {/* Technical Note */}
-        <p className="text-[10px] text-gray-400 text-center">
-          Corpus = markdown de todos los <code className="text-[10px]">*.pdf-vlm-digest.json</code> en{" "}
-          <code className="text-[10px]">/info</code> · Gemini Live
-        </p>
       </div>
     </div>
   );

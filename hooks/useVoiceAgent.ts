@@ -7,7 +7,6 @@ import {
   SKILL_ROLE_LABELS,
   type SkillRoleId,
 } from "@/lib/servicio-cliente/knowledgeBase";
-import { buildFundAdvisoryVoiceInstruction } from "@/lib/asesoria/advisoryKnowledgeBase";
 
 type VoiceCloseReason = { code?: number; reason?: string };
 
@@ -110,6 +109,32 @@ Al iniciar la conversación (cuando el usuario acaba de conectar):
 1) Saluda en una frase.
 2) Resume en 2 frases breves el trade-off entre tu portafolio actual y el portafolio sugerido usando solo los datos anteriores.
 3) Invita a hacer preguntas libres por voz.
+
+Después responde solo lo que preguntan.`;
+}
+
+function buildFundAdvisoryAdvisorInstruction(fundContext: string): string {
+  return `Eres el asesor de voz de ELEMENTO ALPHA y ALIANZA FIDUCIARIA (Colombia) en el módulo de asesoría especializada de fondos (demo).
+Habla en español colombiano, profesional y cercano. Sé conciso por voz; amplía solo si el usuario pide más detalle.
+
+Tu trabajo es responder preguntas por VOZ sobre FIC Abierto Alianza y FIC CxC Alianza: rentabilidad, riesgo, composición, liquidez, comisiones, prospectos, reglamentos y comparativas.
+NO emitas bloques JSON ni etiquetas técnicas en voz.
+
+DATOS OFICIALES — úsalos tal cual; no inventes cifras fuera de este bloque:
+---
+${fundContext}
+---
+
+Reglas:
+- Si algo no está en los datos, dilo con claridad.
+- No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
+- Prioriza extractos de documentos (extractosDocumentos) cuando pregunten por láminas, prospecto o reglamento.
+- Compara FIC Abierto vs FIC CxC usando la tabla comparativa del contexto cuando sea útil.
+
+Al conectar (primer turno):
+1) Saluda en una frase.
+2) Pregunta si desea información sobre FIC Abierto, FIC CxC o una comparativa.
+3) Invita a preguntas libres por voz.
 
 Después responde solo lo que preguntan.`;
 }
@@ -331,10 +356,8 @@ interface UseVoiceAgentOptions {
   customerSupportContext?: string;
   /** Si se define con mode customer_support, instrucción = perfil SKILLS (PM, estratega, etc.). */
   skillConsultRole?: SkillRoleId;
-  /** Contexto adicional del cliente para asesoría de fondos (mode === "fund_advisory"). */
+  /** Contexto compacto de fondos + extractos JSON (mode === "fund_advisory"). Igual que rebalanceContext. */
   fundAdvisoryContext?: string;
-  /** Markdown concatenado de todos los digests VLM en /info (mode === "fund_advisory"). */
-  fundAdvisoryDigestMarkdown?: string;
   financialContext?: string;
   intakeData?: VoiceIntakeData;
   onRecommendation?: (rec: PortfolioRecommendation) => void;
@@ -346,7 +369,6 @@ function resolveSystemInstruction(opts: {
   customerSupportContext?: string;
   skillConsultRole?: SkillRoleId;
   fundAdvisoryContext?: string;
-  fundAdvisoryDigestMarkdown?: string;
   financialContext?: string;
   intakeData?: VoiceIntakeData;
 }): string {
@@ -363,9 +385,9 @@ function resolveSystemInstruction(opts: {
     return buildCustomerSupportInstruction(safeCtx);
   }
   if (opts.mode === "fund_advisory") {
-    return buildFundAdvisoryVoiceInstruction(
-      opts.fundAdvisoryContext,
-      opts.fundAdvisoryDigestMarkdown,
+    const ctx = opts.fundAdvisoryContext?.trim();
+    return buildFundAdvisoryAdvisorInstruction(
+      ctx || "(Contexto de fondos aún no disponible.)",
     );
   }
   return buildSystemInstruction(opts.financialContext, opts.intakeData);
@@ -378,7 +400,6 @@ export function useVoiceAgent({
   customerSupportContext,
   skillConsultRole,
   fundAdvisoryContext,
-  fundAdvisoryDigestMarkdown,
   financialContext,
   intakeData,
   onRecommendation,
@@ -554,7 +575,6 @@ export function useVoiceAgent({
             customerSupportContext,
             skillConsultRole,
             fundAdvisoryContext,
-            fundAdvisoryDigestMarkdown,
             financialContext,
             intakeData,
           }),
@@ -666,7 +686,6 @@ export function useVoiceAgent({
     customerSupportContext,
     skillConsultRole,
     fundAdvisoryContext,
-    fundAdvisoryDigestMarkdown,
     financialContext,
     intakeData,
     playBase64Pcm,
