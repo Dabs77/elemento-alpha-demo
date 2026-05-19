@@ -12,6 +12,7 @@ type VoiceContextApiOk = {
   sourceFiles: string[];
   totalChars: number;
   truncated: boolean;
+  mode?: "full" | "compact";
 };
 
 const FALLBACK_CONTEXT = JSON.stringify(
@@ -29,6 +30,7 @@ export function AdvisoryVoicePanel() {
     sourceFiles: string[];
     totalChars: number;
     truncated: boolean;
+    mode: "full" | "compact";
   } | null>(null);
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">("loading");
 
@@ -48,6 +50,7 @@ export function AdvisoryVoicePanel() {
           sourceFiles: data.sourceFiles,
           totalChars: data.totalChars,
           truncated: data.truncated,
+          mode: data.mode ?? "compact",
         });
         setLoadState("ready");
       })
@@ -82,8 +85,10 @@ export function AdvisoryVoicePanel() {
         <h3 className="text-sm font-semibold text-gray-900">Asesor de Fondos por Voz</h3>
         <p className="text-xs text-gray-500 mt-0.5">
           {loadState === "loading"
-            ? "Preparando contexto…"
-            : "FIC Abierto · FIC CxC · extractos de documentación"}
+            ? "Preparando contexto de documentación…"
+            : contextMeta?.mode === "full"
+              ? "FIC Abierto · FIC CxC · JSON íntegro (modo full — alto consumo de cuota)"
+              : "FIC Abierto · FIC CxC · extractos clave de documentación (modo compacto)"}
         </p>
       </div>
 
@@ -116,11 +121,31 @@ export function AdvisoryVoicePanel() {
           )}
         </div>
 
-        {error && <p className="text-center text-xs text-red-600">{error}</p>}
+        {error && (
+          <div className="rounded-lg border border-red-200 bg-red-50/80 p-3 text-xs text-red-800 leading-relaxed">
+            <p>{error}</p>
+            {(error.includes("Cuota") || error.includes("quota")) && (
+              <p className="mt-2 text-red-700">
+                Revisa tu plan en{" "}
+                <a
+                  href="https://aistudio.google.com/apikey"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline font-medium"
+                >
+                  Google AI Studio
+                </a>
+                . Para probar sin JSON completo, elimina{" "}
+                <code className="rounded bg-white/80 px-1">FUND_ADVISORY_VOICE_FULL_JSON=1</code> de{" "}
+                <code className="rounded bg-white/80 px-1">.env.local</code> y reinicia el servidor.
+              </p>
+            )}
+          </div>
+        )}
 
         {loadState === "error" && (
           <div className="rounded-lg border border-amber-200 bg-amber-50/80 p-3 text-xs text-amber-900 flex items-center justify-between gap-2">
-            <span>Contexto reducido (sin extractos PDF).</span>
+            <span>Contexto reducido (sin JSON de documentos).</span>
             <button
               type="button"
               onClick={() => loadContext({ showLoading: true })}
@@ -135,8 +160,8 @@ export function AdvisoryVoicePanel() {
         {contextMeta && loadState === "ready" && (
           <p className="text-[11px] text-gray-500 text-center leading-relaxed">
             {contextMeta.sourceFiles.length} documentos · ~{(contextMeta.totalChars / 1000).toFixed(0)}k
-            caracteres
-            {contextMeta.truncated ? " · truncado al límite Live" : ""}
+            caracteres · modo {contextMeta.mode === "full" ? "JSON completo" : "compacto"}
+            {contextMeta.truncated ? " · truncado" : ""}
           </p>
         )}
 

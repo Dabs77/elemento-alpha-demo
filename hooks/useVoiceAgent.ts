@@ -10,7 +10,71 @@ import {
 
 type VoiceCloseReason = { code?: number; reason?: string };
 
-type LiveVoiceSession = { close: () => void };
+type LiveVoiceSession = {
+  close: () => void;
+  sendClientContent: (params: {
+    turns?: { role?: string; parts?: { text?: string }[] }[];
+    turnComplete?: boolean;
+  }) => void;
+  sendRealtimeInput: (params: {
+    audio?: { data: string; mimeType: string };
+    text?: string;
+  }) => void;
+};
+
+/** Tamaño por fragmento al inyectar corpus grande vía sendClientContent (evita error 1007). */
+const FUND_ADVISORY_CONTEXT_CHUNK_SIZE = 30_000;
+
+function chunkFundAdvisoryContext(context: string): string[] {
+  if (context.length <= FUND_ADVISORY_CONTEXT_CHUNK_SIZE) return [context];
+  const chunks: string[] = [];
+  for (let i = 0; i < context.length; i += FUND_ADVISORY_CONTEXT_CHUNK_SIZE) {
+    chunks.push(context.slice(i, i + FUND_ADVISORY_CONTEXT_CHUNK_SIZE));
+  }
+  return chunks;
+}
+
+/** Por encima de esto el contexto se inyecta por chunks (modo JSON completo). */
+const FUND_ADVISORY_INLINE_CONTEXT_MAX = 50_000;
+
+function formatLiveCloseError(code?: number, reason?: string): string {
+  const r = (reason ?? "").toLowerCase();
+  if (code === 1011 || r.includes("quota") || r.includes("billing")) {
+    return (
+      "Cuota de Gemini agotada. El modo JSON completo (~1,8M caracteres) consume muchísima cuota por sesión. " +
+      "Opciones: (1) revisa facturación en aistudio.google.com, o (2) quita FUND_ADVISORY_VOICE_FULL_JSON=1 de .env.local " +
+      "para usar el modo compacto (~40 KB) y reinicia npm run dev."
+    );
+  }
+  if (code === 1007 || r.includes("invalid argument")) {
+    return "Contexto demasiado grande para Gemini Live. Usa modo compacto (sin FUND_ADVISORY_VOICE_FULL_JSON=1).";
+  }
+  return `Conexión cerrada (${code ?? "?"}): ${reason || "sin razón"}`;
+}
+
+function sendFundAdvisoryContextChunks(session: LiveVoiceSession, context: string): void {
+  const chunks = chunkFundAdvisoryContext(context);
+  const total = chunks.length;
+  for (let i = 0; i < total; i++) {
+    const header =
+      total === 1
+        ? "[BASE DE CONOCIMIENTO COMPLETA — JSON íntegro de todos los documentos VLM y métricas estructuradas]"
+        : `[BASE DE CONOCIMIENTO — fragmento ${i + 1}/${total}]`;
+    session.sendClientContent({
+      turns: [
+        {
+          role: "user",
+          parts: [
+            {
+              text: `${header}\n\nUsa estos datos como única fuente autorizada. No inventes cifras.\n\n${chunks[i]}`,
+            },
+          ],
+        },
+      ],
+      turnComplete: i === total - 1,
+    });
+  }
+}
 
 const ai = new GoogleGenAI({
   apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY!,
@@ -128,10 +192,34 @@ ${fundContext}
 Reglas:
 - Si algo no está en los datos, dilo con claridad.
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
-- Prioriza extractos de documentos (extractosDocumentos) cuando pregunten por láminas, prospecto o reglamento.
+- Prioriza extractos de documentos (extractosDocumentos o documentosVlmDigest) cuando pregunten por láminas, prospecto o reglamento.
 - Compara FIC Abierto vs FIC CxC usando la tabla comparativa del contexto cuando sea útil.
 
 Al conectar (primer turno):
+1) Saluda en una frase.
+2) Pregunta si desea información sobre FIC Abierto, FIC CxC o una comparativa.
+3) Invita a preguntas libres por voz.
+
+Después responde solo lo que preguntan.`;
+}
+
+function buildFundAdvisoryAdvisorInstructionRulesOnly(): string {
+  return `Eres el asesor de voz de ELEMENTO ALPHA y ALIANZA FIDUCIARIA (Colombia) en el módulo de asesoría especializada de fondos (demo).
+Habla en español colombiano, profesional y cercano. Sé conciso por voz; amplía solo si el usuario pide más detalle.
+
+Tu trabajo es responder preguntas por VOZ sobre FIC Abierto Alianza y FIC CxC Alianza: rentabilidad, riesgo, composición, liquidez, comisiones, prospectos, reglamentos y comparativas.
+NO emitas bloques JSON ni etiquetas técnicas en voz.
+
+La base de conocimiento completa (JSON íntegro de cada digest VLM + métricas estructuradas) llegará en uno o más mensajes de contexto antes de que hables.
+Úsala como única fuente de verdad; no inventes cifras fuera de ese corpus.
+
+Reglas:
+- Si algo no está en los datos, dilo con claridad.
+- No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
+- Prioriza documentosVlmDigest (JSON completo por archivo) cuando pregunten por láminas, prospecto o reglamento.
+- Compara FIC Abierto vs FIC CxC usando la tabla comparativa del contexto cuando sea útil.
+
+Al recibir la base de conocimiento (primer turno):
 1) Saluda en una frase.
 2) Pregunta si desea información sobre FIC Abierto, FIC CxC o una comparativa.
 3) Invita a preguntas libres por voz.
@@ -386,9 +474,10 @@ function resolveSystemInstruction(opts: {
   }
   if (opts.mode === "fund_advisory") {
     const ctx = opts.fundAdvisoryContext?.trim();
-    return buildFundAdvisoryAdvisorInstruction(
-      ctx || "(Contexto de fondos aún no disponible.)",
-    );
+    if (ctx && ctx.length <= FUND_ADVISORY_INLINE_CONTEXT_MAX) {
+      return buildFundAdvisoryAdvisorInstruction(ctx);
+    }
+    return buildFundAdvisoryAdvisorInstructionRulesOnly();
   }
   return buildSystemInstruction(opts.financialContext, opts.intakeData);
 }
@@ -421,6 +510,7 @@ export function useVoiceAgent({
   const fullInterviewTranscriptRef = useRef<string>("");
   const onRecommendationRef = useRef(onRecommendation);
   const modeRef = useRef(mode);
+  const fundAdvisoryContextRef = useRef(fundAdvisoryContext);
 
   useEffect(() => {
     onRecommendationRef.current = onRecommendation;
@@ -429,6 +519,10 @@ export function useVoiceAgent({
   useEffect(() => {
     modeRef.current = mode;
   }, [mode]);
+
+  useEffect(() => {
+    fundAdvisoryContextRef.current = fundAdvisoryContext;
+  }, [fundAdvisoryContext]);
 
   // ── Reproducción de audio PCM base64 (24kHz) ─────────────────────────────
   const playBase64Pcm = useCallback((base64: string) => {
@@ -584,29 +678,39 @@ export function useVoiceAgent({
             setIsConnecting(false);
             setIsConnected(true);
 
-            // 4. Activar envío de audio al conectar
-            recorderNode.port.onmessage = (e) => {
-              const pcm16 = e.data;
-              const buffer = new ArrayBuffer(pcm16.length * 2);
-              const view = new DataView(buffer);
-              for (let i = 0; i < pcm16.length; i++) view.setInt16(i * 2, pcm16[i], true);
-              let binary = "";
-              const bytes = new Uint8Array(buffer);
-              for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
+            void sessionPromise.then((session) => {
+              const liveSession = session as LiveVoiceSession;
+              const ctx = fundAdvisoryContextRef.current?.trim();
+              if (
+                modeRef.current === "fund_advisory" &&
+                ctx &&
+                ctx.length > FUND_ADVISORY_INLINE_CONTEXT_MAX
+              ) {
+                sendFundAdvisoryContextChunks(liveSession, ctx);
+              }
 
-              sessionPromise.then((session) => {
+              // Activar envío de audio tras inyectar contexto
+              recorderNode.port.onmessage = (e) => {
+                const pcm16 = e.data;
+                const buffer = new ArrayBuffer(pcm16.length * 2);
+                const view = new DataView(buffer);
+                for (let i = 0; i < pcm16.length; i++) view.setInt16(i * 2, pcm16[i], true);
+                let binary = "";
+                const bytes = new Uint8Array(buffer);
+                for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
+
                 try {
-                  session.sendRealtimeInput({
+                  liveSession.sendRealtimeInput({
                     audio: { data: window.btoa(binary), mimeType: "audio/pcm;rate=16000" },
                   });
                 } catch {
                   /* envío rechazado si la sesión ya cerró */
                 }
-              });
-            };
+              };
 
-            source.connect(recorderNode);
-            recorderNode.connect(audioContextRef.current!.destination);
+              source.connect(recorderNode);
+              recorderNode.connect(audioContextRef.current!.destination);
+            });
           },
 
           onmessage: (message: LiveServerMessage) => {
@@ -663,7 +767,7 @@ export function useVoiceAgent({
             console.warn("Sesión Gemini cerrada:", event?.code, event?.reason);
             cleanup();
             if (event?.code && event.code !== 1000) {
-              setError(`Conexión cerrada (${event.code}): ${event.reason || "sin razón"}`);
+              setError(formatLiveCloseError(event.code, event.reason));
             }
             setIsConnected(false);
             setIsConnecting(false);
