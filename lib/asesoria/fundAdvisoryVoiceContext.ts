@@ -3,15 +3,16 @@ import { FIC_ABIERTO_DATA, FIC_CXC_DATA, FUND_COMPARISON_TABLE } from "./fundDat
 import { STRESS_EPISODES, STRESS_SUMMARY } from "./stressTestData";
 import { listVlmDigestJsonFiles, readVlmDigestJson } from "./collectFundDigestMarkdown";
 
-/** Modo compacto (~40 KB) evita agotar cuota de Gemini Live. Full JSON ~1,8M chars. */
+/** Modo compacto ampliado (~120 KB). Full JSON ~1,8M chars (requiere cuota). */
 export function isFundAdvisoryVoiceFullJsonMode(): boolean {
   const v = process.env.FUND_ADVISORY_VOICE_FULL_JSON?.trim().toLowerCase();
   return v === "1" || v === "true" || v === "yes";
 }
 
 const COMPACT_MAX_CHARS =
-  Number(process.env.FUND_ADVISORY_VOICE_MAX_CHARS) || 38_000;
+  Number(process.env.FUND_ADVISORY_VOICE_MAX_CHARS) || 120_000;
 
+/** Páginas clave por digest — orden de prioridad al truncar (último = se recorta primero). */
 const KEY_PAGES_BY_FILE: Record<string, number[] | "all"> = {
   "Desempe_o_FIC_Abierto_.pdf-vlm-digest.json": [2, 7, 8, 13],
   "Update_FIC_CxC_Marzo_2026.pdf-vlm-digest.json": [2, 3],
@@ -20,8 +21,19 @@ const KEY_PAGES_BY_FILE: Record<string, number[] | "all"> = {
   "Presentacion-Corporativa-ALIANZA-ASSET-MANAGEMENT_Mar2026..pdf-vlm-digest.json": [
     1, 2, 3, 4, 5, 6,
   ],
-  "Prospecto_FIC_Abierto_2026-03_.pdf-vlm-digest.json": [1, 2, 3, 4, 5, 6],
-  "Reglamento_Fondo_Abierto_2026-3_.pdf-vlm-digest.json": [1, 2, 3, 4, 5, 6],
+  "Prospecto_FIC_Abierto_2026-03_.pdf-vlm-digest.json": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "Reglamento_Fondo_Abierto_2026-3_.pdf-vlm-digest.json": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+};
+
+/** Prioridad de truncado: menor número = se conserva más tiempo. */
+const FILE_TRUNCATION_PRIORITY: Record<string, number> = {
+  "Prospecto_FIC_Abierto_2026-03_.pdf-vlm-digest.json": 1,
+  "Reglamento_Fondo_Abierto_2026-3_.pdf-vlm-digest.json": 2,
+  "Update_FIC_CxC_Marzo_2026.pdf-vlm-digest.json": 3,
+  "FIC_CxC_Abril_2026.pdf-vlm-digest.json": 4,
+  "Desempe_o_FIC_Abierto_.pdf-vlm-digest.json": 5,
+  "Plataforma_de_Fondos_y_Cuantavista.pdf-vlm-digest.json": 6,
+  "Presentacion-Corporativa-ALIANZA-ASSET-MANAGEMENT_Mar2026..pdf-vlm-digest.json": 7,
 };
 
 export type FundAdvisoryVoiceContextResult = {
@@ -48,15 +60,21 @@ function resolvePageNumbers(fileName: string, digest: PdfVlmDigestResult): numbe
   if (rule?.length) return rule;
   return [...digest.pages]
     .sort((a, b) => a.pageNumber - b.pageNumber)
-    .slice(0, 5)
+    .slice(0, 6)
     .map((p) => p.pageNumber);
 }
 
-function buildStructuredPayload(documentosVlmDigest: unknown) {
+type DigestExcerpt = {
+  archivo: string;
+  documento: string;
+  paginas: { numero: number; titulo?: string; contenido: string }[];
+};
+
+function buildMetricsPayload() {
   return {
     escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
     nota:
-      "Datos demo Marzo 2026. Responde solo con esta información; no inventes cifras.",
+      "Datos demo Marzo 2026. Responde con precisión usando ficAbierto, ficCxC, comparativa, estresHistorico y corpusDocumental.",
     ficAbierto: FIC_ABIERTO_DATA,
     ficCxC: FIC_CXC_DATA,
     comparativa: FUND_COMPARISON_TABLE,
@@ -64,8 +82,102 @@ function buildStructuredPayload(documentosVlmDigest: unknown) {
       resumen: STRESS_SUMMARY,
       episodios: STRESS_EPISODES,
     },
-    documentosVlmDigest,
   };
+}
+
+function buildDigestExcerpts(): DigestExcerpt[] {
+  const excerpts: DigestExcerpt[] = [];
+
+  for (const name of listVlmDigestJsonFiles()) {
+    const parsed = readVlmDigestJson(name);
+    if (!parsed) continue;
+
+    const pageNumbers = resolvePageNumbers(name, parsed);
+    const paginas: DigestExcerpt["paginas"] = [];
+
+    for (const n of pageNumbers) {
+      const content = pageMarkdown(parsed, n);
+      if (!content) continue;
+      const titulo = parsed.pages.find((p) => p.pageNumber === n)?.tituloInferido;
+      paginas.push({ numero: n, titulo, contenido: content });
+    }
+
+    if (paginas.length === 0) continue;
+    excerpts.push({
+      archivo: name,
+      documento: parsed.fileName || name,
+      paginas,
+    });
+  }
+
+  return excerpts;
+}
+
+function buildCorpusMarkdown(excerpts: DigestExcerpt[]): string {
+  return excerpts
+    .map((doc) => {
+      const body = doc.paginas
+        .map((p) => {
+          const header = p.titulo
+            ? `#### Página ${p.numero} — ${p.titulo}`
+            : `#### Página ${p.numero}`;
+          return `${header}\n\n${p.contenido}`;
+        })
+        .join("\n\n");
+      return `### ${doc.documento}\n*Archivo: ${doc.archivo}*\n\n${body}`;
+    })
+    .join("\n\n---\n\n");
+}
+
+function serializeCompactPayload(
+  excerpts: DigestExcerpt[],
+  corpusMarkdown: string,
+): string {
+  return JSON.stringify({
+    ...buildMetricsPayload(),
+    corpusDocumental: excerpts.map((e) => ({
+      archivo: e.archivo,
+      documento: e.documento,
+      paginasIncluidas: e.paginas.map((p) => p.numero),
+    })),
+    corpusDocumentalMarkdown: corpusMarkdown,
+  });
+}
+
+function truncateExcerptsToFit(excerpts: DigestExcerpt[], maxChars: number): {
+  excerpts: DigestExcerpt[];
+  truncated: boolean;
+} {
+  let working = excerpts.map((e) => ({ ...e, paginas: [...e.paginas] }));
+  let truncated = false;
+
+  const fits = () => serializeCompactPayload(working, buildCorpusMarkdown(working)).length <= maxChars;
+
+  if (fits()) return { excerpts: working, truncated: false };
+
+  truncated = true;
+  const byPriority = [...working].sort(
+    (a, b) =>
+      (FILE_TRUNCATION_PRIORITY[b.archivo] ?? 99) -
+      (FILE_TRUNCATION_PRIORITY[a.archivo] ?? 99),
+  );
+
+  while (!fits() && byPriority.length > 0) {
+    const target = byPriority[0];
+    const doc = working.find((d) => d.archivo === target.archivo);
+    if (!doc || doc.paginas.length === 0) {
+      byPriority.shift();
+      working = working.filter((d) => d.archivo !== target.archivo);
+      continue;
+    }
+    doc.paginas.pop();
+    if (doc.paginas.length === 0) {
+      byPriority.shift();
+      working = working.filter((d) => d.archivo !== target.archivo);
+    }
+  }
+
+  return { excerpts: working, truncated };
 }
 
 function buildFullJsonContext(): FundAdvisoryVoiceContextResult {
@@ -82,7 +194,10 @@ function buildFullJsonContext(): FundAdvisoryVoiceContextResult {
     documentosVlmDigest.push({ archivoJson: name, digest: parsed });
   }
 
-  const context = JSON.stringify(buildStructuredPayload(documentosVlmDigest));
+  const context = JSON.stringify({
+    ...buildMetricsPayload(),
+    documentosVlmDigest,
+  });
 
   return {
     context,
@@ -94,69 +209,11 @@ function buildFullJsonContext(): FundAdvisoryVoiceContextResult {
 }
 
 function buildCompactContext(): FundAdvisoryVoiceContextResult {
-  const digestExcerpts: {
-    archivo: string;
-    documento: string;
-    paginas: { numero: number; titulo?: string; contenido: string }[];
-  }[] = [];
-  const sourceFiles: string[] = [];
-
-  for (const name of listVlmDigestJsonFiles()) {
-    const parsed = readVlmDigestJson(name);
-    if (!parsed) continue;
-
-    const pageNumbers = resolvePageNumbers(name, parsed);
-    const paginas: { numero: number; titulo?: string; contenido: string }[] = [];
-
-    for (const n of pageNumbers) {
-      const content = pageMarkdown(parsed, n);
-      if (!content) continue;
-      const titulo = parsed.pages.find((p) => p.pageNumber === n)?.tituloInferido;
-      paginas.push({ numero: n, titulo, contenido: content.slice(0, 4_500) });
-    }
-
-    if (paginas.length === 0) continue;
-    sourceFiles.push(name);
-    digestExcerpts.push({
-      archivo: name,
-      documento: parsed.fileName || name,
-      paginas,
-    });
-  }
-
-  const payload = {
-    escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
-    nota:
-      "Datos demo Marzo 2026. Responde solo con esta información; no inventes cifras.",
-    ficAbierto: FIC_ABIERTO_DATA,
-    ficCxC: FIC_CXC_DATA,
-    comparativa: FUND_COMPARISON_TABLE,
-    estresHistorico: {
-      resumen: STRESS_SUMMARY,
-      episodios: STRESS_EPISODES,
-    },
-    extractosDocumentos: digestExcerpts,
-  };
-
-  let context = JSON.stringify(payload);
-  let truncated = false;
-
-  if (context.length > COMPACT_MAX_CHARS) {
-    truncated = true;
-    while (context.length > COMPACT_MAX_CHARS && digestExcerpts.length > 0) {
-      const last = digestExcerpts[digestExcerpts.length - 1];
-      if (last.paginas.length > 1) {
-        last.paginas.pop();
-      } else {
-        digestExcerpts.pop();
-      }
-      context = JSON.stringify({ ...payload, extractosDocumentos: digestExcerpts });
-    }
-    if (context.length > COMPACT_MAX_CHARS) {
-      context = context.slice(0, COMPACT_MAX_CHARS);
-      context += '..."[contexto truncado por límite Gemini Live]"';
-    }
-  }
+  const allExcerpts = buildDigestExcerpts();
+  const sourceFiles = allExcerpts.map((e) => e.archivo);
+  const { excerpts, truncated } = truncateExcerptsToFit(allExcerpts, COMPACT_MAX_CHARS);
+  const corpusMarkdown = buildCorpusMarkdown(excerpts);
+  const context = serializeCompactPayload(excerpts, corpusMarkdown);
 
   return {
     context,
@@ -169,8 +226,8 @@ function buildCompactContext(): FundAdvisoryVoiceContextResult {
 
 /**
  * Contexto para asesoría por voz.
- * Por defecto: compacto (~40 KB, cabe en cuota free de Live).
- * Full JSON: FUND_ADVISORY_VOICE_FULL_JSON=1 en .env.local (~1,8M chars, requiere plan con cuota).
+ * Por defecto: compacto (~120 KB, markdown + métricas).
+ * Full JSON: FUND_ADVISORY_VOICE_FULL_JSON=1 (~1,8M chars, requiere cuota).
  */
 export function buildFundAdvisoryVoiceContext(): FundAdvisoryVoiceContextResult {
   return isFundAdvisoryVoiceFullJsonMode()

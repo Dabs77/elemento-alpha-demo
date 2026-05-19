@@ -13,6 +13,8 @@ export interface SimulatedClientPosition {
   valorUnidad: number;
   fechaVinculacion: string;
   tiempoPermanenciaMeses: number;
+  /** Porcentaje del capital retirado en el periodo (0 = sin retiros) */
+  retirosCapitalPct: number;
   rentabilidadObtenida: number;
   comisionAplicada: string;
   tipoParticipacion: string;
@@ -56,6 +58,45 @@ function simpleHash(str: string): number {
   return Math.abs(hash);
 }
 
+/** Perfiles demo con cédula fija — activan reglas de recomendación de forma predecible. */
+const DEMO_CEDULA_OVERRIDES: Record<
+  string,
+  Partial<SimulatedClientPosition> & {
+    tiempoPermanenciaMeses: number;
+    retirosCapitalPct: number;
+  }
+> = {
+  /** Regla 2: > 12 meses, retiros < 30% → traslado total CxC + aumento 20% */
+  "1000077160": {
+    nombre: "Carlos Andrés Martínez López",
+    tiempoPermanenciaMeses: 18,
+    retirosCapitalPct: 15,
+    posicionActual: 100_000_000,
+  },
+};
+
+function applyDemoCedulaOverride(
+  client: SimulatedClientPosition,
+  cleanCedula: string,
+): SimulatedClientPosition {
+  const override = DEMO_CEDULA_OVERRIDES[cleanCedula];
+  if (!override) return client;
+
+  const merged = { ...client, ...override, cedula: cleanCedula };
+  const hoy = new Date();
+  const fechaVinculacion = new Date(hoy);
+  fechaVinculacion.setMonth(
+    fechaVinculacion.getMonth() - merged.tiempoPermanenciaMeses,
+  );
+  merged.fechaVinculacion = fechaVinculacion.toISOString().split("T")[0];
+  merged.unidadesFondo =
+    Math.round((merged.posicionActual / merged.valorUnidad) * 100) / 100;
+  merged.rentabilidadObtenida =
+    Math.round(((8.5 * merged.tiempoPermanenciaMeses) / 12) * 100) / 100;
+
+  return merged;
+}
+
 // Genera datos simulados basados en la cédula
 export function generateSimulatedClient(cedula: string): SimulatedClientPosition {
   const hash = simpleHash(cedula);
@@ -93,6 +134,9 @@ export function generateSimulatedClient(cedula: string): SimulatedClientPosition
   const rentabilidadAnual = 5 + (hash % 700) / 100;
   const rentabilidadObtenida = (rentabilidadAnual * tiempoPermanenciaMeses) / 12;
   
+  // Retiros simulados (0–55% del capital)
+  const retirosCapitalPct = hash % 56;
+
   // Tipo de participación y comisión
   let tipoParticipacion: string;
   let comisionAplicada: string;
@@ -113,20 +157,26 @@ export function generateSimulatedClient(cedula: string): SimulatedClientPosition
     comisionAplicada = "1.25% E.A.";
   }
   
-  return {
-    cedula: cleanCedula,
-    nombre,
-    tipoCliente,
-    fondo,
-    posicionActual: Math.round(posicionActual),
-    unidadesFondo: Math.round(unidadesFondo * 100) / 100,
-    valorUnidad: Math.round(valorUnidad * 100) / 100,
-    fechaVinculacion: fechaVinculacion.toISOString().split("T")[0],
-    tiempoPermanenciaMeses,
-    rentabilidadObtenida: Math.round(rentabilidadObtenida * 100) / 100,
-    comisionAplicada,
-    tipoParticipacion,
-  };
+  return normalizeSimulatedClient(
+    applyDemoCedulaOverride(
+      {
+        cedula: cleanCedula,
+        nombre,
+        tipoCliente,
+        fondo,
+        posicionActual: Math.round(posicionActual),
+        unidadesFondo: Math.round(unidadesFondo * 100) / 100,
+        valorUnidad: Math.round(valorUnidad * 100) / 100,
+        fechaVinculacion: fechaVinculacion.toISOString().split("T")[0],
+        tiempoPermanenciaMeses,
+        retirosCapitalPct,
+        rentabilidadObtenida: Math.round(rentabilidadObtenida * 100) / 100,
+        comisionAplicada,
+        tipoParticipacion,
+      },
+      cleanCedula,
+    ),
+  );
 }
 
 // Cliente de demo predefinido (para la UI inicial)
@@ -139,11 +189,22 @@ export const DEMO_CLIENT: SimulatedClientPosition = {
   unidadesFondo: 2763.42,
   valorUnidad: 10856.23,
   fechaVinculacion: "2026-02-15",
-  tiempoPermanenciaMeses: 3,
+  tiempoPermanenciaMeses: 9,
+  retirosCapitalPct: 0,
   rentabilidadObtenida: 2.51,
   comisionAplicada: "1.25% E.A.",
   tipoParticipacion: "Persona Natural",
 };
+
+/** Asegura campos opcionales en clientes generados antes de retirosCapitalPct. */
+export function normalizeSimulatedClient(
+  client: SimulatedClientPosition,
+): SimulatedClientPosition {
+  return {
+    ...client,
+    retirosCapitalPct: client.retirosCapitalPct ?? 0,
+  };
+}
 
 // Formateo de moneda COP
 export function formatCOP(value: number): string {

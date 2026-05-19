@@ -2,9 +2,16 @@
 
 import { useState, useCallback } from "react";
 import { Search, User, Wallet, Calendar, TrendingUp, BarChart3, AlertTriangle } from "lucide-react";
-import { generateSimulatedClient, formatCOP, formatNumber, type SimulatedClientPosition } from "@/lib/asesoria/simulatedClientData";
+import {
+  generateSimulatedClient,
+  normalizeSimulatedClient,
+  formatCOP,
+  formatNumber,
+  type SimulatedClientPosition,
+} from "@/lib/asesoria/simulatedClientData";
 import { FIC_ABIERTO_DATA } from "@/lib/asesoria/fundDataService";
 import { StressHistoryModule } from "./StressHistoryModule";
+import { RecommendationsModule } from "./RecommendationsModule";
 
 export function ClienteExistenteView() {
   const [cedula, setCedula] = useState("");
@@ -15,8 +22,7 @@ export function ClienteExistenteView() {
     if (!cedula.trim()) return;
     setIsSearching(true);
     setTimeout(() => {
-      const simulatedClient = generateSimulatedClient(cedula);
-      setCliente(simulatedClient);
+      setCliente(normalizeSimulatedClient(generateSimulatedClient(cedula)));
       setIsSearching(false);
     }, 500);
   }, [cedula]);
@@ -70,9 +76,6 @@ export function ClienteExistenteView() {
                   <p className="text-sm text-gray-600">
                     {cliente.tipoCliente === "persona_juridica" ? "NIT" : "C.C."} {cliente.cedula}
                   </p>
-                  <p className="text-xs text-gray-500 mt-0.5">
-                    {cliente.tipoParticipacion} · {cliente.comisionAplicada}
-                  </p>
                 </div>
               </div>
               <div className="text-right">
@@ -109,7 +112,7 @@ export function ClienteExistenteView() {
                   <BarChart3 className="w-4 h-4" />
                   <span className="text-xs font-medium">Rentabilidad</span>
                 </div>
-                <p className="text-sm font-semibold text-green-600">+{cliente.rentabilidadObtenida}%</p>
+                <p className="text-sm font-semibold text-green-600">{cliente.rentabilidadObtenida}%</p>
               </div>
             </div>
           </div>
@@ -256,6 +259,9 @@ export function ClienteExistenteView() {
 
           {/* Stress History Module */}
           <StressHistoryModule fondo="FIC Abierto" />
+
+          {/* Recommendations */}
+          <RecommendationsModule cliente={cliente} />
         </>
       )}
 
