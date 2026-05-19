@@ -56,6 +56,9 @@ export function AdvisoryVoicePanel() {
           ragProvider: data.ragProvider,
         });
         setLoadState("ready");
+        const ragLabel =
+          data.ragProvider === "brainbox" ? "BrainBox" : data.ragProvider === "local" ? "Local" : "N/A";
+        console.log(`[asesoría-voz] Proveedor RAG al cargar: ${ragLabel}`);
       })
       .catch(() => {
         setFundContext(FALLBACK_CONTEXT);

@@ -92,7 +92,11 @@ async function fetchFundAdvisoryRagContext(
     const data = (await res.json()) as { context?: string; provider?: "brainbox" | "local" };
     const context = data.context?.trim();
     if (!context) return null;
-    return { context, provider: data.provider ?? "local" };
+    const provider = data.provider ?? "local";
+    console.log(
+      `[asesoría-voz] RAG búsqueda → ${provider === "brainbox" ? "BrainBox" : "Local"}: "${query.slice(0, 80)}"`,
+    );
+    return { context, provider };
   } catch {
     return null;
   }

@@ -248,6 +248,10 @@ async function buildRagBaseContext(): Promise<FundAdvisoryVoiceContextResult> {
     ? (meta.archivosIndexados as string[])
     : listVlmDigestJsonFiles();
 
+  console.log(
+    `[fund-advisory-voice-context] RAG: ${provider === "brainbox" ? "BrainBox" : "Local (JSON /info)"}`,
+  );
+
   return {
     context,
     sourceFiles,

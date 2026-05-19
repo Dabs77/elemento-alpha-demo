@@ -1,3 +1,5 @@
+import { geminiFetchErrorMessage, geminiServerFetch } from "@/lib/geminiServerFetch";
+
 const DEFAULT_BASE_URL = "https://app.brainbox.com.co/api/public/v1";
 
 export type BrainboxConfig = {
@@ -87,15 +89,20 @@ async function brainboxRequest<T>(
   body?: Record<string, unknown>,
 ): Promise<T> {
   const url = `${cfg.baseUrl.replace(/\/$/, "")}/${endpoint.replace(/^\//, "")}`;
-  const res = await fetch(url, {
-    method,
-    headers: {
-      Authorization: `Bearer ${cfg.apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: body ? JSON.stringify(body) : undefined,
-    cache: "no-store",
-  });
+  let res: Response;
+  try {
+    res = await geminiServerFetch(url, {
+      method,
+      headers: {
+        Authorization: `Bearer ${cfg.apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: body ? JSON.stringify(body) : undefined,
+      cache: "no-store",
+    });
+  } catch (err) {
+    throw new BrainboxApiError(`BrainBox fetch: ${geminiFetchErrorMessage(err)}`);
+  }
 
   let payload: { success?: boolean; data?: T; error?: BrainboxApiErrorBody } = {};
   try {

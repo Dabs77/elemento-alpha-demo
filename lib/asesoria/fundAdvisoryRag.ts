@@ -9,14 +9,49 @@ import {
   formatRagChunkForContext,
   searchFundAdvisoryRagLocal,
 } from "./fundAdvisoryRagLocal";
-import type { FundAdvisoryRagResult, RagChunk } from "./fundAdvisoryRagTypes";
+import {
+  searchByEmbedding,
+  buildVectorIndex,
+  isIndexReady,
+  getIndexStats,
+} from "./ragVectorIndex";
+import type { FundAdvisoryRagResult, RagChunk, RagProvider } from "./fundAdvisoryRagTypes";
 
 export type { FundAdvisoryRagResult, RagChunk } from "./fundAdvisoryRagTypes";
 export { getFundAdvisoryRagIndex } from "./fundAdvisoryRagLocal";
 export { isBrainboxRagEnabled, getBrainboxConfig } from "./brainboxClient";
+export { buildVectorIndex, isIndexReady, getIndexStats } from "./ragVectorIndex";
 
 const DEFAULT_TOP_K = Number(process.env.FUND_ADVISORY_RAG_TOP_K) || 8;
 const DEFAULT_MAX_CHARS = Number(process.env.FUND_ADVISORY_RAG_MAX_CHARS) || 32_000;
+
+type ExtendedProvider = RagProvider | "vector";
+
+function getConfiguredProvider(): ExtendedProvider {
+  const p = process.env.FUND_ADVISORY_RAG_PROVIDER?.trim().toLowerCase();
+  if (p === "brainbox") return "brainbox";
+  if (p === "local" || p === "keywords") return "local";
+  if (p === "vector" || p === "embeddings") return "vector";
+  // Default: usar embeddings vectoriales
+  return "vector";
+}
+
+function logRagProvider(
+  provider: ExtendedProvider,
+  query: string,
+  chunkCount: number,
+  note?: string,
+): void {
+  const labels: Record<ExtendedProvider, string> = {
+    brainbox: "BrainBox",
+    local: "Local (keywords)",
+    vector: "Vector (embeddings)",
+  };
+  const suffix = note ? ` · ${note}` : "";
+  console.log(
+    `[fund-advisory-rag] ${labels[provider]} — ${chunkCount} fragmento(s) | query: "${query.slice(0, 80)}"${suffix}`,
+  );
+}
 
 function pickString(obj: Record<string, unknown>, keys: string[]): string | undefined {
   for (const key of keys) {
@@ -91,7 +126,7 @@ function selectChunksWithinLimit(chunks: RagChunk[], maxChars: number, topK: num
   return selected;
 }
 
-export async function searchFundAdvisoryRagBrainbox(
+async function searchFundAdvisoryRagBrainbox(
   query: string,
   opts?: { topK?: number; maxChars?: number },
 ): Promise<FundAdvisoryRagResult> {
@@ -125,27 +160,82 @@ export async function searchFundAdvisoryRagBrainbox(
   };
 }
 
-/** Búsqueda RAG: BrainBox si está configurado; si no, índice local JSON. */
+async function searchFundAdvisoryRagVector(
+  query: string,
+  opts?: { topK?: number; maxChars?: number },
+): Promise<FundAdvisoryRagResult> {
+  const trimmed = query.trim();
+  const topK = opts?.topK ?? DEFAULT_TOP_K;
+  const maxChars = opts?.maxChars ?? DEFAULT_MAX_CHARS;
+
+  if (!trimmed) {
+    return { query: trimmed, chunks: [], context: "", totalChars: 0, provider: "local" };
+  }
+
+  const results = await searchByEmbedding(trimmed, { topK: topK * 2, minScore: 0.25 });
+
+  const chunks: RagChunk[] = results.map((r) => ({
+    id: r.chunk.id,
+    archivo: r.chunk.archivo,
+    documento: r.chunk.documento,
+    pageNumber: r.chunk.pageNumber,
+    titulo: r.chunk.titulo,
+    text: r.chunk.text,
+    source: "local",
+    score: r.score,
+  }));
+
+  const selected = selectChunksWithinLimit(chunks, maxChars, topK);
+  const context = selected.map(formatRagChunkForContext).join("\n\n---\n\n");
+
+  return {
+    query: trimmed,
+    chunks: selected,
+    context,
+    totalChars: context.length,
+    provider: "local",
+  };
+}
+
+/** Búsqueda RAG: vector (embeddings), BrainBox, o keywords según configuración. */
 export async function searchFundAdvisoryRag(
   query: string,
   opts?: { topK?: number; maxChars?: number },
 ): Promise<FundAdvisoryRagResult> {
-  if (isBrainboxRagEnabled()) {
+  const provider = getConfiguredProvider();
+
+  if (provider === "brainbox" && isBrainboxRagEnabled()) {
     try {
-      return await searchFundAdvisoryRagBrainbox(query, opts);
+      const result = await searchFundAdvisoryRagBrainbox(query, opts);
+      const units = result.usage?.intelligenceUnitsConsumed;
+      logRagProvider("brainbox", query, result.chunks.length, units ? `${units} units` : undefined);
+      return result;
     } catch (err) {
-      console.error("[fund-advisory-rag] BrainBox falló, usando índice local:", err);
-      return searchFundAdvisoryRagLocal(query, opts);
+      console.warn("[fund-advisory-rag] BrainBox falló → fallback vector:", err instanceof Error ? err.message : err);
     }
   }
-  return searchFundAdvisoryRagLocal(query, opts);
+
+  if (provider === "vector" || provider === "brainbox") {
+    try {
+      const result = await searchFundAdvisoryRagVector(query, opts);
+      const topScore = result.chunks[0]?.score;
+      logRagProvider("vector", query, result.chunks.length, topScore ? `top score: ${topScore.toFixed(3)}` : undefined);
+      return result;
+    } catch (err) {
+      console.warn("[fund-advisory-rag] Vector falló → fallback keywords:", err instanceof Error ? err.message : err);
+    }
+  }
+
+  const local = searchFundAdvisoryRagLocal(query, opts);
+  logRagProvider("local", query, local.chunks.length, "keywords");
+  return local;
 }
 
 const SEED_QUERIES = [
-  "rentabilidad FIC Abierto desempeño marzo",
-  "FIC CxC rentabilidad update marzo",
-  "comisiones prospecto reglamento FIC Abierto",
-  "comparativa liquidez plataforma fondos",
+  "rentabilidad FIC Abierto desempeño marzo 2026",
+  "FIC CxC rentabilidad comisiones pacto permanencia",
+  "prospecto reglamento comisiones tipos participación",
+  "comparativa liquidez volatilidad riesgo fondos",
 ];
 
 export async function buildFundAdvisoryRagSeedContext(): Promise<string> {
@@ -153,7 +243,7 @@ export async function buildFundAdvisoryRagSeedContext(): Promise<string> {
   const parts: string[] = [];
 
   for (const q of SEED_QUERIES) {
-    const result = await searchFundAdvisoryRag(q, { topK: 3, maxChars: 10_000 });
+    const result = await searchFundAdvisoryRag(q, { topK: 4, maxChars: 15_000 });
     for (const chunk of result.chunks) {
       if (seen.has(chunk.id)) continue;
       seen.add(chunk.id);
@@ -165,7 +255,9 @@ export async function buildFundAdvisoryRagSeedContext(): Promise<string> {
 }
 
 export async function buildRagSourceMetaPayload(): Promise<Record<string, unknown>> {
-  if (isBrainboxRagEnabled()) {
+  const provider = getConfiguredProvider();
+
+  if (provider === "brainbox" && isBrainboxRagEnabled()) {
     const cfg = getBrainboxConfig();
     let archivos: string[] = cfg?.fileIds ?? [];
 
@@ -180,22 +272,24 @@ export async function buildRagSourceMetaPayload(): Promise<Record<string, unknow
 
     return {
       escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
-      fuenteUnica:
-        "ÚNICA fuente autorizada: documentos indexados en BrainBox (búsqueda semántica + reranking). " +
-        "Responde SOLO con fragmentos de corpusInicialRag o [FRAGMENTOS RAG]. NO inventes cifras.",
+      fuenteUnica: "Documentos indexados en BrainBox (búsqueda semántica + reranking).",
       proveedorRag: "brainbox",
       boxId: cfg?.boxId,
       archivosIndexados: archivos,
     };
   }
 
+  const stats = getIndexStats();
   return {
     escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
     fuenteUnica:
-      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info (prospectos, reglamentos, desempeño, updates). " +
-      "NO uses cifras de memoria del modelo ni datos fuera de esos JSON.",
-    proveedorRag: "local",
+      provider === "vector"
+        ? "Búsqueda semántica con embeddings vectoriales sobre JSON digest en /info."
+        : "Búsqueda por keywords sobre JSON digest en /info.",
+    proveedorRag: provider === "vector" ? "vector" : "local",
     archivosIndexados: listVlmDigestJsonFiles(),
+    fragmentosIndexados: stats.chunks,
+    indiceVectorialListo: stats.ready,
   };
 }
 
@@ -203,13 +297,12 @@ export async function buildRagSourceMetaPayload(): Promise<Record<string, unknow
 export function buildJsonSourceMetaPayload() {
   return {
     escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
-    fuenteUnica:
-      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info. " +
-      "NO uses cifras de memoria del modelo ni datos fuera de esos JSON.",
+    fuenteUnica: "Archivos JSON digest VLM en /info.",
     archivosIndexados: listVlmDigestJsonFiles(),
   };
 }
 
-export function getFundAdvisoryRagProvider(): "brainbox" | "local" {
-  return isBrainboxRagEnabled() ? "brainbox" : "local";
+export function getFundAdvisoryRagProvider(): RagProvider {
+  const p = getConfiguredProvider();
+  return p === "vector" ? "local" : p;
 }
