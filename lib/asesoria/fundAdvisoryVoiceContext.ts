@@ -230,13 +230,9 @@ async function buildRagBaseContext(): Promise<FundAdvisoryVoiceContextResult> {
     buildRagSourceMetaPayload(),
   ]);
   const provider = getFundAdvisoryRagProvider();
-  const isBrainbox = provider === "brainbox-chat" || provider === "brainbox-retrieve";
-  const notaRag = isBrainbox
-    ? provider === "brainbox-chat"
-      ? "Usas BrainBox Chat para respuestas directas. Recibirás [RESPUESTA DE BRAINBOX] por pregunta. " +
-        "Parafrasea esa información en tu estilo conversacional; si no está, di que no tienes el dato."
-      : "Corpus indexado en BrainBox (búsqueda semántica). Recibirás [DATOS] por pregunta. " +
-        "Responde SOLO con esos extractos; si no está, di que no tienes el dato."
+  const notaRag = provider === "brainbox"
+    ? "Corpus indexado en BrainBox (búsqueda semántica). Recibirás [DATOS] por pregunta. " +
+      "Responde SOLO con esos extractos; si no está, di que no tienes el dato."
     : "Corpus indexado desde JSON digest VLM. Recibirás [DATOS] por pregunta. " +
       "Responde SOLO con texto de esos JSON; si no está, di que no tienes el dato.";
 

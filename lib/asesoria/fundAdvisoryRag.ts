@@ -77,7 +77,7 @@ export async function searchFundAdvisoryRag(
   }
 
   if (!isBrainboxRagEnabled()) {
-    throw new BrainboxApiError("BrainBox no está configurado. Configura BRAINBOX_API_KEY y BRAINBOX_BOX_ID.", "NOT_CONFIGURED", 500);
+    throw new BrainboxApiError("BrainBox no está configurado. Configura BRAINBOX_API_KEY y BRAINBOX_BOX_ID.", { code: "NOT_CONFIGURED", status: 500 });
   }
 
   const result = await brainboxRetrieveDocuments(trimmed, { threshold: opts?.threshold });
