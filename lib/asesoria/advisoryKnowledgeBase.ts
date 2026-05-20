@@ -89,16 +89,27 @@ El 50% del FIC CxC está invertido en riesgo cuasi-soberano de Colombia (libranz
 FIC CxC ofrece mejor rentabilidad y menor volatilidad, pero requiere pacto de permanencia de 30 días.
 FIC Abierto ofrece liquidez inmediata con rentabilidad competitiva para un perfil conservador.
 
-### Episodios de Estrés Histórico (2014-2026)
+### Episodios de Estrés Histórico (Ene 2017 - Mar 2026)
+Fuente: Backtesting Alianza Fondo Abierto ("Actual") vs CXC ("Sugerido"), informe oficial Elemento Alpha 2026-05-15.
 Se han analizado ${STRESS_SUMMARY.totalEpisodios} episodios de estrés de mercado:
-- Victorias BMK Sugerido: ${STRESS_SUMMARY.victoriasBMKSugerido}
-- Victorias BMK Actual: ${STRESS_SUMMARY.victoriasBMKActual}
-- Peor Max Drawdown histórico: ${STRESS_SUMMARY.peorMaxDDActual}%
+- Victorias BMK Sugerido (CxC): ${STRESS_SUMMARY.victoriasBMKSugerido}
+- Victorias BMK Actual (Abierto): ${STRESS_SUMMARY.victoriasBMKActual}
+- Peor MaxDD intra-episodio Abierto: ${STRESS_SUMMARY.peorMaxDDActual.toFixed(2)}% (COVID-19 Crash)
+- Peor MaxDD intra-episodio CxC: ${STRESS_SUMMARY.peorMaxDDSugerido.toFixed(2)}% (Normalización Tasas 2023)
 
 Episodios clave:
-- **COVID-19 Crash (Feb-Abr 2020)**: MaxDD -12.39% actual, -11.51% sugerido. Recuperación en 90 días.
-- **Inflación & Alzas Tasas 2022**: Retorno -3.98% actual, -3.10% sugerido.
-- **Normalización Tasas 2023**: Retorno +18.62% actual, +19.61% sugerido.
+- **Ciclo Alzas FED (Ene 2017 - Dic 2018, 728 d)**: Retorno Abierto +9.40%, CxC +14.62% (Δ +5.22 pp). Gana CxC.
+- **COVID-19 Crash (Feb - Mar 2020, 33 d)**: Retorno Abierto -0.77%, CxC -0.11%. MaxDD Abierto -1.10%, CxC -0.52%. Gana CxC.
+- **Recup. Post-COVID (Mar - Dic 2020, 283 d)**: Retorno Abierto +3.70%, CxC +3.81%. Gana CxC marginalmente.
+- **Caída TES Col. (Feb - Oct 2021, 272 d)**: Retorno Abierto -0.15%, CxC +1.63% (Δ +1.78 pp). Gana CxC.
+- **Inflación & Alzas 2022 (Ene - Dic 2022, 361 d)**: Retorno Abierto +6.17%, CxC +7.77%. Gana CxC.
+- **Cambio Gobierno Col. 2022 (Jun - Nov 2022, 164 d)**: Retorno Abierto +3.57%, CxC +4.46%. Gana CxC.
+- **Rally COLTES 2023 (Jul - Dic 2023, 181 d)**: Retorno Abierto +6.29%, CxC +5.70% (Δ -0.59 pp). Gana Abierto.
+- **Normalización Tasas 2023 (Ene - Dic 2023, 361 d)**: Retorno Abierto +13.57%, CxC +10.51% (Δ -3.06 pp). Gana Abierto.
+
+Drawdowns top-5 históricos (ventana 2017-01-01 → 2026-03-31):
+- Abierto: COVID-19 -1.10% (37 d, recuperado), TES Col. 2021 -0.54% (363 d), pulsos menores en 2023 y 2026.
+- CxC: Normalización Tasas 23-01 -1.33% (35 d), COVID-19 -0.52% (23 d), resto < 0.10%.
 
 ### Expectativas 1er Semestre 2026
 - FIC Abierto: Retorno esperado 9.0%-10.0% E.A., volatilidad media, 0-3 días negativos/mes
@@ -169,7 +180,7 @@ FONDOS ALIANZA - RESUMEN:
 • FIC Abierto: $8.76 Bn AUMs, AAA/2+, Vista, 10.03% mes, 0.32% vol, 10 días neg YTD
 • FIC CxC: $5.55 Bn AUMs, AAA/VrM1, 30 días, 10.71% mes, 0.31% vol, 6 días neg YTD
 • CxC supera en rentabilidad y volatilidad; Abierto gana en liquidez
-• Estrés histórico: 11 episodios analizados, peor drawdown -12.39% (COVID)
+• Estrés histórico: 8 episodios analizados (2017-2023). Peor MaxDD intra-episodio: Abierto -1.10% (COVID-19), CxC -1.33% (Normalización Tasas 2023). CxC gana 6 de 8 episodios.
 `.trim();
 }
 

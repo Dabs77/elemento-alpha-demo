@@ -7,6 +7,7 @@ import { ClienteExistenteView } from "@/components/asesoria/ClienteExistenteView
 import { ClienteNuevoView } from "@/components/asesoria/ClienteNuevoView";
 import { AlertsModule } from "@/components/asesoria/AlertsModule";
 import { AdvisoryVoicePanel } from "@/components/asesoria/AdvisoryVoicePanel";
+import { AdvisoryVoicePanelCxC } from "@/components/asesoria/AdvisoryVoicePanelCxC";
 
 type TabId = "existente" | "nuevo";
 
@@ -106,7 +107,12 @@ export default function AsesoriaEspecializadaPage() {
           {(showAlerts || showVoice) && (
             <div className="w-[340px] flex-shrink-0 space-y-4">
               {showAlerts && <AlertsModule />}
-              {showVoice && <AdvisoryVoicePanel />}
+              {showVoice && (
+                <>
+                  <AdvisoryVoicePanel />
+                  <AdvisoryVoicePanelCxC />
+                </>
+              )}
             </div>
           )}
         </div>
