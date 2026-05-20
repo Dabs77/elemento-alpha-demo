@@ -8,6 +8,9 @@ import { ClienteNuevoView } from "@/components/asesoria/ClienteNuevoView";
 import { AlertsModule } from "@/components/asesoria/AlertsModule";
 import { AdvisoryVoicePanel } from "@/components/asesoria/AdvisoryVoicePanel";
 import { AdvisoryVoicePanelCxC } from "@/components/asesoria/AdvisoryVoicePanelCxC";
+import { AdvisoryVoicePanelBothFunds } from "@/components/asesoria/AdvisoryVoicePanelBothFunds";
+import { AdvisoryVoicePanelFullCorpus } from "@/components/asesoria/AdvisoryVoicePanelFullCorpus";
+import { AdvisoryVoicePanelElevenLabs } from "@/components/asesoria/AdvisoryVoicePanelElevenLabs";
 
 type TabId = "existente" | "nuevo";
 
@@ -109,8 +112,11 @@ export default function AsesoriaEspecializadaPage() {
               {showAlerts && <AlertsModule />}
               {showVoice && (
                 <>
+                  <AdvisoryVoicePanelElevenLabs />
                   <AdvisoryVoicePanel />
                   <AdvisoryVoicePanelCxC />
+                  <AdvisoryVoicePanelBothFunds />
+                  <AdvisoryVoicePanelFullCorpus />
                 </>
               )}
             </div>

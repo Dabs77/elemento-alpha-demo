@@ -1,0 +1,5284 @@
+# Documento: Reglamento_Fondo_Abierto_2026-3_ (1).pdf
+
+---
+
+## Metadatos de Extracción
+
+| Campo | Valor |
+|-------|-------|
+| **Archivo Original** | Reglamento_Fondo_Abierto_2026-3_ (1).pdf |
+| **Total de Páginas** | 54 |
+| **Páginas Analizadas** | 54 |
+| **Fecha de Extracción** | 2026-05-20T04:39:18.053Z |
+
+---
+
+## Contenido del Documento
+
+## Página 1 de 54
+
+![Logo Alianza Fiduciaria](imagen)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Información de Contacto:**
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+---
+
+## REGLAMENTO DEL FONDO ABIERTO ALIANZA
+### SIN PACTO DE PERMANENCIA MÍNIMA
+
+Por medio del presente reglamento del “FONDO ABIERTO ALIANZA” sin pacto de permanencia mínima, se establecen los principios y normas bajo los cuales se regirá la relación entre **ALIANZA FIDUCIARIA S.A** como sociedad administradora de dicho fondo y los inversionistas, con ocasión de los aportes de recursos que realicen al mismo.
+
+Las obligaciones de la Sociedad Administradora del Fondo de Inversión Colectiva relacionadas con la gestión del portafolio son de medio y no de resultado. Los dineros entregados por los inversionistas a los fondos de inversión colectiva no son depósitos, ni generan para la sociedad administradora las obligaciones propias de una institución de depósito y no están amparados por el seguro de depósito del fondo de garantías de instituciones financieras - **FOGAFIN**, ni por ningún otro esquema de dicha naturaleza. La inversión en el Fondo de Inversión Colectiva está sujeta a los riesgos de inversión, derivados de la evolución de los precios de los activos que componen el portafolio del respectivo Fondo de Inversión Colectiva.
+
+---
+
+**Información de pie de página y márgenes:**
+- **Margen izquierdo (texto vertical):** VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+- **Sitio web:** www.alianza.com.co
+- **Paginación:** Página **1** de **54**
+
+---
+
+## Página 2 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+## Tabla de contenido
+
+Capítulo I. Aspectos generales................................................................................................................ 5
+Cláusula 1.1. Sociedad administradora................................................................................................ 5
+Cláusula 1.2. Fondo............................................................................................................................ 5
+Cláusula 1.3. Duración........................................................................................................................ 5
+Cláusula 1.4. Sede ............................................................................................................................. 5
+Cláusula 1.5. Duración del encargo de inversión ............................................................................... 6
+Cláusula 1.6. Bienes del Fondo (Segregación Patrimonial)............................................................... 6
+Cláusula 1.7. Cobertura ..................................................................................................................... 6
+Cláusula 1.8. Mecanismos de Información......................................................................................... 6
+Cláusula 1.9. Monto máximo de recursos administrados .................................................................. 7
+Cláusula 1.10. Monto mínimo de participaciones ............................................................................... 7
+Capítulo II. Política de Inversión ............................................................................................................ 7
+Cláusula 2.1. Tipo de Fondo y Objeto ................................................................................................ 7
+Cláusula 2.2. Activos aceptables para invertir.................................................................................... 7
+Cláusula 2.3. Límites a la inversión.................................................................................................... 9
+Cláusula 2.3.1. Plazo promedio ponderado de las inversiones..................................................... 11
+Cláusula 2.3.2. Limite por Matriz Filial y subsidiaria .................................................................... 11
+Cláusula 2.4. Liquidez del Fondo..................................................................................................... 11
+Cláusula 2.4.1. Operaciones de reporto, simultáneas y transferencia temporal de valores .... 12
+Cláusula 2.4.2. Depósitos de recursos líquidos ......................................................................... 12
+Cláusula 2.4.3. Ajustes temporales ........................................................................................... 12
+Cláusula 2.5. Operaciones de Cobertura ........................................................................................ 13
+Cláusula 2.6. Riesgo del Fondo ...................................................................................................... 13
+Cláusula 2.6.1. Factores de Riesgo........................................................................................... 13
+Cláusula 2.6.2. Perfil de riesgo.................................................................................................. 15
+Cláusula 2.6.3. Administración de Riesgos................................................................................ 15
+Cláusula 2.6.4. Gestión de riesgos ambiental, social y de gobierno (ASG) ............................ 18
+Cláusula 2.7. Transparencia en la revelación de aspectos ASG .................................................... 18
+Capítulo III. Organismos de administración y control........................................................................... 18
+Cláusula 3.1. Órganos de administración........................................................................................ 18
+Cláusula 3.1.1. Responsabilidad de la sociedad administradora............................................... 18
+Cláusula 3.1.2. Gerente............................................................................................................. 21
+Cláusula 3.2. Órganos de asesoría................................................................................................. 22
+Cláusula 3.2.1. Comité de Inversiones ..................................................................................... 22
+Cláusula 3.2.2. Constitución ...................................................................................................... 22
+Cláusula 3.2.3. Reuniones ........................................................................................................ 23
+Cláusula 3.2.4. Funciones ......................................................................................................... 23
+Cláusula 3.3. Órganos de control.................................................................................................... 23
+Cláusula 3.3.1. Revisor fiscal .................................................................................................... 23
+Capítulo IV. Constitución y redención de participaciones ................................................................... 23
+Cláusula 4.1. Vinculación y clases de participaciones..................................................................... 23
+Cláusula 4.1.1 Vinculación ........................................................................................................ 23
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **2** de **54**
+
+---
+
+## Página 3 de 54
+
+## Encabezado
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+---
+
+## Tabla de Contenido
+
+Cláusula 4.1.2. Clases de Participaciones................................................................................ 25
+Cláusula 4.1.3. Traslados entre tipos de participación............................................................. 26
+Cláusula 4.2. Número mínimo de inversionistas ..................................................................... 27
+Cláusula 4.3. Límites a la participación ................................................................................... 27
+Cláusula 4.3.1. Límite de participación para la sociedad administradora............................. 27
+Cláusula 4.4. Representación de las Participaciones............................................................. 27
+Cláusula 4.5. Redención de las participaciones...................................................................... 28
+Cláusula 4.6. Suspensión de las redenciones......................................................................... 29
+Cláusula 4.6.1. De la asamblea de inversionistas................................................................ 29
+Cláusula 4.6.2. De la Junta Directiva................................................................................... 29
+Cláusula 4.7 Otros medios electrónicos para redención de Participaciones........................... 30
+Capítulo V. Valoración del Fondo y las participaciones ........................................................... 30
+Cláusula 5.1. Valor inicial de la unidad ................................................................................... 30
+Cláusula 5.2. Valor total y valor de unidad de las participaciones .......................................... 31
+Cláusula 5.3. Valor del fondo .................................................................................................. 32
+Cláusula 5.4. Periodicidad de la valoración............................................................................. 33
+Capítulo VI. Gastos ................................................................................................................. 33
+Cláusula 6.1. Gastos............................................................................................................... 33
+Cláusula 6.2. Comisión por administración ............................................................................. 34
+Cláusula 6.2.1. Fórmula para el cálculo de comisiones de acuerdo al tipo de participación ... 35
+Cláusula 6.3. Criterios para la selección y remuneración de los intermediarios ..................... 36
+Capítulo VII. De la sociedad administradora............................................................................ 36
+Cláusula 7.1. Funciones y Obligaciones ............................................................................... 36
+Cláusula 7.2. Facultades y Derechos...................................................................................... 38
+Cláusula 7.3. Metodología de cálculo de la remuneración y forma de pago........................... 39
+Capítulo VIII. Del custodio de Valores .................................................................................... 39
+Cláusula 8.1. Activos Locales ................................................................................................. 39
+Cláusula 8.1.1. Funciones y obligaciones............................................................................ 39
+Cláusula 8.2. Facultades y derechos: .................................................................................... 40
+Cláusula 8.3. Metodología de cálculo de la remuneración y forma de pago........................... 40
+Cláusula 8.3.1 Costo por activos custodiados: .................................................................... 40
+Cláusula 8.3.2. Costo por Compensación y liquidación de operaciones ............................. 40
+Capítulo IX. Distribución .......................................................................................................... 40
+Cláusula 9.1. Medios de distribución del Fondo...................................................................... 40
+Cláusula 9.2. Distribuidor especializado del Fondo y cuenta Ómnibus .................................. 40
+Cláusula 9.2.1. Distribuidor especializado ........................................................................... 41
+Cláusula 9.2.2. Cuenta Ómnibus......................................................................................... 41
+Cláusula 9.3. Debida atención al inversionista ....................................................................... 41
+Cláusula 9.4. Deber de asesoría............................................................................................. 43
+Capítulo X De los inversionistas .............................................................................................. 43
+Cláusula 10.1. Obligaciones ................................................................................................... 43
+Cláusula 10.2. Facultades y Derechos.................................................................................... 44
+Cláusula 10.3. Asamblea de inversionistas............................................................................. 45
+Cláusula 10.3.1. Convocatoria............................................................................................. 45
+Cláusula 10.3.2. Funciones ................................................................................................. 45
+Cláusula 10.3.3. Consulta universal .................................................................................... 46
+
+---
+
+## Pie de página y Márgenes
+
+*Texto vertical en el margen izquierdo:*
+**VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA**
+
+*Texto inferior:*
+www.alianza.com.co
+**Página 3 de 54**
+
+---
+
+## Página 4 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Capítulo XI. Mecanismos de Revelación de información ................................................................. 46
+Cláusula 11.1. Extracto de cuenta y medios previstos para su distribución.................................. 47
+Cláusula 11.2. Rendición de cuentas........................................................................................... 47
+Cláusula 11.3. Ficha técnica ....................................................................................................... 47
+Cláusula 11.4. Prospecto de inversión........................................................................................ 47
+Cláusula 11.5. Sitio de internet de la sociedad administradora .................................................. 48
+Cláusula 11.6. Reglamento del Fondo ....................................................................................... 49
+Capítulo XII Liquidación................................................................................................................... 49
+Cláusula 12.1. Causales ............................................................................................................. 49
+Cláusula 12.2. Procedimiento ..................................................................................................... 49
+Capítulo XIII. Fusión y Cesión del Fondo ...................................................................................... 52
+Cláusula 13.1. Procedimiento para Fusión.................................................................................. 52
+Cláusula 13.2. Procedimiento para cesión del Fondo abierto Alianza. ....................................... 52
+Capítulo XIV. Modificaciones al Reglamento .................................................................................. 53
+Cláusula 14.1. Modificaciones al Reglamento............................................................................. 53
+Capítulo XV. Prevención de lavado de activos y financiación del terrorismo ................................. 53
+Cláusula 15.1. Prevención de lavado de activos y financiación del terrorismo ........................... 53
+Capítulo XVI. Conflictos de Interés................................................................................................. 54
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **4** de **54**
+
+---
+
+## Página 5 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: **(601) 6447700**
+Cr. **15 82-99**
+Bogotá, Colombia
+
+## Capítulo I. Aspectos generales
+
+### Cláusula 1.1. Sociedad administradora
+
+La Sociedad Administradora es **ALIANZA FIDUCIARIA S.A**, entidad legalmente constituida mediante escritura pública número **545** del **11 de febrero de 1986**, otorgada en la **Notaría 10** del Círculo Notarial de Cali, identificada con el número de **NIT. 860.531.315-3**, con domicilio principal en la ciudad de Bogotá D.C. Esta sociedad tiene permiso de funcionamiento otorgado por la Superintendencia Bancaria (hoy Superintendencia Financiera de Colombia) mediante **Resolución 3357** del **16 de junio de 1986**.
+
+Cuando en el presente reglamento se emplee la expresión “Sociedad Administradora” o “Alianza Fiduciaria”, se entenderá que se hace referencia a la sociedad aquí mencionada.
+
+### Cláusula 1.2. Fondo
+
+El Fondo denominado “**FONDO ABIERTO ALIANZA**” es un Fondo de Inversión Colectiva, de naturaleza abierta, sin pacto de permanencia mínima, conforme lo establecido en el **Decreto 2555 de 2010**, por lo cual la Sociedad Administradora está obligada a redimir las participaciones de los inversionistas en cualquier momento durante la vigencia del Fondo. Cuando en el presente reglamento se emplee la expresión "Fondo", se entenderá que se hace referencia al Fondo Abierto Alianza que aquí se reglamenta.
+
+### Cláusula 1.3. Duración
+
+El Fondo Abierto Alianza tendrá una duración igual a la de la sociedad administradora. Este término se podrá prorrogar, previa decisión de la sociedad administradora. El término de duración de la sociedad administradora se dará a conocer a través del prospecto de inversión. En caso de prórroga del Fondo, la sociedad administradora así lo informará a los inversionistas a través de su página web, indicando el nuevo término de duración.
+
+### Cláusula 1.4. Sede
+
+El Fondo tendrá como sede el mismo lugar donde funcionen las oficinas principales de la sociedad administradora que en la actualidad se encuentran ubicadas en la **Carrera 15 No 82 - 99** de la ciudad de Bogotá D.C. En dicha dirección se encontrarán todos los libros y documentos relativos al Fondo; además en este lugar se recibirán y entregarán los recursos, de conformidad con las reglas establecidas en la cláusula **4.1.1** del presente reglamento. No obstante, se podrán recibir y entregar recursos para el Fondo en las agencias o sucursales de Alianza Fiduciaria S.A, o en las oficinas de las entidades con las que ésta haya celebrado contratos de corresponsalía o uso de red de oficinas o equivalentes, suscritos, de acuerdo con lo establecido en el Estatuto Orgánico del Sistema financiero y demás normas que regulen la materia, en los cuales la responsabilidad es exclusiva de Alianza Fiduciaria S.A. A través de www.alianza.com.co, los inversionistas podrán consultar los contratos de corresponsalía o uso de red de oficinas o equivalentes, así como su duración, y las sucursales y agencias en las que se prestará atención al público.
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **5** de **54**
+
+---
+
+## Página 6 de 54
+
+**Encabezado**
+[Logo: Alianza Fiduciaria - UNA EMPRESA DE LA ORGANIZACIÓN DELIMA]
+T: **(601) 6447700**
+Cr. **15 82-99**
+Bogotá, Colombia
+
+---
+
+La sociedad administradora deberá informar a la Superintendencia Financiera, con **veinte (20)** días hábiles de anticipación conforme a lo dispuesto en el artículo **2.34.1.1.1** del Decreto **2555** de **2010**, cualquier modificación a los contratos de corresponsalía o uso de red de oficinas o equivalentes los términos en él descritos
+
+### Cláusula 1.5. Duración del encargo de inversión
+
+El Fondo por ser de naturaleza abierta, permite que los inversionistas entreguen recursos y rediman su participación en cualquier momento dentro de los horarios establecidos, de conformidad con las reglas establecidas en la cláusula **4.5** “Redención de Participaciones” del presente reglamento.
+
+### Cláusula 1.6. Bienes del Fondo (Segregación Patrimonial)
+
+De conformidad con lo dispuesto por el artículo **68** de la Ley **964** de **2005**, y todas aquellas normas que lo sustituyan o modifiquen, los bienes del Fondo no hacen parte del patrimonio de Alianza Fiduciaria, y por consiguiente constituirán un patrimonio independiente y separado de ésta, destinado exclusivamente al desarrollo de las actividades descritas en el presente reglamento y al pago de las obligaciones que se contraigan con respaldo y por cuenta del Fondo, sin perjuicio de la responsabilidad profesional que le asiste a la sociedad administradora por la gestión y el manejo de los recursos. En consecuencia, los bienes del Fondo no constituyen prenda general de los acreedores de Alianza Fiduciaria y están excluidos de la masa de bienes que puedan conformarse, para efectos de cualquier procedimiento mercantil, o de otras acciones legales que puedan afectar a su administrador. Cada vez que Alianza Fiduciaria S.A actúe por cuenta del Fondo, se considerará que compromete únicamente los bienes del mismo Fondo.
+
+### Cláusula 1.7. Cobertura
+
+La sociedad administradora ha contratado una póliza de seguro, que estará vigente durante toda la existencia del Fondo Abierto Alianza, cuyas coberturas, vigencia y sociedad aseguradora podrán ser consultadas por los Inversionistas en www.alianza.com.co. Esta póliza amparará los riesgos señalados en el artículo **3.1.1.3.4** del Decreto **2555** de **2010**.
+
+### Cláusula 1.8. Mecanismos de Información
+
+La sociedad Administradora mantendrá informados a los inversionistas sobre todos los aspectos inherentes al fondo, a través de los siguientes mecanismos: (i) El presente reglamento, (ii) El Prospecto, (iii) La Ficha Técnica, (iv) El Extracto de Cuenta, y (v) el Informe de rendición de cuentas.
+
+La información del Fondo, así como el reglamento, el prospecto y la ficha técnica, estarán disponibles en las condiciones previstas en los numerales **3.1**, **3.2**, y **3.3** de la parte **III** del título **VI**, del capítulo **III** de la circular básica Jurídica a través del sitio web www.alianza.com.co y por medios impresos, los cuales estarán en sus dependencias u oficinas de servicio al público, en las entidades con las cuales hubiere celebrado contratos de uso de red de oficina o
+
+---
+
+**Márgenes y Pie de Página**
+Margen izquierdo (texto vertical): VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+Inferior izquierdo: www.alianza.com.co
+Inferior derecho: Página **6** de **54**
+
+---
+
+## Página 7 de 54
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+corresponsalía, así como en las oficinas de los distribuidores especializados que realicen la actividad de distribución de fondos de inversión colectiva.
+
+La sociedad administradora deberá comunicar, de manera suficiente y adecuada a los inversionistas la disponibilidad de la respectiva información y los mecanismos para acceder a ésta
+
+### Cláusula 1.9. Monto máximo de recursos administrados
+
+La sociedad administradora no podrá gestionar recursos a través de fondos de inversión colectiva que superen el equivalente a **100** veces el monto de capital pagado, la reserva legal, ambos saneados y la prima en colocación de acciones, de la sociedad administradora, menos el ultimo valor registrado de las inversiones participativas mantenidas en sociedades que puedan gestionar recursos de terceros bajo las modalidades de administración de valores, administración de portafolios de terceros o administración de fondos de inversión colectiva.
+
+### Cláusula 1.10. Monto mínimo de participaciones
+
+El Fondo Abierto Alianza deberá tener un patrimonio mínimo equivalente a **2.600** salarios mínimos legales mensuales vigentes.
+
+## Capítulo II. Política de Inversión
+
+### Cláusula 2.1. Tipo de Fondo y Objeto
+
+El Fondo Abierto Alianza es un Fondo de Inversión Colectiva de tipo abierto diseñado para que personas naturales o jurídicas o fideicomisos que inviertan de manera temporal sus excedentes de liquidez en un portafolio a la vista de bajo riesgo y perfil conservador. Los recursos del fondo son invertidos principalmente en títulos de renta fija de corta y mediana duración, con un componente importante de liquidez, cuyo objetivo principal es la preservación de capital.
+
+### Cláusula 2.2. Activos aceptables para invertir
+
+El portafolio del Fondo Abierto Alianza estará compuesto por los siguientes activos:
+
+a. Valores inscritos en el RNVE.
+
+b. Valores emitidos por bancos del exterior (No RNVE) denominados en pesos colombianos.
+
+c. Valores emitidos en el exterior por entidades locales (No RNVE) y por el gobierno colombiano (RNVE), denominados en dólares de Estados Unidos y pagaderos en dólares de Estados Unidos.
+
+d. Valores emitidos en el exterior cuya calificación mínima corresponda a la calificación riesgo país de Colombia , denominados en dólares de Estados Unidos y pagaderos en dólares de Estados Unidos.
+
+e. Valores emitidos en el exterior por entidades locales (No RNVE) y por el gobierno colombiano (RNVE), denominados en pesos colombianos y pagaderos en dólares de
+
+---
+**Información de márgenes y pie de página:**
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Esquina inferior izquierda:* www.alianza.com.co
+*Esquina inferior derecha:* Página **7** de **54**
+
+---
+
+## Página 8 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Estados Unidos.
+
+f. Valores emitidos por el Gobierno de Estados Unidos denominados y pagaderos en dólares americanos.
+
+g. ETF (Exchange Trade Fund) inscritos en bolsa que tengan como objetivo de inversión la exposición en activos emitidos por el Gobierno de Estados Unidos a los que se hace referencia en el literal f, incluidos los ETFs "Short U.S Treasury 7-10 years" que busquen retornos inversos al ICE U.S. Treasury 7-10 years bond index.
+
+h. Bonos emitidos por organismos multilaterales de crédito, o entidades públicas (No RNVE) denominados en pesos colombianos.
+
+i. Participaciones en Fondos de inversión colectiva que tengan como objetivo de inversión la exposición en activos de renta fija local.
+
+j. Participaciones en Fondos de inversión colectiva locales que tengan como objetivo de inversión la exposición en activos de renta fija emergente global con al menos el **90%** de sus títulos grado de inversión excluyendo Colombia.
+
+k. Participaciones en otros fondos de inversión colectiva abiertos con o sin pacto de permanencia, administrados por la Sociedad Administradora, que inviertan en renta fija local o en activos que tengan como subyacente derechos de contenido crediticio y que cuenten con calificación mínima **AA+**
+
+l. Derivados con fines de cobertura
+
+m. Participaciones en Fondos de Renta Fija Corporativa incluidos Fondos Money Market gestionados por un asset managers aprobado por el comité de inversiones de la Sociedad Administradora que cuenten con experiencia mínima de **10 años** y administren por lo menos **5 mil millones de USD** en activos. La participación en este tipo de activos deberá contar con cobertura cambiaria mínimo por el **98%** del valor de la posición inicial.
+
+**Parágrafo Primero:** Las inversiones del literal f emitidos en el exterior deberán tener una duración máxima de **10 años**
+
+**Parágrafo Segundo:** Las inversiones del literal j y m podrán tener exposición al riesgo cambiario, por lo que se incluirán dentro de las inversiones en moneda extranjera (dólares americanos). La exposición neta en moneda extranjera no podrá exceder el **2%** del valor del fondo.
+
+**Parágrafo Tercero:** Cuando el Fondo invierta en otros Fondos de Inversión Colectiva deberá considerar lo siguiente:
+
+i. Que sólo puede invertir en Fondos que cumplan con la política de inversión del Fondo.
+
+ii. No se permiten aportes recíprocos.
+
+iii. El Fondo podrá invertir en Fondos locales administrados por la Sociedad Administradora.
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **8** de **54**
+
+---
+
+## Página 9 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza**
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+iv. En los casos en que el total o parte de las inversiones del Fondo se realicen en otros Fondos administrados por la misma sociedad administradora, no se generará el cobro de una doble comisión.
+
+v. En caso de que resulte aplicable, lo dispuesto en el numeral 2 del artículo 3.1.1.10.2 del Decreto 2555 de 2010.
+
+vi. Las inversiones serán sometidas a aprobación del comité de inversiones de la Sociedad Administradora
+
+## Cláusula 2.3. Límites a la inversión
+
+| | Título | Tipo (%) | Duración (meses) | Calificación * |
+|---|---|---|---|---|
+| | | Mínimo | Máximo | Mínima | Máxima | Mínima | Máxima |
+| **Inscripción** | RNVE | 0 | 100 | 0 | 120 | AA+ | AAA |
+| | No RNVE | 0 | 35 | 0 | 84 | AA+ | AAA |
+| **Clase inversión** | Renta fija | 0 | 100 | 0 | 120 | AA+ | AAA |
+| | Renta variable (acciones) | 0 | 0 | | | N/A | N/A |
+| **Moneda** | Pesos colombianos | 0 | 100 | | | | |
+| | USD (sin cobertura cambiaria) | 0 | 2 | | | | |
+| | USD (con cobertura cambiaria) | 0 | 20 | | | | |
+| **Emisor** | Sector financiero de carácter privado emitido en Colombia | 0 | 99 | 0 | 120 | AA+ | AAA |
+| | Sector financiero de carácter público o mixto (entidades financieras con participación directa o indirecta de la Nación) ** | 0 | 40 | 0 | 120 | AAA | AAA |
+| | Sector real emitido en Colombia | 0 | 70 | 0 | 120 | AA+ | AAA |
+| | Emisores locales (incluido el gobierno nacional) emitidos en el exterior y emisores extranjeros | 0 | 35 | 0 | 84 | (***) | AAA |
+| | Nación Colombia | 0 | 70 | 0 | 360 | | |
+| | Gobierno Estados Unidos | 0 | 20 | 0 | 120 | AAA | AAA |
+| **Clase** | Bonos | 0 | 60 | 0 | 120 | AA+ | AAA |
+| | Acciones | 0 | 0 | | | | |
+| | CDT | 0 | 90 | 0 | 84 | AA+ | AAA |
+| | ETF | 0 | 5 | N/A | N/A | N/A | N/A |
+| | Participaciones en Fondos de inversión colectiva que inviertan en Renta Fija local | 0 | 20 | 0 | 12 | AA+ | AAA |
+| | Participaciones en Fondos locales que inviertan en renta fija emergente global. | 0 | 2 | N/A | N/A | N/A | N/A |
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **9** de **54**
+
+---
+
+## Página 10 de 54
+
+## Encabezado
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+## Tabla de Límites de Inversión (Continuación)
+
+| Descripción | Columna 1 | Columna 2 | Columna 3 | Columna 4 | Columna 5 | Columna 6 |
+|---|---|---|---|---|---|---|
+| Participaciones en Fondos de Renta Fija Corporativa incluidos Fondos Money Market gestionados por un asset managers aprobado por el comité de inversiones de la Sociedad Administradora que cuenten con experiencia mínima de 10 años y administren por lo menos 5 mil millones de USD en activos. La participación en este tipo de activos deberá contar con cobertura cambiaria mínimo por el **98%** del valor de la posición inicial. | **0** | **5** | **0** | **84** | NA | NA |
+| Participaciones en otros fondos de inversión colectiva abiertos con o sin pacto de permanencia administrados por la sociedad administradora | **0** | **10** | N/A | N/A | AA+ | AAA |
+| Titularizaciones | **0** | **35** | **0** | **120** | AA+ | AAA |
+| Papeles comerciales | **0** | **35** | **0** | **12** | AA+ | AAA |
+| Otros multilaterales en Pesos | **0** | **70** | **0** | **84** | AA+ | AAA |
+
+## Notas y Aclaraciones
+
+\* Las calificaciones de títulos de emisores locales emitidos en el exterior corresponden a calificaciones internacionales.
+
+\*\* Sociedades anónimas de economía mixta con participación del Estado.
+
+\*\*\* La calificación mínima requerida para títulos emitidos en el exterior corresponderá a la calificación riesgo país de Colombia.
+
+*Nota: Los porcentajes aquí señalados se calcularán con base en el total del valor del Fondo Abierto Alianza. Las operaciones que se realicen sobre valores inscritos en el Registro Nacional de Valores y Emisores deberán efectuarse a través de una bolsa de valores o de cualquier otro sistema de negociación de valores autorizado por la Superintendencia Financiera de Colombia.*
+
+**Parágrafo Primero:** Las inversiones de que trata el literal anterior e tendrá como límite de inversión el mismo límite del activo subyacente sobre el cual se realice la operación.
+
+**Parágrafo Segundo:** Dada la naturaleza del Fondo y del tipo de activos sobre los cuales se realizarán las inversiones, el Fondo no realizará operaciones de naturaleza apalancada de acuerdo con los términos del Artículo 3.1.1.5.1 del Decreto 2555 de 2010.
+
+**Parágrafo Tercero:** Cuando el Fondo invierta en otros fondos de inversión colectiva deberá considerar lo siguiente:
+
+## Pie de Página y Márgenes
+
+**Margen Izquierdo (Texto Vertical):** VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+**Footer:**
+www.alianza.com.co
+Página **10** de **54**
+
+---
+
+## Página 11 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+1. Que sólo puede invertir en fondos de inversión colectiva que cumplan con la política de inversión del Fondo.
+2. No se permiten aportes recíprocos.
+3. El Fondo podrá invertir en fondos de inversión colectiva locales administrados por la Sociedad Administradora.
+4. En los casos en el que el total o parte de las inversiones de El Fondo se realicen en otros fondos de inversión colectiva administrados por la misma sociedad administradora, no se generará el cobro de una doble comisión.
+5. En caso de que resulte aplicable, lo dispuesto en el numeral **2** del artículo **3.1.1.10.2** del Decreto **2555** de **2010**.
+
+**Parágrafo Cuarto:** Las inversiones denominadas en dólares americanos deberán contar con cobertura cambiaria mínimo sobre el **90%** del valor de las posiciones al momento de realizar la inversión. La exposición cambiaria (USD) admisible será la resultante de variaciones en el precio de los activos subyacentes que estén denominados en dólares americanos. En todo caso, la máxima exposición en dólares americanos sin cobertura no podrá superar el **2%** del valor del fondo.
+
+**Parágrafo Quinto:** Para efectos de la calificación, en caso de que los emisores cuenten con dos o más calificaciones de riesgo por parte de diferentes agencias calificadoras, se tendrá en cuenta la mínima calificación.
+
+### Cláusula 2.3.1. Plazo promedio ponderado de las inversiones
+
+Para las inversiones de renta fija el plazo promedio ponderado no podrá ser superior a **1090** días de acuerdo con el perfil conservador del fondo. El plazo mínimo promedio ponderado del Fondo será de **90** días. No obstante, lo anterior, el plazo de vencimiento máximo de las inversiones en renta fija será de **360** meses.
+
+### Cláusula 2.3.2. Limite por Matriz Filial y subsidiaria
+
+Las inversiones en valores cuyo emisor u originador, avalista, aceptante, garante sea la matriz, las subordinadas de esta o las subordinadas de la sociedad administradora, si es del caso, no podrá ser superior al **10%** del valor de los activos del Fondo, conforme a lo establecido en el artículo **3.1.1.10.2** del Decreto **2555** de **2010**.
+
+### Cláusula 2.4. Liquidez del Fondo
+
+La liquidez del Fondo será administrada por medio de depósitos en cuentas de ahorro y corrientes de entidades financieras nacionales y/o depósitos remunerados en el Banco de la República y en operaciones de reporto, simultaneas y/o transferencia temporal de valores. Estas entidades financieras deberán contar con una calificación mínima de **AA+** para el largo plazo o **F2** para el corto plazo o su equivalente en otra calificadora de riesgo.
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **11** de **54**
+
+---
+
+## Página 12 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Exclusivamente para los recursos que se mantengan en cuentas de depósito de entidades financieras nacionales con calificación F2 en corto plazo o su equivalente en otra calificadora de riesgo, la exposición no podrá superar el **1%** del valor total del fondo.
+
+***Cláusula 2.4.1. Operaciones de reporte, simultáneas y transferencia temporal de valores***
+
+El Fondo abierto Alianza podrá realizar operaciones de reporte, simultáneas y transferencia temporal de valores, tanto activas como pasivas. Estas operaciones deberán efectuarse a través de un sistema de negociación de valores autorizado por la Superintendencia Financiera de Colombia. Las operaciones pasivas solo se podrán realizar para atender solicitudes de redención de participaciones o gastos del fondo.
+
+Los fondos de inversión colectiva podrán actuar solamente como originadoras en operaciones de la transferencia temporal de valores, caso en el cual la suma de estas operaciones no podrá exceder del **30%** del activo del Fondo.
+
+En todo caso la suma de las operaciones de liquidez (repos, simultáneas y transferencia temporal de valores) tanto activas como pasivas no podrán superar el **30%** de los activos del Fondo, según lo establecido en el artículo 3.1.1.4.5 del Decreto 2555 de 2010
+
+De acuerdo con lo establecido en el parágrafo tercero del artículo 3.1.1.4.5 del Decreto 2555 de 2010, las operaciones descritas en esta cláusula no podrán tener como contraparte, directa o indirectamente, a entidades vinculadas de la sociedad administradora del fondo de inversión colectiva.
+
+***Cláusula 2.4.2. Depósitos de recursos líquidos***
+
+El Fondo Abierto Alianza podrá realizar depósitos hasta el **50%** del valor del Fondo en cuentas bancarias corrientes o de ahorro de entidades financieras de acuerdo con lo establecido en el numeral 2.3 del presente reglamento.
+
+| Tipo Entidad Financiera | Límite General | Concentración Por Entidad |
+| :--- | :--- | :--- |
+| | **Mínimo** | **Máximo** | **Mínimo** | **Máximo** |
+| MATRIZ | No aplica | No aplica | No aplica | No aplica |
+| OTRAS ENTIDADES | **0** | **50%** | **0** | **20%** |
+
+En caso tal que Alianza Fiduciaria SA llegase a convertir en matriz o filial financiera se acogerá a lo establecido en la ley, para lo cual contará con un plazo no mayor a **180 días** para ajustarse
+
+**Parágrafo:** Del total de los recursos líquidos depositados en bancos, el Fondo deberá tener al menos el **80%** en bancos con la máxima calificación crediticia en el corto plazo.
+
+***Cláusula 2.4.3. Ajustes temporales***
+
+Conforme lo establecido en el artículo 3.1.1.4.3 del Decreto 2555 de 2010, cuando las circunstancias imprevistas o imprevisibles en el mercado hagan imposible el cumplimiento de la política de inversión del Fondo, la sociedad administradora podrá ajustarla de manera
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **12** de **54**
+
+---
+
+## Página 13 de 54
+
+**Alianza Fiduciaria**\nUNA EMPRESA DE LA ORGANIZACIÓN DELIMA\nT: (601) 6447700\nCr. 15 82-99\nBogotá, Colombia\n\nprovisional, lo cual deberá ser informado a los inversionistas, a la sociedad calificadora y a la Superintendencia Financiera. La calificación de imposibilidad deberá ser reconocida como un hecho generalizado en el mercado\n\n## Cláusula 2.5. Operaciones de Cobertura\n\nLa sociedad administradora podrá realizar operaciones de derivados sobre los activos aceptables para invertir del Fondo con el propósito de cubrirse de los riesgos descritos en la cláusula 2.6. del reglamento en un monto que no supere el valor total de la posición de riesgo que pretende ser cubierta. Las operaciones deberán estar enmarcadas dentro de los lineamientos establecidos para los activos subyacentes en la cláusula 2.2. del presente reglamento.\n\nLa valoración y la contabilización de las operaciones de derivados se efectuarán con base a lo establecido en el Capítulo XVIII de la Circular Básica Contable y Financiera (Circular Externa 100 de 1995) de la Superintendencia Financiera de Colombia o en las normas que lo modifiquen, sustituyan o complementen.\n\nLa Sociedad Administradora del Fondo, contará con políticas y mecanismos de control para la administración de los riesgos inherentes a la celebración de operaciones sobre instrumentos derivados, entre ellos los relacionados con las posibles pérdidas por la valoración o liquidación de los contratos, la constitución de garantías para respaldar las posiciones abiertas, las exigencias de liquidez o de títulos para la atención de los llamados al margen, y los demás riesgos que se identifiquen en la estructuración de posiciones de cobertura. Así mismo, Alianza revelará la exposición neta de acuerdo con los criterios de revelación de la información que establezca la Superintendencia Financiera de Colombia.\n\n## Cláusula 2.6. Riesgo del Fondo\n\n### Cláusula 2.6.1. Factores de Riesgo\n\nEl Fondo Abierto Alianza se encuentra expuesto a los siguientes riesgos sobre títulos valores o valores:\n\n*Cláusula 2.6.1.1. Riesgo emisor o crediticio*\n\nEs la posibilidad de que se produzcan pérdidas financieras asociadas al pago, repago o incumplimiento de las obligaciones de una empresa, gobierno, Fondo de inversión colectiva o patrimonio, bien sea como emisor de un instrumento financiero o como contraparte en una negociación. El riesgo de crédito puede generar dos consecuencias principales:\n\n* ✓ La pérdida de valor en el activo y el consecuente detrimento del capital invertido por el Fondo.\n* ✓ La reprogramación del retorno del activo proveniente de una reestructuración, con detrimento del capital invertido por el Fondo.\n\n---\n**Información de pie de página y márgenes:**\n* Margen izquierdo: VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA\n* Inferior izquierdo: www.alianza.com.co\n* Inferior derecho: Página 13 de 54
+
+---
+
+## Página 14 de 54
+
+![Logo Alianza Fiduciaria](logo)\n**Alianza Fiduciaria**\nUNA EMPRESA DE LA ORGANIZACIÓN DELIMA\n\nT: (601) 6447700\nCr. 15 82-99\nBogotá, Colombia\n\n### *Cláusula 2.6.1.2. Riesgo de mercado*\n\nEs la posibilidad de que se produzcan pérdidas en el valor de los activos que componen el Fondo como consecuencia de cambios en las cotizaciones de los precios de mercado o los factores de riesgo, afectando así el valor total del Fondo. Lo anterior se traduce en movimientos al alza o a la baja en el precio, teniendo como resultado utilidades o pérdidas en el portafolio del Fondo.\n\n### *Cláusula 2.6.1.3. Riesgo de liquidez*\n\nEs la posibilidad de que se incurra en pérdidas como consecuencia de no poder cumplir a cabalidad, de manera oportuna y eficiente, los flujos de caja esperados e inesperados. El riesgo de liquidez se manifiesta ante la insuficiencia de activos líquidos disponibles y ante la necesidad de incurrir en costos adicionales de fondeo. Asimismo, se ve representado en la incapacidad de generar o deshacer posiciones por la inadecuada profundidad de los mercados o por los cambios drásticos en las tasas de interés.\n\n### *Cláusula 2.6.1.4. Riesgo de concentración*\n\nEs la posibilidad de que se produzcan pérdidas cuando las inversiones del Fondo no se encuentren diversificadas, entre otros, por emisor, inversionista, vencimientos, etc\n\n### *Cláusula 2.6.1.5. Riesgo de contraparte*\n\nRepresenta la posibilidad de que el Fondo de Inversión Colectiva incurra en pérdidas como consecuencia del incumplimiento de una contraparte. Dicho riesgo se deriva de las condiciones económicas y financieras de la contraparte y la probabilidad de que éstas cumplan satisfactoriamente la transacción pactada.\n\n### *Cláusula 2.6.1.6. Riesgo de tasa de cambio*\n\nEs el riesgo que se asume cuando se mantienen posiciones en divisas o en activos denominados en moneda extranjera. Representa la posibilidad de incurrir en pérdidas como consecuencia de las fluctuaciones en la respectiva moneda.\n\n### *Cláusula 2.6.1.7. Riesgo jurídico*\n\nEs la posibilidad de que se produzcan pérdidas derivadas de la no existencia de documentación adecuada para el desarrollo de las operaciones, su incorrecta y/o incompleta documentación, de la formalización de contratos con contraparte sin capacidad jurídica o legal, y del incumplimiento de las disposiciones legales y reglamentarias vigentes.\n\nEl Fondo tiene por ello la restricción a la negociación que se encuentren desmaterializados en el DCV o DECEVAL para efectos de eliminación de documentos físicos, traslados o endosos de estos.\n\n### *Cláusula 2.6.1.8. Riesgo de Lavado de Activos*\n\nEl riesgo de lavado de activos, es la amenaza de que la sociedad administradora sea utilizada como instrumento para el ocultamiento, manejo, inversión o aprovechamiento, en cualquier\n\n---\n\n**Margen izquierdo (texto vertical):** VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA\n\n**Pie de página:**\nwww.alianza.com.co\nPágina **14** de **54**
+
+---
+
+## Página 15 de 54
+
+forma, de dinero u otros bienes provenientes de actividades delictivas, o para dar apariencia de legalidad a éstas o a las transacciones y fondos vinculados con las mismas, afectando la estabilidad del sistema financiero y la integridad de los mercados por el carácter global de las operaciones y las redes utilizadas para el manejo de tales recursos.
+
+*Cláusula 2.6.1.9. Riesgo Operativo*
+
+El riesgo operativo es la posibilidad de incurrir en pérdidas por deficiencias, fallas o inadecuaciones, en el recurso humano, los procesos, la tecnología, la infraestructura o por la ocurrencia de acontecimientos externos, asociadas al cumplimiento y ejecución de las operaciones del fondo.
+
+### **Cláusula 2.6.2. Perfil de riesgo**
+
+De acuerdo con los activos aceptables para invertir, se considera que el perfil general de riesgo del Fondo es conservador, por cuanto las características de los títulos en los cuales puede invertir de acuerdo con su calificación externa, así como en el análisis interno cualitativo y cuantitativo son de la más alta calificación. Adicionalmente por la duración del portafolio, las restricciones de liquidez según los plazos en los que puede invertir y el perfil de liquidez de las inversiones que pueden componer el Fondo de Inversión colectiva, hace que disminuya el riesgo de liquidez y que los impactos por riesgo de mercado sean menores.
+
+### **Cláusula 2.6.3. Administración de Riesgos**
+
+La Sociedad Administradora adoptó mecanismos de administración de riesgos, diseñados e implementados en función del perfil de riesgo del Fondo. A continuación, se describe cada uno de ellos:
+
+*Cláusula 2.6.3.1. Riesgo emisor o crediticio*
+
+La gestión del riesgo emisor o crediticio, comprende la evaluación y calificación de los diferentes emisores de títulos valores, con el objeto de establecer los cupos máximos de inversión para éstos. La asignación de dichos cupos se efectúa mediante el empleo de un modelo de calificación desarrollado a nivel interno, a través del cual se realiza un seguimiento permanente a los indicadores financieros de las entidades emisoras. El modelo permite realizar una adecuada gestión de riesgo y llevar a cabo la asignación de límites de los que trata el numeral 2.1.1.1. y la valoración de los activos de que trata el numeral 2.1.1.2 de la Circular Básica Jurídica, Parte III Título VI, Capítulo III.
+
+Además de lo anterior, los resultados del modelo permiten realizar ajustes en la valoración de acuerdo a la evaluación de riesgo. La calibración se hace mensualmente de tal manera que se pueda dar seguimiento permanente a la evolución de la calidad crediticia del obligado a pagar el derecho contenido en los instrumentos (deudor, contraparte, emisor, originador y/o pagador, según sea el caso) que conforman el portafolio del Fondo, o de la contraparte de las operaciones que ésta realice, las garantías que haya recibido como respaldo de las mismas, o las obligaciones derivadas de los instrumentos que el FIC adquiera. Todo lo anterior con el fin de
+
+---
+
+## Página 16 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+dar cumplimiento a lo estipulado por la SFC en el numeral 6.4 del Capítulo I de la Circular Básica Contable y Financiera, además de asegurar la calidad de los activos que conforman el portafolio.
+
+Por otro lado, se estableció que las inversiones del fondo estarán concentradas principalmente en riesgo nación y en títulos calificados **AAA**, o su equivalente, y no serán admisibles las inversiones con calificación inferior a **AA+**, o su equivalente, ni las inversiones que no cuenten con calificación oficial de riesgo de crédito. Los recursos líquidos depositados en una misma entidad no podrán superar el equivalente al **20%** del valor del fondo.
+
+### *Cláusula 2.6.3.2. Riesgo de mercado*
+
+Las metodologías de medición y administración de riesgo implementadas por Alianza Fiduciaria permiten estimar y gestionar adecuadamente el Valor en Riesgo (VaR) al cual está expuesto el Fondo. Dichas metodologías atienden cabalmente las directrices regulatorias establecidas por la Superintendencia Financiera de Colombia en el Capítulo XXI de la Circular Básica Contable y Financiera 100 de 1995.
+
+La valoración de los de los instrumentos que hagan parte del portafolio, se realizará en virtud de lo dispuesto en el Capítulo I de la Circular Básica Contable y Financiera 100 de 1995, en concordancia con lo previsto en el Capítulo IV, Título IV, Parte III de la Circular Básica Jurídica, bajo el esquema de la proveeduría de precios para valoración.
+
+### *Cláusula 2.6.3.3. Riesgo de liquidez*
+
+Para mitigar el riesgo de liquidez la Sociedad Administradora cuenta con un modelo de liquidez el cual establece límites mínimos de liquidez en diferentes horizontes de tiempo y entornos de mercado. De esta manera se garantiza el cumplimiento de las obligaciones del Fondo dando siempre cumplimiento a lo establecido en el Capítulo VI de la Circular Básica Contable y Financiera, Circular Externa 100 de 1995.
+
+### *Cláusula 2.6.3.4. Riesgo de concentración*
+
+El Fondo, para mitigar el riesgo de concentraciones, tiene los siguientes límites de inversión:
+
+No podrán mantenerse títulos de un mismo emisor, aceptante o garante que representen más del diez por ciento (**10%**) del total del fondo. No obstante, dicha participación podrá ser hasta del veinte por ciento (**20%**) del total del fondo cuando la inversión tenga por objeto títulos de deuda emitidos, aceptados o garantizados por los establecimientos de crédito vigilados por la Superintendencia financiera. Cuando se trata de inversiones en títulos emitidos por la nación, caso en el cual la concentración permitida es de **70%**.
+
+### *Cláusula 2.6.3.5. Riesgo de Contraparte*
+
+Para mitigar este riesgo, la Sociedad Administradora llevará a cabo un estricto proceso de selección de las contrapartes con las que se celebren operaciones fundamentado en un análisis financiero, estructural, de carácter cuantitativo y cualitativo. El proceso de selección, con la respectiva asignación de cupos, se ejecutará a través de un modelo de calificación, que evaluará las variables determinantes de la solvencia y la capacidad de pago, así como los factores
+
+---
+**Margen Izquierdo:** VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+**Pie de página:** www.alianza.com.co | Página **16** de **54**
+
+---
+
+## Página 17 de 54
+
+![Logo Alianza Fiduciaria](logo)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+relacionados con el componente moral. Serán admitidos, como garantía para las operaciones que así lo requieran, los activos admisibles establecidos en la Cláusula 2.2.
+
+*Cláusula 2.6.3.6. Riesgo de tasa de cambio*
+
+Como principal mecanismo para la mitigación de este tipo de riesgo, se utilizarán derivados con fines de cobertura cambiaria. Estos instrumentos eliminarán la exposición del Fondo al riesgo de tasa de cambio.
+
+*Cláusula 2.6.3.7. Riesgo Jurídico*
+
+Con el fin de mitigar los riesgos jurídicos, la Sociedad Administradora mantendrá un departamento jurídico, responsable por la aprobación y revisión de los contratos y acuerdos suscritos por el Fondo en el giro ordinario de sus actividades. Dicho departamento jurídico también debe ser responsable de revisar y aprobar todos los acuerdos suscritos por el Fondo en Colombia. Por otra parte, este departamento también debe monitorear la evolución de la regulación en Colombia y sus posibles impactos sobre las actividades del Fondo.
+
+*Cláusula 2.6.3.8. Riesgo de Lavado de Activos*
+
+Con el fin de identificar, monitorear y medir el riesgo de lavado de activos de manera ágil y oportuna, la sociedad administradora cuenta con un Sistema de Administración del Riesgo de Lavado de Activos y Financiación al Terrorismo (SARLAFT), conformado por un conjunto de políticas, instrumentos, mecanismos y procedimientos diseñados para conocer adecuada y suficientemente a los clientes, empleados y proveedores con quienes guarda relaciones contractuales. Este sistema permite obtener la información necesaria para reportar de forma inmediata y suficiente, a través del oficial de cumplimiento, a la unidad de información y análisis financiero del ministerio de hacienda y crédito público -UIAF- cualquier información relevante sobre el manejo de fondos cuya cuantía o característica no guarde relación con la actividad económica de sus clientes, o sobre las transacciones que por su número, cantidades transadas o características de las mismas, puedan conducir razonablemente a sospechar que los mismos están utilizando la compañía para el lavado de activos.
+
+*Cláusula 2.6.3.9. Riesgo Operativo*
+
+Para mitigar este riesgo se implementó el Sistema de Administración de Riesgo Operativo, el cual está compuesto por políticas, procedimientos y demás elementos definidos en el Capítulo XXIII de la Circular Básica Contable y Financiera; realizando el ciclo de identificación, medición, control y seguimiento a los riesgos, así como la definición y cumplimiento de los planes de acción que se requieran con el fin de disminuir la probabilidad de ocurrencia y el impacto de los riesgos en la Sociedad Administradora. Así mismo, Alianza Fiduciaria cuenta con un Plan de Continuidad del Negocio (PCN), el cual es un conjunto detallado de acciones que describen los procedimientos, los sistemas y los recursos necesarios para retornar y continuar la operación, en caso de interrupción.
+
+---
+
+**VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA**
+
+www.alianza.com.co
+
+**Página 17 de 54**
+
+---
+
+## Página 18 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+### *Cláusula 2.6.4. Gestión de riesgos ambiental, social y de gobierno (ASG)*
+
+Se consideran factores de riesgo ASG aquellos asociados a asuntos ambientales, sociales y de gobernanza que representan amenazas u oportunidades con potencial incidencia en el desempeño financiero y la percepción en el mercado frente a los activos en los que invierte el Fondo y/o sus respectivos emisores. Como criterios ambientales se consideran aspectos relativos al objeto social u actividad empresarial que puedan afectar de forma positiva o negativa al medio ambiente. Las cuestiones sociales incluyen aspectos concernientes a su integración con la comunidad, bajo un enfoque de responsabilidad social, es decir, las relaciones con las comunidades locales, la gestión del capital humano, el lugar y condiciones de trabajo, la prevención de prácticas comerciales y actividades controvertidas, incluyendo la adhesión a los derechos humanos y la no discriminación. En cuanto a los asuntos de buen gobierno, estos se refieren a la calidad de la gestión, la cultura, el perfil de riesgo de los referidos emisores, agrupados en su gobernanza y comportamiento corporativo.
+
+La conformación del portafolio de inversiones del Fondo no persigue objetivos específicos de orden ambiental, social o de buen gobierno; por lo tanto, en la revelación de información a los inversionistas no se emplearán denominaciones tales como inversiones sostenibles, responsables, verdes o similares. No obstante, la Sociedad Administradora del Fondo tiene previstos procesos de identificación, evaluación, monitoreo y mitigación de los factores de riesgo ASG, que estarán inmersos en los métodos y procesos de análisis de información ejecutados por parte de proveedores externos, debidamente seleccionados por Alianza Fiduciaria.
+
+El proceso de toma de decisiones de inversión y la concentración de inversiones que eventualmente estén orientadas a la consecución de objetivos ASG, responderá estrictamente a la definición que para tal efecto establezca el Comité de Inversiones de la Sociedad Administradora.
+
+### **Cláusula 2.7. Transparencia en la revelación de aspectos ASG**
+
+Si bien el Fondo podrá integrar dentro de sus análisis los factores ASG en la toma de decisiones de inversión en Activos Admisibles, el Fondo no persigue un objeto de inversión ASG ni podrá ser considerado un Fondo de esta categoría.
+
+## **Capítulo III. Organismos de administración y control**
+
+### **Cláusula 3.1. Órganos de administración**
+
+#### *Cláusula 3.1.1. Responsabilidad de la sociedad administradora*
+
+La sociedad administradora, en la gestión de los recursos del Fondo, adquiere obligaciones de medio y no de resultado. Por lo tanto, Alianza Fiduciaria, no podrá garantizar una tasa fija para las participaciones constituidas, así como asegurar rendimientos por valorización de los activos que integran el Fondo. En todo caso, responderá en su condición de agente del mercado.
+
+---
+
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página:*
+www.alianza.com.co
+Página **18** de **54**
+
+---
+
+## Página 19 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+---
+
+Alianza Fiduciaria cuenta con una Junta Directiva, un Comité de Inversiones, el gerente y su respectivo suplente del Fondo Abierto Alianza, encargados de realizar la gestión de la misma. Para este fin, la Junta Directiva de la sociedad administradora del Fondo Abierto Alianza, con respecto a la administración de fondos de inversión colectiva, deberá cumplir las siguientes obligaciones:
+
+1. Definir las políticas y procedimientos aplicables al desarrollo de la actividad de administración de fondos de inversión colectiva, y determinar los criterios o condiciones bajo los cuales la sociedad desarrollará todas o algunas de las demás actividades relacionadas con los fondos de inversión colectiva administrados.
+
+Para el efecto, la junta directiva deberá definir para cuales fondos de inversión colectiva o familias de fondos de inversión colectiva la sociedad ejercerá la gestión del portafolio de manera directa, y para cuales dicha gestión será delegada a un gestor externo en los términos de la presente parte del presente decreto.
+
+Así mismo, la junta directiva deberá realizar la designación de la entidad que prestará los servicios de custodia de valores, y de las actividades complementarias a la misma que serán prestadas por parte de la entidad designada como custodio.
+
+2. Definir los criterios o estándares aplicables a la selección de entidades encargadas de la gestión, y de la custodia de los fondos de inversión colectiva administrados por la sociedad autorizada.
+
+3. Definir una adecuada estructura organizacional para garantizar el cumplimiento e independencia de las funciones propias de la actividad de administración de fondos de inversión colectiva, así como del personal responsable de las mismas.
+
+4. Fijar los procedimientos y políticas para determinar el proceso de valoración del portafolio de los fondos de inversión colectiva administrados y de sus participaciones, el cual deberá ser cumplido por la sociedad administradora o por el gestor o el custodio del respectivo fondo de inversión colectiva, según lo establezca el reglamento.
+
+La junta directiva deberá fijar medidas de control que permitan vigilar el cumplimiento de las reglas establecidas para la valoración de los fondos de inversión colectiva administrados.
+
+5. Determinar las políticas necesarias para adoptar medidas de control y reglas de conducta apropiadas y suficientes, que se orienten a evitar que los fondos de inversión colectiva administrados puedan ser utilizados como instrumentos para el ocultamiento, manejo, inversión o aprovechamiento en cualquier forma de dineros u otros bienes provenientes de actividades ilícitas, para realizar evasión tributaria o para dar apariencia de legalidad a actividades ilícitas o a las transacciones y recursos vinculados con las mismas.
+
+---
+
+**Margen izquierdo (texto vertical):** VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+**Margen inferior izquierdo:** www.alianza.com.co
+**Margen inferior derecho:** Página **19** de **54**
+
+---
+
+## Página 20 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+6. Aprobar los manuales para el control y prevención del lavado de activos, de gobierno corporativo incluyendo el código de conducta, de control interno, y los demás necesarios para el cumplimiento de las normas aplicables.
+
+7. Establecer políticas en cualquier otro aspecto que tenga relevancia con el adecuado funcionamiento y la correcta administración del fondo de inversión colectiva.
+
+8. Diseñar políticas, directrices y procedimientos de gobierno corporativo y de control interno, orientadas a administrar los riesgos que puedan afectar a los fondos de inversión colectiva administrados.
+
+9. Determinar políticas, directrices y procedimientos para garantizar la calidad de la información divulgada al público en general, a los inversionistas y a la Superintendencia Financiera de Colombia.
+
+10. Establecer políticas y adoptar los mecanismos que sean necesarios para evitar el uso de información privilegiada o reservada y la manipulación de la rentabilidad o del valor de la unidad.
+
+11. Diseñar y aprobar las políticas para la presentación a las asambleas de inversionistas de toda la información necesaria que permita establecer el estado de los fondos de inversión colectiva administrados, incluyendo como mínimo: los estados financieros básicos de propósito general, la descripción general del portafolio, y la evolución del valor de la participación, del valor del fondo de inversión colectiva y de la participación de cada inversionista dentro del mismo.
+
+12. Definir las situaciones constitutivas de conflictos de interés, así como las políticas y los procedimientos para su prevención y administración.
+
+13. Establecer políticas, directrices y procedimientos para el ejercicio de los derechos políticos inherentes a los valores administrados colectivamente, cuando dicha actividad no haya sido delegada voluntariamente en el custodio de dichos valores. Dichas políticas, directrices y procedimientos deberán definir expresamente los casos en que la sociedad administradora podrá abstenerse de participar en las deliberaciones y votaciones, en razón, entre otras, de la poca materialidad de la participación social o de los asuntos a ser decididos.
+
+14. Fijar las directrices de los programas de capacitación para los funcionarios encargados de las tareas relacionadas con la administración de los fondos de inversión colectiva.
+
+15. Definir los mecanismos que serán implementados para el seguimiento del cumplimiento de las funciones del personal vinculado contractualmente al gestor externo, en relación con la gestión del fondo de inversión colectiva.
+
+16. Dictar las políticas y mecanismos para solucionar de manera efectiva y oportuna los problemas detectados y reportados por las áreas involucradas en la actividad de administración del fondo de inversión colectiva, y por el revisor fiscal, sobre asuntos que
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+**Página 20 de 54**
+
+---
+
+## Página 21 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+puedan afectar el adecuado funcionamiento y administración del fondo de inversión colectiva.
+
+17. Determinar los mecanismos que eviten la aplicación de prácticas discriminatorias o inequitativas entre los inversionistas de un mismo fondo de inversión colectiva.
+
+18. Determinar el contenido mínimo de los informes que deberá presentar quien ejecute la actividad de gestión de los fondos de inversión colectiva administrados por la sociedad administradora.
+
+19. Nombrar el gerente del fondo de inversión colectiva y su suplente, cuando haya lugar.
+
+20. Las demás establecidas a cargo de la junta directiva de la sociedad administradora de fondos de inversión colectiva en otras normas legales o reglamentarias.
+
+La información relacionada con el gerente, su suplente y dicho comité será publicada a través del prospecto de inversión que podrá ser consultado en las agencias o sucursales de Alianza Fiduciaria o en las oficinas de las entidades con las que haya suscrito contratos de corresponsalía o uso de red de oficinas o equivalentes, y en www.alianza.com.co.
+
+La constitución del Comité de Inversiones y la designación del gerente no exonera a la Junta Directiva de la responsabilidad prevista en el artículo 200 del Código de Comercio o cualquier otra norma que lo modifique, sustituya o derogue, ni del cumplimiento de los deberes establecidos en las normas vigentes.
+
+En todo caso, Alianza Fiduciaria responderá hasta de la culpa leve en el cumplimiento de sus funciones, como experto prudente y diligente.
+
+**Cláusula 3.1.2. Gerente**
+
+Alianza Fiduciaria S.A ha designado un gerente, con su respectivo suplente, dedicado de forma exclusiva a la gestión de las decisiones de inversión efectuadas a nombre del Fondo. El gerente se considerará administrador de la sociedad, y estará inscrito en el Registro Nacional de Profesionales del Mercado de Valores.
+
+El gerente y su suplente tendrán a su cargo y dará cumplimiento a las funciones asignadas en el Decreto 2555 de 2010 y en el presente reglamento entre otras:
+
+1. En la toma de decisiones de inversión deberá tener en cuenta las políticas diseñadas por la junta directiva identificar, medir, gestionar y administrar los riesgos.
+2. Documentar con detalle y precisión los problemas detectados en los envíos de información de la sociedad administradora a los inversionistas y a la Superintendencia Financiera de Colombia, categorizados por fecha de ocurrencia, frecuencia e impacto. Así mismo, deberá documentar los mecanismos implementados para evitar la reincidencia de las fallas detectadas.
+3. Asegurarse de que la Sociedad Administradora cuente con personal idóneo para el cumplimiento de las obligaciones de información.
+4. Proponer a los órganos de administración el desarrollo de programas, planes y
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **21** de **54**
+
+---
+
+## Página 22 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+estrategias orientadas al cumplimiento eficaz de las obligaciones de información a cargo de la Sociedad Administradora.
+
+5. Cumplir con las directrices, mecanismos y procedimientos señalados por la Junta Directiva de la sociedad administradora, y vigilar su cumplimiento por las demás personas vinculadas contractualmente cuyas funciones se encuentren relacionadas con la gestión propia.
+
+6. Informar a la Superintendencia Financiera de Colombia los hechos que imposibiliten o dificulten el cumplimiento de sus funciones, previa información a la junta directiva.
+
+7. Presentar la información a la asamblea de inversionistas, de conformidad con lo señalado en el numeral 15 del artículo 3.1.3.1.3 del decreto 2555 de 2010.
+
+8. Identificar, controlar y gestionar las situaciones generadoras de conflictos de interés, según las reglas establecidas en las normas aplicables y las directrices señaladas por la junta.
+
+9. Acudir a la junta directiva de la sociedad administradora de fondos de inversión colectiva en los eventos en que considere que se requiere de su intervención, con la finalidad de garantizar la adecuada gestión del fondo de inversión colectiva.
+
+10. Ejercer una supervisión permanente sobre el personal vinculado a la gestión del portafolio fondo de inversión colectiva gestionado, y
+
+11. Las demás asignadas por la junta directiva de la sociedad gestora, sin perjuicio de las responsabilidades asignadas a la misma.
+
+**Parágrafo 1:** El suplente solo actuará en caso de ausencias temporales o absolutas del principal.
+
+**Parágrafo 2:** Como requisitos para poder desempeñar las funciones de Gerente el funcionario deberá ser profesional en Finanzas, economía o áreas afines, contar con un estudio de post-grado y tener una experiencia de al menos **4** años en el sector financiero en la administración de portafolios. De igual forma no contar con antecedentes de condenas en la AMV y/o la Superintendencia financiera de Colombia.
+
+**Cláusula 3.2. Órganos de asesoría**
+
+***Cláusula 3.2.1. Comité de Inversiones***
+
+La junta directiva de la sociedad administradora designará un comité denominado “Comité de Inversiones” responsable del análisis de las inversiones y de los emisores así como de la definición de los cupos de inversión y las políticas para adquisición y liquidación de inversiones. Los miembros de este comité se considerarán administradores de conformidad con lo establecido en el artículo 22 de la Ley 222 de 1995 o cualquier otra norma que lo modifique, sustituya o derogue.
+
+***Cláusula 3.2.2. Constitución***
+
+El Comité de Inversiones estará compuesto por un número mínimo de tres (**3**) miembros. Dichos miembros deberán ser elegidos por la Junta Directiva de la Sociedad Administradora y acreditar experiencia en temas financieros y ocupar o haber ocupado cargos directivos.
+
+[Texto vertical en el margen izquierdo:] VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página **22** de **54**
+
+---
+
+## Página 23 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: **(601) 6447700**
+Cr. 15 82-99
+Bogotá, Colombia
+
+Las decisiones adoptadas en el Comité de Inversiones deberán constar en actas.
+
+### *Cláusula 3.2.3. Reuniones*
+
+El Comité de Inversiones se reunirá ordinariamente una vez al mes. También podrá reunirse extraordinariamente cuando las circunstancias lo requieran, previa convocatoria efectuada por la Sociedad Administradora. De las reuniones se levantarán actas.
+
+El quórum para las sesiones del Comité de Inversiones se conformará con la presencia de al menos **tres (3)** de los miembros designados, quienes podrán tomar decisiones con la mayoría de los miembros presentes en el comité.
+
+**Parágrafo Primero:** En las sesiones del Comité de Inversiones podrá participar el Gerente del Fondo de Inversión Colectiva con voz pero sin voto. Así mismo, al Comité podrán asistir otros invitados con voz pero sin voto.
+
+### *Cláusula 3.2.4. Funciones*
+
+El comité de inversiones tiene dentro de sus funciones:
+
+1. Fijar las políticas de adquisición y liquidación de inversiones, verificar su eficaz cumplimiento, incluyendo la asignación de cupos de inversión por emisor y por clase de inversión.
+2. Evaluar y proponer, en general, todas las medidas que reclamen el interés común de los suscriptores.
+3. Llevar a cabo un control periódico de las diferentes variables de riesgo que pueden afectar los portafolios administrados por la fiduciaria.
+4. Adoptar las políticas necesarias que se deben seguir, de acuerdo con unas estrategias de reacción y operación en diversos escenarios, orientadas a fortalecer las operaciones sobre las cuales se considera existe una mayor exposición al riesgo.
+5. Las que determine la Junta Directiva de la sociedad administradora.
+
+### **Cláusula 3.3. Órganos de control**
+
+#### *Cláusula 3.3.1. Revisor fiscal*
+
+La revisoría fiscal del Fondo abierto Alianza será realizada por el revisor fiscal de la sociedad administradora. La identificación y los datos de contacto de la revisoría fiscal serán dadas a conocer a través del prospecto de inversión y del sitio web www.alianza.com.co. Los informes del revisor fiscal serán independientes de los de la sociedad administradora.
+
+## **Capítulo IV. Constitución y redención de participaciones**
+
+### **Cláusula 4.1. Vinculación y clases de participaciones**
+
+#### *Cláusula 4.1.1 Vinculación*
+
+Para ingresar al Fondo el inversionista deberá aceptar las condiciones establecidas en el presente reglamento y hacer la entrega efectiva de recursos. En este proceso se debe establecer
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **23** de **54**
+
+---
+
+## Página 24 de 54
+
+### Encabezado ###<br>**Alianza Fiduciaria**<br>UNA EMPRESA DE LA ORGANIZACIÓN DELIMA<br>T: (601) 6447700<br>Cr. 15 82-99<br>Bogotá, Colombia<br><br>la plena identificación de la propiedad de los recursos por parte del inversionista. De igual forma establecer los aspectos relacionados con el conocimiento del cliente, incluyendo datos sobre la dirección de contacto, una cuenta bancaria vigente y demás aspectos señalados en las normas para la prevención de actividades ilícitas y lavado de activos y financiación del terrorismo, los cuales le serán solicitados por la fuerza de ventas al momento de vincularse.<br><br>A la dirección física y/o electrónica que registre se le enviará todas las comunicaciones que se produzcan en desarrollo del reglamento, la cual permanecerá vigente mientras no sea modificada a través de documento escrito firmado por el inversionista y entregado en las oficinas de la sociedad administradora, sin perjuicio de lo establecido en el **numeral 5° artículo 23 del Código de Procedimiento Civil**.<br><br>Una vez el inversionista realice la entrega efectiva y se tenga la plena identificación de la propiedad de los recursos correspondientes, dicho valor será convertido en unidades, al valor de la unidad vigente determinado de conformidad con la **cláusula 5.3** (Valor de la unidad) del presente reglamento. La sociedad administradora deberá expedir una constancia por el recibo de los recursos que cumplirá con los requisitos mínimos establecidos en el **numeral 2.8 del Capítulo III del Título IV de la Parte III de la Circular Básica Jurídica**. Con dicha constancia la misma se entregará la copia d prospecto de inversión, la cual puede ser enviada al correo electrónico del Inversionista, dejando evidencia, por parte del inversionista del recibo de la mencionada copia, así como de la aceptación y comprensión de la información allí contenida.<br><br>La cantidad de unidades que represente el aporte se informará al suscriptor el día hábil inmediatamente siguiente al de constitución de unidades en el Fondo mediante la emisión de un documento representativo de la participación el cual deberá contener los requisitos mínimos establecidos en el **numeral 2.10 del Capítulo III del Título IV de la Parte III de la Circular Básica Jurídica**, y será entregado al inversionista de la siguiente manera:<br><ul><li>Correo electrónico registrado o;</li><li>Comunicación remitida al domicilio registrado en la sociedad administradora o;</li><li>Como documento en la página web de Alianza Fiduciaria S.A.</li></ul><br>Los aportes podrán efectuarse en dinero, cheque o transferencia de recursos, que se podrán efectuar en las oficinas de la sociedad administradora, sus agencias o sucursales, o en las oficinas de las entidades con las que haya celebrado contratos de uso de red de oficinas o corresponsalía local o en la red bancaria establecida por la sociedad administradora para el recaudo de recursos del Fondo. Para el efecto, la sociedad administradora informará a través de www.alianza.com.co, la red establecida para recibir aportes.<br><br>Si la entrega de recursos se efectúa por medio de transferencia bancaria o consignación en las cuentas exclusivas del Fondo, el inversionista deberá informar de manera inmediata de esta situación por medio físico.<br><br>---<br>**[Margen Izquierdo]**<br>VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA<br><br>**[Pie de Página]**<br>www.alianza.com.co<br>**Página 24 de 54**
+
+---
+
+## Página 25 de 54
+
+## Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Si el aporte se realiza en cheque, el certificado definitivo sólo se expedirá una vez que se haya pagado el cheque. Si el cheque resultare impagado a su presentación, se considerará que en ningún momento existió aporte al Fondo. En tal evento, una vez impagado el instrumento, se procederán a efectuar las anotaciones contables pertinentes tendientes a reversar la operación y a devolver el cheque no pagado a la persona que lo hubiere entregado, sin perjuicio de que se le exija, a título de sanción, el **20%** del importe del cheque, conforme a lo previsto por el artículo **731** del Código de Comercio. Este valor hará parte de los activos del Fondo.
+
+**Parágrafo 1.** El horario de recepción de los aportes de los suscriptores será informado en www.alianza.com.co. En caso de que se reciban recursos después del horario establecido, se entenderá como efectuados el día hábil siguiente.
+
+**Parágrafo 2.** La sociedad administradora se reserva el derecho de admisión de inversionistas a el Fondo , así como la recepción de aportes posteriores a la misma, siendo una causal objetiva de cancelación del encargo, el incumplimiento legal de cualquier obligación a cargo del inversionista dentro de las que se encuentran el estar incluido en cualquier lista relacionada con la prevención y control de lavado de activos y financiación del terrorismo o cuando a juicio de la sociedad administradora, las operaciones del encargo se consideren de carácter inusual o sospechoso, de acuerdo con lo establecido en las normas vigentes que regulen el Sistema integral de prevención de lavado de activos y financiación del terrorismo .
+
+**Parágrafo 3.** El monto mínimo de vinculación será de **$10.000** (diez mil pesos) sin pacto de permanencia mínima. El monto mínimo de permanencia será de **$1.000** (mil pesos). Los inversionistas podrán realizar aportes adicionales al Fondo, para lo cual serán aplicables las reglas establecidas en la presente cláusula en cuanto a la constitución de unidades. El valor del aporte adicional se contabilizará como un mayor valor de la inversión inicial. El monto mínimo de aportes adicionales será la suma de **$1.000** (mil pesos).
+
+**Parágrafo 4.** La Sociedad Administradora cuando evidencie que por error se acreditó o debitó una suma en la cuenta de un Inversionista, compensará y/o reversará las sumas de dinero que sean acreditadas erróneamente una vez sea identificado el error, y como consecuencia de ello procederá informar de esa situación al inversionista para su conocimiento.
+
+### Cláusula 4.1.2. Clases de Participaciones
+
+El Fondo tendrá diferentes tipos de participaciones creadas de conformidad con los tipos de inversionistas que se vinculen al fondo de inversión colectiva.
+
+Para el Fondo Abierto Alianza todas las participaciones tendrán los mismos derechos y obligaciones, salvo por lo establecido en el párrafo segundo de la cláusula **6.2**, sin perjuicio de que cada tipo de participación dará lugar a un valor de unidad independiente.
+
+Los tipos de participaciones del Fondo serán los siguientes:
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **25** de **54**
+
+---
+
+## Página 26 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza**
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+| Tipos de Participación | Descripción | Rango |
+| :---: | :--- | :--- |
+| A | Personas naturales, jurídicas y fideicomisos (PNJF) | Saldo mínimo <= saldo <= $50 MM |
+| B | Personas naturales, jurídicas y fideicomisos (PNJF) | $50 MM < saldo <= $200 MM |
+| C | Personas naturales, jurídicas y fideicomisos (PNJF) | $200 MM < saldo <= $1.000 MM |
+| D | Personas naturales, jurídicas y fideicomisos (PNJF) | $1.000 MM < saldo <= $10.000 MM |
+| E | Personas naturales, jurídicas y fideicomisos (PNJF) | saldo > $10.000 MM |
+| I | Inversionistas profesionales y entidades vigiladas por la SFC | saldo > = saldo mínimo |
+| CA | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | Saldo mínimo <= saldo <= $5.000 MM |
+| CB | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $5.000 MM < saldo <= $10.000 MM |
+| CC | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $10.000 MM < saldo <= $20.000 MM |
+| CD | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | saldo > $20.000 MM |
+| P | Portafolios de inversión del FPV Visión | saldo > = saldo mínimo |
+| F | FICS administrados por Alianza Fiduciaria | saldo > = saldo mínimo |
+| M | Personas naturales vinculadas laboralmente a las compañías del grupo Alianza. | saldo > = saldo mínimo |
+| O | Cuentas ómnibus | saldo > = saldo mínimo |
+
+**Cláusula 4.1.3. Traslados entre tipos de participación**
+
+Alianza Fiduciaria trasladará entre los diferentes tipos de participaciones de forma diaria, de acuerdo al saldo de cada inversionista. Este traslado se hará de forma automática, de la siguiente forma:
+
+Se verifica el saldo final del encargo del inversionista, después de reconocer rendimientos, adiciones y retiros, se ubica en el nivel al que tiene derecho y se realizan los traslados entre los niveles. El traslado se realizará al momento de efectuar el cierre diario del fondo después de haber realizado la distribución de rendimientos. El monto a trasladar será el correspondiente al saldo a favor del inversionista el día del traslado, monto que será convertido en unidades de acuerdo al valor de la unidad del nivel dentro del tipo de participación al que ingresa.
+
+La información referente al cambio o los cambios de niveles a que haya tenido un cliente en un período de tiempo determinado se reflejará como un retiro del nivel de donde sale y como una adición al nivel a donde entra dentro del mismo tipo de participación. Todos los movimientos de traslado entre niveles dentro de un mismo tipo de participación, se verá evidenciado en el extracto mensual de cada inversionista.
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_sfc.png)
+
+www.alianza.com.co
+
+Página **26** de **54**
+
+---
+
+## Página 27 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+## Cláusula 4.2. Número mínimo de inversionistas
+
+De acuerdo con los lineamientos del Decreto **2555** de **2010** el Fondo no tendrá un número mínimo de inversionistas, sin perjuicio de lo dispuesto en el numeral **4.3** del presente reglamento, en concordancia con lo dispuesto en el artículo **3.1.1.6.2** del Decreto **2555** de **2010**.
+
+## Cláusula 4.3. Límites a la participación
+
+Ningún inversionista podrá poseer directa o indirectamente a través de una cuenta ómnibus, una participación que exceda el diez (**10%**) por ciento del valor del patrimonio del Fondo. Cuando algún Inversionista llegare a tener una participación superior al límite aquí establecido, la Sociedad Administradora deberá informarle al día hábil siguiente para que este ajuste su participación. Pasado **1** mes calendario después de informarle al Inversionista y ante la ausencia de instrucciones, el inversionista faculta irrevocablemente a Alianza para trasladar los recursos en exceso que serán consignados en la cuenta bancaria señalada por éste al momento de su vinculación o a un encargo en nombre del inversionista en otro Fondo de Inversión Colectiva Abierto sin pacto de permanencia administrado por Alianza, previo descuento de los gastos por transferencia a que haya lugar.
+
+En todo caso, si cumplido el mes calendario que se tiene previsto para la normalización del límite de participación este no se ha regularizado o si se presentan situaciones extraordinarias que afecten de manera grave la operación del Fondo, la Sociedad Administradora podrá dejar de aplicar el presente límite de manera temporal, siempre y cuando se garanticen los derechos de los Inversionistas del Fondo de Inversión Colectiva y se informe de manera simultánea a la Superintendencia Financiera de Colombia.
+
+**Parágrafo Primero**: Este límite a la participación se aplicará en los términos del Artículo **3.1.1.6.2** del Decreto **2555** de **2010**.
+
+**Parágrafo Segundo**: La inversión de otros fondos administrados, gestionados y distribuidos por la Sociedad Administradora no podrá superar el límite establecido en la presente cláusula.
+
+### Cláusula 4.3.1. Límite de participación para la sociedad administradora
+
+De acuerdo con lo estipulado en el numeral **2** del artículo **3.1.1.10.2** del Decreto **2555** de **2010**, el porcentaje máximo de participaciones que la Sociedad Administradora podrá suscribir en el fondo será el diez por ciento (**10%**) del valor del fondo de inversión al momento de hacer la inversión. La sociedad administradora, deberá conservar las participaciones que haya adquirido durante un plazo mínimo de un (**1**) año.
+
+## Cláusula 4.4. Representación de las Participaciones
+
+La naturaleza de los derechos de los inversionistas en el Fondo abierto Alianza será de participación. Los documentos que representen estas participaciones no tendrán el carácter ni las prerrogativas propias de los títulos valores, ni serán negociables.
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **27** de **54**
+
+---
+
+## Página 28 de 54
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+![Logo Alianza Fiduciaria](Alianza Fiduciaria - UNA EMPRESA DE LA ORGANIZACIÓN DELIMA)
+
+El documento representativo de las participaciones contendrá la siguiente información: (i) Nombre de la sociedad administradora, del Fondo, y el tipo de participación. (ii) Plazo mínimo de permanencia. (iii) El nombre de la oficina, sucursal o agencia de la sociedad administradora, o si fuere el caso, el de las entidades con las que se haya suscrito convenio de uso de red, contrato de distribución especializada, o contrato de corresponsalía local, que estén facultados para expedir el documento representativo de participaciones y la fecha de expedición respectiva. (iv) Nombre e identificación del Inversionista. (v) Valor nominal de la inversión, el número de unidades que dicha inversión representa y el valor de la unidad a la fecha en que se realiza la inversión, de acuerdo con el tipo de participación, según corresponda. (vi) Las advertencias señaladas en el inciso segundo del artículo 3.1.1.6.3 y en el artículo 3.1.1.9.3 del Decreto 2555 de 2010.
+
+**Parágrafo:** Los derechos de participación del inversionista podrán ser objeto de cesión, siempre y cuando la misma sea previamente aprobada por la sociedad administradora, para lo cual el cesionario deberá allegar la información señalada en la cláusula 4.1. del presente reglamento.
+
+### **Cláusula 4.5. Redención de las participaciones**
+
+Los inversionistas podrán redimir sus participaciones en el Fondo Abierto Alianza en cualquier momento dentro de los horarios establecidos, dada la naturaleza de este último. El inversionista debe solicitar la redención total o parcial mediante comunicación escrita o verbal que conste en medio verificable a la Sociedad Administradora. Para efectuar los movimientos, se tendrá en cuenta el mismo horario que tenga la Sociedad Administradora para atención al público, el cual se encuentra publicado en la página web www.alianza.com.co, de suerte que, si la solicitud es recibida después del horario establecido, se entenderá recibida el día hábil siguiente.
+
+Todo retiro o reembolso por concepto de la redención de unidades tendrá expresión en moneda y en unidades y tal conversión se efectuará al valor de la unidad vigente para el día en que realice la solicitud del retiro o reembolso con cargo a cuentas de patrimonio y abono a cuentas por pagar.
+
+El proceso de retiro de recursos del Fondo se adelanta en tres momentos:
+
+1. Día de la solicitud de retiro: Día en el cual el partícipe anuncia la intención del retiro.
+2. Día de la causación del retiro: Día en el cual se liquida el valor de las redenciones con base en el valor de la unidad del día de solicitud.
+3. Día de pago: día en el cual se hace la cancelación efectiva de las redenciones, en el cual se le informa al inversionista el número de unidades y el valor en pesos al cual fueron redimidas, según la valoración efectuada el día de la causación. La información será remitida, a través del correo electrónico registrado o como documento en la página web de Alianza Fiduciaria.
+
+La redención podrá efectuarse por los medios definidos por la sociedad administradora para tal fin y serán informados al inversionista. Alianza Fiduciaria cobrará una suma como costo de
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página 28 de 54
+
+---
+
+## Página 29 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+operación por los servicios adicionales de retiro que se generan, contra los recursos administrados, sobre el segundo y sucesivos retiros en un mismo mes conforme lo establezca la sociedad administradora y se informe a los. Estos costos serán informados a los inversionistas en los extractos mensuales y/o en la página web www.alianza.com.co.
+
+**Parágrafo 1:** Los impuestos, tasas y contribuciones que se generen por la redención de participaciones estarán a cargo del inversionista y se considerará como un mayor valor de retiro. Ello de conformidad con las normas que lo regulen. La vigencia de esta cláusula dependerá exclusivamente de la vigencia de las normas dictadas por el Gobierno Nacional o por el Congreso de la República con respecto a los impuestos y a las contribuciones temporales sobre las transacciones financieras.
+
+**Parágrafo 2:** La Sociedad Administradora se encuentra facultada para entregar un porcentaje menor al saldo del inversionista el mismo día de la solicitud de retiro y el saldo restante a más tardar al día siguiente una vez se determine el valor de la unidad aplicable el día de la causación del retiro.
+
+### **Cláusula 4.6. Suspensión de las redenciones**
+
+***Cláusula 4.6.1. De la asamblea de inversionistas***
+
+La asamblea de inversionistas podrá aprobar la suspensión de la redención de participaciones, entendiéndose como tal la facultad otorgada a la sociedad administradora para no realizar la redención de participación por un periodo determinado, cuando se presenten solicitudes de redención y por efectos del mercado y de la composición del Fondo, Alianza Fiduciaria no encuentre viable la venta de los activos que componen el Fondo, en especial los eventos definidos en la cláusula 2.4.3 del presente reglamento, ni tampoco el realizar operaciones de reporto para atender los retiros en un plazo que no exceda los **15** días comunes.
+
+Para este fin, deberá citarse y celebrarse asamblea de inversionistas, de conformidad con las reglas señaladas en la cláusula 10.3 del presente reglamento. De aceptar esta medida la asamblea de suscriptores deberá determinar el periodo por el cual se suspenderán las redenciones y el procedimiento para su restablecimiento. Esta decisión, junto con sus fundamentos, el periodo de suspensión y el procedimiento para restablecer las redenciones, deberá ser informada de manera inmediata a través del sitio web de la sociedad administradora y por escrito a la Superintendencia Financiera de Colombia.
+
+***Cláusula 4.6.2. De la Junta Directiva***
+
+En concordancia con los artículos 3.1.1.7.3 y 3.1.1.9.5, literal f), numeral 4, del Decreto **2555** de **2010** y lo previsto en el numeral 2.3 del Capítulo III, Título VI de la Parte III de la Circular Externa **029** de **2014**, la junta directiva podrá autorizar la suspensión de redenciones de participaciones del Fondo cuando: i) se presenten situaciones de crisis o ii ) se presenten eventos sobrevinientes o inesperados en los cuales no sea posible cumplir con los términos necesarios para convocar a la asamblea de inversionistas.
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **29** de **54**
+
+---
+
+## Página 30 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+En todo caso, previo a la Junta Directiva en la que se decrete la suspensión de las redenciones de participación, la administración de la Sociedad Administradora preparará a la Junta Directiva un informe que sustente técnica y económicamente la proposición presentada para consideración de la Junta Directiva.
+
+La decisión que tome la Junta Directiva respecto a la suspensión de las redenciones de participación se informará de manera inmediata a la Superintendencia Financiera de Colombia, sustentando técnica y económicamente la decisión adoptada en beneficio de los inversionistas. Así mismo, la decisión se informará de manera inmediata, clara y precisa a los inversionistas, a través de publicación en la página web de la sociedad administradora, www.alianza.com.co o de correo electrónico a las direcciones registradas.
+
+**Cláusula 4.7 Otros medios electrónicos para redención de Participaciones**
+
+El inversionista que así lo establezca podrá solicitar la tarjeta virtual Alianza provista y aprobada por Alianza Fiduciaria para el Fondo.
+
+Las condiciones de uso y manejo de la misma se encuentran establecidas en el documento denominado” Términos y Condiciones de la Tarjeta Alianza”, el cual se encuentra en la página web www.alianza.com.co, tiene por objeto establecer las reglas de utilización de la citada tarjeta en el Fondo Abierto Alianza.
+
+### **Capítulo V. Valoración del Fondo y las participaciones**
+
+**Cláusula 5.1. Valor inicial de la unidad**
+
+El valor inicial de cada unidad fue aquella que rigió para el día del inicio de operaciones de este Fondo cuando se denominaba fondo común ordinario, por la suma de **$1.000**
+
+**Parágrafo Primero:** A partir de la entrada en vigencia del presente reglamento los valores de unidad serán diferentes según la clase de participación. El valor de la unidad t-1 será el valor de unidad vigente para el día anterior a la entrada en vigencia, por lo tanto, igual para todos los tipos de participación y se constituye como el valor inicial de cada participación.
+
+**Parágrafo Segundo:** Los inversionistas podrán realizar solicitudes de redención de sus participaciones dentro de los horarios establecidos por la sociedad administradora en la página web www.alianza.com.co. Las solicitudes recibidas después de dicho horario se entenderán presentadas al día hábil siguiente.
+
+No obstante, cuando las redenciones, pagos o transferencias se efectúen mediante la funcionalidad de transferencias inmediatas, dichas las operaciones podrán verse reflejadas el mismo día en que sean realizadas, o el día calendario siguiente si el fondo se encuentra en proceso de cierre.
+
+<u>Para efectos de este reglamento, se entiende por proceso de cierre, el conjunto de tareas y actividades que realiza diariamente la sociedad administradora del Fondo, tendientes a determinar el valor de la unidad del Fondo en el día t, que incluyen (i) el cálculo del valor del pre-cierre del tipo de participación al cierre del día t, (ii) el cálculo del valor de la unidad del tipo</u>
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **30** de **54**
+
+---
+
+## Página 31 de 54
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+![Logo Alianza Fiduciaria](Logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+de participación al cierre del día t, (iii) el cálculo del número de unidades del tipo de participación al cierre del día t, (iv) el cálculo del valor de cierre del tipo de participación al cierre del día t y (v) el nuevo valor del fondo.
+
+## **Cláusula 5.2. Valor total y valor de unidad de las participaciones**
+
+El valor de cierre de cada tipo de participación estará dado por el resultado de multiplicar, el número de unidades del tipo de participación al cierre del día, por su valor de unidad al cierre del mismo día.
+
+El valor de unidad de cada tipo de participación al cierre del día será calculado teniendo en cuenta el valor del cierre del tipo de participación al final del día anterior, los rendimientos netos (ingresos –gastos comunes entre las participaciones) del fondo distribuibles a prorrata entre los tipos de participación, y los gastos atribuibles exclusivamente a cada tipo de participación.
+
+Los tipos de participación tendrán valores de unidad diferentes dependiendo de la comisión de administración aplicable para cada uno de estos. El valor de la unidad inicial será el mismo para todos los tipos de participación (Vr Unidad T-1), y será diferencial a partir de T0.
+
+### **1. Cálculo del valor del precierre del tipo de participación al cierre del día t**
+
+El valor de precierre de cada participación se calculará a partir del valor neto o de cierre de operaciones del tipo de participación del día anterior, adicionando los rendimientos netos (Ingresos – gastos comunes) del fondo distribuidos al tipo de participación durante el día, menos los gastos atribuibles exclusivamente al tipo de participación. Este cálculo se observa en la siguiente fórmula:
+
+**PCFnt = VFCn(t-1) + RDnt**
+
+Donde:
+
+PCFnt = Valor del precierre de la participación “n” al cierre del día t
+
+VFCn(t-1) = Valor del tipo de participación “n” al cierre del día t-1
+
+RDnt = Rendimientos netos (Ingresos – Gastos comunes del fondo – Gastos de la participación) del tipo de participación “n” en el día t
+
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+### **2. Cálculo del valor de la unidad del tipo de participación al cierre del día t**
+
+El valor de unidad del tipo de participación al cierre del día t se calculará dividiendo el valor del precierre del día entre el número de unidades del tipo de participación al cierre del día t – 1.
+
+**VUOnt = PCFnt / NUCn(t-1)**
+
+Donde:
+
+VUOnt = Valor de unidad del tipo de participación “n” al cierre del día t
+
+PCFnt = Valor del precierre de la participación “n” al cierre del día t
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **31** de **54**
+
+---
+
+## Página 32 de 54
+
+## Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+---
+
+NUCn(t-1) = Número de unidades del tipo de participación “n” al cierre del día t – 1
+
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+En caso de que un tipo de participación quede sin inversionista, su valor de la unidad quedará en ceros. Si transcurrido un tiempo ingresan inversionistas al tipo de participación y éste se reactiva, su valor de unidad iniciará en diez mil pesos moneda corriente (**$10.000**), tal y como se establece en el numeral 1.1.4.2, Capítulo XI de la Circular Básica Contable y Financiera.
+
+### 3. Cálculo del número de unidades del tipo de participación al cierre del día t
+
+El número de unidades del tipo de participación al cierre del día t será igual al número de unidades al cierre del día anterior, más el número de unidades que se adicionen por las partidas activas del día t, menos las unidades que salgan del fondo por las partidas pasivas del día t.
+
+**NUCnt = NUCn(t-1) + (Partidas activas – Partidas Pasivas) / VUOnt**
+
+Donde:
+
+* NUCnt = Número de unidades del tipo de participación “n” al cierre del día t
+* NUCn(t-1) = Número de unidades del tipo de participación “n” al cierre del día t – 1
+* VUOnt = Valor de unidad del tipo de participación “n” al cierre del día t
+* n = tipos de participación definidos en la Cláusula 4.1.2.
+
+### 4. Cálculo del valor de cierre del tipo de participación al cierre del día t:
+
+El valor de cierre del tipo de participación al final del día t se calculará multiplicando el valor de la unidad y el número de unidades del tipo de participación al cierre del día t.
+
+**VFCnt = VUOnt * NUCnt**
+
+Donde:
+
+* VFCnt = Valor de cierre del tipo de participación “n” al cierre del día t
+* VUOnt = Valor de unidad del tipo de participación “n” al cierre del día t
+* NUCnt = Número de unidades del tipo de participación “n” al cierre del día t
+* n = tipos de participación definidos en la Cláusula 4.1.2.
+
+### Cláusula 5.3. Valor del fondo
+
+El valor neto del fondo al cierre del día t será igual a la sumatoria del valor de cada tipo de participación establecido en la cláusula 4.1 (Vinculación y clases de participaciones) del presente Reglamento. Este valor será calculado con la siguiente fórmula:
+
+**VF = Σ_{i=1}^{n} VFCnt**
+
+Donde:
+
+* VF = Valor del fondo al cierre del día t
+
+---
+
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **32** de **54**
+
+---
+
+## Página 33 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+VFCnt = Valor de cierre del tipo de participación N al cierre del día t
+
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+Todos los activos que hagan parte del Fondo de Inversión Colectiva deberán ser objeto de valoración o valuación de acuerdo con la metodología, parámetros y lineamientos establecidos en el Capítulo I – 1 de la Circular Básica Contable y Financiera 100 de 1995, en concordancia con lo establecido en el capítulo IV, título IV, parte III de la Circular Básica Jurídica, bajo el esquema de la proveeduría de precios para valoración.
+
+### **Cláusula 5.4. Periodicidad de la valoración**
+
+La valoración del Fondo y sus participaciones se efectuará diariamente de conformidad con el Capítulo XI de la Circular Básica Contable y Financiera (Circular Externa 100 de 1995), por lo que los rendimientos de ésta se liquidarán y abonarán con la misma periodicidad.
+
+## **Capítulo VI. Gastos**
+
+### **Cláusula 6.1. Gastos**
+
+Estarán a cargo del Fondo Abierto Alianza los siguientes gastos:
+
+1. El costo del contrato de depósito de valores que componen el portafolio del fondo.
+2. El costo de contrato de custodia de los valores que componen el Fondo.
+3. La remuneración de la sociedad administradora.
+4. Los honorarios y gastos en que se incurra para la defensa del Fondo cuando las circunstancias lo exijan.
+5. El valor de los seguros y amparos de los activos del Fondo, distintos a la póliza que trata la cláusula 1.7. del presente reglamento.
+6. Los gastos bancarios que se originen en el depósito y transferencia de los recursos del Fondo así como los originados en las operaciones, compra y venta de valores.
+7. Los gastos en que se incurra para la citación y celebración de las asambleas de los inversionistas.
+8. Los tributos que graven directamente los valores, los activos o los ingresos del Fondo.
+9. Los honorarios y gastos causados por la revisoría fiscal del Fondo y los relativos a gastos causados por la auditoría externa, cuando la asamblea haya establecido su contratación.
+10. Los gastos totales que ocasione el suministro de información a los inversionistas o a los beneficiarios, tales como extractos, rendiciones de cuenta, publicaciones, impresos publicitarios, formas de papelería para la operación del Fondo, correo directo, procesamiento y transmisión de la información.
+11. Los gastos bancarios como chequeras, plataformas informativas y transaccionales que permitan mantener una adecuada red de cobertura a todos los inversionistas.
+12. Los costos y gastos que se deriven con ocasión del numeral 4.7 de este reglamento asociados a los pagos de los proveedores que prestan la infraestructura de la operación de la Tarjeta Alianza como canal de redención de participaciones del Fondo, los cuales
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **33** de **54**
+
+---
+
+## Página 34 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+comprenden:
+i. Los costos de procesamiento transaccional generados por las franquicias de las tarjetas para el funcionamiento de la tarjeta.
+ii. Los costos de infraestructura tecnológica de conexión con el procesador de pagos, necesarios para garantizar la disponibilidad del servicio.
+iii. Los costos de las billeteras digitales asociados al funcionamiento transaccional.
+13. Los correspondientes al pago de comisiones relacionados con la adquisición o enajenación de activos y la realización de operaciones, así como la participación en sistemas de negociación.
+14. Los intereses y demás rendimientos financieros que deban cancelarse por razón de operaciones de reporto o repo, simultáneas y transferencias temporales de valores y para el cubrimiento de los costos de operaciones de crédito que se encuentren autorizadas y en general los gastos en que se incurra por concepto de coberturas.
+15. Los asociados al proceso de calificación del Fondo, así como del proceso de revisión de la misma.
+16. Los gastos en que se incurra para la valoración del portafolio del Fondo.
+17. El costo del archivo físico y magnético relacionado con el Fondo.
+18. Los gastos asociados a operaciones con derivados para fines de cobertura
+
+**Parágrafo Primero:** Los costos y gastos asociados a servicios bancarios especializados tales como, consignaciones en otras plazas, recaudos referenciados, así como costos y gastos asociados a gestiones particulares que deba realizar la Sociedad Administradora tales como, regularizaciones, activaciones, entre otros, serán asumidos únicamente por aquel inversionista que sea usuario de este tipo de servicio bancario, de acuerdo con el tarifario que estará a disposición de los inversionistas del Fondo en la página web de la Sociedad Administradora. La Sociedad Administradora está autorizada para descontar de los recursos del inversionista la tarifa correspondiente.
+
+## Cláusula 6.2. Comisión por administración
+
+La Sociedad Administradora percibirá como beneficio del Fondo Abierto Alianza, una comisión previa y fija efectiva anual descontada diariamente, calculada con base en el valor neto o del patrimonio del respectivo Fondo del día anterior. La comisión por administración será diferencial dependiendo de la clasificación del inversionista, de acuerdo con la siguiente tabla:
+
+| Tipos de Participación | Descripción | Rango | Comisión Admin | Condicionamiento | Comisión de desempeño |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| A | Personas naturales, jurídicas y fideicomisos (PNJF) | Saldo mínimo <= saldo <= $50 MM | 2,35% | TB <= T.I.B.R | 0.00% |
+| | | | | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| | | | | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| | | | | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+| B | Personas naturales, jurídicas y fideicomisos (PNJF) | $50 MM < saldo <= $200 MM | 2,15% | TB <= T.I.B.R | 0.00% |
+| | | | | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| | | | | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| | | | | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+
+![Vigilado Superintendencia Financiera de Colombia](logo_superintendencia.png)
+
+www.alianza.com.co
+
+Página **34** de **54**
+
+---
+
+## Página 35 de 54
+
+## Encabezado
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+## Tabla de Comisiones por Tipo de Participación
+
+| Tipo | Perfil / Condición | Rango de Saldo | Tarifa Base | Condición de Desempeño (TB vs T.I.B.R) | Comisión sobre exceso |
+|---|---|---|---|---|---|
+| C | | $200 MM < saldo <= $1.000 MM | 2,00% | TB <= T.I.B.R | 0.00% |
+| C | | $200 MM < saldo <= $1.000 MM | 2,00% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| C | | $200 MM < saldo <= $1.000 MM | 2,00% | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| C | | $200 MM < saldo <= $1.000 MM | 2,00% | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+| D | | $1.000 MM < saldo <= $10.000 MM | 1,65% | TB <= T.I.B.R | 0.00% |
+| D | | $1.000 MM < saldo <= $10.000 MM | 1,65% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| D | | $1.000 MM < saldo <= $10.000 MM | 1,65% | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| D | | $1.000 MM < saldo <= $10.000 MM | 1,65% | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+| E | | saldo > $10.000 MM | 1,05% | TB <= T.I.B.R | 0.00% |
+| E | | saldo > $10.000 MM | 1,05% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| E | | saldo > $10.000 MM | 1,05% | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| E | | saldo > $10.000 MM | 1,05% | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+| I | Inversionistas profesionales y entidades vigiladas por la SFC | saldo >= saldo mínimo | 0,75% | TB <= T.I.B.R | 0.00% |
+| I | Inversionistas profesionales y entidades vigiladas por la SFC | saldo >= saldo mínimo | 0,75% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 0.00% |
+| I | Inversionistas profesionales y entidades vigiladas por la SFC | saldo >= saldo mínimo | 0,75% | TB > 1,1 veces T.I.B.R | 0.00% |
+| CA | | Saldo mínimo <= saldo <= $5.000 MM | 1,52% | TB <= T.I.B.R | 0.00% |
+| CA | | Saldo mínimo <= saldo <= $5.000 MM | 1,52% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| CA | | Saldo mínimo <= saldo <= $5.000 MM | 1,52% | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| CA | | Saldo mínimo <= saldo <= $5.000 MM | 1,52% | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+| CB | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $5.000 MM < saldo <= $10.000 MM | 1,27% | TB <= T.I.B.R | 0.00% |
+| CB | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $5.000 MM < saldo <= $10.000 MM | 1,27% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 10% sobre exceso |
+| CB | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $5.000 MM < saldo <= $10.000 MM | 1,27% | TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR | 15% sobre exceso |
+| CB | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $5.000 MM < saldo <= $10.000 MM | 1,27% | TB > 1,5 veces T.I.B.R | 20% sobre exceso |
+| CC | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $10.000 MM < saldo <= $20.000 MM | 1,02% | TB <= T.I.B.R | 0.00% |
+| CC | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $10.000 MM < saldo <= $20.000 MM | 1,02% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 0.00% |
+| CC | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | $10.000 MM < saldo <= $20.000 MM | 1,02% | TB > 1,1 veces T.I.B.R | 0.00% |
+| CD | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | saldo > $20.000 MM | 0.75% | TB <= T.I.B.R | 0.00% |
+| CD | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | saldo > $20.000 MM | 0.75% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 0.00% |
+| CD | Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos | saldo > $20.000 MM | 0.75% | TB > 1,1 veces T.I.B.R | 0.00% |
+| P | Portafolios de inversión del Fondo de Pensiones Visión | saldo >= saldo mínimo | 1.00% | TB <= T.I.B.R | 0.00% |
+| P | Portafolios de inversión del Fondo de Pensiones Visión | saldo >= saldo mínimo | 1.00% | TB > T.I.B.R y <= 1,3 veces T.I.B.R | 10% sobre exceso |
+| P | Portafolios de inversión del Fondo de Pensiones Visión | saldo >= saldo mínimo | 1.00% | TB > 1,3 veces T.I.B.R | 15% sobre exceso |
+| F | FICS administrados por Alianza Fiduciaria | saldo >= saldo mínimo | 0.00% | NA | 0.00% |
+| M | Personas naturales vinculadas laboralmente a las compañías del grupo Alianza. | saldo >= saldo mínimo | 0.50% | NA | 0.00% |
+| O | Cuentas ómnibus | saldo >= saldo mínimo | 1.75% | TB <= T.I.B.R | 0.00% |
+| O | Cuentas ómnibus | saldo >= saldo mínimo | 1.75% | TB > T.I.B.R y <= 1,1 veces T.I.B.R | 0.00% |
+| O | Cuentas ómnibus | saldo >= saldo mínimo | 1.75% | TB > 1,1 veces T.I.B.R | 0.00% |
+
+TB: Tasa bruta del portafolio
+T.I.B.R: Tasa de Intervención del Banco de la República
+
+La rentabilidad bruta del portafolio corresponde a los rendimientos generados por las inversiones admisibles más aquellos que se generen por la realización de operaciones de que tratan las cláusulas 2.4.1 y 2.4.2 y 2.5 del presente reglamento.
+
+### Cláusula 6.2.1. Fórmula para el cálculo de comisiones de acuerdo al tipo de participación
+
+Con el objetivo de determinar el valor de la comisión para cada tipo de participación la sociedad administradora realizará el siguiente cálculo:
+
+**CAn= (VNF t-1)n * [((1 + in% E.A.)^(1/365)) – 1]**
+
+## Pie de página y márgenes
+www.alianza.com.co
+**Página 35 de 54**
+
+*Texto en margen izquierdo (vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+---
+
+## Página 36 de 54
+
+![Logo Alianza Fiduciaria](Logo de Alianza Fiduciaria con el texto: UNA EMPRESA DE LA ORGANIZACIÓN DELIMA)
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Dónde:
+
+CAn = Valor de la Comisión de Administración de cada tipo participación calculado diariamente
+
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+(VNF t-1)n = Valor Neto del Fondo al cierre de operaciones del día anterior para cada tipo de participación definido en la Cláusula 4.1.2.
+
+in% = Valor del porcentaje de comisión cobrado a cada tipo de participación
+
+**Cláusula 6.3. Criterios para la selección y remuneración de los intermediarios**
+
+Al momento de elegir los intermediarios con los cuales la sociedad administradora realizará operaciones a nombre del fondo se tendrán en cuenta los siguientes criterios:
+
+1. Cupos de contraparte vigentes aprobados por la Junta Directiva
+2. Criterio de ejecución del encargo, mejor precio obtenido para el fondo.
+
+**Capítulo VII. De la sociedad administradora**
+
+**Cláusula 7.1. Funciones y Obligaciones**
+
+La sociedad administradora deberá cumplir, además de los deberes establecidos en la normatividad vigente, las siguientes obligaciones:
+
+1. Consagrar su actividad de administración exclusivamente en favor de los intereses de los inversionistas o de los beneficiarios designados por ellos.
+2. Entregar la custodia de los valores que integran el portafolio del fondo de inversión colectiva administrado a una sociedad de las mencionadas en el artículo 2.22.2.1.1 del decreto 2555 de 2010, así como, suministrar al custodio la información necesaria para la correcta ejecución de las funciones de custodia.
+3. Identificar, medir, gestionar y administrar el riesgo del Fondo;
+4. Realizar la salvaguarda y el ejercicio de derechos patrimoniales de los activos diferentes a valores que hagan parte del portafolio del Fondo;
+5. Efectuar la valoración del portafolio del Fondo y sus participaciones, de conformidad con las instrucciones impartidas por la Superintendencia Financiera de Colombia.
+6. Ejercer oportunamente los derechos patrimoniales de los activos del fondo de inversión colectiva, cuando estos sean diferentes a valores entregados en custodia.
+7. Llevar la contabilidad del Fondo separada de la propia o la de otros negocios por ella administrados, de acuerdo con las reglas que sobre el particular establezca la Superintendencia Financiera de Colombia;
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **36** de **54**
+
+---
+
+## Página 37 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+8. Establecer y mantener actualizados los mecanismos de suministro de información del Fondo, en los términos de las normas aplicables y las instrucciones impartidas por la Superintendencia Financiera de Colombia;
+
+9. Verificar el envío oportuno de la información que la sociedad administradora debe remitir a los inversionistas y a la Superintendencia Financiera de Colombia, y que el contenido de la misma cumpla con las condiciones establecidas por la Superintendencia;
+
+10. Asegurar el mantenimiento de la reserva de la información que conozca con ocasión de la actividad de administración del Fondo, y adoptar políticas, procedimientos y mecanismos para evitar el uso indebido de información privilegiada o reservada relacionada con el Fondo, sus activos, estrategias, negocios y operaciones, sin perjuicio del cumplimiento de los deberes de información a la Superintendencia Financiera de Colombia;
+
+11. Garantizar la independencia de funciones y del personal responsable de la actividad de administración del Fondo;
+
+12. Capacitar a todas las personas vinculadas contractualmente con la entidad que participan en el funcionamiento o fuerza de ventas del Fondo.
+
+13. Vigilar que el personal vinculado a la sociedad administradora del Fondo cumpla con sus obligaciones en la administración del Fondo, incluyendo las reglas de gobierno corporativo, conducta y las demás establecidas en los manuales de procedimiento de la sociedad administradora.
+
+14. Informar a la Superintendencia financiera, los hechos o situaciones que impidan el normal desarrollo del Fondo o su liquidación, o el adecuado cumplimiento de sus funciones como administrador de las mismas. Dicho aviso deberá darse de manera inmediata a la ocurrencia del hecho, a la fecha en que tuvo o debió haber tenido conocimiento del mismo.
+
+15. Presentar a las asambleas de inversionistas, cuando haya lugar a ello, toda la información necesaria que permita establecer el estado del Fondo. En todo caso, como mínimo deberán presentarse los estados financieros básicos, la descripción general del portafolio, la evolución del valor de las participaciones, la evolución del valor del Fondo y de la participación de cada inversionista dentro del mismo.
+
+16. Adoptar medidas de control y reglas de conducta necesarias, apropiadas y suficientes, que se orienten a evitar que el Fondo pueda ser utilizado como instrumento para el ocultamiento, manejo, inversión o aprovechamiento en cualquier forma de dineros u otros bienes provenientes de actividades delictivas, o para dar apariencia de legalidad a las actividades delictivas o a las transacciones y recursos vinculados con las mismas;
+
+---
+*Margen izquierdo (texto vertical):*
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página:*
+www.alianza.com.co
+Página **37** de **54**
+
+---
+
+## Página 38 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+17. Contar con manuales de control interno, gobierno corporativo incluyendo el código de conducta, y los demás manuales necesarios para el cumplimiento de las normas vigentes;
+
+18. Abstener de efectuar prácticas discriminatorias o inequitativas entre los inversionistas del Fondo, sin perjuicio de lo establecido en el artículo 3.1.1.6.5 del Decreto 2555 de 2010.
+
+19. Ejercer los derechos políticos inherentes a los valores administrados colectivamente, de conformidad con las políticas que defina la Junta Directiva excepto en que haya delegado dicha obligación en el custodio de valores contratado para el Fondo.
+
+20. Cumplir con las políticas, directrices, mecanismos y procedimientos que señale la Junta Directiva de la Sociedad Administradora para la actividad de administración del Fondo.
+
+21. Identificar, controlar y gestionar las situaciones generadoras de conflictos de interés en la actividad de administración del Fondo según las reglas establecidas en las normas aplicables y las directrices señaladas por la Junta Directiva de la sociedad administradora;
+
+22. Entregar oportunamente a la Superintendencia Financiera de Colombia y al Autorregulador del Mercado de Valores la información que para el cumplimiento de sus funciones requieran acerca de la administración del Fondo;
+
+23. Ejercer supervisión permanente sobre el personal vinculado a la administración del Fondo;
+
+24. Cumplir a cabalidad con los demás aspectos necesarios para la adecuada administración del Fondo.
+
+25. Las demás que establezca las normas aplicables.
+
+26. Abstenerse de realizar las actividades enunciadas en todos los numerales del artículo 3.1.1.10.1. del decreto 2555 de 2010.
+
+**Cláusula 7.2. Facultades y Derechos**
+
+Además de las consagradas en el presente reglamento y en las normas vigentes, son facultades de la sociedad administradora:
+
+1. Convocar a la asamblea de inversionistas.
+
+2. Reservarse el derecho de admisión al Fondo y autorizar o no la cesión de unidades y derechos.
+
+3. Exigir el pago de la remuneración por administración del Fondo.
+
+4. Solicitar la información que estime necesaria al inversionista.
+
+![Vigilado Superintendencia Financiera de Colombia](logo_superintendencia.png)
+
+www.alianza.com.co
+
+Página **38** de **54**
+
+---
+
+## Página 39 de 54
+
+![Logo Alianza Fiduciaria](imagen)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+5. Modificar el presente reglamento de conformidad con las normas vigentes, y de acuerdo con lo establecido en el presente reglamento para el efecto.
+6. Terminar unilateralmente la relación jurídica existente con cualquier inversionista del Fondo, si a su juicio aquel está utilizando el Fondo, o pretende hacerlo, para la realización de cualquier actividad ilícita.
+7. Las demás establecidos en este reglamento.
+
+### Cláusula 7.3. Metodología de cálculo de la remuneración y forma de pago
+
+La Sociedad percibirá una comisión de administración calculada de acuerdo con lo establecido en la cláusula 6.2, la cual se cobrará a los inversionistas de manera diaria. Esta comisión se pagará por medio de transferencia desde las cuentas de fondo a la cuenta de la Sociedad establecida para ello, por lo menos una vez al mes.
+
+## Capítulo VIII. Del custodio de Valores
+
+### Cláusula 8.1. Activos Locales
+
+La sociedad fiduciaria contrató a la sociedad Cititrust Colombia S.A. para ejercer la actividad de custodia de valores del Fondo. Dicha sociedad fue contratada para prestar el servicio por autorización de la Junta Directiva. La información asociada a la designación del custodio estará a disposición de los inversionistas del Fondo en la página web de la Sociedad Administradora (www.alianza.com.co).
+
+#### Cláusula 8.1.1. Funciones y obligaciones
+
+*Cláusula 8.1.1.1. Funciones:*
+
+En ejercicio de la actividad de custodio de valores de acuerdo con la Parte 2 del Decreto 2555 de 2010 el custodio contratado por la Sociedad Administradora prestará las siguientes funciones al Fondo:
+
+1. Salvaguarda de valores.
+2. Compensación y liquidación de operaciones.
+3. Administración de derechos patrimoniales
+
+*Cláusula 8.1.1.2. Obligaciones*
+
+En ejercicio de la actividad de custodia valores de acuerdo con la Parte 2 del Decreto 2555 de 2010 el custodio deberá cumplir con las siguientes obligaciones:
+
+1. Asegurarse de realizar las anotaciones en cuenta de los derechos sobre los valores cuya custodia se encomienda a nombre del Fondo.
+2. Contar con políticas, procedimientos y mecanismos necesarios para garantizar una adecuada ejecución de la actividad de valores.
+
+---
+
+*Margen izquierdo (texto vertical):*
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página:*
+www.alianza.com.co
+Página **39** de **54**
+
+---
+
+## Página 40 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+3. Identificar, medir, controlar y gestionar los riesgos propios de la actividad de custodia de valores por medio del desarrollo y mantenimiento de sistemas adecuad de control interno y de identificación, medición, control y gestión de riesgos.
+
+4. Verificar el cumplimiento de las instrucciones impartidas por la Sociedad Administradora en nombre del Fondo en relación con los valores objeto de custodia. En ningún caso podrá disponer de los valores sin que medie la instrucción previa y expresa de la Sociedad Administradora así como la validación de la misma.
+
+5. Todas las demás estipuladas en el artículo **2.22.2.1.4** del Decreto **2555** de **2010**.
+
+6. Otras obligaciones especiales establecidas en el artículo **2.22.2.1.5** del Decreto **2555** de **2010**
+
+**Cláusula 8.2. Facultades y derechos:**
+
+Las facultades y derechos del custodio serán establecidas en el contrato que se suscriba entre la Sociedad Administradora y el respectivo Custodio.
+
+**Cláusula 8.3. Metodología de cálculo de la remuneración y forma de pago**
+
+La Sociedad Fiduciaria estableció con el custodio para el ejercicio de las funciones descritas en la cláusula **8.1.1.1** una remuneración por la prestación de los servicios a cargo del Fondo. Esta remuneración tendrá dos componentes establecidos de acuerdo al tamaño de los activos bajo custodia y un costo por compensación y liquidación de operaciones.
+
+**Cláusula 8.3.1 Costo por activos custodiados:**
+
+La sociedad que presta los servicios de custodia del fondo recibirá una remuneración a cargo del fondo de acuerdo al volumen de activos que tenga en custodia. Este costo se realizará con base en el contrato suscrito entre el custodio y la sociedad administradora.
+
+**Cláusula 8.3.2. Costo por Compensación y liquidación de operaciones**
+
+La sociedad que presta los servicios de custodia del fondo recibirá una remuneración a cargo del fondo por concepto de la compensación y liquidaciones de las operaciones que realice, el cobro se realiza por el tipo de operación y por la cantidad de operaciones realizadas en el periodo, todo de conformidad con lo pactado en el contrato suscrito entre la sociedad administradora y la sociedad que preste los servicios de custodia.
+
+### Capítulo IX. Distribución
+
+**Cláusula 9.1. Medios de distribución del Fondo**
+
+Los medios autorizados para la distribución del Fondo son aquellos descritos en el Capítulo III, Cláusula **3.4**.
+
+**Cláusula 9.2. Distribuidor especializado del Fondo y cuenta Ómnibus**
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **40** de **54**
+
+---
+
+## Página 41 de 54
+
+![Logo Alianza Fiduciaria](Logo)
+
+T: **(601) 6447700**
+Cr. **15 82-99**
+Bogotá, Colombia
+
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+### *Cláusula 9.2.1. Distribuidor especializado*
+
+El Fondo podrá ser distribuido de manera especializada, a través de cuentas ómnibus administradas por una sociedad administradora de fondos de inversión colectiva diferente de la sociedad administradora del Fondo, de acuerdo con lo establecido en el artículo **3.1.4.2.1.** del Decreto **2555** de **2010**.
+
+Para tales efectos, se suscribirá entre la Sociedad Administradora y el Distribuidor Especializado un contrato que regulará la relación entre ellos, en cumplimiento de lo establecido en la Parte **III** Título **VI** Capítulo **V** de la Circular Básica Jurídica y el Decreto **2555** de **2010**. El mencionado Distribuidor Especializado deberá, previo al ofrecimiento de las Cuentas Ómnibus, obtener la aprobación por parte de la Superintendencia Financiera de Colombia del reglamento marco de funcionamiento de dichas cuentas ómnibus, el cual regulará las relaciones entre el Distribuidor Especializado y los Inversionistas, y deberá tener el contenido mínimo señalado en el numeral **5** del Capítulo **V** del Título **VI** de la Parte **III** de la Circular Básica Jurídica de la Superintendencia Financiera de Colombia.
+
+Los distribuidores especializados del Fondo deberán cumplir las obligaciones establecidas en el Artículo **3.1.4.2.3.** del Decreto **2555** de **2010**.
+
+### *Cláusula 9.2.2. Cuenta Ómnibus*
+
+Serán cuentas administradas por el distribuidor especializado, bajo la cual se agruparán uno o más inversionistas registrados previamente ante dicha entidad, con el fin de que el distribuidor actúe en nombre propio y por cuenta de ellos. La identidad de los inversionistas finales únicamente será conocida por el distribuidor especializado.
+
+Un mismo distribuidor podrá administrar diferentes cuentas ómnibus para hacer parte de distintos fondos de inversión colectiva, cuentas éstas que a su vez no podrán incluir como inversionistas a otras cuentas ómnibus.
+
+### Cláusula 9.3. Debida atención al inversionista
+
+La fuerza de ventas se compone de los sujetos promotores vinculados a la sociedad administradora o al distribuidor especializado por cualquier medio, para desarrollar la distribución del fondo. Vinculación que podrá realizarse directamente con las personas naturales denominados sujetos promotores o indirectamente a través de personas jurídicas con las cuales se celebre un contrato con dicho objeto, de acuerdo con lo establecido en el Artículo **3.1.4.3.1.** del Decreto **2555** de **2010**.
+
+La fuerza de ventas de la sociedad administradora, el distribuidor especializado (en que caso que exista) y el prestador de los contratos de uso de red, prestaran la debida atención al inversionista durante las etapas de promoción, vinculación, vigencia y redención de la participación en el Fondo.
+
+El deber de atención debe ser cumplido en todos los casos por medio de un profesional debidamente autorizado por la sociedad administradora y contar con las certificaciones
+
+---
+*Margen izquierdo (texto vertical):*
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página:*
+www.alianza.com.co
+Página **41** de **54**
+
+---
+
+## Página 42 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+emitidas por el autorregulador del mercado de valores (AMV) correspondientes para el efecto e inscrito en el RNPMV, con independencia del medio empleado para la distribución del Fondo de Inversión Colectiva.
+
+Los mecanismos a través de los cuales se facilitará el acceso oportuno y adecuado a la debida atención serán los siguientes:
+
+1. En la etapa de promoción, quien realiza la promoción deberá identificarse como promotor de la Sociedad Administradora, entregar y presentar a los potenciales inversionistas toda la información necesaria y suficiente para conocer las características y los riesgos del Fondo, evitar hacer afirmaciones que puedan conducir a apreciaciones falsas, engañosas o inexactas sobre el fondo de inversión colectiva, su objetivo de inversión, el riesgo asociado, gastos, o cualquier otro aspecto, así como verificar que el inversionista conozca, entienda y acepte el prospecto del fondo de inversión colectiva. Esta obligación deberá constar en el contrato que suscriba la sociedad administradora con el Distribuidor Especializado, y en general en los contratos que suscriba con quienes realizan la promoción y distribución del Fondo, de acuerdo con lo establecido en este reglamento.
+
+2. En la etapa de vinculación, el reglamento del fondo estará a disposición del inversionista en la página web de la Sociedad Administradora www.alianza.com.co, y quien realice la promoción del Fondo conforme a este reglamento, deberá (i) remitir las órdenes de constitución de participaciones a la Sociedad Administradora en forma diligente y oportuna, (ii) entregar al inversionista los documentos Representativos de participación en el Fondo, (iii) e indicar los diferentes mecanismos de información del mismo, todo de conformidad con el presente reglamento y la normatividad aplicable vigente.
+
+3. Durante la vigencia de la inversión en el fondo, el distribuidor debe contar con los recursos apropiados para atender en forma oportuna las consultas, solicitudes y quejas que sean presentadas por el inversionista.
+
+4. En la etapa de redención de la participación en el fondo de inversión colectiva, el distribuidor, deberá dar traslado oportuno a la sociedad administradora de las solicitudes de redención de participaciones, y conforme a la información que le entregue la sociedad administradora, deberá indicar al Inversionista la forma en que se realizó el cálculo para determinar el valor de los recursos a ser entregados al inversionista.
+
+Lo dispuesto en la presente Cláusula no corresponde al desarrollo de la actividad de asesoría prevista en el Libro 40 de la Parte 2 del Decreto 2555 de 2010.
+
+**Parágrafo Primero:** La Sociedad Administradora pone a disposición de los inversionistas del Fondo los siguientes canales habilitados para proporcionar la debida atención al inversionista: el correo electrónico servicioalcliente@alianza.com.co, las líneas telefónicas y las oficinas a nivel nacional disponibles en https://www.alianza.com.co/oficinas o podrá comunicarse directamente con su asesor comercial.
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **42** de **54**
+
+---
+
+## Página 43 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+**Cláusula 9.4. Deber de asesoría**
+
+En cumplimiento a las disposiciones establecidas en el numeral 2.2.3 de la Parte III, Título II, Capítulo IV de la Circular Básica Jurídica y en el Decreto 2555 de 2010 en relación con la clasificación de productos, el Fondo fue categorizado como un “Producto Simple” de acuerdo con la metodología del Manual de Asesoría aprobado por la Junta Directiva de la Sociedad Administradora que se encuentra disponible en la página web https://www.alianza.com.co/quienes-somos.
+
+Al momento de la entrada en vigor de la presente Cláusula y de acuerdo con el Artículo 2.40.2.1.4 del Decreto 2555 de 2010 la distribución de productos simples no requiere recomendaciones profesionales y tampoco requiere realizar el análisis de conveniencia previsto en el artículo 2.40.1.1.7 del Decreto 2555 de 2010.
+
+En todo caso, la sociedad administradora o el distribuidor especializado, según corresponda, deberá suministrar recomendaciones profesionales cuando el cliente lo solicite o cuando sobrevenga una circunstancia que afecte de manera sustancial la inversión, de conformidad con lo establecido en las políticas y procedimientos internos de la sociedad administradora; la sociedad administradora o el distribuidor especializado según corresponda, actuarán con la mayor diligencia y profesionalismo para brindarle al inversionista clasificado como “cliente inversionista” toda la asesoría necesaria conforme a sus políticas y manuales internos para que éste pueda tomar decisiones de inversión en el marco de las reglas de la “Actividad de Asesoría” que establece el Libro 40 de la Parte 2° del Decreto 2555 de 2010 y las reglas especiales del Capítulo IV del Título II de la Parte III de la Circular Básica Jurídica de la Superintendencia Financiera de Colombia o aquellas que las modifiquen o sustituyan.
+
+Durante la vigencia de la inversión en el Fondo, la sociedad administradora o el distribuidor especializado, según corresponda, deberá suministrar recomendaciones profesionales cuando el cliente inversionista lo solicite a través de cualquier medio verificable o por intermedio de los canales de atención habilitados y que se encuentran relacionados en el Parágrafo Primero de la Cláusula 9.3. o cuando sobrevenga una circunstancia que afecte de manera sustancial la inversión.
+
+**Parágrafo Primero:** En las operaciones de intermediación sobre los valores que emitan los fondos de inversión colectiva el deber de asesoría será cumplido por el intermediario que atienda al cliente inversionista, de conformidad con las disposiciones del Libro 40 de la Parte 2 del presente Decreto 2555 de 2010.
+
+**Capítulo X De los inversionistas**
+
+**Cláusula 10.1. Obligaciones**
+
+1. Aceptar y cumplir el contenido del presente reglamento.
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **43** de **54**
+
+---
+
+## Página 44 de 54
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+2. Suministrar completa y oportunamente la información y documentos que le solicite la Sociedad Administradora, en especial la establecida por la ley y la Superintendencia Financiera para prevenir el lavado de activos y financiación del terrorismo provenientes de actividades delictivas. Igualmente es obligación del suscriptor actualizar la información y documentación por lo menos una vez al año y cada vez que se presenten modificaciones a la misma.
+
+3. Efectuar el pago de los aportes, de conformidad con el procedimiento establecido en el capítulo IV del presente reglamento.
+
+4. Informar a la sociedad administradora la(s) cuenta(s) bancaria(s) que será(n) utilizada(s) para redimir los derechos, para consignar los recursos que sobrepasen los límites de concentración por inversionista o para el desarrollo del proceso de liquidación, y cualquier otro procedimiento operativo que lo requiera.
+
+5. Si lo requiere la sociedad administradora, presentar el documento representativo de la inversión para solicitar la redención parcial o total de los derechos en ellos representados.
+
+6. Las demás establecidas en este reglamento y en las normas vigentes
+
+### **Cláusula 10.2. Facultades y Derechos**
+
+Además de los expresamente pactados en el presente reglamento y de aquellos asignados por normas especiales, los inversionistas o los beneficiarios designados por ellos, tendrán los siguientes derechos:
+
+1. Participar en los resultados económicos generados del giro ordinario de las operaciones del Fondo;
+
+2. Examinar los documentos relacionados con el Fondo, en la forma y términos previstos en el reglamento, a excepción de aquellos que se refieran a los demás inversionistas los cuales nunca podrán ser consultados por inversionistas diferentes del propio interesado. Para este fin, el inversionista deberá informar a la sociedad administradora sobre su intención de consultar los documentos por lo menos con **30** días de anticipación. Una vez recibida la solicitud por el administrador le designará un día y una hora en la cual podrá acceder a la información. La inspección podrá realizarse cuando menos dentro de los quince (**15**) días hábiles siguientes a la terminación de cada semestre calendario;
+
+3. Ceder las participaciones en el Fondo, de conformidad con las reglas señaladas en el presente reglamento;
+
+4. Solicitar la redención total o parcial de las participaciones que les correspondan en el Fondo
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **44** de **54**
+
+---
+
+## Página 45 de 54
+
+![Logo Alianza Fiduciaria](logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+5. Ejercer los derechos políticos derivados de su participación, a través de la asamblea de inversionistas;
+
+6. Convocar la asamblea de inversionistas de conformidad con lo establecido en la cláusula 10.3.1 del presente reglamento
+
+7. Recibir un trato igualitario cuando se encuentre en igualdad de circunstancias objetivas con otros inversionistas del mismo fondo de inversión colectiva.
+
+### **Cláusula 10.3. Asamblea de inversionistas**
+
+La asamblea del Fondo abierto ALIANZA la constituyen los respectivos inversionistas, reunidos con el quórum y en las condiciones establecidas en el presente reglamento. Para los aspectos no establecidos en el presente reglamento, se aplicarán las normas del Código de Comercio previstas para la asamblea de accionistas de la sociedad anónima, cuando no sean contrarias a su naturaleza.
+
+***Cláusula 10.3.1. Convocatoria***
+
+La Asamblea de Inversionistas podrá ser convocada por: La Sociedad Administradora, por el revisor fiscal, por inversionistas del Fondo que representen no menos del veinticinco por ciento (**25%**) de las participaciones, o por la Superintendencia Financiera de Colombia. El respectivo orden del día deberá figurar en la convocatoria, la cual deberá realizarse a través de una publicación realizada mediante cualquier medio electrónico idóneo para ello o en un diario de amplia circulación nacional señalados para el efecto en el reglamento, así como, en el sitio web www.alianza.com.co.
+
+En todos los casos, la asamblea de inversionistas se podrá reunir de forma presencial o no presencial, siendo aplicables para el efecto, en uno y otro caso, las normas contenidas en la legislación mercantil para las sociedades anónimas. La asamblea podrá deliberar con la presencia de un número plural de suscriptores que representen por lo menos el **51%** de las participaciones del Fondo. Las decisiones de la asamblea se tomarán mediante el voto favorable de la mitad más una de las unidades presentes o representadas en la respectiva reunión. Cada participación otorga un voto.
+
+Si convocada una asamblea, ésta no se realizare por falta de quórum previsto para el efecto, se citará nuevamente a una reunión, atendiendo a las normas del Código de Comercio para reuniones de segunda convocatoria.
+
+**Parágrafo:** La participación de la sociedad administradora del Fondo como inversionista no se tendrá en cuenta para determinar el quórum deliberatorio ni le dará derecho a voto alguno.
+
+***Cláusula 10.3.2. Funciones***
+
+Son funciones de la asamblea de inversionistas las siguientes:
+
+1. Designar, cuando lo considere conveniente, un auditor externo para el Fondo;
+
+---
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página:* www.alianza.com.co | Página **45** de **54**
+
+---
+
+## Página 46 de 54
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+2. Disponer que la administración del Fondo se entregue a otra sociedad legalmente autorizada para el efecto.
+
+3. Decretar la liquidación del fondo de inversión colectiva y, cuando sea del caso, designar el liquidador.
+
+4. Aprobar o improbar el proyecto de fusión del Fondo; y
+
+5. Autorización la suspensión provisional de redenciones, de conformidad con lo señalado en la cláusula 4.6. del presente reglamento.
+
+6. Las demás expresamente asignadas por el Decreto 2555 de 2010.
+
+### *Cláusula 10.3.3. Consulta universal*
+
+Como alternativa a la realización de asambleas de inversionistas, la Sociedad Administradora podrá realizar una consulta universal para el Fondo. La decisión de adelantar la consulta será informada a la Superintendencia Financiera de Colombia, quien podrá presentar observaciones a la misma.
+
+Esta consulta se enviará a todos los inversionistas a través comunicación personal dirigida a la última dirección de correo electrónico registrada en la sociedad, en la cual se formulará un cuestionario sobre los asuntos que requieren de su decisión, para que éstos puedan manifestar si aceptan o no la propuesta formulada por la Sociedad Administradora, lo cual deberá realizarse dentro de los **treinta (30)** días siguientes a la recepción de la consulta.
+
+Para que la consulta sea válida se requiere que responda al menos el **cincuenta y uno por ciento (51%)** de las participaciones del Fondo de Inversión Colectiva, sin tener en cuenta la participación de la Sociedad Administradora.
+
+Para el conteo de votos la sociedad administradora del fondo deberá documentar el número de comunicaciones recibidas, así como los votos a favor y en contra de la consulta.
+
+La Sociedad Administradora informará a la Superintendencia Financiera de Colombia los resultados de la consulta, allegando para tal fin un escrito detallado de la misma y las decisiones adoptadas, el cual deberá ser suscrito por el gerente del respectivo Fondo y el revisor fiscal.
+
+La decisión adoptada por el mecanismo de la consulta será informada a los Inversionistas a través de la página web de la Sociedad Administradora
+
+**Parágrafo:** La consulta de que trata la presente cláusula también podrá realizarse por los medios electrónicos siempre y cuando se cumpla con el procedimiento establecido en el artículo 3.1.5.6.4 del Decreto 2555 de 2010.
+
+## Capítulo XI. Mecanismos de Revelación de información
+
+La sociedad administradora del Fondo abierto ALIANZA pondrá a disposición de los inversionistas toda la información necesaria para el adecuado entendimiento sobre la naturaleza de la sociedad administradora y de la inversión en el Fondo, de acuerdo con lo
+
+---
+
+**Margen izquierdo:** VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+**Pie de página izquierdo:** www.alianza.com.co
+**Pie de página derecho:** Página **46** de **54**
+
+---
+
+## Página 47 de 54
+
+**[Encabezado]**<br>Alianza Fiduciaria<br>UNA EMPRESA DE LA ORGANIZACIÓN DELIMA<br>T: (601) 6447700<br>Cr. 15 82-99<br>Bogotá, Colombia<br><br>establecido en el decreto **2555 de 2010** y en el numeral 3 del Capítulo III del Título IV de la Parte III de la Circular Básica Jurídica. Los documentos con información del Fondo pueden ser consultados a través de la página de Internet www.alianza.com.co y por medio de los impresos que estarán en las oficinas de la Sociedad Administradora y en las oficinas de atención al público.<br><br>### **Cláusula 11.1. Extracto de cuenta y medios previstos para su distribución**<br><br>La sociedad administradora del Fondo deberá mantener a disposición de los inversionistas el extracto de cuenta en donde se informe sobre el movimiento de la cuenta en la periodicidad y con base en el contenido mínimo previstos en el Numeral 3.1. del Capítulo 3, del Título VI de la Parte III de la Circular Básica Jurídica o en las normas que lo modifiquen, sustituyan o complementen.<br><br>El extracto de cuenta estará disponible en la página web www.alianza.com.co.<br><br>### **Cláusula 11.2. Rendición de cuentas**<br><br>La sociedad administradora rendirá un informe que contenga una explicación detallada y pormenorizada acerca del desempeño del Fondo. El informe incluirá al menos la información definida en el numeral 4 del Capítulo III del Título VI de la Parte III de la Circular Básica Jurídica y Circular Externa 026 de 2014, entre otras contendrá:<br><br>- Información de desempeño<br>- Composición del portafolio.<br>- Estados Financieros y sus notas.<br>- Evolución del valor de las unidades del Fondo.<br>- Descripción de los gastos del Fondo.<br>- Otros aspectos relevantes a juicio del administrador<br><br>Este informe se realizará cada **6 meses**, con cortes a **30 de junio** y **31 de diciembre**. Estará disponible en la página web www.alianza.com.co y deberá remitirse a cada inversionista vía correo electrónico dentro de los **quince (15) días** comunes contados a partir de la fecha del respectivo corte.<br><br>### **Cláusula 11.3. Ficha técnica**<br><br>La sociedad administradora publicará en www.alianza.com.co la ficha técnica del Fondo, de conformidad con el numeral 3.2 del Capítulo III del Título VI de la Parte III de la Circular Básica Jurídica y Circular Externa 026 de 2014, con una periodicidad mensual y dentro de los primeros **cinco (5) días** siguientes al corte del mes anterior.<br><br>### **Cláusula 11.4. Prospecto de inversión**<br><br>**[Margen Izquierdo]**<br>VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA<br><br>**[Pie de página]**<br>www.alianza.com.co<br>Página **47** de **54**
+
+---
+
+## Página 48 de 54
+
+## Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Para la comercialización del Fondo abierto Alianza la sociedad administradora ha elaborado un prospecto que guarda concordancia con la información del reglamento, el cual será dado a conocer previamente a la vinculación de los inversionistas. La sociedad administradora dejará constancia que el inversionista ha recibido la copia del mismo, escrita o por cualquier otro medio, y sobre la aceptación y entendimiento de la información allí consignada. No obstante, lo anterior, la sociedad administradora, a solicitud del inversionista entregará el reglamento del Fondo abierto ALIANZA. En www.alianza.com.co y en las oficinas de atención al público, se podrá consultar, de manera actualizada, la versión de este reglamento, del prospecto y de la ficha técnica del Fondo.
+
+El prospecto deberá contener como mínimo:
+
+1. Información general del fondo de inversión colectiva.
+2. Política de inversión del fondo de inversión colectiva, indicando el tipo de fondo de inversión colectiva y la descripción de su perfil de riesgo.
+3. Información económica del fondo de inversión colectiva, donde se incluya la forma, valor y cálculo de la remuneración a pagar a la sociedad administradora, e información sobre los demás gastos que puedan afectar la rentabilidad del fondo de inversión colectiva.
+4. Información operativa del fondo de inversión colectiva, incluyendo la indicación de los contratos de uso de red de oficinas y de corresponsalía local que haya suscrito la sociedad administradora, vigentes al momento de la expedición del prospecto.
+5. Medios de reporte de información a los inversionistas y al público en general.
+6. Identificación de la entidad que actúa como custodio de valores.
+7. Los demás aspectos que establezca la Superintendencia Financiera de Colombia.
+
+### **Cláusula 11.5. Sitio de internet de la sociedad administradora**
+
+Alianza Fiduciaria cuenta con el sitio web www.alianza.com.co en el que se podrá consultar de manera permanente y actualizada la siguiente información:
+
+1. Reglamento, prospecto y ficha técnica del Fondo, debidamente actualizados.
+2. Rentabilidad después de comisión.
+3. Información relacionada con los órganos de administración y control con los que cuenta la sociedad administradora.
+4. Oficinas de atención al público, contratos de uso de red de oficinas y corresponsalía local suscritos.
+5. Entidad aseguradora, amparos y la vigencia de la póliza de que trata la cláusula 1.7. del presente reglamento.
+6. Calificación del Fondo.
+
+---
+*VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA*
+www.alianza.com.co
+Página **48** de **54**
+
+---
+
+## Página 49 de 54
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+[Logo: Alianza Fiduciaria - UNA EMPRESA DE LA ORGANIZACIÓN DELIMA]
+
+7. Informe de gestión y rendición de cuentas.
+8. Estados financieros y sus notas respectivas.
+
+### Cláusula 11.6. Reglamento del Fondo
+
+La sociedad administradora pondrá a disposición de los inversionistas el reglamento del Fondo vigente en su página web, www.alianza.com.co.
+
+## Capítulo XII Liquidación
+
+### Cláusula 12.1. Causales
+
+Son causales de disolución y liquidación del Fondo:
+
+1. El vencimiento del término de duración.
+2. La decisión válida de la asamblea de inversionistas de liquidar el Fondo.
+3. La decisión motivada técnica y económicamente de la junta directiva de la sociedad administradora de liquidar el Fondo.
+4. Cualquier hecho o situación que coloque a la sociedad administradora en imposibilidad definitiva de continuar desarrollando su objeto social;
+5. Cuando el patrimonio del Fondo esté por debajo del monto mínimo señalado en la cláusula. 1.9 del presente reglamento.
+6. La toma de posesión de la sociedad administradora, la orden de desmonte de operaciones o de liquidación del Fondo por parte de la Superintendencia Financiera de Colombia.
+7. No cumplir con lo establecido en el artículo 3.1.1.6.2 del Decreto 2555 de 2010.
+8. Las demás establecidas en las normas vigentes.
+
+**Parágrafo 1:** Cuando se presente alguna de las causales de liquidación previstas anteriormente, la sociedad administradora deberá comunicarla inmediatamente a la Superintendencia Financiera de Colombia. A los inversionistas se les comunicará el acaecimiento de la causal de liquidación del Fondo por los medios previstos en el presente reglamento. Estas comunicaciones deberán realizarse a más tardar al día siguiente de la ocurrencia de la causal.
+
+### Cláusula 12.2. Procedimiento
+
+La liquidación del Fondo se ajustará al siguiente procedimiento:
+
+1 A partir de la fecha del acaecimiento de la causal de liquidación y mientras esta subsista, el Fondo no podrá constituir nuevas participaciones ni atender redenciones.
+2 Cuando la causal de liquidación sea distinta de las consagradas en los numerales 1 y 2 de la cláusula 12.1 del presente reglamento, la sociedad administradora procederá a convocar
+
+---
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+*Pie de página izquierdo:* www.alianza.com.co
+*Pie de página derecho:* Página **49** de **54**
+
+---
+
+## Página 50 de 54
+
+## Encabezado
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: **(601) 6447700**
+Cr. **15 82-99**
+Bogotá, Colombia
+
+## Cuerpo del Documento
+
+a la asamblea de inversionistas que deberá celebrarse entre los **cinco (5)** y **diez (10)** días comunes siguientes a la fecha de la comunicación de la noticia de liquidación.
+
+**3** En caso de que esta asamblea no se realizare por falta de quórum previsto para el efecto, ésta se citará nuevamente para celebrarse entre los **tres (3)** y **seis (6)** días comunes siguientes a la asamblea fallida, pudiendo deliberar con cualquier quórum.
+
+**4** En el evento de que la liquidación haya ocurrido con base en las causales previstas en los numerales **3°**, y **4°** de la cláusula **12.1.** del presente reglamento, la asamblea de inversionistas podrá decidir si entrega la administración del Fondo a otra sociedad legalmente habilitada para administrar fondos de inversión colectiva, caso en el cual se considerará enervada la respectiva causal de liquidación. En este caso, la asamblea deberá establecer las fechas y condiciones en las que se realizará el traspaso del Fondo al administrador seleccionado.
+
+**5** Acaecida la causal de liquidación si la misma no es enervada, la asamblea de inversionistas deberá decidir si la sociedad administradora desarrollará el proceso de liquidación o si se designará un liquidador especial. En caso de que la asamblea no designe una persona, se entenderá que la sociedad administradora adelantará la liquidación.
+
+**6** El liquidador deberá obrar con el mismo grado de diligencia, habilidad y cuidado razonables que los exigidos para la sociedad en el presente reglamento.
+
+**7** El liquidador procederá inmediatamente a liquidar todas las inversiones que constituyan el portafolio del fondo de inversión colectiva, en un plazo no mayor a **un (1) año**. Vencido este término, si existieren activos cuya realización no hubiere sido posible, la Asamblea de Inversionistas deberá reunirse en un lapso no mayor a **cuatro (4) meses**, con el fin de evaluar el informe detallado que deberá presentar el liquidador sobre las gestiones realizadas hasta la fecha, y podrá:
+
+a) Otorgar el plazo adicional que estime conveniente para que el liquidador continúe con la gestión de liquidación de las inversiones pendientes, en cuyo caso deberá acordar las fechas en que el liquidador presentará a los inversionistas de forma individual y/o a la Asamblea de Inversionistas, informes sobre su gestión. La Asamblea de Inversionistas podrá prorrogar hasta por **un (1) año** el plazo adicional inicialmente otorgado en el evento en que los activos no se hayan podido liquidar en dicho plazo adicional inicial y, en todo caso, mediando informe detallado del liquidador sobre las gestiones realizadas.
+
+b) Solicitar al liquidador que los activos sean entregados en pago a los inversionistas en proporción a sus participaciones. Para realizar esta solicitud, la Asamblea de Inversionistas podrá reunirse en cualquier tiempo.
+
+c) Tomar las decisiones que considere pertinentes para lograr la liquidación de las inversiones y la adecuada protección de los derechos de los inversionistas.
+
+## Elementos de Margen y Pie de Página
+
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página izquierdo:* www.alianza.com.co
+
+*Pie de página derecho:* Página **50** de **54**
+
+---
+
+## Página 51 de 54
+
+![Logo Alianza Fiduciaria](Logo de Alianza Fiduciaria con el texto 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA')
+
+**T:** (601) 6447700
+**Cr.** 15 82-99
+Bogotá, Colombia
+
+8 Una vez liquidadas todas las inversiones se procederá de inmediato a cancelar a los inversionistas las participaciones, en un término que no podrá exceder de **quince (15) días hábiles** siguientes al vencimiento del plazo previsto en el numeral sexto de la presente cláusula.
+
+9 Si vencido el período máximo de pago de las participaciones, existieren sumas pendientes de retiro, se seguirá el siguiente procedimiento:
+
+a) Si el inversionista ha informado a la sociedad administradora, por medio escrito, una cuenta bancaria para realizar depósitos o pagos, el liquidador deberá consignar el valor pendiente de retiro en dicha cuenta.
+
+b) De no ser posible la consignación que hace referencia el numeral anterior, y en caso de que el inversionista haya señalada e identificado, por medio escrito, un mandatario para el pago o un beneficiario, el liquidador realizara el pago de los aportes pendientes a dicha persona.
+
+c) Ante la imposibilidad de realizar el pago de conformidad de alguno de los literales anteriores, se dará aplicación del artículo 249 del Código de Comercio
+
+El liquidador deberá enviar a la Superintendencia Financiera de Colombia y a los inversionistas del Fondo liquidado el informe de finalización de actividades a través de correo electrónico o cualquier otro medio medios electrónico que el liquidador determine.
+
+---
+
+*Texto en el margen izquierdo (vertical):*
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página:*
+www.alianza.com.co
+**Página 51 de 54**
+
+---
+
+## Página 52 de 54
+
+![Logo Alianza Fiduciaria](Logo: Alianza Fiduciaria - UNA EMPRESA DE LA ORGANIZACIÓN DELIMA)
+
+T: **(601) 6447700**
+Cr. 15 82-99
+Bogotá, Colombia
+
+## Capítulo XIII. Fusión y Cesión del Fondo
+
+### Cláusula 13.1. Procedimiento para Fusión
+
+El Fondo abierto “ALIANZA” podrá fusionarse con otro u otros Fondo de Inversión Colectiva para lo cual se deberá atender el siguiente procedimiento.
+
+1. La sociedad administradora elaborará del proyecto de fusión el cual deberá contener siguiente información:
+   a. Los datos financieros y económicos de cada uno de los Fondos de inversión colectiva objeto de la fusión, con sus respectivos soportes, y
+   b. Un anexo explicativo sobre los mecanismos que se utilizarán para nivelar el valor de la unidad de los Fondos de Inversión Colectiva, incluyendo la relación de intercambio.
+
+2. El proyecto de fusión deberá contar con la aprobación de las Juntas Directivas de cada una las sociedades administradoras involucradas en la fusión.
+
+3. Una vez aprobado el compromiso se deberá realizar la publicación en *uno de los* siguientes diarios de amplia circulación nacional (La República), del resumen del compromiso de fusión y se informará en la página web de la sociedad administradora el diario en el que se publicará. En el evento en el cual el diario de amplia circulación nacional antes mencionado no se encuentre disponible subsidiariamente la Sociedad Administradora podrá hacer la publicación el periódico “El Espectador”.
+
+4. La sociedad administradora convocará a los inversionistas a asamblea mediante comunicación escrita acompañada del compromiso de fusión. La asamblea deberá realizarse luego de transcurridos **15 días** al envío de la comunicación a los inversionistas.
+
+5. Los inversionistas que no estén de acuerdo con el compromiso de fusión o los que no asistan a la asamblea en la que se decida la fusión podrán ejercer el derecho consagrado en el presente reglamento (Derecho de Retiro). En este caso, el término de un **(1) mes** se contará desde el día de la celebración de la asamblea de inversionistas.
+
+6. Una vez aprobado el compromiso de fusión por las asambleas de inversionistas, la sociedad administradora del nuevo fondo o nueva o colectiva o de la absorbente informará a la Superintendencia Financiera de Colombia de dicho compromiso, mediante comunicación escrita a la cual se deberá anexar el proyecto de fusión aprobado y las actas resultantes de las asambleas y reuniones de juntas directivas, y lo dispuesto en el artículo **3.1.2.1.1** del Decreto **2555** de **2010**.
+
+### Cláusula 13.2. Procedimiento para cesión del Fondo abierto Alianza.
+
+La sociedad administradora podrá ceder la administración del Fondo a otra sociedad administradora legalmente autorizada para administrar este tipo de vehículos de inversión, sin
+
+---
+
+*Margen izquierdo (texto vertical):* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+*Pie de página:*
+www.alianza.com.co
+Página **52** de **54**
+
+---
+
+## Página 53 de 54
+
+![Logo Alianza Fiduciaria](logo_alianza.png)
+
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+perjuicio de la naturaleza jurídica de las mismas, por decisión de su Junta Directiva, para lo cual deberá aplicar el siguiente procedimiento:
+
+1. La cesión deberá ser autorizada por la Superintendencia Financiera de Colombia.
+2. El cesionario debe allegar con la solicitud de autorización la certificación expedida por el representante legal acerca de que la sociedad cumple con los requeriditos establecido en el artículo 3.1.1.3.2. de Decreto 2555 de 2010 y el perfil requerido para las personas que integrarán el comité de inversiones, así como el perfil del gerente del Fondo.
+3. Autorizada la cesión por la Superintendencia Financiera, deberá informarse a los inversionistas participantes, de conformidad con lo establecido en el inciso segundo del capítulo XIV (Modificación al reglamento).
+4. Los inversionistas participantes deberán expresar su rechazo o aceptación dentro de los treinta (**30**) días siguientes a la fecha de publicación del aviso de cesión. De no recibirse respuesta dentro del término fijado se entenderá aceptada la cesión. Los inversionistas que manifiesten su desacuerdo con la cesión podrán solicitar la redención de su participación, sin que por este hecho se genere sanción ni penalidad de ningún tipo.
+
+**Capítulo XIV. Modificaciones al Reglamento**
+
+**Cláusula 14.1. Modificaciones al Reglamento**
+
+Las reformas al presente reglamento deberán ser aprobadas por la Junta Directiva de la Sociedad Administradora y enviadas a la Superintendencia Financiera de Colombia de forma previa a su entrada en vigor. Estas reformas deberán ser comunicadas en el sitio web www.alianza.com.co de la Sociedad Administradora.
+
+Cuando dichas reformas impliquen modificaciones o afectación negativa de los derechos económicos de los inversionistas, deberán contar con un soporte técnico que respalde dicha aprobación y deberán ser informadas a los inversionistas mediante alguno de los siguientes mecanismos: (i) publicación en un diario de amplia circulación, (ii) Publicación en la página web de la Sociedad Administradora, (iii) otro medio de comunicación electrónica o (iv) mediante el envío de una comunicación por medio electrónico dirigida a cada uno de los inversionistas.
+
+En la página web de la Sociedad Administradora se informarán el diario o diarios en donde se publicarán las modificaciones en caso de que opte por esta alternativa.
+
+**Capítulo XV. Prevención de lavado de activos y financiación del terrorismo**
+
+**Cláusula 15.1. Prevención de lavado de activos y financiación del terrorismo**
+
+Para los fines previstos en la ley el inversionista se obliga a entregar información veraz y verificable solicitada en el formato de vinculación y a actualizar sus datos por lo menos anualmente, suministrando la totalidad de los soportes documentales e información exigidos por Alianza Fiduciaria S.A al momento de la vinculación. Alianza Fiduciaria S.A queda desde ya
+
+![Vigilado Superintendencia Financiera de Colombia](vigilado_superintendencia.png)
+
+www.alianza.com.co
+
+Página **53** de **54**
+
+---
+
+## Página 54 de 54
+
+![Logo Alianza Fiduciaria](Logo)
+**Alianza Fiduciaria**
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+facultada para dar por terminado el contrato, en caso de desatención a estos deberes por parte del inversionista.
+
+Así mismo, los inversionistas tendrán la obligación de: informar por escrito a Alianza Fiduciaria S.A dentro de los cinco (5 días) hábiles siguientes, cada vez que modifiquen o cambien los datos correspondientes a dirección, domicilio, teléfonos, fax, ocupación, profesión, oficio, razón social, representación legal, lugar de trabajo o residencia y en fin, cualquier circunstancia que varíe de las que reporten a la firma de la constancia de adhesión al presente reglamento, tanto para las personas naturales como jurídicas y fideicomisos, con base en lo dispuesto en las normas que regulan esta materia. Igualmente, se obligan a enviar original del certificado de ingresos y retenciones, declaración de renta, constancia de honorarios o balance del último año según el caso, por cada año de vigencia del presente contrato, dentro de los cinco (5) días hábiles siguientes a que dichos documentos sean expedidos o presentados.
+
+## Capítulo XVI. Conflictos de Interés
+
+Con el objetivo de prevenir y gestionar los conflictos de interés, la Sociedad Administradora dará cumplimiento a lo establecido en su Código de Buen Gobierno, en su Código de Ética de la Sociedad Administradora y en el presente reglamento.
+
+### Cláusula 16.1. Prohibiciones
+
+La Sociedad Administradora se abstendrá de realizar cualquiera de las actividades señaladas en el Artículo 3.1.1.10.1 del Decreto 2555 de 2010.
+
+### Cláusula 16.2. Conflictos de Interés
+
+Se entenderán como situaciones generadoras de conflictos de interés las señaladas en el Artículo 3.1.1.10.2 del Decreto 2555 de 2010.
+
+**Advertencia. “Las obligaciones de la sociedad administradora del Fondo relacionadas con la gestión del portafolio son de medio y no de resultado. Los dineros entregados por los inversionistas al Fondo no son depósitos, ni generan para la sociedad administradora las obligaciones propias de una institución de depósito y no están amparadas por el seguro de depósito del Fondo de Garantías de Instituciones Financieras –FOGAFIN-, ni por ninguno otro esquema de dicha naturaleza. La inversión en el Fondo está sujeta a los riesgos de inversión, derivados de la evolución de los precios de los activos que componen el portafolio de la respectivo Fondo”.**
+
+*Margen izquierdo:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página **54** de **54**
+
+---
+
+
+---
+
+## Información Detallada por Página
+
+### Página 1
+
+**Título Inferido:** REGLAMENTO DEL FONDO ABIERTO ALIANZA SIN PACTO DE PERMANENCIA MÍNIMA
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad financiera Alianza Fiduciaria, ubicado en la esquina superior izquierda del documento.
+- *Metadata Visual:* Isotipo compuesto por un triángulo azul y verde, acompañado del nombre de la empresa y su eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia y control estatal, indicando que la entidad está regulada por la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto en orientación vertical ascendente, ubicado en el margen inferior izquierdo de la página, acompañado de una línea vertical.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+REGLAMENTO DEL FONDO ABIERTO ALIANZA
+SIN PACTO DE PERMANENCIA MÍNIMA
+
+Por medio del presente reglamento del “FONDO ABIERTO ALIANZA” sin pacto de permanencia mínima, se establecen los principios y normas bajo los cuales se regirá la relación entre ALIANZA FIDUCIARIA S.A como sociedad administradora de dicho fondo y los inversionistas, con ocasión de los aportes de recursos que realicen al mismo.
+
+Las obligaciones de la Sociedad Administradora del Fondo de Inversión Colectiva relacionadas con la gestión del portafolio son de medio y no de resultado. Los dineros entregados por los inversionistas a los fondos de inversión colectiva no son depósitos, ni generan para la sociedad administradora las obligaciones propias de una institución de depósito y no están amparados por el seguro de depósito del fondo de garantías de instituciones financieras - FOGAFIN, ni por ningún otro esquema de dicha naturaleza. La inversión en el Fondo de Inversión Colectiva está sujeta a los riesgos de inversión, derivados de la evolución de los precios de los activos que componen el portafolio del respectivo Fondo de Inversión Colectiva.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 1 de 54
+`
+
+### Página 2
+
+**Título Inferido:** Tabla de contenido
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de la empresa Alianza Fiduciaria, indicando que es una empresa de la Organización Delima.
+- *Metadata Visual:* Logo en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical en el margen inferior izquierdo.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Tabla de contenido
+
+Capítulo I. Aspectos generales................................................................................................................ 5
+Cláusula 1.1. Sociedad administradora................................................................................................ 5
+Cláusula 1.2. Fondo............................................................................................................................ 5
+Cláusula 1.3. Duración........................................................................................................................ 5
+Cláusula 1.4. Sede ............................................................................................................................. 5
+Cláusula 1.5. Duración del encargo de inversión ............................................................................... 6
+Cláusula 1.6. Bienes del Fondo (Segregación Patrimonial)............................................................... 6
+Cláusula 1.7. Cobertura ..................................................................................................................... 6
+Cláusula 1.8. Mecanismos de Información......................................................................................... 6
+Cláusula 1.9. Monto máximo de recursos administrados .................................................................. 7
+Cláusula 1.10. Monto mínimo de participaciones ............................................................................... 7
+Capítulo II. Política de Inversión ............................................................................................................ 7
+Cláusula 2.1. Tipo de Fondo y Objeto ................................................................................................ 7
+Cláusula 2.2. Activos aceptables para invertir.................................................................................... 7
+Cláusula 2.3. Límites a la inversión.................................................................................................... 9
+Cláusula 2.3.1. Plazo promedio ponderado de las inversiones..................................................... 11
+Cláusula 2.3.2. Limite por Matriz Filial y subsidiaria .................................................................... 11
+Cláusula 2.4. Liquidez del Fondo..................................................................................................... 11
+Cláusula 2.4.1. Operaciones de reporto, simultáneas y transferencia temporal de valores .... 12
+Cláusula 2.4.2. Depósitos de recursos líquidos ......................................................................... 12
+Cláusula 2.4.3. Ajustes temporales ........................................................................................... 12
+Cláusula 2.5. Operaciones de Cobertura ........................................................................................ 13
+Cláusula 2.6. Riesgo del Fondo ...................................................................................................... 13
+Cláusula 2.6.1. Factores de Riesgo........................................................................................... 13
+Cláusula 2.6.2. Perfil de riesgo.................................................................................................. 15
+Cláusula 2.6.3. Administración de Riesgos................................................................................ 15
+Cláusula 2.6.4. Gestión de riesgos ambiental, social y de gobierno (ASG) ............................ 18
+Cláusula 2.7. Transparencia en la revelación de aspectos ASG .................................................... 18
+Capítulo III. Organismos de administración y control........................................................................... 18
+Cláusula 3.1. Órganos de administración........................................................................................ 18
+Cláusula 3.1.1. Responsabilidad de la sociedad administradora............................................... 18
+Cláusula 3.1.2. Gerente............................................................................................................. 21
+Cláusula 3.2. Órganos de asesoría................................................................................................. 22
+Cláusula 3.2.1. Comité de Inversiones ..................................................................................... 22
+Cláusula 3.2.2. Constitución ...................................................................................................... 22
+Cláusula 3.2.3. Reuniones ........................................................................................................ 23
+Cláusula 3.2.4. Funciones ......................................................................................................... 23
+Cláusula 3.3. Órganos de control.................................................................................................... 23
+Cláusula 3.3.1. Revisor fiscal .................................................................................................... 23
+Capítulo IV. Constitución y redención de participaciones ................................................................... 23
+Cláusula 4.1. Vinculación y clases de participaciones..................................................................... 23
+Cláusula 4.1.1 Vinculación ........................................................................................................ 23
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 2 de 54
+`
+
+### Página 3
+
+**Título Inferido:** Tabla de Contenido
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad financiera Alianza Fiduciaria, acompañado de su eslogan institucional.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda. Compuesto por un isotipo en forma de triángulo con colores azul y verde, seguido del nombre de la empresa en texto azul oscuro.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical (rotado 90 grados hacia la izquierda), ubicado en el margen inferior izquierdo de la página, en color gris claro.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+Cláusula 4.1.2. Clases de Participaciones................................................................................ 25
+Cláusula 4.1.3. Traslados entre tipos de participación............................................................. 26
+Cláusula 4.2. Número mínimo de inversionistas ..................................................................... 27
+Cláusula 4.3. Límites a la participación ................................................................................... 27
+Cláusula 4.3.1. Límite de participación para la sociedad administradora............................. 27
+Cláusula 4.4. Representación de las Participaciones............................................................. 27
+Cláusula 4.5. Redención de las participaciones...................................................................... 28
+Cláusula 4.6. Suspensión de las redenciones......................................................................... 29
+Cláusula 4.6.1. De la asamblea de inversionistas................................................................ 29
+Cláusula 4.6.2. De la Junta Directiva................................................................................... 29
+Cláusula 4.7 Otros medios electrónicos para redención de Participaciones........................... 30
+Capítulo V. Valoración del Fondo y las participaciones ........................................................... 30
+Cláusula 5.1. Valor inicial de la unidad ................................................................................... 30
+Cláusula 5.2. Valor total y valor de unidad de las participaciones .......................................... 31
+Cláusula 5.3. Valor del fondo .................................................................................................. 32
+Cláusula 5.4. Periodicidad de la valoración............................................................................. 33
+Capítulo VI. Gastos ................................................................................................................. 33
+Cláusula 6.1. Gastos............................................................................................................... 33
+Cláusula 6.2. Comisión por administración ............................................................................. 34
+Cláusula 6.2.1. Fórmula para el cálculo de comisiones de acuerdo al tipo de participación ... 35
+Cláusula 6.3. Criterios para la selección y remuneración de los intermediarios ..................... 36
+Capítulo VII. De la sociedad administradora............................................................................ 36
+Cláusula 7.1. Funciones y Obligaciones ............................................................................... 36
+Cláusula 7.2. Facultades y Derechos...................................................................................... 38
+Cláusula 7.3. Metodología de cálculo de la remuneración y forma de pago........................... 39
+Capítulo VIII. Del custodio de Valores .................................................................................... 39
+Cláusula 8.1. Activos Locales ................................................................................................. 39
+Cláusula 8.1.1. Funciones y obligaciones............................................................................ 39
+Cláusula 8.2. Facultades y derechos: .................................................................................... 40
+Cláusula 8.3. Metodología de cálculo de la remuneración y forma de pago........................... 40
+Cláusula 8.3.1 Costo por activos custodiados: .................................................................... 40
+Cláusula 8.3.2. Costo por Compensación y liquidación de operaciones ............................. 40
+Capítulo IX. Distribución .......................................................................................................... 40
+Cláusula 9.1. Medios de distribución del Fondo...................................................................... 40
+Cláusula 9.2. Distribuidor especializado del Fondo y cuenta Ómnibus .................................. 40
+Cláusula 9.2.1. Distribuidor especializado ........................................................................... 41
+Cláusula 9.2.2. Cuenta Ómnibus......................................................................................... 41
+Cláusula 9.3. Debida atención al inversionista ....................................................................... 41
+Cláusula 9.4. Deber de asesoría............................................................................................. 43
+Capítulo X De los inversionistas .............................................................................................. 43
+Cláusula 10.1. Obligaciones ................................................................................................... 43
+Cláusula 10.2. Facultades y Derechos.................................................................................... 44
+Cláusula 10.3. Asamblea de inversionistas............................................................................. 45
+Cláusula 10.3.1. Convocatoria............................................................................................. 45
+Cláusula 10.3.2. Funciones ................................................................................................. 45
+Cláusula 10.3.3. Consulta universal .................................................................................... 46
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 3 de 54
+`
+
+### Página 4
+
+**Título Inferido:** Índice de Contenidos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de la empresa Alianza Fiduciaria, indicando que es una empresa de la Organización Delima.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde con el texto 'Alianza Fiduciaria' a la derecha.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello que indica que la entidad está vigilada por la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical en el margen izquierdo inferior.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Capítulo XI. Mecanismos de Revelación de información ................................................................. 46
+Cláusula 11.1. Extracto de cuenta y medios previstos para su distribución.................................. 47
+Cláusula 11.2. Rendición de cuentas........................................................................................... 47
+Cláusula 11.3. Ficha técnica ....................................................................................................... 47
+Cláusula 11.4. Prospecto de inversión........................................................................................ 47
+Cláusula 11.5. Sitio de internet de la sociedad administradora .................................................. 48
+Cláusula 11.6. Reglamento del Fondo ....................................................................................... 49
+Capítulo XII Liquidación................................................................................................................... 49
+Cláusula 12.1. Causales ............................................................................................................. 49
+Cláusula 12.2. Procedimiento ..................................................................................................... 49
+Capítulo XIII. Fusión y Cesión del Fondo ...................................................................................... 52
+Cláusula 13.1. Procedimiento para Fusión.................................................................................. 52
+Cláusula 13.2. Procedimiento para cesión del Fondo abierto Alianza. ....................................... 52
+Capítulo XIV. Modificaciones al Reglamento .................................................................................. 53
+Cláusula 14.1. Modificaciones al Reglamento............................................................................. 53
+Capítulo XV. Prevención de lavado de activos y financiación del terrorismo ................................. 53
+Cláusula 15.1. Prevención de lavado de activos y financiación del terrorismo ........................... 53
+Capítulo XVI. Conflictos de Interés................................................................................................. 54
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 4 de 54
+`
+
+### Página 5
+
+**Título Inferido:** Capítulo I. Aspectos generales
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Isotipo compuesto por tres triángulos (azul, celeste y verde claro) formando una pirámide o letra A, acompañado del nombre de la empresa.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo en orientación vertical.
+- *Metadata Visual:* Texto en mayúsculas, orientación vertical de abajo hacia arriba, con una línea vertical a su izquierda.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Capítulo I. Aspectos generales
+
+Cláusula 1.1. Sociedad administradora
+
+La Sociedad Administradora es ALIANZA FIDUCIARIA S.A, entidad legalmente constituida mediante escritura pública número 545 del 11 de febrero de 1986, otorgada en la Notaría 10 del Círculo Notarial de Cali, identificada con el número de NIT. 860.531.315-3, con domicilio principal en la ciudad de Bogotá D.C. Esta sociedad tiene permiso de funcionamiento otorgado por la Superintendencia Bancaria (hoy Superintendencia Financiera de Colombia) mediante Resolución 3357 del 16 de junio de 1986.
+
+Cuando en el presente reglamento se emplee la expresión “Sociedad Administradora” o “Alianza Fiduciaria”, se entenderá que se hace referencia a la sociedad aquí mencionada.
+
+Cláusula 1.2. Fondo
+
+El Fondo denominado “FONDO ABIERTO ALIANZA” es un Fondo de Inversión Colectiva, de naturaleza abierta, sin pacto de permanencia mínima, conforme lo establecido en el Decreto 2555 de 2010, por lo cual la Sociedad Administradora está obligada a redimir las participaciones de los inversionistas en cualquier momento durante la vigencia del Fondo. Cuando en el presente reglamento se emplee la expresión "Fondo", se entenderá que se hace referencia al Fondo Abierto Alianza que aquí se reglamenta.
+
+Cláusula 1.3. Duración
+
+El Fondo Abierto Alianza tendrá una duración igual a la de la sociedad administradora. Este término se podrá prorrogar, previa decisión de la sociedad administradora. El término de duración de la sociedad administradora se dará a conocer a través del prospecto de inversión. En caso de prórroga del Fondo, la sociedad administradora así lo informará a los inversionistas a través de su página web, indicando el nuevo término de duración.
+
+Cláusula 1.4. Sede
+
+El Fondo tendrá como sede el mismo lugar donde funcionen las oficinas principales de la sociedad administradora que en la actualidad se encuentran ubicadas en la Carrera 15 No 82 - 99 de la ciudad de Bogotá D.C. En dicha dirección se encontrarán todos los libros y documentos relativos al Fondo; además en este lugar se recibirán y entregarán los recursos, de conformidad con las reglas establecidas en la cláusula 4.1.1 del presente reglamento. No obstante, se podrán recibir y entregar recursos para el Fondo en las agencias o sucursales de Alianza Fiduciaria S.A, o en las oficinas de las entidades con las que ésta haya celebrado contratos de corresponsalía o uso de red de oficinas o equivalentes, suscritos, de acuerdo con lo establecido en el Estatuto Orgánico del Sistema financiero y demás normas que regulen la materia, en los cuales la responsabilidad es exclusiva de Alianza Fiduciaria S.A. A través de www.alianza.com.co, los inversionistas podrán consultar los contratos de corresponsalía o uso de red de oficinas o equivalentes, así como su duración, y las sucursales y agencias en las que se prestará atención al público.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 5 de 54
+`
+
+### Página 6
+
+**Título Inferido:** Reglamento Fondo Abierto - Cláusulas 1.5 a 1.8
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de Alianza Fiduciaria con su eslogan, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo compuesto por colores azul y verde. Texto adjunto: 'Alianza Fiduciaria', 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Datos Observados:* N/A
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia, ubicado verticalmente en el margen izquierdo de la página.
+- *Metadata Visual:* Texto en orientación vertical de abajo hacia arriba, acompañado de una línea vertical y un pequeño recuadro con la palabra 'VIGILADO'.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+La sociedad administradora deberá informar a la Superintendencia Financiera, con veinte (20) días hábiles de anticipación conforme a lo dispuesto en el artículo 2.34.1.1.1 del Decreto 2555 de 2010, cualquier modificación a los contratos de corresponsalía o uso de red de oficinas o equivalentes los términos en él descritos
+
+Cláusula 1.5. Duración del encargo de inversión
+
+El Fondo por ser de naturaleza abierta, permite que los inversionistas entreguen recursos y rediman su participación en cualquier momento dentro de los horarios establecidos, de conformidad con las reglas establecidas en la cláusula 4.5 “Redención de Participaciones” del presente reglamento.
+
+Cláusula 1.6. Bienes del Fondo (Segregación Patrimonial)
+
+De conformidad con lo dispuesto por el artículo 68 de la Ley 964 de 2005, y todas aquellas normas que lo sustituyan o modifiquen, los bienes del Fondo no hacen parte del patrimonio de Alianza Fiduciaria, y por consiguiente constituirán un patrimonio independiente y separado de ésta, destinado exclusivamente al desarrollo de las actividades descritas en el presente reglamento y al pago de las obligaciones que se contraigan con respaldo y por cuenta del Fondo, sin perjuicio de la responsabilidad profesional que le asiste a la sociedad administradora por la gestión y el manejo de los recursos. En consecuencia, los bienes del Fondo no constituyen prenda general de los acreedores de Alianza Fiduciaria y están excluidos de la masa de bienes que puedan conformarse, para efectos de cualquier procedimiento mercantil, o de otras acciones legales que puedan afectar a su administrador. Cada vez que Alianza Fiduciaria S.A actúe por cuenta del Fondo, se considerará que compromete únicamente los bienes del mismo Fondo.
+
+Cláusula 1.7. Cobertura
+
+La sociedad administradora ha contratado una póliza de seguro, que estará vigente durante toda la existencia del Fondo Abierto Alianza, cuyas coberturas, vigencia y sociedad aseguradora podrán ser consultadas por los Inversionistas en www.alianza.com.co. Esta póliza amparará los riesgos señalados en el artículo 3.1.1.3.4 del Decreto 2555 de 2010.
+
+Cláusula 1.8. Mecanismos de Información
+
+La sociedad Administradora mantendrá informados a los inversionistas sobre todos los aspectos inherentes al fondo, a través de los siguientes mecanismos: (i) El presente reglamento, (ii) El Prospecto, (iii) La Ficha Técnica, (iv) El Extracto de Cuenta, y (v) el Informe de rendición de cuentas.
+
+La información del Fondo, así como el reglamento, el prospecto y la ficha técnica, estarán disponibles en las condiciones previstas en los numerales 3.1, 3.2, y 3.3 de la parte III del título VI, del capítulo III de la circular básica Jurídica a través del sitio web www.alianza.com.co y por medios impresos, los cuales estarán en sus dependencias u oficinas de servicio al público, en las entidades con las cuales hubiere celebrado contratos de uso de red de oficina o
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 6 de 54
+`
+
+### Página 7
+
+**Título Inferido:** Capítulo II. Política de Inversión
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad administradora del fondo.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda. Consiste en un isotipo de un triángulo compuesto por formas azules y verdes, seguido del texto 'Alianza Fiduciaria' y el eslogan 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Datos Observados:* N/A
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia y control de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+corresponsalía, así como en las oficinas de los distribuidores especializados que realicen la actividad de distribución de fondos de inversión colectiva.
+
+La sociedad administradora deberá comunicar, de manera suficiente y adecuada a los inversionistas la disponibilidad de la respectiva información y los mecanismos para acceder a ésta
+
+Cláusula 1.9. Monto máximo de recursos administrados
+
+La sociedad administradora no podrá gestionar recursos a través de fondos de inversión colectiva que superen el equivalente a 100 veces el monto de capital pagado, la reserva legal, ambos saneados y la prima en colocación de acciones, de la sociedad administradora, menos el ultimo valor registrado de las inversiones participativas mantenidas en sociedades que puedan gestionar recursos de terceros bajo las modalidades de administración de valores, administración de portafolios de terceros o administración de fondos de inversión colectiva.
+
+Cláusula 1.10. Monto mínimo de participaciones
+
+El Fondo Abierto Alianza deberá tener un patrimonio mínimo equivalente a 2.600 salarios mínimos legales mensuales vigentes.
+
+Capítulo II. Política de Inversión
+
+Cláusula 2.1. Tipo de Fondo y Objeto
+
+El Fondo Abierto Alianza es un Fondo de Inversión Colectiva de tipo abierto diseñado para que personas naturales o jurídicas o fideicomisos que inviertan de manera temporal sus excedentes de liquidez en un portafolio a la vista de bajo riesgo y perfil conservador. Los recursos del fondo son invertidos principalmente en títulos de renta fija de corta y mediana duración, con un componente importante de liquidez, cuyo objetivo principal es la preservación de capital.
+
+Cláusula 2.2. Activos aceptables para invertir
+
+El portafolio del Fondo Abierto Alianza estará compuesto por los siguientes activos:
+
+a. Valores inscritos en el RNVE.
+
+b. Valores emitidos por bancos del exterior (No RNVE) denominados en pesos colombianos.
+
+c. Valores emitidos en el exterior por entidades locales (No RNVE) y por el gobierno colombiano (RNVE), denominados en dólares de Estados Unidos y pagaderos en dólares de Estados Unidos.
+
+d. Valores emitidos en el exterior cuya calificación mínima corresponda a la calificación riesgo país de Colombia , denominados en dólares de Estados Unidos y pagaderos en dólares de Estados Unidos.
+
+e. Valores emitidos en el exterior por entidades locales (No RNVE) y por el gobierno colombiano (RNVE), denominados en pesos colombianos y pagaderos en dólares de
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 7 de 54
+`
+
+### Página 8
+
+**Título Inferido:** Reglamento Fondo Abierto - Política de Inversión
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de la empresa Alianza Fiduciaria, con el texto 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde, seguido del nombre de la empresa.
+- *Datos Observados:* N/A
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical en el margen izquierdo que dice 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Estados Unidos.
+
+f. Valores emitidos por el Gobierno de Estados Unidos denominados y pagaderos en dólares americanos.
+
+g. ETF (Exchange Trade Fund) inscritos en bolsa que tengan como objetivo de inversión la exposición en activos emitidos por el Gobierno de Estados Unidos a los que se hace referencia en el literal f, incluidos los ETFs "Short U.S Treasury 7-10 years" que busquen retornos inversos al ICE U.S. Treasury 7-10 years bond index.
+
+h. Bonos emitidos por organismos multilaterales de crédito, o entidades públicas (No RNVE) denominados en pesos colombianos.
+
+i. Participaciones en Fondos de inversión colectiva que tengan como objetivo de inversión la exposición en activos de renta fija local.
+
+j. Participaciones en Fondos de inversión colectiva locales que tengan como objetivo de inversión la exposición en activos de renta fija emergente global con al menos el 90% de sus títulos grado de inversión excluyendo Colombia.
+
+k. Participaciones en otros fondos de inversión colectiva abiertos con o sin pacto de permanencia, administrados por la Sociedad Administradora, que inviertan en renta fija local o en activos que tengan como subyacente derechos de contenido crediticio y que cuenten con calificación mínima AA+
+
+l. Derivados con fines de cobertura
+
+m. Participaciones en Fondos de Renta Fija Corporativa incluidos Fondos Money Market gestionados por un asset managers aprobado por el comité de inversiones de la Sociedad Administradora que cuenten con experiencia mínima de 10 años y administren por lo menos 5 mil millones de USD en activos. La participación en este tipo de activos deberá contar con cobertura cambiaria mínimo por el 98% del valor de la posición inicial.
+
+Parágrafo Primero: Las inversiones del literal f emitidos en el exterior deberán tener una duración máxima de 10 años
+
+Parágrafo Segundo: Las inversiones del literal j y m podrán tener exposición al riesgo cambiario, por lo que se incluirán dentro de las inversiones en moneda extranjera (dólares americanos). La exposición neta en moneda extranjera no podrá exceder el 2% del valor del fondo.
+
+Parágrafo Tercero: Cuando el Fondo invierta en otros Fondos de Inversión Colectiva deberá considerar lo siguiente:
+
+i. Que sólo puede invertir en Fondos que cumplan con la política de inversión del Fondo.
+
+ii. No se permiten aportes recíprocos.
+
+iii. El Fondo podrá invertir en Fondos locales administrados por la Sociedad Administradora.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 8 de 54
+`
+
+### Página 9
+
+**Título Inferido:** Cláusula 2.3. Límites a la inversión
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Encabezado del documento con el logo de la empresa, nombre, eslogan e información de contacto.
+- *Metadata Visual:* Logo corporativo en la esquina superior izquierda, información de contacto alineada a la derecha.
+- *Datos Observados:* Logo de Alianza Fiduciaria, texto 'Alianza Fiduciaria UNA EMPRESA DE LA ORGANIZACIÓN DELIMA', teléfono 'T: (601) 6447700', dirección 'Cr. 15 82-99', ciudad 'Bogotá, Colombia'.
+
+**Elemento 2 (tabla):**
+- *Descripción:* Tabla que detalla los límites de inversión del fondo, especificando porcentajes mínimos y máximos, duraciones en meses y calificaciones crediticias requeridas para diferentes tipos de activos, monedas y emisores.
+- *Metadata Visual:* Tabla con encabezados con fondo azul oscuro y texto blanco. Celdas con bordes grises. Agrupaciones en la primera columna con fondo azul oscuro.
+- *Datos Observados:* Tabla con límites de inversión. Columnas: Título, Tipo (%) [Mínimo, Máximo], Duración (meses) [Mínima, Máxima], Calificación * [Mínima, Máxima]. Filas agrupadas por: Inscripción, Clase inversión, Moneda, Emisor, Clase. Valores numéricos y calificaciones detallados en la tabla.
+
+**Elemento 3 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto rotado 90 grados en el margen izquierdo inferior.
+- *Datos Observados:* Texto vertical 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+iv. En los casos en que el total o parte de las inversiones del Fondo se realicen en otros Fondos administrados por la misma sociedad administradora, no se generará el cobro de una doble comisión.
+
+v. En caso de que resulte aplicable, lo dispuesto en el numeral 2 del artículo 3.1.1.10.2 del Decreto 2555 de 2010.
+
+vi. Las inversiones serán sometidas a aprobación del comité de inversiones de la Sociedad Administradora
+
+Cláusula 2.3. Límites a la inversión
+
+| | Título | Tipo (%) | Duración (meses) | Calificación * |
+|---|---|---|---|---|
+| | | Mínimo | Máximo | Mínima | Máxima | Mínima | Máxima |
+| Inscripción | RNVE | 0 | 100 | 0 | 120 | AA+ | AAA |
+| | No RNVE | 0 | 35 | 0 | 84 | AA+ | AAA |
+| Clase inversión | Renta fija | 0 | 100 | 0 | 120 | AA+ | AAA |
+| | Renta variable (acciones) | 0 | 0 | | | N/A | N/A |
+| Moneda | Pesos colombianos | 0 | 100 | | | | |
+| | USD (sin cobertura cambiaria) | 0 | 2 | | | | |
+| | USD (con cobertura cambiaria) | 0 | 20 | | | | |
+| Emisor | Sector financiero de carácter privado emitido en Colombia | 0 | 99 | 0 | 120 | AA+ | AAA |
+| | Sector financiero de carácter público o mixto (entidades financieras con participación directa o indirecta de la Nación) ** | 0 | 40 | 0 | 120 | AAA | AAA |
+| | Sector real emitido en Colombia | 0 | 70 | 0 | 120 | AA+ | AAA |
+| | Emisores locales (incluido el gobierno nacional) emitidos en el exterior y emisores extranjeros | 0 | 35 | 0 | 84 | (***) | AAA |
+| | Nación Colombia | 0 | 70 | 0 | 360 | | |
+| | Gobierno Estados Unidos | 0 | 20 | 0 | 120 | AAA | AAA |
+| Clase | Bonos | 0 | 60 | 0 | 120 | AA+ | AAA |
+| | Acciones | 0 | 0 | | | | |
+| | CDT | 0 | 90 | 0 | 84 | AA+ | AAA |
+| | ETF | 0 | 5 | N/A | N/A | N/A | N/A |
+| | Participaciones en Fondos de inversión colectiva que inviertan en Renta Fija local | 0 | 20 | 0 | 12 | AA+ | AAA |
+| | Participaciones en Fondos locales que inviertan en renta fija emergente global. | 0 | 2 | N/A | N/A | N/A | N/A |
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 9 de 54
+`
+
+### Página 10
+
+**Título Inferido:** Reglamento Fondo Abierto - Límites de Inversión y Parágrafos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de Alianza Fiduciaria con su eslogan.
+- *Metadata Visual:* Triángulo azul y verde, texto 'Alianza Fiduciaria', 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Datos Observados:* N/A
+
+**Elemento 2 (tabla):**
+- *Descripción:* Tabla que detalla los tipos de activos permitidos para inversión, junto con sus límites mínimos y máximos, plazos y calificaciones requeridas (continuación de la página anterior, sin encabezados explícitos).
+- *Metadata Visual:* Tabla de 5 filas y 7 columnas. La primera columna contiene la descripción del activo, las siguientes 6 contienen parámetros numéricos y de calificación.
+- *Datos Observados:* Valores numéricos de límites: 0, 5, 10, 12, 35, 70, 84, 120. Calificaciones: AA+, AAA, NA, N/A. Porcentaje: 98%.
+
+**Elemento 3 (otro):**
+- *Descripción:* Sello de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto vertical en el margen inferior izquierdo: 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+Participaciones en Fondos de Renta Fija Corporativa incluidos Fondos Money Market gestionados por un asset managers aprobado por el comité de inversiones de la Sociedad Administradora que cuenten con experiencia mínima de 10 años y administren por lo menos 5 mil millones de USD en activos. La participación en este tipo de activos deberá contar con cobertura cambiaria mínimo por el 98% del valor de la posición inicial. 0 5 0 84 NA NA
+Participaciones en otros fondos de inversión colectiva abiertos con o sin pacto de permanencia administrados por la sociedad administradora 0 10 N/A N/A AA+ AAA
+Titularizaciones 0 35 0 120 AA+ AAA
+Papeles comerciales 0 35 0 12 AA+ AAA
+Otros multilaterales en Pesos 0 70 0 84 AA+ AAA
+* Las calificaciones de títulos de emisores locales emitidos en el exterior corresponden a calificaciones internacionales.
+** Sociedades anónimas de economía mixta con participación del Estado.
+*** La calificación mínima requerida para títulos emitidos en el exterior corresponderá a la calificación riesgo país de Colombia.
+Nota: Los porcentajes aquí señalados se calcularán con base en el total del valor del Fondo Abierto Alianza. Las operaciones que se realicen sobre valores inscritos en el Registro Nacional de Valores y Emisores deberán efectuarse a través de una bolsa de valores o de cualquier otro sistema de negociación de valores autorizado por la Superintendencia Financiera de Colombia.
+Parágrafo Primero: Las inversiones de que trata el literal anterior e tendrá como límite de inversión el mismo límite del activo subyacente sobre el cual se realice la operación.
+Parágrafo Segundo: Dada la naturaleza del Fondo y del tipo de activos sobre los cuales se realizarán las inversiones, el Fondo no realizará operaciones de naturaleza apalancada de acuerdo con los términos del Artículo 3.1.1.5.1 del Decreto 2555 de 2010.
+Parágrafo Tercero: Cuando el Fondo invierta en otros fondos de inversión colectiva deberá considerar lo siguiente:
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 10 de 54
+`
+
+### Página 11
+
+**Título Inferido:** Reglamento Fondo Abierto - Políticas de Inversión y Liquidez
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde claro, acompañado del nombre de la empresa y su eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo con orientación vertical.
+- *Metadata Visual:* Texto vertical en color gris claro.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+1. Que sólo puede invertir en fondos de inversión colectiva que cumplan con la política de inversión del Fondo.
+2. No se permiten aportes recíprocos.
+3. El Fondo podrá invertir en fondos de inversión colectiva locales administrados por la Sociedad Administradora.
+4. En los casos en el que el total o parte de las inversiones de El Fondo se realicen en otros fondos de inversión colectiva administrados por la misma sociedad administradora, no se generará el cobro de una doble comisión.
+5. En caso de que resulte aplicable, lo dispuesto en el numeral 2 del artículo 3.1.1.10.2 del Decreto 2555 de 2010.
+
+Parágrafo Cuarto: Las inversiones denominadas en dólares americanos deberán contar con cobertura cambiaria mínimo sobre el 90% del valor de las posiciones al momento de realizar la inversión. La exposición cambiaria (USD) admisible será la resultante de variaciones en el precio de los activos subyacentes que estén denominados en dólares americanos. En todo caso, la máxima exposición en dólares americanos sin cobertura no podrá superar el 2% del valor del fondo.
+
+Parágrafo Quinto: Para efectos de la calificación, en caso de que los emisores cuenten con dos o más calificaciones de riesgo por parte de diferentes agencias calificadoras, se tendrá en cuenta la mínima calificación.
+
+Cláusula 2.3.1. Plazo promedio ponderado de las inversiones
+
+Para las inversiones de renta fija el plazo promedio ponderado no podrá ser superior a 1090 días de acuerdo con el perfil conservador del fondo. El plazo mínimo promedio ponderado del Fondo será de 90 días. No obstante, lo anterior, el plazo de vencimiento máximo de las inversiones en renta fija será de 360 meses.
+
+Cláusula 2.3.2. Limite por Matriz Filial y subsidiaria
+
+Las inversiones en valores cuyo emisor u originador, avalista, aceptante, garante sea la matriz, las subordinadas de esta o las subordinadas de la sociedad administradora, si es del caso, no podrá ser superior al 10% del valor de los activos del Fondo, conforme a lo establecido en el artículo 3.1.1.10.2 del Decreto 2555 de 2010.
+
+Cláusula 2.4. Liquidez del Fondo
+
+La liquidez del Fondo será administrada por medio de depósitos en cuentas de ahorro y corrientes de entidades financieras nacionales y/o depósitos remunerados en el Banco de la República y en operaciones de reporto, simultaneas y/o transferencia temporal de valores. Estas entidades financieras deberán contar con una calificación mínima de AA+ para el largo plazo o F2 para el corto plazo o su equivalente en otra calificadora de riesgo.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 11 de 54
+`
+
+### Página 12
+
+**Título Inferido:** Reglamento Fondo Abierto Alianza - Cláusulas de Inversión
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de Alianza Fiduciaria, indicando que es una empresa de la Organización Delima.
+- *Metadata Visual:* Logo corporativo en la esquina superior izquierda.
+- *Datos Observados:* N/A
+
+**Elemento 2 (tabla):**
+- *Descripción:* Tabla que detalla los límites generales y de concentración por entidad para depósitos de recursos líquidos, diferenciando entre la matriz y otras entidades.
+- *Metadata Visual:* Columnas: Tipo Entidad Financiera, Límite General (Mínimo, Máximo), Concentración Por Entidad (Mínimo, Máximo).
+- *Datos Observados:* MATRIZ: Mínimo No aplica, Máximo No aplica, Concentración Mínimo No aplica, Concentración Máximo No aplica. OTRAS ENTIDADES: Mínimo 0, Máximo 50%, Concentración Mínimo 0, Concentración Máximo 20%.
+
+**Elemento 3 (imagen):**
+- *Descripción:* Sello de 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Metadata Visual:* Texto vertical en el margen izquierdo inferior.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Exclusivamente para los recursos que se mantengan en cuentas de depósito de entidades financieras nacionales con calificación F2 en corto plazo o su equivalente en otra calificadora de riesgo, la exposición no podrá superar el 1% del valor total del fondo.
+
+Cláusula 2.4.1. Operaciones de reporte, simultáneas y transferencia temporal de valores
+
+El Fondo abierto Alianza podrá realizar operaciones de reporte, simultáneas y transferencia temporal de valores, tanto activas como pasivas. Estas operaciones deberán efectuarse a través de un sistema de negociación de valores autorizado por la Superintendencia Financiera de Colombia. Las operaciones pasivas solo se podrán realizar para atender solicitudes de redención de participaciones o gastos del fondo.
+
+Los fondos de inversión colectiva podrán actuar solamente como originadoras en operaciones de la transferencia temporal de valores, caso en el cual la suma de estas operaciones no podrá exceder del 30% del activo del Fondo.
+
+En todo caso la suma de las operaciones de liquidez (repos, simultáneas y transferencia temporal de valores) tanto activas como pasivas no podrán superar el 30% de los activos del Fondo, según lo establecido en el artículo 3.1.1.4.5 del Decreto 2555 de 2010
+
+De acuerdo con lo establecido en el parágrafo tercero del artículo 3.1.1.4.5 del Decreto 2555 de 2010, las operaciones descritas en esta cláusula no podrán tener como contraparte, directa o indirectamente, a entidades vinculadas de la sociedad administradora del fondo de inversión colectiva.
+
+Cláusula 2.4.2. Depósitos de recursos líquidos
+
+El Fondo Abierto Alianza podrá realizar depósitos hasta el 50% del valor del Fondo en cuentas bancarias corrientes o de ahorro de entidades financieras de acuerdo con lo establecido en el numeral 2.3 del presente reglamento.
+
+Tipo Entidad Financiera
+Límite General
+Concentración Por Entidad
+Mínimo
+Máximo
+Mínimo
+Máximo
+MATRIZ
+No aplica
+No aplica
+No aplica
+No aplica
+OTRAS ENTIDADES
+0
+50%
+0
+20%
+
+En caso tal que Alianza Fiduciaria SA llegase a convertir en matriz o filial financiera se acogerá a lo establecido en la ley, para lo cual contará con un plazo no mayor a 180 días para ajustarse
+
+Parágrafo: Del total de los recursos líquidos depositados en bancos, el Fondo deberá tener al menos el 80% en bancos con la máxima calificación crediticia en el corto plazo.
+
+Cláusula 2.4.3. Ajustes temporales
+
+Conforme lo establecido en el artículo 3.1.1.4.3 del Decreto 2555 de 2010, cuando las circunstancias imprevistas o imprevisibles en el mercado hagan imposible el cumplimiento de la política de inversión del Fondo, la sociedad administradora podrá ajustarla de manera
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 12 de 54
+`
+
+### Página 13
+
+**Título Inferido:** Cláusula 2.5. Operaciones de Cobertura y Cláusula 2.6. Riesgo del Fondo
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo de Alianza Fiduciaria con el lema corporativo
+- *Metadata Visual:* Ubicado en la esquina superior izquierda del documento, compuesto por un triángulo azul y verde
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de agua vertical indicando vigilancia gubernamental
+- *Metadata Visual:* Texto rotado 90 grados en el margen izquierdo inferior
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria UNA EMPRESA DE LA ORGANIZACIÓN DELIMA T: (601) 6447700 Cr. 15 82-99 Bogotá, Colombia provisional, lo cual deberá ser informado a los inversionistas, a la sociedad calificadora y a la Superintendencia Financiera. La calificación de imposibilidad deberá ser reconocida como un hecho generalizado en el mercado Cláusula 2.5. Operaciones de Cobertura La sociedad administradora podrá realizar operaciones de derivados sobre los activos aceptables para invertir del Fondo con el propósito de cubrirse de los riesgos descritos en la cláusula 2.6. del reglamento en un monto que no supere el valor total de la posición de riesgo que pretende ser cubierta. Las operaciones deberán estar enmarcadas dentro de los lineamientos establecidos para los activos subyacentes en la cláusula 2.2. del presente reglamento. La valoración y la contabilización de las operaciones de derivados se efectuarán con base a lo establecido en el Capítulo XVIII de la Circular Básica Contable y Financiera (Circular Externa 100 de 1995) de la Superintendencia Financiera de Colombia o en las normas que lo modifiquen, sustituyan o complementen. La Sociedad Administradora del Fondo, contará con políticas y mecanismos de control para la administración de los riesgos inherentes a la celebración de operaciones sobre instrumentos derivados, entre ellos los relacionados con las posibles pérdidas por la valoración o liquidación de los contratos, la constitución de garantías para respaldar las posiciones abiertas, las exigencias de liquidez o de títulos para la atención de los llamados al margen, y los demás riesgos que se identifiquen en la estructuración de posiciones de cobertura. Así mismo, Alianza revelará la exposición neta de acuerdo con los criterios de revelación de la información que establezca la Superintendencia Financiera de Colombia. Cláusula 2.6. Riesgo del Fondo Cláusula 2.6.1. Factores de Riesgo El Fondo Abierto Alianza se encuentra expuesto a los siguientes riesgos sobre títulos valores o valores: Cláusula 2.6.1.1. Riesgo emisor o crediticio Es la posibilidad de que se produzcan pérdidas financieras asociadas al pago, repago o incumplimiento de las obligaciones de una empresa, gobierno, Fondo de inversión colectiva o patrimonio, bien sea como emisor de un instrumento financiero o como contraparte en una negociación. El riesgo de crédito puede generar dos consecuencias principales: ✓ La pérdida de valor en el activo y el consecuente detrimento del capital invertido por el Fondo. ✓ La reprogramación del retorno del activo proveniente de una reestructuración, con detrimento del capital invertido por el Fondo. VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA www.alianza.com.co Página 13 de 54
+`
+
+### Página 14
+
+**Título Inferido:** Cláusulas de Riesgos del Fondo
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad fiduciaria ubicado en la esquina superior izquierda del documento.
+- *Metadata Visual:* Triángulo azul y verde claro, texto en azul oscuro y negro.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo en orientación vertical.
+- *Metadata Visual:* Texto vertical en color gris claro, fuente pequeña.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria UNA EMPRESA DE LA ORGANIZACIÓN DELIMA T: (601) 6447700 Cr. 15 82-99 Bogotá, Colombia Cláusula 2.6.1.2. Riesgo de mercado Es la posibilidad de que se produzcan pérdidas en el valor de los activos que componen el Fondo como consecuencia de cambios en las cotizaciones de los precios de mercado o los factores de riesgo, afectando así el valor total del Fondo. Lo anterior se traduce en movimientos al alza o a la baja en el precio, teniendo como resultado utilidades o pérdidas en el portafolio del Fondo. Cláusula 2.6.1.3. Riesgo de liquidez Es la posibilidad de que se incurra en pérdidas como consecuencia de no poder cumplir a cabalidad, de manera oportuna y eficiente, los flujos de caja esperados e inesperados. El riesgo de liquidez se manifiesta ante la insuficiencia de activos líquidos disponibles y ante la necesidad de incurrir en costos adicionales de fondeo. Asimismo, se ve representado en la incapacidad de generar o deshacer posiciones por la inadecuada profundidad de los mercados o por los cambios drásticos en las tasas de interés. Cláusula 2.6.1.4. Riesgo de concentración Es la posibilidad de que se produzcan pérdidas cuando las inversiones del Fondo no se encuentren diversificadas, entre otros, por emisor, inversionista, vencimientos, etc Cláusula 2.6.1.5. Riesgo de contraparte Representa la posibilidad de que el Fondo de Inversión Colectiva incurra en pérdidas como consecuencia del incumplimiento de una contraparte. Dicho riesgo se deriva de las condiciones económicas y financieras de la contraparte y la probabilidad de que éstas cumplan satisfactoriamente la transacción pactada. Cláusula 2.6.1.6. Riesgo de tasa de cambio Es el riesgo que se asume cuando se mantienen posiciones en divisas o en activos denominados en moneda extranjera. Representa la posibilidad de incurrir en pérdidas como consecuencia de las fluctuaciones en la respectiva moneda. Cláusula 2.6.1.7. Riesgo jurídico Es la posibilidad de que se produzcan pérdidas derivadas de la no existencia de documentación adecuada para el desarrollo de las operaciones, su incorrecta y/o incompleta documentación, de la formalización de contratos con contraparte sin capacidad jurídica o legal, y del incumplimiento de las disposiciones legales y reglamentarias vigentes. El Fondo tiene por ello la restricción a la negociación que se encuentren desmaterializados en el DCV o DECEVAL para efectos de eliminación de documentos físicos, traslados o endosos de estos. Cláusula 2.6.1.8. Riesgo de Lavado de Activos El riesgo de lavado de activos, es la amenaza de que la sociedad administradora sea utilizada como instrumento para el ocultamiento, manejo, inversión o aprovechamiento, en cualquier VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA www.alianza.com.co Página 14 de 54
+`
+
+### Página 15
+
+**Título Inferido:** Reglamento del Fondo: Definición de Perfil de Riesgo y Mecanismos de Administración (Operativo y Crediticio)
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad fiduciaria junto con su eslogan institucional.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda, compuesto por un isotipo triangular azul y verde y texto tipográfico.
+- *Datos Observados:* Alianza Fiduciaria, Organización Delima
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de control estatal que certifica la supervisión de la entidad por parte del ente regulador colombiano.
+- *Metadata Visual:* Texto dispuesto en orientación vertical a lo largo del margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Información Corporativa: Alianza Fiduciaria (Una empresa de la Organización Delima). Contacto: T: (601) 6447700, Cr. 15 82-99, Bogotá, Colombia. 
+
+El documento continúa indicando que se busca prevenir el uso de recursos o bienes derivados de actos ilícitos, o el intento de otorgar una fachada de legalidad a estos o a las operaciones y capitales relacionados. Se advierte que estas prácticas perjudican la firmeza del sistema financiero y la pureza de los mercados, dada la escala internacional de estas maniobras y las estructuras usadas para administrar dichos fondos.
+
+Cláusula 2.6.1.9. Riesgo Operativo: Se define como la probabilidad de sufrir mermas económicas a causa de fallos, carencias o imperfecciones en el personal, los procedimientos, los sistemas tecnológicos o la infraestructura, así como por la incidencia de sucesos externos vinculados a la realización y acatamiento de las transacciones del fondo.
+
+Cláusula 2.6.2. Perfil de riesgo: El nivel de riesgo global del Fondo se cataloga como conservador, considerando los activos permitidos para inversión. Esto se debe a que los instrumentos en los que está autorizado a invertir cuentan con la máxima calificación, tanto por evaluaciones externas como por análisis internos de carácter cualitativo y cuantitativo. Además, factores como la duración de la cartera, las limitaciones de liquidez asociadas a los plazos de inversión permitidos y el perfil de liquidez de los activos que integran el Fondo de Inversión Colectiva, contribuyen a mitigar el riesgo de liquidez y a atenuar las consecuencias del riesgo de mercado.
+
+Cláusula 2.6.3. Administración de Riesgos: La entidad administradora ha puesto en marcha estrategias para la gestión de riesgos, las cuales han sido creadas y aplicadas de acuerdo con el nivel de riesgo del Fondo. A continuación se detallan dichas estrategias:
+
+Cláusula 2.6.3.1. Riesgo emisor o crediticio: El control del riesgo crediticio o de emisor abarca el análisis y la clasificación de los distintos emisores de valores, con el propósito de fijar los topes máximos de inversión permitidos para cada uno. La distribución de estos topes se realiza mediante un sistema de calificación propio, el cual permite vigilar de forma constante los parámetros financieros de las entidades que emiten los títulos. Este sistema facilita una correcta administración del riesgo, la fijación de los topes mencionados en el numeral 2.1.1.1. y la tasación de los activos referidos en el numeral 2.1.1.2 de la Circular Básica Jurídica, Parte III Título VI, Capítulo III.
+
+Sumado a esto, los datos arrojados por el sistema posibilitan la modificación de las valoraciones en función del análisis de riesgo. Esta calibración se ejecuta mensualmente para mantener una vigilancia ininterrumpida sobre el desarrollo de la solvencia crediticia del sujeto obligado a saldar el derecho estipulado en los documentos (ya sea deudor, contraparte, emisor, originador y/o pagador) que integran la cartera del Fondo. De igual forma, se monitorea a la contraparte en las transacciones ejecutadas, los avales obtenidos como garantía o los compromisos derivados de los valores comprados por el FIC. Todo este proceso tiene como fin...
+
+Pie de página: Vigilado Superintendencia Financiera de Colombia (texto vertical). Web: www.alianza.com.co. Página 15 de 54.
+`
+
+### Página 16
+
+**Título Inferido:** Reglamento Fondo Abierto - Gestión de Riesgos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de Alianza Fiduciaria compuesto por un triángulo azul y verde, acompañado del nombre de la empresa y su eslogan.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda. Colores: Azul, verde, negro.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+dar cumplimiento a lo estipulado por la SFC en el numeral 6.4 del Capítulo I de la Circular Básica Contable y Financiera, además de asegurar la calidad de los activos que conforman el portafolio.
+
+Por otro lado, se estableció que las inversiones del fondo estarán concentradas principalmente en riesgo nación y en títulos calificados AAA, o su equivalente, y no serán admisibles las inversiones con calificación inferior a AA+, o su equivalente, ni las inversiones que no cuenten con calificación oficial de riesgo de crédito. Los recursos líquidos depositados en una misma entidad no podrán superar el equivalente al 20% del valor del fondo.
+
+Cláusula 2.6.3.2. Riesgo de mercado
+
+Las metodologías de medición y administración de riesgo implementadas por Alianza Fiduciaria permiten estimar y gestionar adecuadamente el Valor en Riesgo (VaR) al cual está expuesto el Fondo. Dichas metodologías atienden cabalmente las directrices regulatorias establecidas por la Superintendencia Financiera de Colombia en el Capítulo XXI de la Circular Básica Contable y Financiera 100 de 1995.
+
+La valoración de los de los instrumentos que hagan parte del portafolio, se realizará en virtud de lo dispuesto en el Capítulo I de la Circular Básica Contable y Financiera 100 de 1995, en concordancia con lo previsto en el Capítulo IV, Título IV, Parte III de la Circular Básica Jurídica, bajo el esquema de la proveeduría de precios para valoración.
+
+Cláusula 2.6.3.3. Riesgo de liquidez
+
+Para mitigar el riesgo de liquidez la Sociedad Administradora cuenta con un modelo de liquidez el cual establece límites mínimos de liquidez en diferentes horizontes de tiempo y entornos de mercado. De esta manera se garantiza el cumplimiento de las obligaciones del Fondo dando siempre cumplimiento a lo establecido en el Capítulo VI de la Circular Básica Contable y Financiera, Circular Externa 100 de 1995.
+
+Cláusula 2.6.3.4. Riesgo de concentración
+
+El Fondo, para mitigar el riesgo de concentraciones, tiene los siguientes límites de inversión:
+
+No podrán mantenerse títulos de un mismo emisor, aceptante o garante que representen más del diez por ciento (10%) del total del fondo. No obstante, dicha participación podrá ser hasta del veinte por ciento (20%) del total del fondo cuando la inversión tenga por objeto títulos de deuda emitidos, aceptados o garantizados por los establecimientos de crédito vigilados por la Superintendencia financiera. Cuando se trata de inversiones en títulos emitidos por la nación, caso en el cual la concentración permitida es de 70%.
+
+Cláusula 2.6.3.5. Riesgo de Contraparte
+
+Para mitigar este riesgo, la Sociedad Administradora llevará a cabo un estricto proceso de selección de las contrapartes con las que se celebren operaciones fundamentado en un análisis financiero, estructural, de carácter cuantitativo y cualitativo. El proceso de selección, con la respectiva asignación de cupos, se ejecutará a través de un modelo de calificación, que evaluará las variables determinantes de la solvencia y la capacidad de pago, así como los factores
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 16 de 54
+`
+
+### Página 17
+
+**Título Inferido:** Reglamento Fondo Abierto - Gestión de Riesgos (Cláusulas 2.6.3.6 a 2.6.3.9)
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la empresa Alianza Fiduciaria ubicado en la esquina superior izquierda del documento.
+- *Metadata Visual:* Triángulo azul y verde claro, texto en color azul oscuro y negro.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia, ubicado en el margen inferior izquierdo, escrito de forma vertical.
+- *Metadata Visual:* Texto vertical en color gris claro, en mayúsculas.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+relacionados con el componente moral. Serán admitidos, como garantía para las operaciones que así lo requieran, los activos admisibles establecidos en la Cláusula 2.2.
+
+Cláusula 2.6.3.6. Riesgo de tasa de cambio
+
+Como principal mecanismo para la mitigación de este tipo de riesgo, se utilizarán derivados con fines de cobertura cambiaria. Estos instrumentos eliminarán la exposición del Fondo al riesgo de tasa de cambio.
+
+Cláusula 2.6.3.7. Riesgo Jurídico
+
+Con el fin de mitigar los riesgos jurídicos, la Sociedad Administradora mantendrá un departamento jurídico, responsable por la aprobación y revisión de los contratos y acuerdos suscritos por el Fondo en el giro ordinario de sus actividades. Dicho departamento jurídico también debe ser responsable de revisar y aprobar todos los acuerdos suscritos por el Fondo en Colombia. Por otra parte, este departamento también debe monitorear la evolución de la regulación en Colombia y sus posibles impactos sobre las actividades del Fondo.
+
+Cláusula 2.6.3.8. Riesgo de Lavado de Activos
+
+Con el fin de identificar, monitorear y medir el riesgo de lavado de activos de manera ágil y oportuna, la sociedad administradora cuenta con un Sistema de Administración del Riesgo de Lavado de Activos y Financiación al Terrorismo (SARLAFT), conformado por un conjunto de políticas, instrumentos, mecanismos y procedimientos diseñados para conocer adecuada y suficientemente a los clientes, empleados y proveedores con quienes guarda relaciones contractuales. Este sistema permite obtener la información necesaria para reportar de forma inmediata y suficiente, a través del oficial de cumplimiento, a la unidad de información y análisis financiero del ministerio de hacienda y crédito público -UIAF- cualquier información relevante sobre el manejo de fondos cuya cuantía o característica no guarde relación con la actividad económica de sus clientes, o sobre las transacciones que por su número, cantidades transadas o características de las mismas, puedan conducir razonablemente a sospechar que los mismos están utilizando la compañía para el lavado de activos.
+
+Cláusula 2.6.3.9. Riesgo Operativo
+
+Para mitigar este riesgo se implementó el Sistema de Administración de Riesgo Operativo, el cual está compuesto por políticas, procedimientos y demás elementos definidos en el Capítulo XXIII de la Circular Básica Contable y Financiera; realizando el ciclo de identificación, medición, control y seguimiento a los riesgos, así como la definición y cumplimiento de los planes de acción que se requieran con el fin de disminuir la probabilidad de ocurrencia y el impacto de los riesgos en la Sociedad Administradora. Así mismo, Alianza Fiduciaria cuenta con un Plan de Continuidad del Negocio (PCN), el cual es un conjunto detallado de acciones que describen los procedimientos, los sistemas y los recursos necesarios para retornar y continuar la operación, en caso de interrupción.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 17 de 54
+`
+
+### Página 18
+
+**Título Inferido:** Gestión de riesgos ambiental, social y de gobierno (ASG) y Organismos de administración y control
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Isotipo compuesto por un triángulo azul y verde claro, acompañado del nombre de la empresa y su eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto de forma vertical en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Cláusula 2.6.4. Gestión de riesgos ambiental, social y de gobierno (ASG)
+
+Se consideran factores de riesgo ASG aquellos asociados a asuntos ambientales, sociales y de gobernanza que representan amenazas u oportunidades con potencial incidencia en el desempeño financiero y la percepción en el mercado frente a los activos en los que invierte el Fondo y/o sus respectivos emisores. Como criterios ambientales se consideran aspectos relativos al objeto social u actividad empresarial que puedan afectar de forma positiva o negativa al medio ambiente. Las cuestiones sociales incluyen aspectos concernientes a su integración con la comunidad, bajo un enfoque de responsabilidad social, es decir, las relaciones con las comunidades locales, la gestión del capital humano, el lugar y condiciones de trabajo, la prevención de prácticas comerciales y actividades controvertidas, incluyendo la adhesión a los derechos humanos y la no discriminación. En cuanto a los asuntos de buen gobierno, estos se refieren a la calidad de la gestión, la cultura, el perfil de riesgo de los referidos emisores, agrupados en su gobernanza y comportamiento corporativo.
+
+La conformación del portafolio de inversiones del Fondo no persigue objetivos específicos de orden ambiental, social o de buen gobierno; por lo tanto, en la revelación de información a los inversionistas no se emplearán denominaciones tales como inversiones sostenibles, responsables, verdes o similares. No obstante, la Sociedad Administradora del Fondo tiene previstos procesos de identificación, evaluación, monitoreo y mitigación de los factores de riesgo ASG, que estarán inmersos en los métodos y procesos de análisis de información ejecutados por parte de proveedores externos, debidamente seleccionados por Alianza Fiduciaria.
+
+El proceso de toma de decisiones de inversión y la concentración de inversiones que eventualmente estén orientadas a la consecución de objetivos ASG, responderá estrictamente a la definición que para tal efecto establezca el Comité de Inversiones de la Sociedad Administradora.
+
+Cláusula 2.7. Transparencia en la revelación de aspectos ASG
+
+Si bien el Fondo podrá integrar dentro de sus análisis los factores ASG en la toma de decisiones de inversión en Activos Admisibles, el Fondo no persigue un objeto de inversión ASG ni podrá ser considerado un Fondo de esta categoría.
+
+Capítulo III. Organismos de administración y control
+
+Cláusula 3.1. Órganos de administración
+
+Cláusula 3.1.1. Responsabilidad de la sociedad administradora
+
+La sociedad administradora, en la gestión de los recursos del Fondo, adquiere obligaciones de medio y no de resultado. Por lo tanto, Alianza Fiduciaria, no podrá garantizar una tasa fija para las participaciones constituidas, así como asegurar rendimientos por valorización de los activos que integran el Fondo. En todo caso, responderá en su condición de agente del mercado.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 18 de 54
+`
+
+### Página 19
+
+**Título Inferido:** Obligaciones de la Junta Directiva en la administración de fondos de inversión colectiva
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad financiera Alianza Fiduciaria, compuesto por un triángulo azul y verde claro, junto con el nombre de la empresa y su eslogan.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Alianza Fiduciaria cuenta con una Junta Directiva, un Comité de Inversiones, el gerente y su respectivo suplente del Fondo Abierto Alianza, encargados de realizar la gestión de la misma. Para este fin, la Junta Directiva de la sociedad administradora del Fondo Abierto Alianza, con respecto a la administración de fondos de inversión colectiva, deberá cumplir las siguientes obligaciones:
+
+1. Definir las políticas y procedimientos aplicables al desarrollo de la actividad de administración de fondos de inversión colectiva, y determinar los criterios o condiciones bajo los cuales la sociedad desarrollará todas o algunas de las demás actividades relacionadas con los fondos de inversión colectiva administrados.
+
+Para el efecto, la junta directiva deberá definir para cuales fondos de inversión colectiva o familias de fondos de inversión colectiva la sociedad ejercerá la gestión del portafolio de manera directa, y para cuales dicha gestión será delegada a un gestor externo en los términos de la presente parte del presente decreto.
+
+Así mismo, la junta directiva deberá realizar la designación de la entidad que prestará los servicios de custodia de valores, y de las actividades complementarias a la misma que serán prestadas por parte de la entidad designada como custodio.
+
+2. Definir los criterios o estándares aplicables a la selección de entidades encargadas de la gestión, y de la custodia de los fondos de inversión colectiva administrados por la sociedad autorizada.
+
+3. Definir una adecuada estructura organizacional para garantizar el cumplimiento e independencia de las funciones propias de la actividad de administración de fondos de inversión colectiva, así como del personal responsable de las mismas.
+
+4. Fijar los procedimientos y políticas para determinar el proceso de valoración del portafolio de los fondos de inversión colectiva administrados y de sus participaciones, el cual deberá ser cumplido por la sociedad administradora o por el gestor o el custodio del respectivo fondo de inversión colectiva, según lo establezca el reglamento.
+
+La junta directiva deberá fijar medidas de control que permitan vigilar el cumplimiento de las reglas establecidas para la valoración de los fondos de inversión colectiva administrados.
+
+5. Determinar las políticas necesarias para adoptar medidas de control y reglas de conducta apropiadas y suficientes, que se orienten a evitar que los fondos de inversión colectiva administrados puedan ser utilizados como instrumentos para el ocultamiento, manejo, inversión o aprovechamiento en cualquier forma de dineros u otros bienes provenientes de actividades ilícitas, para realizar evasión tributaria o para dar apariencia de legalidad a actividades ilícitas o a las transacciones y recursos vinculados con las mismas.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 19 de 54
+`
+
+### Página 20
+
+**Título Inferido:** Políticas y Directrices de Administración (Continuación)
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa Alianza Fiduciaria, compuesto por un triángulo azul y verde claro, seguido del nombre de la empresa y su eslogan.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical ubicado en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+6. Aprobar los manuales para el control y prevención del lavado de activos, de gobierno corporativo incluyendo el código de conducta, de control interno, y los demás necesarios para el cumplimiento de las normas aplicables.
+7. Establecer políticas en cualquier otro aspecto que tenga relevancia con el adecuado funcionamiento y la correcta administración del fondo de inversión colectiva.
+8. Diseñar políticas, directrices y procedimientos de gobierno corporativo y de control interno, orientadas a administrar los riesgos que puedan afectar a los fondos de inversión colectiva administrados.
+9. Determinar políticas, directrices y procedimientos para garantizar la calidad de la información divulgada al público en general, a los inversionistas y a la Superintendencia Financiera de Colombia.
+10. Establecer políticas y adoptar los mecanismos que sean necesarios para evitar el uso de información privilegiada o reservada y la manipulación de la rentabilidad o del valor de la unidad.
+11. Diseñar y aprobar las políticas para la presentación a las asambleas de inversionistas de toda la información necesaria que permita establecer el estado de los fondos de inversión colectiva administrados, incluyendo como mínimo: los estados financieros básicos de propósito general, la descripción general del portafolio, y la evolución del valor de la participación, del valor del fondo de inversión colectiva y de la participación de cada inversionista dentro del mismo.
+12. Definir las situaciones constitutivas de conflictos de interés, así como las políticas y los procedimientos para su prevención y administración.
+13. Establecer políticas, directrices y procedimientos para el ejercicio de los derechos políticos inherentes a los valores administrados colectivamente, cuando dicha actividad no haya sido delegada voluntariamente en el custodio de dichos valores. Dichas políticas, directrices y procedimientos deberán definir expresamente los casos en que la sociedad administradora podrá abstenerse de participar en las deliberaciones y votaciones, en razón, entre otras, de la poca materialidad de la participación social o de los asuntos a ser decididos.
+14. Fijar las directrices de los programas de capacitación para los funcionarios encargados de las tareas relacionadas con la administración de los fondos de inversión colectiva.
+15. Definir los mecanismos que serán implementados para el seguimiento del cumplimiento de las funciones del personal vinculado contractualmente al gestor externo, en relación con la gestión del fondo de inversión colectiva.
+16. Dictar las políticas y mecanismos para solucionar de manera efectiva y oportuna los problemas detectados y reportados por las áreas involucradas en la actividad de administración del fondo de inversión colectiva, y por el revisor fiscal, sobre asuntos que
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 20 de 54
+`
+
+### Página 21
+
+**Título Inferido:** Reglamento Fondo Abierto - Funciones de la Junta Directiva y Gerente
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de Alianza Fiduciaria, indicando que es una empresa de la Organización Delima.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde, con el texto 'Alianza Fiduciaria' y 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Datos Observados:* N/A
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+puedan afectar el adecuado funcionamiento y administración del fondo de inversión colectiva.
+
+17. Determinar los mecanismos que eviten la aplicación de prácticas discriminatorias o inequitativas entre los inversionistas de un mismo fondo de inversión colectiva.
+
+18. Determinar el contenido mínimo de los informes que deberá presentar quien ejecute la actividad de gestión de los fondos de inversión colectiva administrados por la sociedad administradora.
+
+19. Nombrar el gerente del fondo de inversión colectiva y su suplente, cuando haya lugar.
+
+20. Las demás establecidas a cargo de la junta directiva de la sociedad administradora de fondos de inversión colectiva en otras normas legales o reglamentarias.
+
+La información relacionada con el gerente, su suplente y dicho comité será publicada a través del prospecto de inversión que podrá ser consultado en las agencias o sucursales de Alianza Fiduciaria o en las oficinas de las entidades con las que haya suscrito contratos de corresponsalía o uso de red de oficinas o equivalentes, y en www.alianza.com.co.
+
+La constitución del Comité de Inversiones y la designación del gerente no exonera a la Junta Directiva de la responsabilidad prevista en el artículo 200 del Código de Comercio o cualquier otra norma que lo modifique, sustituya o derogue, ni del cumplimiento de los deberes establecidos en las normas vigentes.
+
+En todo caso, Alianza Fiduciaria responderá hasta de la culpa leve en el cumplimiento de sus funciones, como experto prudente y diligente.
+
+Cláusula 3.1.2. Gerente
+
+Alianza Fiduciaria S.A ha designado un gerente, con su respectivo suplente, dedicado de forma exclusiva a la gestión de las decisiones de inversión efectuadas a nombre del Fondo. El gerente se considerará administrador de la sociedad, y estará inscrito en el Registro Nacional de Profesionales del Mercado de Valores.
+
+El gerente y su suplente tendrán a su cargo y dará cumplimiento a las funciones asignadas en el Decreto 2555 de 2010 y en el presente reglamento entre otras:
+
+1. En la toma de decisiones de inversión deberá tener en cuenta las políticas diseñadas por la junta directiva identificar, medir, gestionar y administrar los riesgos.
+2. Documentar con detalle y precisión los problemas detectados en los envíos de información de la sociedad administradora a los inversionistas y a la Superintendencia Financiera de Colombia, categorizados por fecha de ocurrencia, frecuencia e impacto. Así mismo, deberá documentar los mecanismos implementados para evitar la reincidencia de las fallas detectadas.
+3. Asegurarse de que la Sociedad Administradora cuente con personal idóneo para el cumplimiento de las obligaciones de información.
+4. Proponer a los órganos de administración el desarrollo de programas, planes y
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 21 de 54
+`
+
+### Página 22
+
+**Título Inferido:** Reglamento Fondo Abierto - Órganos de asesoría
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de Alianza Fiduciaria, con el texto 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Metadata Visual:* Logo corporativo en la esquina superior izquierda.
+- *Datos Observados:* N/A
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical en el margen inferior izquierdo: 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+estrategias orientadas al cumplimiento eficaz de las obligaciones de información a cargo de la Sociedad Administradora.
+
+5. Cumplir con las directrices, mecanismos y procedimientos señalados por la Junta Directiva de la sociedad administradora, y vigilar su cumplimiento por las demás personas vinculadas contractualmente cuyas funciones se encuentren relacionadas con la gestión propia.
+
+6. Informar a la Superintendencia Financiera de Colombia los hechos que imposibiliten o dificulten el cumplimiento de sus funciones, previa información a la junta directiva.
+
+7. Presentar la información a la asamblea de inversionistas, de conformidad con lo señalado en el numeral 15 del artículo 3.1.3.1.3 del decreto 2555 de 2010.
+
+8. Identificar, controlar y gestionar las situaciones generadoras de conflictos de interés, según las reglas establecidas en las normas aplicables y las directrices señaladas por la junta.
+
+9. Acudir a la junta directiva de la sociedad administradora de fondos de inversión colectiva en los eventos en que considere que se requiere de su intervención, con la finalidad de garantizar la adecuada gestión del fondo de inversión colectiva.
+
+10. Ejercer una supervisión permanente sobre el personal vinculado a la gestión del portafolio fondo de inversión colectiva gestionado, y
+
+11. Las demás asignadas por la junta directiva de la sociedad gestora, sin perjuicio de las responsabilidades asignadas a la misma.
+
+Parágrafo 1: El suplente solo actuará en caso de ausencias temporales o absolutas del principal.
+
+Parágrafo 2: Como requisitos para poder desempeñar las funciones de Gerente el funcionario deberá ser profesional en Finanzas, economía o áreas afines, contar con un estudio de post-grado y tener una experiencia de al menos 4 años en el sector financiero en la administración de portafolios. De igual forma no contar con antecedentes de condenas en la AMV y/o la Superintendencia financiera de Colombia.
+
+Cláusula 3.2. Órganos de asesoría
+
+Cláusula 3.2.1. Comité de Inversiones
+
+La junta directiva de la sociedad administradora designará un comité denominado “Comité de Inversiones” responsable del análisis de las inversiones y de los emisores así como de la definición de los cupos de inversión y las políticas para adquisición y liquidación de inversiones. Los miembros de este comité se considerarán administradores de conformidad con lo establecido en el artículo 22 de la Ley 222 de 1995 o cualquier otra norma que lo modifique, sustituya o derogue.
+
+Cláusula 3.2.2. Constitución
+
+El Comité de Inversiones estará compuesto por un número mínimo de tres (3) miembros. Dichos miembros deberán ser elegidos por la Junta Directiva de la Sociedad Administradora y acreditar experiencia en temas financieros y ocupar o haber ocupado cargos directivos.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 22 de 54
+`
+
+### Página 23
+
+**Título Inferido:** Reglamento del Fondo - Comité de Inversiones y Órganos de Control
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad financiera Alianza Fiduciaria, compuesto por un triángulo azul y verde.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda del documento.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical ubicado en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Las decisiones adoptadas en el Comité de Inversiones deberán constar en actas.
+
+Cláusula 3.2.3. Reuniones
+
+El Comité de Inversiones se reunirá ordinariamente una vez al mes. También podrá reunirse extraordinariamente cuando las circunstancias lo requieran, previa convocatoria efectuada por la Sociedad Administradora. De las reuniones se levantarán actas.
+
+El quórum para las sesiones del Comité de Inversiones se conformará con la presencia de al menos tres (3) de los miembros designados, quienes podrán tomar decisiones con la mayoría de los miembros presentes en el comité.
+
+Parágrafo Primero: En las sesiones del Comité de Inversiones podrá participar el Gerente del Fondo de Inversión Colectiva con voz pero sin voto. Así mismo, al Comité podrán asistir otros invitados con voz pero sin voto.
+
+Cláusula 3.2.4. Funciones
+
+El comité de inversiones tiene dentro de sus funciones:
+
+1. Fijar las políticas de adquisición y liquidación de inversiones, verificar su eficaz cumplimiento, incluyendo la asignación de cupos de inversión por emisor y por clase de inversión.
+2. Evaluar y proponer, en general, todas las medidas que reclamen el interés común de los suscriptores.
+3. Llevar a cabo un control periódico de las diferentes variables de riesgo que pueden afectar los portafolios administrados por la fiduciaria.
+4. Adoptar las políticas necesarias que se deben seguir, de acuerdo con unas estrategias de reacción y operación en diversos escenarios, orientadas a fortalecer las operaciones sobre las cuales se considera existe una mayor exposición al riesgo.
+5. Las que determine la Junta Directiva de la sociedad administradora.
+
+Cláusula 3.3. Órganos de control
+
+Cláusula 3.3.1. Revisor fiscal
+
+La revisoría fiscal del Fondo abierto Alianza será realizada por el revisor fiscal de la sociedad administradora. La identificación y los datos de contacto de la revisoría fiscal serán dadas a conocer a través del prospecto de inversión y del sitio web www.alianza.com.co. Los informes del revisor fiscal serán independientes de los de la sociedad administradora.
+
+Capítulo IV. Constitución y redención de participaciones
+
+Cláusula 4.1. Vinculación y clases de participaciones
+
+Cláusula 4.1.1 Vinculación
+
+Para ingresar al Fondo el inversionista deberá aceptar las condiciones establecidas en el presente reglamento y hacer la entrega efectiva de recursos. En este proceso se debe establecer
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 23 de 54
+`
+
+### Página 24
+
+**Título Inferido:** Reglamento Fondo Abierto - Condiciones de Aportes y Comunicaciones al Inversionista
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de Alianza Fiduciaria con su lema empresarial, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Isotipo en forma de triángulo compuesto por colores azul claro, azul oscuro y verde.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia y control de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto de forma vertical en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria UNA EMPRESA DE LA ORGANIZACIÓN DELIMA T: (601) 6447700 Cr. 15 82-99 Bogotá, Colombia la plena identificación de la propiedad de los recursos por parte del inversionista. De igual forma establecer los aspectos relacionados con el conocimiento del cliente, incluyendo datos sobre la dirección de contacto, una cuenta bancaria vigente y demás aspectos señalados en las normas para la prevención de actividades ilícitas y lavado de activos y financiación del terrorismo, los cuales le serán solicitados por la fuerza de ventas al momento de vincularse. A la dirección física y/o electrónica que registre se le enviará todas las comunicaciones que se produzcan en desarrollo del reglamento, la cual permanecerá vigente mientras no sea modificada a través de documento escrito firmado por el inversionista y entregado en las oficinas de la sociedad administradora, sin perjuicio de lo establecido en el numeral 5° artículo 23 del Código de Procedimiento Civil. Una vez el inversionista realice la entrega efectiva y se tenga la plena identificación de la propiedad de los recursos correspondientes, dicho valor será convertido en unidades, al valor de la unidad vigente determinado de conformidad con la cláusula 5.3 (Valor de la unidad) del presente reglamento. La sociedad administradora deberá expedir una constancia por el recibo de los recursos que cumplirá con los requisitos mínimos establecidos en el numeral 2.8 del Capítulo III del Título IV de la Parte III de la Circular Básica Jurídica. Con dicha constancia la misma se entregará la copia d prospecto de inversión, la cual puede ser enviada al correo electrónico del Inversionista, dejando evidencia, por parte del inversionista del recibo de la mencionada copia, así como de la aceptación y comprensión de la información allí contenida. La cantidad de unidades que represente el aporte se informará al suscriptor el día hábil inmediatamente siguiente al de constitución de unidades en el Fondo mediante la emisión de un documento representativo de la participación el cual deberá contener los requisitos mínimos establecidos en el numeral 2.10 del Capítulo III del Título IV de la Parte III de la Circular Básica Jurídica, y será entregado al inversionista de la siguiente manera: Correo electrónico registrado o; Comunicación remitida al domicilio registrado en la sociedad administradora o; Como documento en la página web de Alianza Fiduciaria S.A. Los aportes podrán efectuarse en dinero, cheque o transferencia de recursos, que se podrán efectuar en las oficinas de la sociedad administradora, sus agencias o sucursales, o en las oficinas de las entidades con las que haya celebrado contratos de uso de red de oficinas o corresponsalía local o en la red bancaria establecida por la sociedad administradora para el recaudo de recursos del Fondo. Para el efecto, la sociedad administradora informará a través de www.alianza.com.co, la red establecida para recibir aportes. Si la entrega de recursos se efectúa por medio de transferencia bancaria o consignación en las cuentas exclusivas del Fondo, el inversionista deberá informar de manera inmediata de esta situación por medio físico. VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA www.alianza.com.co Página 24 de 54
+`
+
+### Página 25
+
+**Título Inferido:** Reglamento Fondo Abierto - Aportes y Clases de Participaciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad administradora del fondo, compuesto por un triángulo azul y verde junto al nombre de la empresa.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Si el aporte se realiza en cheque, el certificado definitivo sólo se expedirá una vez que se haya pagado el cheque. Si el cheque resultare impagado a su presentación, se considerará que en ningún momento existió aporte al Fondo. En tal evento, una vez impagado el instrumento, se procederán a efectuar las anotaciones contables pertinentes tendientes a reversar la operación y a devolver el cheque no pagado a la persona que lo hubiere entregado, sin perjuicio de que se le exija, a título de sanción, el 20% del importe del cheque, conforme a lo previsto por el artículo 731 del Código de Comercio. Este valor hará parte de los activos del Fondo.
+
+Parágrafo 1. El horario de recepción de los aportes de los suscriptores será informado en www.alianza.com.co. En caso de que se reciban recursos después del horario establecido, se entenderá como efectuados el día hábil siguiente.
+
+Parágrafo 2. La sociedad administradora se reserva el derecho de admisión de inversionistas a el Fondo , así como la recepción de aportes posteriores a la misma, siendo una causal objetiva de cancelación del encargo, el incumplimiento legal de cualquier obligación a cargo del inversionista dentro de las que se encuentran el estar incluido en cualquier lista relacionada con la prevención y control de lavado de activos y financiación del terrorismo o cuando a juicio de la sociedad administradora, las operaciones del encargo se consideren de carácter inusual o sospechoso, de acuerdo con lo establecido en las normas vigentes que regulen el Sistema integral de prevención de lavado de activos y financiación del terrorismo .
+
+Parágrafo 3. El monto mínimo de vinculación será de $10.000 (diez mil pesos) sin pacto de permanencia mínima. El monto mínimo de permanencia será de $1.000 (mil pesos). Los inversionistas podrán realizar aportes adicionales al Fondo, para lo cual serán aplicables las reglas establecidas en la presente cláusula en cuanto a la constitución de unidades. El valor del aporte adicional se contabilizará como un mayor valor de la inversión inicial. El monto mínimo de aportes adicionales será la suma de $1.000 (mil pesos).
+
+Parágrafo 4. La Sociedad Administradora cuando evidencie que por error se acreditó o debitó una suma en la cuenta de un Inversionista, compensará y/o reversará las sumas de dinero que sean acreditadas erróneamente una vez sea identificado el error, y como consecuencia de ello procederá informar de esa situación al inversionista para su conocimiento.
+
+Cláusula 4.1.2. Clases de Participaciones
+
+El Fondo tendrá diferentes tipos de participaciones creadas de conformidad con los tipos de inversionistas que se vinculen al fondo de inversión colectiva.
+
+Para el Fondo Abierto Alianza todas las participaciones tendrán los mismos derechos y obligaciones, salvo por lo establecido en el párrafo segundo de la cláusula 6.2, sin perjuicio de que cada tipo de participación dará lugar a un valor de unidad independiente.
+
+Los tipos de participaciones del Fondo serán los siguientes:
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 25 de 54
+`
+
+### Página 26
+
+**Título Inferido:** Tipos de Participación y Traslados
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de Alianza Fiduciaria en la esquina superior izquierda.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde, texto en azul oscuro y gris.
+- *Datos Observados:* Logo de Alianza Fiduciaria, texto 'Alianza Fiduciaria', texto 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'
+
+**Elemento 2 (texto):**
+- *Descripción:* Información de contacto de Alianza Fiduciaria en la esquina superior derecha.
+- *Metadata Visual:* Texto en color gris.
+- *Datos Observados:* T: (601) 6447700, Cr. 15 82-99, Bogotá, Colombia
+
+**Elemento 3 (tabla):**
+- *Descripción:* Tabla que detalla los diferentes tipos de participación en el fondo, la descripción de los inversionistas que aplican a cada tipo y el rango de saldo requerido.
+- *Metadata Visual:* Encabezados de columna con fondo azul oscuro y texto blanco. Filas alternando fondo blanco y gris claro.
+- *Datos Observados:* Tabla con 3 columnas: Tipos de Participación, Descripción, Rango. 14 filas de datos.
+
+**Elemento 4 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia en el margen izquierdo.
+- *Metadata Visual:* Texto en color gris, orientación vertical.
+- *Datos Observados:* Texto vertical 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Tipos de
+Participación
+Descripción
+Rango
+A
+Saldo mínimo <= saldo <= $50 MM
+B
+$50 MM < saldo <= $200 MM
+C
+Personas naturales, jurídicas y
+fideicomisos (PNJF)
+$200 MM < saldo <= $1.000 MM
+D
+$1.000 MM < saldo <= $10.000 MM
+E
+saldo > $10.000 MM
+I
+Inversionistas profesionales y
+entidades vigiladas por la SFC
+saldo > = saldo mínimo
+CA
+Saldo mínimo <= saldo <= $5.000 MM
+CB
+Personas jurídicas con ventas >
+$50.000 MM (Corporativos) y sus
+vinculados económicos
+$5.000 MM < saldo <= $10.000 MM
+CC
+$10.000 MM < saldo <= $20.000 MM
+CD
+saldo > $20.000 MM
+P
+Portafolios de inversión del FPV
+Visión
+saldo > = saldo mínimo
+F
+FICS administrados por Alianza
+Fiduciaria
+saldo > = saldo mínimo
+M
+Personas naturales vinculadas
+laboralmente a las compañías del
+grupo Alianza.
+saldo > = saldo mínimo
+O
+Cuentas ómnibus
+saldo > = saldo mínimo
+
+Cláusula 4.1.3. Traslados entre tipos de participación
+
+Alianza Fiduciaria trasladará entre los diferentes tipos de participaciones de forma diaria, de
+acuerdo al saldo de cada inversionista. Este traslado se hará de forma automática, de la
+siguiente forma:
+
+Se verifica el saldo final del encargo del inversionista, después de reconocer rendimientos,
+adiciones y retiros, se ubica en el nivel al que tiene derecho y se realizan los traslados entre los
+niveles. El traslado se realizará al momento de efectuar el cierre diario del fondo después de
+haber realizado la distribución de rendimientos. El monto a trasladar será el correspondiente
+al saldo a favor del inversionista el día del traslado, monto que será convertido en unidades de
+acuerdo al valor de la unidad del nivel dentro del tipo de participación al que ingresa.
+
+La información referente al cambio o los cambios de niveles a que haya tenido un cliente en un
+período de tiempo determinado se reflejará como un retiro del nivel de donde sale y como una
+adición al nivel a donde entra dentro del mismo tipo de participación. Todos los movimientos
+de traslado entre niveles dentro de un mismo tipo de participación, se verá evidenciado en el
+extracto mensual de cada inversionista.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA
+DE COLOMBIA
+
+www.alianza.com.co
+
+Página 26 de 54
+`
+
+### Página 27
+
+**Título Inferido:** Reglamento Fondo Abierto - Cláusulas 4.2 a 4.4 (Límites de participación)
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad fiduciaria en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo azul y verde claro con el nombre de la empresa.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Cláusula 4.2. Número mínimo de inversionistas
+De acuerdo con los lineamientos del Decreto 2555 de 2010 el Fondo no tendrá un número mínimo de inversionistas, sin perjuicio de lo dispuesto en el numeral 4.3 del presente reglamento, en concordancia con lo dispuesto en el artículo 3.1.1.6.2 del Decreto 2555 de 2010.
+
+Cláusula 4.3. Límites a la participación
+Ningún inversionista podrá poseer directa o indirectamente a través de una cuenta ómnibus, una participación que exceda el diez (10%) por ciento del valor del patrimonio del Fondo. Cuando algún Inversionista llegare a tener una participación superior al límite aquí establecido, la Sociedad Administradora deberá informarle al día hábil siguiente para que este ajuste su participación. Pasado 1 mes calendario después de informarle al Inversionista y ante la ausencia de instrucciones, el inversionista faculta irrevocablemente a Alianza para trasladar los recursos en exceso que serán consignados en la cuenta bancaria señalada por éste al momento de su vinculación o a un encargo en nombre del inversionista en otro Fondo de Inversión Colectiva Abierto sin pacto de permanencia administrado por Alianza, previo descuento de los gastos por transferencia a que haya lugar.
+
+En todo caso, si cumplido el mes calendario que se tiene previsto para la normalización del límite de participación este no se ha regularizado o si se presentan situaciones extraordinarias que afecten de manera grave la operación del Fondo, la Sociedad Administradora podrá dejar de aplicar el presente límite de manera temporal, siempre y cuando se garanticen los derechos de los Inversionistas del Fondo de Inversión Colectiva y se informe de manera simultánea a la Superintendencia Financiera de Colombia.
+
+Parágrafo Primero: Este límite a la participación se aplicará en los términos del Artículo 3.1.1.6.2 del Decreto 2555 de 2010.
+
+Parágrafo Segundo: La inversión de otros fondos administrados, gestionados y distribuidos por la Sociedad Administradora no podrá superar el límite establecido en la presente cláusula.
+
+Cláusula 4.3.1. Límite de participación para la sociedad administradora
+De acuerdo con lo estipulado en el numeral 2 del artículo 3.1.1.10.2 del Decreto 2555 de 2010, el porcentaje máximo de participaciones que la Sociedad Administradora podrá suscribir en el fondo será el diez por ciento (10%) del valor del fondo de inversión al momento de hacer la inversión. La sociedad administradora, deberá conservar las participaciones que haya adquirido durante un plazo mínimo de un (1) año.
+
+Cláusula 4.4. Representación de las Participaciones
+La naturaleza de los derechos de los inversionistas en el Fondo abierto Alianza será de participación. Los documentos que representen estas participaciones no tendrán el carácter ni las prerrogativas propias de los títulos valores, ni serán negociables.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 27 de 54
+`
+
+### Página 28
+
+**Título Inferido:** Cláusula 4.5. Redención de las participaciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo azul y verde claro, texto en azul oscuro y gris.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia y control de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo.
+- *Metadata Visual:* Texto en orientación vertical, fuente pequeña, color gris claro.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+El documento representativo de las participaciones contendrá la siguiente información: (i) Nombre de la sociedad administradora, del Fondo, y el tipo de participación. (ii) Plazo mínimo de permanencia. (iii) El nombre de la oficina, sucursal o agencia de la sociedad administradora, o si fuere el caso, el de las entidades con las que se haya suscrito convenio de uso de red, contrato de distribución especializada, o contrato de corresponsalía local, que estén facultados para expedir el documento representativo de participaciones y la fecha de expedición respectiva. (iv) Nombre e identificación del Inversionista. (v) Valor nominal de la inversión, el número de unidades que dicha inversión representa y el valor de la unidad a la fecha en que se realiza la inversión, de acuerdo con el tipo de participación, según corresponda. (vi) Las advertencias señaladas en el inciso segundo del artículo 3.1.1.6.3 y en el artículo 3.1.1.9.3 del Decreto 2555 de 2010.
+
+Parágrafo: Los derechos de participación del inversionista podrán ser objeto de cesión, siempre y cuando la misma sea previamente aprobada por la sociedad administradora, para lo cual el cesionario deberá allegar la información señalada en la cláusula 4.1. del presente reglamento.
+
+Cláusula 4.5. Redención de las participaciones
+
+Los inversionistas podrán redimir sus participaciones en el Fondo Abierto Alianza en cualquier momento dentro de los horarios establecidos, dada la naturaleza de este último. El inversionista debe solicitar la redención total o parcial mediante comunicación escrita o verbal que conste en medio verificable a la Sociedad Administradora. Para efectuar los movimientos, se tendrá en cuenta el mismo horario que tenga la Sociedad Administradora para atención al público, el cual se encuentra publicado en la página web www.alianza.com.co, de suerte que, si la solicitud es recibida después del horario establecido, se entenderá recibida el día hábil siguiente.
+
+Todo retiro o reembolso por concepto de la redención de unidades tendrá expresión en moneda y en unidades y tal conversión se efectuará al valor de la unidad vigente para el día en que realice la solicitud del retiro o reembolso con cargo a cuentas de patrimonio y abono a cuentas por pagar.
+
+El proceso de retiro de recursos del Fondo se adelanta en tres momentos:
+
+1. Día de la solicitud de retiro: Día en el cual el partícipe anuncia la intención del retiro.
+2. Día de la causación del retiro: Día en el cual se liquida el valor de las redenciones con base en el valor de la unidad del día de solicitud.
+3. Día de pago: día en el cual se hace la cancelación efectiva de las redenciones, en el cual se le informa al inversionista el número de unidades y el valor en pesos al cual fueron redimidas, según la valoración efectuada el día de la causación. La información será remitida, a través del correo electrónico registrado o como documento en la página web de Alianza Fiduciaria.
+
+La redención podrá efectuarse por los medios definidos por la sociedad administradora para tal fin y serán informados al inversionista. Alianza Fiduciaria cobrará una suma como costo de
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 28 de 54
+`
+
+### Página 29
+
+**Título Inferido:** Cláusula 4.6. Suspensión de las redenciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad financiera Alianza Fiduciaria, compuesto por un triángulo azul y verde.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda del documento.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical ubicado en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+operación por los servicios adicionales de retiro que se generan, contra los recursos administrados, sobre el segundo y sucesivos retiros en un mismo mes conforme lo establezca la sociedad administradora y se informe a los. Estos costos serán informados a los inversionistas en los extractos mensuales y/o en la página web www.alianza.com.co.
+
+Parágrafo 1: Los impuestos, tasas y contribuciones que se generen por la redención de participaciones estarán a cargo del inversionista y se considerará como un mayor valor de retiro. Ello de conformidad con las normas que lo regulen. La vigencia de esta cláusula dependerá exclusivamente de la vigencia de las normas dictadas por el Gobierno Nacional o por el Congreso de la República con respecto a los impuestos y a las contribuciones temporales sobre las transacciones financieras.
+
+Parágrafo 2: La Sociedad Administradora se encuentra facultada para entregar un porcentaje menor al saldo del inversionista el mismo día de la solicitud de retiro y el saldo restante a más tardar al día siguiente una vez se determine el valor de la unidad aplicable el día de la causación del retiro.
+
+Cláusula 4.6. Suspensión de las redenciones
+
+Cláusula 4.6.1. De la asamblea de inversionistas
+
+La asamblea de inversionistas podrá aprobar la suspensión de la redención de participaciones, entendiéndose como tal la facultad otorgada a la sociedad administradora para no realizar la redención de participación por un periodo determinado, cuando se presenten solicitudes de redención y por efectos del mercado y de la composición del Fondo, Alianza Fiduciaria no encuentre viable la venta de los activos que componen el Fondo, en especial los eventos definidos en la cláusula 2.4.3 del presente reglamento, ni tampoco el realizar operaciones de reporto para atender los retiros en un plazo que no exceda los 15 días comunes.
+
+Para este fin, deberá citarse y celebrarse asamblea de inversionistas, de conformidad con las reglas señaladas en la cláusula 10.3 del presente reglamento. De aceptar esta medida la asamblea de suscriptores deberá determinar el periodo por el cual se suspenderán las redenciones y el procedimiento para su restablecimiento. Esta decisión, junto con sus fundamentos, el periodo de suspensión y el procedimiento para restablecer las redenciones, deberá ser informada de manera inmediata a través del sitio web de la sociedad administradora y por escrito a la Superintendencia Financiera de Colombia.
+
+Cláusula 4.6.2. De la Junta Directiva
+
+En concordancia con los artículos 3.1.1.7.3 y 3.1.1.9.5, literal f), numeral 4, del Decreto 2555 de 2010 y lo previsto en el numeral 2.3 del Capítulo III, Título VI de la Parte III de la Circular Externa 029 de 2014, la junta directiva podrá autorizar la suspensión de redenciones de participaciones del Fondo cuando: i) se presenten situaciones de crisis o ii ) se presenten eventos sobrevinientes o inesperados en los cuales no sea posible cumplir con los términos necesarios para convocar a la asamblea de inversionistas.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 29 de 54
+`
+
+### Página 30
+
+**Título Inferido:** Capítulo V. Valoración del Fondo y las participaciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de Alianza Fiduciaria, compuesto por un triángulo azul y verde, acompañado del nombre de la empresa y el lema 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* N/A
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical en el margen inferior izquierdo: 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+En todo caso, previo a la Junta Directiva en la que se decrete la suspensión de las redenciones de participación, la administración de la Sociedad Administradora preparará a la Junta Directiva un informe que sustente técnica y económicamente la proposición presentada para consideración de la Junta Directiva.
+
+La decisión que tome la Junta Directiva respecto a la suspensión de las redenciones de participación se informará de manera inmediata a la Superintendencia Financiera de Colombia, sustentando técnica y económicamente la decisión adoptada en beneficio de los inversionistas. Así mismo, la decisión se informará de manera inmediata, clara y precisa a los inversionistas, a través de publicación en la página web de la sociedad administradora, www.alianza.com.co o de correo electrónico a las direcciones registradas.
+
+Cláusula 4.7 Otros medios electrónicos para redención de Participaciones
+
+El inversionista que así lo establezca podrá solicitar la tarjeta virtual Alianza provista y aprobada por Alianza Fiduciaria para el Fondo.
+
+Las condiciones de uso y manejo de la misma se encuentran establecidas en el documento denominado” Términos y Condiciones de la Tarjeta Alianza”, el cual se encuentra en la página web www.alianza.com.co, tiene por objeto establecer las reglas de utilización de la citada tarjeta en el Fondo Abierto Alianza.
+
+Capítulo V. Valoración del Fondo y las participaciones
+
+Cláusula 5.1. Valor inicial de la unidad
+
+El valor inicial de cada unidad fue aquella que rigió para el día del inicio de operaciones de este Fondo cuando se denominaba fondo común ordinario, por la suma de $1.000
+
+Parágrafo Primero: A partir de la entrada en vigencia del presente reglamento los valores de unidad serán diferentes según la clase de participación. El valor de la unidad t-1 será el valor de unidad vigente para el día anterior a la entrada en vigencia, por lo tanto, igual para todos los tipos de participación y se constituye como el valor inicial de cada participación.
+
+Parágrafo Segundo: Los inversionistas podrán realizar solicitudes de redención de sus participaciones dentro de los horarios establecidos por la sociedad administradora en la página web www.alianza.com.co. Las solicitudes recibidas después de dicho horario se entenderán presentadas al día hábil siguiente.
+
+No obstante, cuando las redenciones, pagos o transferencias se efectúen mediante la funcionalidad de transferencias inmediatas, dichas las operaciones podrán verse reflejadas el mismo día en que sean realizadas, o el día calendario siguiente si el fondo se encuentra en proceso de cierre.
+
+Para efectos de este reglamento, se entiende por proceso de cierre, el conjunto de tareas y actividades que realiza diariamente la sociedad administradora del Fondo, tendientes a determinar el valor de la unidad del Fondo en el día t, que incluyen (i) el cálculo del valor del pre-cierre del tipo de participación al cierre del día t, (ii) el cálculo del valor de la unidad del tipo
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 30 de 54
+`
+
+### Página 31
+
+**Título Inferido:** Cláusula 5.2. Valor total y valor de unidad de las participaciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad financiera en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo compuesto por colores azul claro, azul oscuro y verde.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia y control de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical ubicado en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+de participación al cierre del día t, (iii) el cálculo del número de unidades del tipo de participación al cierre del día t, (iv) el cálculo del valor de cierre del tipo de participación al cierre del día t y (v) el nuevo valor del fondo.
+Cláusula 5.2. Valor total y valor de unidad de las participaciones
+El valor de cierre de cada tipo de participación estará dado por el resultado de multiplicar, el número de unidades del tipo de participación al cierre del día, por su valor de unidad al cierre del mismo día.
+El valor de unidad de cada tipo de participación al cierre del día será calculado teniendo en cuenta el valor del cierre del tipo de participación al final del día anterior, los rendimientos netos (ingresos –gastos comunes entre las participaciones) del fondo distribuibles a prorrata entre los tipos de participación, y los gastos atribuibles exclusivamente a cada tipo de participación.
+Los tipos de participación tendrán valores de unidad diferentes dependiendo de la comisión de administración aplicable para cada uno de estos. El valor de la unidad inicial será el mismo para todos los tipos de participación (Vr Unidad T-1), y será diferencial a partir de T0.
+1. Cálculo del valor del precierre del tipo de participación al cierre del día t
+El valor de precierre de cada participación se calculará a partir del valor neto o de cierre de operaciones del tipo de participación del día anterior, adicionando los rendimientos netos (Ingresos – gastos comunes) del fondo distribuidos al tipo de participación durante el día, menos los gastos atribuibles exclusivamente al tipo de participación. Este cálculo se observa en la siguiente fórmula:
+PCFnt = VFCn(t-1) + RDnt
+Donde:
+PCFnt = Valor del precierre de la participación “n” al cierre del día t
+VFCn(t-1) = Valor del tipo de participación “n” al cierre del día t-1
+RDnt = Rendimientos netos (Ingresos – Gastos comunes del fondo – Gastos de la participación) del tipo de participación “n” en el día t
+n = tipos de participación definidos en la Cláusula 4.1.2.
+2. Cálculo del valor de la unidad del tipo de participación al cierre del día t
+El valor de unidad del tipo de participación al cierre del día t se calculará dividiendo el valor del precierre del día entre el número de unidades del tipo de participación al cierre del día t – 1.
+VUOnt = PCFnt / NUCn(t-1)
+Donde:
+VUOnt = Valor de unidad del tipo de participación “n” al cierre del día t
+PCFnt = Valor del precierre de la participación “n” al cierre del día t
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 31 de 54
+`
+
+### Página 32
+
+**Título Inferido:** Cálculo del número de unidades y valor de cierre del tipo de participación
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad financiera Alianza Fiduciaria.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda. Consiste en un isotipo de un triángulo compuesto por colores azul y verde, seguido del nombre de la empresa y su eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto en orientación vertical (rotado 90 grados) en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+NUCn(t-1) = Número de unidades del tipo de participación “n” al cierre del día t – 1
+
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+En caso de que un tipo de participación quede sin inversionista, su valor de la unidad quedará en ceros. Si transcurrido un tiempo ingresan inversionistas al tipo de participación y éste se reactiva, su valor de unidad iniciará en diez mil pesos moneda corriente ($10.000), tal y como se establece en el numeral 1.1.4.2, Capítulo XI de la Circular Básica Contable y Financiera.
+
+3. Cálculo del número de unidades del tipo de participación al cierre del día t
+
+El número de unidades del tipo de participación al cierre del día t será igual al número de unidades al cierre del día anterior, más el número de unidades que se adicionen por las partidas activas del día t, menos las unidades que salgan del fondo por las partidas pasivas del día t.
+
+NUCnt = NUCn(t-1) + (Partidas activas – Partidas Pasivas) / VUOnt
+
+Donde:
+
+NUCnt = Número de unidades del tipo de participación “n” al cierre del día t
+NUCn(t-1) = Número de unidades del tipo de participación “n” al cierre del día t – 1
+VUOnt = Valor de unidad del tipo de participación “n” al cierre del día t
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+4. Cálculo del valor de cierre del tipo de participación al cierre del día t:
+
+El valor de cierre del tipo de participación al final del día t se calculará multiplicando el valor de la unidad y el número de unidades del tipo de participación al cierre del día t.
+
+VFCnt = VUOnt * NUCnt
+
+Donde:
+
+VFCnt = Valor de cierre del tipo de participación “n” al cierre del día t
+VUOnt = Valor de unidad del tipo de participación “n” al cierre del día t
+NUCnt = Número de unidades del tipo de participación “n” al cierre del día t
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+Cláusula 5.3. Valor del fondo
+
+El valor neto del fondo al cierre del día t será igual a la sumatoria del valor de cada tipo de participación establecido en la cláusula 4.1 (Vinculación y clases de participaciones) del presente Reglamento. Este valor será calculado con la siguiente fórmula:
+
+VF = Σ_{i=1}^{n} VFCnt
+
+Donde:
+
+VF = Valor del fondo al cierre del día t
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 32 de 54
+`
+
+### Página 33
+
+**Título Inferido:** Capítulo VI. Gastos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa administradora del fondo.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda. Consiste en un isotipo de un triángulo compuesto por secciones azul y verde, seguido del nombre de la empresa y su eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora estatal.
+- *Metadata Visual:* Texto dispuesto en orientación vertical (rotado 90 grados) en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+VFCnt = Valor de cierre del tipo de participación N al cierre del día t
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+Todos los activos que hagan parte del Fondo de Inversión Colectiva deberán ser objeto de valoración o valuación de acuerdo con la metodología, parámetros y lineamientos establecidos en el Capítulo I – 1 de la Circular Básica Contable y Financiera 100 de 1995, en concordancia con lo establecido en el capítulo IV, título IV, parte III de la Circular Básica Jurídica, bajo el esquema de la proveeduría de precios para valoración.
+
+Cláusula 5.4. Periodicidad de la valoración
+La valoración del Fondo y sus participaciones se efectuará diariamente de conformidad con el Capítulo XI de la Circular Básica Contable y Financiera (Circular Externa 100 de 1995), por lo que los rendimientos de ésta se liquidarán y abonarán con la misma periodicidad.
+
+Capítulo VI. Gastos
+
+Cláusula 6.1. Gastos
+Estarán a cargo del Fondo Abierto Alianza los siguientes gastos:
+1. El costo del contrato de depósito de valores que componen el portafolio del fondo.
+2. El costo de contrato de custodia de los valores que componen el Fondo.
+3. La remuneración de la sociedad administradora.
+4. Los honorarios y gastos en que se incurra para la defensa del Fondo cuando las circunstancias lo exijan.
+5. El valor de los seguros y amparos de los activos del Fondo, distintos a la póliza que trata la cláusula 1.7. del presente reglamento.
+6. Los gastos bancarios que se originen en el depósito y transferencia de los recursos del Fondo así como los originados en las operaciones, compra y venta de valores.
+7. Los gastos en que se incurra para la citación y celebración de las asambleas de los inversionistas.
+8. Los tributos que graven directamente los valores, los activos o los ingresos del Fondo.
+9. Los honorarios y gastos causados por la revisoría fiscal del Fondo y los relativos a gastos causados por la auditoría externa, cuando la asamblea haya establecido su contratación.
+10. Los gastos totales que ocasione el suministro de información a los inversionistas o a los beneficiarios, tales como extractos, rendiciones de cuenta, publicaciones, impresos publicitarios, formas de papelería para la operación del Fondo, correo directo, procesamiento y transmisión de la información.
+11. Los gastos bancarios como chequeras, plataformas informativas y transaccionales que permitan mantener una adecuada red de cobertura a todos los inversionistas.
+12. Los costos y gastos que se deriven con ocasión del numeral 4.7 de este reglamento asociados a los pagos de los proveedores que prestan la infraestructura de la operación de la Tarjeta Alianza como canal de redención de participaciones del Fondo, los cuales
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 33 de 54
+`
+
+### Página 34
+
+**Título Inferido:** Cláusula 6.2. Comisión por administración
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Encabezado del documento con el logo de la empresa y datos de contacto.
+- *Metadata Visual:* Logo en la esquina superior izquierda, datos de contacto en la esquina superior derecha.
+- *Datos Observados:* Logo de Alianza Fiduciaria, texto 'Alianza Fiduciaria', 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'. Teléfono: (601) 6447700, Dirección: Cr. 15 82-99, Bogotá, Colombia.
+
+**Elemento 2 (tabla):**
+- *Descripción:* Tabla que detalla la comisión por administración y desempeño según el tipo de participación, rango de saldo y condicionamiento.
+- *Metadata Visual:* Tabla con 6 columnas: Tipos de Participación, Descripción, Rango, Comisión Admin, Condicionamiento, Comisión de desempeño.
+- *Datos Observados:* Tipos de Participación: A, B. Descripción: Personas naturales, jurídicas y fideicomisos (PNJF). Rango: Saldo mínimo <= saldo <= $50 MM, $50 MM < saldo <= $200 MM. Comisión Admin: 2,35%, 2,15%. Condicionamiento: TB <= T.I.B.R, TB > T.I.B.R y <= 1,1 veces T.I.B.R, TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR, TB > 1,5 veces T.I.B.R. Comisión de desempeño: 0.00%, 10% sobre exceso, 15% sobre exceso, 20% sobre exceso.
+
+**Elemento 3 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto en orientación vertical en el margen izquierdo inferior.
+- *Datos Observados:* Texto vertical: 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+comprenden:
+i. Los costos de procesamiento transaccional generados por las franquicias de las tarjetas para el funcionamiento de la tarjeta.
+ii. Los costos de infraestructura tecnológica de conexión con el procesador de pagos, necesarios para garantizar la disponibilidad del servicio.
+iii. Los costos de las billeteras digitales asociados al funcionamiento transaccional.
+13. Los correspondientes al pago de comisiones relacionados con la adquisición o enajenación de activos y la realización de operaciones, así como la participación en sistemas de negociación.
+14. Los intereses y demás rendimientos financieros que deban cancelarse por razón de operaciones de reporto o repo, simultáneas y transferencias temporales de valores y para el cubrimiento de los costos de operaciones de crédito que se encuentren autorizadas y en general los gastos en que se incurra por concepto de coberturas.
+15. Los asociados al proceso de calificación del Fondo, así como del proceso de revisión de la misma.
+16. Los gastos en que se incurra para la valoración del portafolio del Fondo.
+17. El costo del archivo físico y magnético relacionado con el Fondo.
+18. Los gastos asociados a operaciones con derivados para fines de cobertura
+
+Parágrafo Primero: Los costos y gastos asociados a servicios bancarios especializados tales como, consignaciones en otras plazas, recaudos referenciados, así como costos y gastos asociados a gestiones particulares que deba realizar la Sociedad Administradora tales como, regularizaciones, activaciones, entre otros, serán asumidos únicamente por aquel inversionista que sea usuario de este tipo de servicio bancario, de acuerdo con el tarifario que estará a disposición de los inversionistas del Fondo en la página web de la Sociedad Administradora. La Sociedad Administradora está autorizada para descontar de los recursos del inversionista la tarifa correspondiente.
+
+Cláusula 6.2. Comisión por administración
+
+La Sociedad Administradora percibirá como beneficio del Fondo Abierto Alianza, una comisión previa y fija efectiva anual descontada diariamente, calculada con base en el valor neto o del patrimonio del respectivo Fondo del día anterior. La comisión por administración será diferencial dependiendo de la clasificación del inversionista, de acuerdo con la siguiente tabla:
+
+Tipos de Participación
+Descripción
+Rango
+Comisión Admin
+Condicionamiento
+Comisión de desempeño
+A
+Personas naturales, jurídicas y fideicomisos (PNJF)
+Saldo mínimo <= saldo <= $50 MM
+2,35%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+B
+$50 MM < saldo <= $200 MM
+2,15%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 34 de 54
+`
+
+### Página 35
+
+**Título Inferido:** Comisiones por tipo de participación y fórmula de cálculo
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad financiera en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo azul y verde, texto corporativo.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (tabla):**
+- *Descripción:* Tabla detallada que especifica las comisiones cobradas por el fondo dependiendo del tipo de participación, el perfil del inversionista, el rango de saldo invertido, la tarifa base y una comisión variable basada en el desempeño del portafolio (TB) frente a la tasa de intervención (T.I.B.R).
+- *Metadata Visual:* Tabla con celdas combinadas para perfiles y condiciones de desempeño. 6 columnas implícitas, múltiples filas por tipo de participación.
+- *Datos Observados:* Tipos: C, D, E, I, CA, CB, CC, CD, P, F, M, O. Saldos desde $200 MM hasta > $20.000 MM. Tarifas base desde 0.00% hasta 2.00%. Comisiones sobre exceso: 0.00%, 10%, 15%, 20%.
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+C
+$200 MM < saldo <= $1.000 MM
+2,00%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+
+D
+$1.000 MM < saldo <= $10.000 MM
+1,65%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+
+E
+saldo > $10.000 MM
+1,05%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+
+I
+Inversionistas profesionales y entidades vigiladas por la SFC
+saldo >= saldo mínimo
+0,75%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+TB > 1,1 veces T.I.B.R
+
+CA
+Saldo mínimo <= saldo <= $5.000 MM
+1,52%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+
+CB
+Personas jurídicas con ventas > $50.000 MM (Corporativos) y sus vinculados económicos
+$5.000 MM < saldo <= $10.000 MM
+1,27%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+10% sobre exceso
+TB > 1,1 veces T.I.B.R y <= 1,5 veces TIBR
+15% sobre exceso
+TB > 1,5 veces T.I.B.R
+20% sobre exceso
+
+CC
+$10.000 MM < saldo <= $20.000 MM
+1,02%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+TB > 1,1 veces T.I.B.R
+
+CD
+saldo > $20.000 MM
+0.75%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+TB > 1,1 veces T.I.B.R
+
+P
+Portafolios de inversión del Fondo de Pensiones Visión
+saldo >= saldo mínimo
+1.00%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,3 veces T.I.B.R
+10% sobre exceso
+TB > 1,3 veces T.I.B.R
+15% sobre exceso
+
+F
+FICS administrados por Alianza Fiduciaria
+saldo >= saldo mínimo
+0.00%
+NA
+0.00%
+
+M
+Personas naturales vinculadas laboralmente a las compañías del grupo Alianza.
+saldo >= saldo mínimo
+0.50%
+NA
+0.00%
+
+O
+Cuentas ómnibus
+saldo >= saldo mínimo
+1.75%
+TB <= T.I.B.R
+0.00%
+TB > T.I.B.R y <= 1,1 veces T.I.B.R
+TB > 1,1 veces T.I.B.R
+
+TB: Tasa bruta del portafolio
+T.I.B.R: Tasa de Intervención del Banco de la República
+
+La rentabilidad bruta del portafolio corresponde a los rendimientos generados por las inversiones admisibles más aquellos que se generen por la realización de operaciones de que tratan las cláusulas 2.4.1 y 2.4.2 y 2.5 del presente reglamento.
+
+Cláusula 6.2.1. Fórmula para el cálculo de comisiones de acuerdo al tipo de participación
+
+Con el objetivo de determinar el valor de la comisión para cada tipo de participación la sociedad administradora realizará el siguiente cálculo:
+
+CAn= (VNF t-1)n * [((1 + in% E.A.)^(1/365)) – 1]
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+Página 35 de 54
+`
+
+### Página 36
+
+**Título Inferido:** Capítulo VII. De la sociedad administradora - Funciones y Obligaciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa Alianza Fiduciaria ubicado en el encabezado superior izquierdo.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde, acompañado del nombre de la empresa y su eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia y control de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Dónde:
+
+CAn = Valor de la Comisión de Administración de cada tipo participación calculado diariamente
+
+n = tipos de participación definidos en la Cláusula 4.1.2.
+
+(VNF t-1)n = Valor Neto del Fondo al cierre de operaciones del día anterior para cada tipo de participación definido en la Cláusula 4.1.2.
+
+in% = Valor del porcentaje de comisión cobrado a cada tipo de participación
+
+Cláusula 6.3. Criterios para la selección y remuneración de los intermediarios
+
+Al momento de elegir los intermediarios con los cuales la sociedad administradora realizará operaciones a nombre del fondo se tendrán en cuenta los siguientes criterios:
+
+1. Cupos de contraparte vigentes aprobados por la Junta Directiva
+2. Criterio de ejecución del encargo, mejor precio obtenido para el fondo.
+
+Capítulo VII. De la sociedad administradora
+
+Cláusula 7.1. Funciones y Obligaciones
+
+La sociedad administradora deberá cumplir, además de los deberes establecidos en la normatividad vigente, las siguientes obligaciones:
+
+1. Consagrar su actividad de administración exclusivamente en favor de los intereses de los inversionistas o de los beneficiarios designados por ellos.
+2. Entregar la custodia de los valores que integran el portafolio del fondo de inversión colectiva administrado a una sociedad de las mencionadas en el artículo 2.22.2.1.1 del decreto 2555 de 2010, así como, suministrar al custodio la información necesaria para la correcta ejecución de las funciones de custodia.
+3. Identificar, medir, gestionar y administrar el riesgo del Fondo;
+4. Realizar la salvaguarda y el ejercicio de derechos patrimoniales de los activos diferentes a valores que hagan parte del portafolio del Fondo;
+5. Efectuar la valoración del portafolio del Fondo y sus participaciones, de conformidad con las instrucciones impartidas por la Superintendencia Financiera de Colombia.
+6. Ejercer oportunamente los derechos patrimoniales de los activos del fondo de inversión colectiva, cuando estos sean diferentes a valores entregados en custodia.
+7. Llevar la contabilidad del Fondo separada de la propia o la de otros negocios por ella administrados, de acuerdo con las reglas que sobre el particular establezca la Superintendencia Financiera de Colombia;
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 36 de 54
+`
+
+### Página 37
+
+**Título Inferido:** Obligaciones de la Sociedad Administradora (Continuación)
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la empresa Alianza Fiduciaria, compuesto por un triángulo azul y verde claro, seguido del nombre de la empresa y su eslogan.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página, junto a una línea vertical.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+8. Establecer y mantener actualizados los mecanismos de suministro de información del Fondo, en los términos de las normas aplicables y las instrucciones impartidas por la Superintendencia Financiera de Colombia;
+9. Verificar el envío oportuno de la información que la sociedad administradora debe remitir a los inversionistas y a la Superintendencia Financiera de Colombia, y que el contenido de la misma cumpla con las condiciones establecidas por la Superintendencia;
+10. Asegurar el mantenimiento de la reserva de la información que conozca con ocasión de la actividad de administración del Fondo, y adoptar políticas, procedimientos y mecanismos para evitar el uso indebido de información privilegiada o reservada relacionada con el Fondo, sus activos, estrategias, negocios y operaciones, sin perjuicio del cumplimiento de los deberes de información a la Superintendencia Financiera de Colombia;
+11. Garantizar la independencia de funciones y del personal responsable de la actividad de administración del Fondo;
+12. Capacitar a todas las personas vinculadas contractualmente con la entidad que participan en el funcionamiento o fuerza de ventas del Fondo.
+13. Vigilar que el personal vinculado a la sociedad administradora del Fondo cumpla con sus obligaciones en la administración del Fondo, incluyendo las reglas de gobierno corporativo, conducta y las demás establecidas en los manuales de procedimiento de la sociedad administradora.
+14. Informar a la Superintendencia financiera, los hechos o situaciones que impidan el normal desarrollo del Fondo o su liquidación, o el adecuado cumplimiento de sus funciones como administrador de las mismas. Dicho aviso deberá darse de manera inmediata a la ocurrencia del hecho, a la fecha en que tuvo o debió haber tenido conocimiento del mismo.
+15. Presentar a las asambleas de inversionistas, cuando haya lugar a ello, toda la información necesaria que permita establecer el estado del Fondo. En todo caso, como mínimo deberán presentarse los estados financieros básicos, la descripción general del portafolio, la evolución del valor de las participaciones, la evolución del valor del Fondo y de la participación de cada inversionista dentro del mismo.
+16. Adoptar medidas de control y reglas de conducta necesarias, apropiadas y suficientes, que se orienten a evitar que el Fondo pueda ser utilizado como instrumento para el ocultamiento, manejo, inversión o aprovechamiento en cualquier forma de dineros u otros bienes provenientes de actividades delictivas, o para dar apariencia de legalidad a las actividades delictivas o a las transacciones y recursos vinculados con las mismas;
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 37 de 54
+`
+
+### Página 38
+
+**Título Inferido:** Reglamento Fondo Abierto - Facultades y Derechos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de la empresa Alianza Fiduciaria, con el texto 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Metadata Visual:* Logo corporativo en la esquina superior izquierda.
+- *Datos Observados:* N/A
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello vertical que indica 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Metadata Visual:* Texto vertical en el margen inferior izquierdo.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+17. Contar con manuales de control interno, gobierno corporativo incluyendo el código de conducta, y los demás manuales necesarios para el cumplimiento de las normas vigentes;
+
+18. Abstener de efectuar prácticas discriminatorias o inequitativas entre los inversionistas del Fondo, sin perjuicio de lo establecido en el artículo 3.1.1.6.5 del Decreto 2555 de 2010.
+
+19. Ejercer los derechos políticos inherentes a los valores administrados colectivamente, de conformidad con las políticas que defina la Junta Directiva excepto en que haya delegado dicha obligación en el custodio de valores contratado para el Fondo.
+
+20. Cumplir con las políticas, directrices, mecanismos y procedimientos que señale la Junta Directiva de la Sociedad Administradora para la actividad de administración del Fondo.
+
+21. Identificar, controlar y gestionar las situaciones generadoras de conflictos de interés en la actividad de administración del Fondo según las reglas establecidas en las normas aplicables y las directrices señaladas por la Junta Directiva de la sociedad administradora;
+
+22. Entregar oportunamente a la Superintendencia Financiera de Colombia y al Autorregulador del Mercado de Valores la información que para el cumplimiento de sus funciones requieran acerca de la administración del Fondo;
+
+23. Ejercer supervisión permanente sobre el personal vinculado a la administración del Fondo;
+
+24. Cumplir a cabalidad con los demás aspectos necesarios para la adecuada administración del Fondo.
+
+25. Las demás que establezca las normas aplicables.
+
+26. Abstenerse de realizar las actividades enunciadas en todos los numerales del artículo 3.1.1.10.1. del decreto 2555 de 2010.
+
+Cláusula 7.2. Facultades y Derechos
+
+Además de las consagradas en el presente reglamento y en las normas vigentes, son facultades de la sociedad administradora:
+
+1. Convocar a la asamblea de inversionistas.
+
+2. Reservarse el derecho de admisión al Fondo y autorizar o no la cesión de unidades y derechos.
+
+3. Exigir el pago de la remuneración por administración del Fondo.
+
+4. Solicitar la información que estime necesaria al inversionista.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 38 de 54
+`
+
+### Página 39
+
+**Título Inferido:** Capítulo VIII. Del custodio de Valores
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la empresa Alianza Fiduciaria, compuesto por un triángulo azul y verde claro, junto con el nombre de la entidad y su eslogan corporativo.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana, indicando que la institución está bajo la supervisión de la Superintendencia Financiera.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+5. Modificar el presente reglamento de conformidad con las normas vigentes, y de acuerdo con lo establecido en el presente reglamento para el efecto.
+6. Terminar unilateralmente la relación jurídica existente con cualquier inversionista del Fondo, si a su juicio aquel está utilizando el Fondo, o pretende hacerlo, para la realización de cualquier actividad ilícita.
+7. Las demás establecidos en este reglamento.
+
+Cláusula 7.3. Metodología de cálculo de la remuneración y forma de pago
+
+La Sociedad percibirá una comisión de administración calculada de acuerdo con lo establecido en la cláusula 6.2, la cual se cobrará a los inversionistas de manera diaria. Esta comisión se pagará por medio de transferencia desde las cuentas de fondo a la cuenta de la Sociedad establecida para ello, por lo menos una vez al mes.
+
+Capítulo VIII. Del custodio de Valores
+
+Cláusula 8.1. Activos Locales
+
+La sociedad fiduciaria contrató a la sociedad Cititrust Colombia S.A. para ejercer la actividad de custodia de valores del Fondo. Dicha sociedad fue contratada para prestar el servicio por autorización de la Junta Directiva. La información asociada a la designación del custodio estará a disposición de los inversionistas del Fondo en la página web de la Sociedad Administradora (www.alianza.com.co).
+
+Cláusula 8.1.1. Funciones y obligaciones
+
+Cláusula 8.1.1.1. Funciones:
+
+En ejercicio de la actividad de custodio de valores de acuerdo con la Parte 2 del Decreto 2555 de 2010 el custodio contratado por la Sociedad Administradora prestará las siguientes funciones al Fondo:
+
+1. Salvaguarda de valores.
+2. Compensación y liquidación de operaciones.
+3. Administración de derechos patrimoniales
+
+Cláusula 8.1.1.2. Obligaciones
+
+En ejercicio de la actividad de custodia valores de acuerdo con la Parte 2 del Decreto 2555 de 2010 el custodio deberá cumplir con las siguientes obligaciones:
+
+1. Asegurarse de realizar las anotaciones en cuenta de los derechos sobre los valores cuya custodia se encomienda a nombre del Fondo.
+2. Contar con políticas, procedimientos y mecanismos necesarios para garantizar una adecuada ejecución de la actividad de valores.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 39 de 54
+`
+
+### Página 40
+
+**Título Inferido:** Capítulo IX. Distribución y Obligaciones del Custodio
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad fiduciaria ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde con el nombre de la empresa.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto en orientación vertical ubicado en el margen inferior izquierdo.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+3. Identificar, medir, controlar y gestionar los riesgos propios de la actividad de custodia de valores por medio del desarrollo y mantenimiento de sistemas adecuad de control interno y de identificación, medición, control y gestión de riesgos.
+4. Verificar el cumplimiento de las instrucciones impartidas por la Sociedad Administradora en nombre del Fondo en relación con los valores objeto de custodia. En ningún caso podrá disponer de los valores sin que medie la instrucción previa y expresa de la Sociedad Administradora así como la validación de la misma.
+5. Todas las demás estipuladas en el artículo 2.22.2.1.4 del Decreto 2555 de 2010.
+6. Otras obligaciones especiales establecidas en el artículo 2.22.2.1.5 del Decreto 2555 de 2010
+
+Cláusula 8.2. Facultades y derechos:
+Las facultades y derechos del custodio serán establecidas en el contrato que se suscriba entre la Sociedad Administradora y el respectivo Custodio.
+
+Cláusula 8.3. Metodología de cálculo de la remuneración y forma de pago
+La Sociedad Fiduciaria estableció con el custodio para el ejercicio de las funciones descritas en la cláusula 8.1.1.1 una remuneración por la prestación de los servicios a cargo del Fondo. Esta remuneración tendrá dos componentes establecidos de acuerdo al tamaño de los activos bajo custodia y un costo por compensación y liquidación de operaciones.
+
+Cláusula 8.3.1 Costo por activos custodiados:
+La sociedad que presta los servicios de custodia del fondo recibirá una remuneración a cargo del fondo de acuerdo al volumen de activos que tenga en custodia. Este costo se realizará con base en el contrato suscrito entre el custodio y la sociedad administradora.
+
+Cláusula 8.3.2. Costo por Compensación y liquidación de operaciones
+La sociedad que presta los servicios de custodia del fondo recibirá una remuneración a cargo del fondo por concepto de la compensación y liquidaciones de las operaciones que realice, el cobro se realiza por el tipo de operación y por la cantidad de operaciones realizadas en el periodo, todo de conformidad con lo pactado en el contrato suscrito entre la sociedad administradora y la sociedad que preste los servicios de custodia.
+
+Capítulo IX. Distribución
+
+Cláusula 9.1. Medios de distribución del Fondo
+Los medios autorizados para la distribución del Fondo son aquellos descritos en el Capítulo III, Cláusula 3.4.
+
+Cláusula 9.2. Distribuidor especializado del Fondo y cuenta Ómnibus
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 40 de 54
+`
+
+### Página 41
+
+**Título Inferido:** Cláusula 9.2.1. Distribuidor especializado
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa Alianza Fiduciaria, compuesto por un triángulo azul y verde claro, seguido del nombre de la empresa y su eslogan.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+Cláusula 9.2.1. Distribuidor especializado
+
+El Fondo podrá ser distribuido de manera especializada, a través de cuentas ómnibus administradas por una sociedad administradora de fondos de inversión colectiva diferente de la sociedad administradora del Fondo, de acuerdo con lo establecido en el artículo 3.1.4.2.1. del Decreto 2555 de 2010.
+
+Para tales efectos, se suscribirá entre la Sociedad Administradora y el Distribuidor Especializado un contrato que regulará la relación entre ellos, en cumplimiento de lo establecido en la Parte III Título VI Capítulo V de la Circular Básica Jurídica y el Decreto 2555 de 2010. El mencionado Distribuidor Especializado deberá, previo al ofrecimiento de las Cuentas Ómnibus, obtener la aprobación por parte de la Superintendencia Financiera de Colombia del reglamento marco de funcionamiento de dichas cuentas ómnibus, el cual regulará las relaciones entre el Distribuidor Especializado y los Inversionistas, y deberá tener el contenido mínimo señalado en el numeral 5 del Capítulo V del Título VI de la Parte III de la Circular Básica Jurídica de la Superintendencia Financiera de Colombia.
+
+Los distribuidores especializados del Fondo deberán cumplir las obligaciones establecidas en el Artículo 3.1.4.2.3. del Decreto 2555 de 2010.
+
+Cláusula 9.2.2. Cuenta Ómnibus
+
+Serán cuentas administradas por el distribuidor especializado, bajo la cual se agruparán uno o más inversionistas registrados previamente ante dicha entidad, con el fin de que el distribuidor actúe en nombre propio y por cuenta de ellos. La identidad de los inversionistas finales únicamente será conocida por el distribuidor especializado.
+
+Un mismo distribuidor podrá administrar diferentes cuentas ómnibus para hacer parte de distintos fondos de inversión colectiva, cuentas éstas que a su vez no podrán incluir como inversionistas a otras cuentas ómnibus.
+
+Cláusula 9.3. Debida atención al inversionista
+
+La fuerza de ventas se compone de los sujetos promotores vinculados a la sociedad administradora o al distribuidor especializado por cualquier medio, para desarrollar la distribución del fondo. Vinculación que podrá realizarse directamente con las personas naturales denominados sujetos promotores o indirectamente a través de personas jurídicas con las cuales se celebre un contrato con dicho objeto, de acuerdo con lo establecido en el Artículo 3.1.4.3.1. del Decreto 2555 de 2010.
+
+La fuerza de ventas de la sociedad administradora, el distribuidor especializado (en que caso que exista) y el prestador de los contratos de uso de red, prestaran la debida atención al inversionista durante las etapas de promoción, vinculación, vigencia y redención de la participación en el Fondo.
+
+El deber de atención debe ser cumplido en todos los casos por medio de un profesional debidamente autorizado por la sociedad administradora y contar con las certificaciones
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 41 de 54
+`
+
+### Página 42
+
+**Título Inferido:** Mecanismos de atención al inversionista
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de la empresa Alianza Fiduciaria, indicando que es una empresa de la Organización Delima.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde, seguido del texto 'Alianza Fiduciaria' y el eslogan.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical en el margen izquierdo inferior.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+emitidas por el autorregulador del mercado de valores (AMV) correspondientes para el efecto e inscrito en el RNPMV, con independencia del medio empleado para la distribución del Fondo de Inversión Colectiva.
+
+Los mecanismos a través de los cuales se facilitará el acceso oportuno y adecuado a la debida atención serán los siguientes:
+
+1. En la etapa de promoción, quien realiza la promoción deberá identificarse como promotor de la Sociedad Administradora, entregar y presentar a los potenciales inversionistas toda la información necesaria y suficiente para conocer las características y los riesgos del Fondo, evitar hacer afirmaciones que puedan conducir a apreciaciones falsas, engañosas o inexactas sobre el fondo de inversión colectiva, su objetivo de inversión, el riesgo asociado, gastos, o cualquier otro aspecto, así como verificar que el inversionista conozca, entienda y acepte el prospecto del fondo de inversión colectiva. Esta obligación deberá constar en el contrato que suscriba la sociedad administradora con el Distribuidor Especializado, y en general en los contratos que suscriba con quienes realizan la promoción y distribución del Fondo, de acuerdo con lo establecido en este reglamento.
+
+2. En la etapa de vinculación, el reglamento del fondo estará a disposición del inversionista en la página web de la Sociedad Administradora www.alianza.com.co, y quien realice la promoción del Fondo conforme a este reglamento, deberá (i) remitir las órdenes de constitución de participaciones a la Sociedad Administradora en forma diligente y oportuna, (ii) entregar al inversionista los documentos Representativos de participación en el Fondo, (iii) e indicar los diferentes mecanismos de información del mismo, todo de conformidad con el presente reglamento y la normatividad aplicable vigente.
+
+3. Durante la vigencia de la inversión en el fondo, el distribuidor debe contar con los recursos apropiados para atender en forma oportuna las consultas, solicitudes y quejas que sean presentadas por el inversionista.
+
+4. En la etapa de redención de la participación en el fondo de inversión colectiva, el distribuidor, deberá dar traslado oportuno a la sociedad administradora de las solicitudes de redención de participaciones, y conforme a la información que le entregue la sociedad administradora, deberá indicar al Inversionista la forma en que se realizó el cálculo para determinar el valor de los recursos a ser entregados al inversionista.
+
+Lo dispuesto en la presente Cláusula no corresponde al desarrollo de la actividad de asesoría prevista en el Libro 40 de la Parte 2 del Decreto 2555 de 2010.
+
+Parágrafo Primero: La Sociedad Administradora pone a disposición de los inversionistas del Fondo los siguientes canales habilitados para proporcionar la debida atención al inversionista: el correo electrónico servicioalcliente@alianza.com.co, las líneas telefónicas y las oficinas a nivel nacional disponibles en https://www.alianza.com.co/oficinas o podrá comunicarse directamente con su asesor comercial.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 42 de 54
+`
+
+### Página 43
+
+**Título Inferido:** Cláusula 9.4. Deber de asesoría
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de la empresa Alianza Fiduciaria, con el lema 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Metadata Visual:* Logo en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical en el margen izquierdo inferior.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Cláusula 9.4. Deber de asesoría
+
+En cumplimiento a las disposiciones establecidas en el numeral 2.2.3 de la Parte III, Título II, Capítulo IV de la Circular Básica Jurídica y en el Decreto 2555 de 2010 en relación con la clasificación de productos, el Fondo fue categorizado como un “Producto Simple” de acuerdo con la metodología del Manual de Asesoría aprobado por la Junta Directiva de la Sociedad Administradora que se encuentra disponible en la página web https://www.alianza.com.co/quienes-somos.
+
+Al momento de la entrada en vigor de la presente Cláusula y de acuerdo con el Artículo 2.40.2.1.4 del Decreto 2555 de 2010 la distribución de productos simples no requiere recomendaciones profesionales y tampoco requiere realizar el análisis de conveniencia previsto en el artículo 2.40.1.1.7 del Decreto 2555 de 2010.
+
+En todo caso, la sociedad administradora o el distribuidor especializado, según corresponda, deberá suministrar recomendaciones profesionales cuando el cliente lo solicite o cuando sobrevenga una circunstancia que afecte de manera sustancial la inversión, de conformidad con lo establecido en las políticas y procedimientos internos de la sociedad administradora; la sociedad administradora o el distribuidor especializado según corresponda, actuarán con la mayor diligencia y profesionalismo para brindarle al inversionista clasificado como “cliente inversionista” toda la asesoría necesaria conforme a sus políticas y manuales internos para que éste pueda tomar decisiones de inversión en el marco de las reglas de la “Actividad de Asesoría” que establece el Libro 40 de la Parte 2° del Decreto 2555 de 2010 y las reglas especiales del Capítulo IV del Título II de la Parte III de la Circular Básica Jurídica de la Superintendencia Financiera de Colombia o aquellas que las modifiquen o sustituyan.
+
+Durante la vigencia de la inversión en el Fondo, la sociedad administradora o el distribuidor especializado, según corresponda, deberá suministrar recomendaciones profesionales cuando el cliente inversionista lo solicite a través de cualquier medio verificable o por intermedio de los canales de atención habilitados y que se encuentran relacionados en el Parágrafo Primero de la Cláusula 9.3. o cuando sobrevenga una circunstancia que afecte de manera sustancial la inversión.
+
+Parágrafo Primero: En las operaciones de intermediación sobre los valores que emitan los fondos de inversión colectiva el deber de asesoría será cumplido por el intermediario que atienda al cliente inversionista, de conformidad con las disposiciones del Libro 40 de la Parte 2 del presente Decreto 2555 de 2010.
+
+Capítulo X De los inversionistas
+
+Cláusula 10.1. Obligaciones
+
+1. Aceptar y cumplir el contenido del presente reglamento.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 43 de 54
+`
+
+### Página 44
+
+**Título Inferido:** Cláusula 10.2. Facultades y Derechos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa Alianza Fiduciaria ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde con el nombre de la empresa.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+2. Suministrar completa y oportunamente la información y documentos que le solicite la Sociedad Administradora, en especial la establecida por la ley y la Superintendencia Financiera para prevenir el lavado de activos y financiación del terrorismo provenientes de actividades delictivas. Igualmente es obligación del suscriptor actualizar la información y documentación por lo menos una vez al año y cada vez que se presenten modificaciones a la misma.
+
+3. Efectuar el pago de los aportes, de conformidad con el procedimiento establecido en el capítulo IV del presente reglamento.
+
+4. Informar a la sociedad administradora la(s) cuenta(s) bancaria(s) que será(n) utilizada(s) para redimir los derechos, para consignar los recursos que sobrepasen los límites de concentración por inversionista o para el desarrollo del proceso de liquidación, y cualquier otro procedimiento operativo que lo requiera.
+
+5. Si lo requiere la sociedad administradora, presentar el documento representativo de la inversión para solicitar la redención parcial o total de los derechos en ellos representados.
+
+6. Las demás establecidas en este reglamento y en las normas vigentes
+
+Cláusula 10.2. Facultades y Derechos
+
+Además de los expresamente pactados en el presente reglamento y de aquellos asignados por normas especiales, los inversionistas o los beneficiarios designados por ellos, tendrán los siguientes derechos:
+
+1. Participar en los resultados económicos generados del giro ordinario de las operaciones del Fondo;
+
+2. Examinar los documentos relacionados con el Fondo, en la forma y términos previstos en el reglamento, a excepción de aquellos que se refieran a los demás inversionistas los cuales nunca podrán ser consultados por inversionistas diferentes del propio interesado. Para este fin, el inversionista deberá informar a la sociedad administradora sobre su intención de consultar los documentos por lo menos con 30 días de anticipación. Una vez recibida la solicitud por el administrador le designará un día y una hora en la cual podrá acceder a la información. La inspección podrá realizarse cuando menos dentro de los quince (15) días hábiles siguientes a la terminación de cada semestre calendario;
+
+3. Ceder las participaciones en el Fondo, de conformidad con las reglas señaladas en el presente reglamento;
+
+4. Solicitar la redención total o parcial de las participaciones que les correspondan en el Fondo
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 44 de 54
+`
+
+### Página 45
+
+**Título Inferido:** Cláusula 10.3. Asamblea de inversionistas
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen|logo
+      descripcionInformacion: Logo corporativo de la entidad financiera Alianza Fiduciaria, acompañado de su eslogan y datos de contacto.
+      metadataVisual: Logo compuesto por un triángulo azul y verde, texto 'Alianza Fiduciaria', 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'. En la esquina superior derecha se encuentran los datos de contacto.
+      datosObservados: Teléfono: (601) 6447700, Dirección: Cr. 15 82-99, Ciudad: Bogotá, Colombia.
+    },
+    {
+      tipo: otro|sello_vigilancia
+      descripcionInformacion: Sello de vigilancia de la entidad reguladora colombiana.
+      metadataVisual: Texto dispuesto verticalmente en el margen inferior izquierdo de la página.
+      datosObservados: VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+    }
+  ],
+  tablasMarkdown: ,
+  textoTranscripcion: T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+5. Ejercer los derechos políticos derivados de su participación, a través de la asamblea de inversionistas;
+6. Convocar la asamblea de inversionistas de conformidad con lo establecido en la cláusula 10.3.1 del presente reglamento
+7. Recibir un trato igualitario cuando se encuentre en igualdad de circunstancias objetivas con otros inversionistas del mismo fondo de inversión colectiva.
+
+Cláusula 10.3. Asamblea de inversionistas
+La asamblea del Fondo abierto ALIANZA la constituyen los respectivos inversionistas, reunidos con el quórum y en las condiciones establecidas en el presente reglamento. Para los aspectos no establecidos en el presente reglamento, se aplicarán las normas del Código de Comercio previstas para la asamblea de accionistas de la sociedad anónima, cuando no sean contrarias a su naturaleza.
+
+Cláusula 10.3.1. Convocatoria
+La Asamblea de Inversionistas podrá ser convocada por: La Sociedad Administradora, por el revisor fiscal, por inversionistas del Fondo que representen no menos del veinticinco por ciento (25%) de las participaciones, o por la Superintendencia Financiera de Colombia. El respectivo orden del día deberá figurar en la convocatoria, la cual deberá realizarse a través de una publicación realizada mediante cualquier medio electrónico idóneo para ello o en un diario de amplia circulación nacional señalados para el efecto en el reglamento, así como, en el sitio web www.alianza.com.co.
+
+En todos los casos, la asamblea de inversionistas se podrá reunir de forma presencial o no presencial, siendo aplicables para el efecto, en uno y otro caso, las normas contenidas en la legislación mercantil para las sociedades anónimas. La asamblea podrá deliberar con la presencia de un número plural de suscriptores que representen por lo menos el 51% de las participaciones del Fondo. Las decisiones de la asamblea se tomarán mediante el voto favorable de la mitad más una de las unidades presentes o representadas en la respectiva reunión. Cada participación otorga un voto.
+
+Si convocada una asamblea, ésta no se realizare por falta de quórum previsto para el efecto, se citará nuevamente a una reunión, atendiendo a las normas del Código de Comercio para reuniones de segunda convocatoria.
+
+Parágrafo: La participación de la sociedad administradora del Fondo como inversionista no se tendrá en cuenta para determinar el quórum deliberatorio ni le dará derecho a voto alguno.
+
+Cláusula 10.3.2. Funciones
+Son funciones de la asamblea de inversionistas las siguientes:
+1. Designar, cuando lo considere conveniente, un auditor externo para el Fondo;
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 45 de 54,  tituloInferido: Cláusula 10.3. Asamblea de inversionistas
+}
+```):**
+- *Descripción:* N/A
+- *Metadata Visual:* N/A
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+5. Ejercer los derechos políticos derivados de su participación, a través de la asamblea de inversionistas;
+6. Convocar la asamblea de inversionistas de conformidad con lo establecido en la cláusula 10.3.1 del presente reglamento
+7. Recibir un trato igualitario cuando se encuentre en igualdad de circunstancias objetivas con otros inversionistas del mismo fondo de inversión colectiva.
+
+Cláusula 10.3. Asamblea de inversionistas
+La asamblea del Fondo abierto ALIANZA la constituyen los respectivos inversionistas, reunidos con el quórum y en las condiciones establecidas en el presente reglamento. Para los aspectos no establecidos en el presente reglamento, se aplicarán las normas del Código de Comercio previstas para la asamblea de accionistas de la sociedad anónima, cuando no sean contrarias a su naturaleza.
+
+Cláusula 10.3.1. Convocatoria
+La Asamblea de Inversionistas podrá ser convocada por: La Sociedad Administradora, por el revisor fiscal, por inversionistas del Fondo que representen no menos del veinticinco por ciento (25%) de las participaciones, o por la Superintendencia Financiera de Colombia. El respectivo orden del día deberá figurar en la convocatoria, la cual deberá realizarse a través de una publicación realizada mediante cualquier medio electrónico idóneo para ello o en un diario de amplia circulación nacional señalados para el efecto en el reglamento, así como, en el sitio web www.alianza.com.co.
+
+En todos los casos, la asamblea de inversionistas se podrá reunir de forma presencial o no presencial, siendo aplicables para el efecto, en uno y otro caso, las normas contenidas en la legislación mercantil para las sociedades anónimas. La asamblea podrá deliberar con la presencia de un número plural de suscriptores que representen por lo menos el 51% de las participaciones del Fondo. Las decisiones de la asamblea se tomarán mediante el voto favorable de la mitad más una de las unidades presentes o representadas en la respectiva reunión. Cada participación otorga un voto.
+
+Si convocada una asamblea, ésta no se realizare por falta de quórum previsto para el efecto, se citará nuevamente a una reunión, atendiendo a las normas del Código de Comercio para reuniones de segunda convocatoria.
+
+Parágrafo: La participación de la sociedad administradora del Fondo como inversionista no se tendrá en cuenta para determinar el quórum deliberatorio ni le dará derecho a voto alguno.
+
+Cláusula 10.3.2. Funciones
+Son funciones de la asamblea de inversionistas las siguientes:
+1. Designar, cuando lo considere conveniente, un auditor externo para el Fondo;
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+www.alianza.com.co
+Página 45 de 54
+`
+
+### Página 46
+
+**Título Inferido:** Reglamento Fondo Abierto - Consulta universal y Mecanismos de Revelación de información
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo azul y verde claro con el nombre de la empresa y su eslogan corporativo.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo con orientación vertical.
+- *Metadata Visual:* Texto en orientación vertical de abajo hacia arriba, en fuente pequeña y color gris.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+2. Disponer que la administración del Fondo se entregue a otra sociedad legalmente autorizada para el efecto.
+3. Decretar la liquidación del fondo de inversión colectiva y, cuando sea del caso, designar el liquidador.
+4. Aprobar o improbar el proyecto de fusión del Fondo; y
+5. Autorización la suspensión provisional de redenciones, de conformidad con lo señalado en la cláusula 4.6. del presente reglamento.
+6. Las demás expresamente asignadas por el Decreto 2555 de 2010.
+
+Cláusula 10.3.3. Consulta universal
+
+Como alternativa a la realización de asambleas de inversionistas, la Sociedad Administradora podrá realizar una consulta universal para el Fondo. La decisión de adelantar la consulta será informada a la Superintendencia Financiera de Colombia, quien podrá presentar observaciones a la misma.
+
+Esta consulta se enviará a todos los inversionistas a través comunicación personal dirigida a la última dirección de correo electrónico registrada en la sociedad, en la cual se formulará un cuestionario sobre los asuntos que requieren de su decisión, para que éstos puedan manifestar si aceptan o no la propuesta formulada por la Sociedad Administradora, lo cual deberá realizarse dentro de los treinta (30) días siguientes a la recepción de la consulta.
+
+Para que la consulta sea válida se requiere que responda al menos el cincuenta y uno por ciento (51%) de las participaciones del Fondo de Inversión Colectiva, sin tener en cuenta la participación de la Sociedad Administradora.
+
+Para el conteo de votos la sociedad administradora del fondo deberá documentar el número de comunicaciones recibidas, así como los votos a favor y en contra de la consulta.
+
+La Sociedad Administradora informará a la Superintendencia Financiera de Colombia los resultados de la consulta, allegando para tal fin un escrito detallado de la misma y las decisiones adoptadas, el cual deberá ser suscrito por el gerente del respectivo Fondo y el revisor fiscal.
+
+La decisión adoptada por el mecanismo de la consulta será informada a los Inversionistas a través de la página web de la Sociedad Administradora
+
+Parágrafo: La consulta de que trata la presente cláusula también podrá realizarse por los medios electrónicos siempre y cuando se cumpla con el procedimiento establecido en el artículo 3.1.5.6.4 del Decreto 2555 de 2010.
+
+Capítulo XI. Mecanismos de Revelación de información
+
+La sociedad administradora del Fondo abierto ALIANZA pondrá a disposición de los inversionistas toda la información necesaria para el adecuado entendimiento sobre la naturaleza de la sociedad administradora y de la inversión en el Fondo, de acuerdo con lo
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 46 de 54
+`
+
+### Página 47
+
+**Título Inferido:** Reglamento del Fondo - Cláusulas de Información y Rendición de Cuentas
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Isotipo compuesto por un triángulo azul con detalles en verde y amarillo en la base. Texto en color azul oscuro y gris.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo.
+- *Metadata Visual:* Texto dispuesto verticalmente, rotado 90 grados en sentido antihorario, en color gris claro.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria UNA EMPRESA DE LA ORGANIZACIÓN DELIMA T: (601) 6447700 Cr. 15 82-99 Bogotá, Colombia establecido en el decreto 2555 de 2010 y en el numeral 3 del Capítulo III del Título IV de la Parte III de la Circular Básica Jurídica. Los documentos con información del Fondo pueden ser consultados a través de la página de Internet www.alianza.com.co y por medio de los impresos que estarán en las oficinas de la Sociedad Administradora y en las oficinas de atención al público. Cláusula 11.1. Extracto de cuenta y medios previstos para su distribución La sociedad administradora del Fondo deberá mantener a disposición de los inversionistas el extracto de cuenta en donde se informe sobre el movimiento de la cuenta en la periodicidad y con base en el contenido mínimo previstos en el Numeral 3.1. del Capítulo 3, del Título VI de la Parte III de la Circular Básica Jurídica o en las normas que lo modifiquen, sustituyan o complementen. El extracto de cuenta estará disponible en la página web www.alianza.com.co. Cláusula 11.2. Rendición de cuentas La sociedad administradora rendirá un informe que contenga una explicación detallada y pormenorizada acerca del desempeño del Fondo. El informe incluirá al menos la información definida en el numeral 4 del Capítulo III del Título VI de la Parte III de la Circular Básica Jurídica y Circular Externa 026 de 2014, entre otras contendrá: - Información de desempeño - Composición del portafolio. - Estados Financieros y sus notas. - Evolución del valor de las unidades del Fondo. - Descripción de los gastos del Fondo. - Otros aspectos relevantes a juicio del administrador Este informe se realizará cada 6 meses, con cortes a 30 de junio y 31 de diciembre. Estará disponible en la página web www.alianza.com.co y deberá remitirse a cada inversionista vía correo electrónico dentro de los quince (15) días comunes contados a partir de la fecha del respectivo corte. Cláusula 11.3. Ficha técnica La sociedad administradora publicará en www.alianza.com.co la ficha técnica del Fondo, de conformidad con el numeral 3.2 del Capítulo III del Título VI de la Parte III de la Circular Básica Jurídica y Circular Externa 026 de 2014, con una periodicidad mensual y dentro de los primeros cinco (5) días siguientes al corte del mes anterior. Cláusula 11.4. Prospecto de inversión VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA www.alianza.com.co Página 47 de 54
+`
+
+### Página 48
+
+**Título Inferido:** Comercialización del Fondo y Sitio de Internet de la Sociedad Administradora
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Símbolo de un triángulo azul y verde claro junto al texto corporativo.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia y control de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo con orientación vertical.
+- *Metadata Visual:* Texto vertical en color gris claro.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria UNA EMPRESA DE LA ORGANIZACIÓN DELIMA T: (601) 6447700 Cr. 15 82-99 Bogotá, Colombia Para la comercialización del Fondo abierto Alianza la sociedad administradora ha elaborado un prospecto que guarda concordancia con la información del reglamento, el cual será dado a conocer previamente a la vinculación de los inversionistas. La sociedad administradora dejará constancia que el inversionista ha recibido la copia del mismo, escrita o por cualquier otro medio, y sobre la aceptación y entendimiento de la información allí consignada. No obstante, lo anterior, la sociedad administradora, a solicitud del inversionista entregará el reglamento del Fondo abierto ALIANZA. En www.alianza.com.co y en las oficinas de atención al público, se podrá consultar, de manera actualizada, la versión de este reglamento, del prospecto y de la ficha técnica del Fondo. El prospecto deberá contener como mínimo: 1. Información general del fondo de inversión colectiva. 2. Política de inversión del fondo de inversión colectiva, indicando el tipo de fondo de inversión colectiva y la descripción de su perfil de riesgo. 3. Información económica del fondo de inversión colectiva, donde se incluya la forma, valor y cálculo de la remuneración a pagar a la sociedad administradora, e información sobre los demás gastos que puedan afectar la rentabilidad del fondo de inversión colectiva. 4. Información operativa del fondo de inversión colectiva, incluyendo la indicación de los contratos de uso de red de oficinas y de corresponsalía local que haya suscrito la sociedad administradora, vigentes al momento de la expedición del prospecto. 5. Medios de reporte de información a los inversionistas y al público en general. 6. Identificación de la entidad que actúa como custodio de valores. 7. Los demás aspectos que establezca la Superintendencia Financiera de Colombia. Cláusula 11.5. Sitio de internet de la sociedad administradora Alianza Fiduciaria cuenta con el sitio web www.alianza.com.co en el que se podrá consultar de manera permanente y actualizada la siguiente información: 1. Reglamento, prospecto y ficha técnica del Fondo, debidamente actualizados. 2. Rentabilidad después de comisión. 3. Información relacionada con los órganos de administración y control con los que cuenta la sociedad administradora. 4. Oficinas de atención al público, contratos de uso de red de oficinas y corresponsalía local suscritos. 5. Entidad aseguradora, amparos y la vigencia de la póliza de que trata la cláusula 1.7. del presente reglamento. 6. Calificación del Fondo. VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA www.alianza.com.co Página 48 de 54
+`
+
+### Página 49
+
+**Título Inferido:** Capítulo XII Liquidación
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la empresa Alianza Fiduciaria ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo compuesto por colores azul claro, azul oscuro y verde claro.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo, escrito verticalmente.
+- *Metadata Visual:* Texto vertical en color gris claro con una línea vertical a su izquierda.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+7. Informe de gestión y rendición de cuentas.
+8. Estados financieros y sus notas respectivas.
+
+Cláusula 11.6. Reglamento del Fondo
+La sociedad administradora pondrá a disposición de los inversionistas el reglamento del Fondo vigente en su página web, www.alianza.com.co.
+
+Capítulo XII Liquidación
+
+Cláusula 12.1. Causales
+Son causales de disolución y liquidación del Fondo:
+1. El vencimiento del término de duración.
+2. La decisión válida de la asamblea de inversionistas de liquidar el Fondo.
+3. La decisión motivada técnica y económicamente de la junta directiva de la sociedad administradora de liquidar el Fondo.
+4. Cualquier hecho o situación que coloque a la sociedad administradora en imposibilidad definitiva de continuar desarrollando su objeto social;
+5. Cuando el patrimonio del Fondo esté por debajo del monto mínimo señalado en la cláusula. 1.9 del presente reglamento.
+6. La toma de posesión de la sociedad administradora, la orden de desmonte de operaciones o de liquidación del Fondo por parte de la Superintendencia Financiera de Colombia.
+7. No cumplir con lo establecido en el artículo 3.1.1.6.2 del Decreto 2555 de 2010.
+8. Las demás establecidas en las normas vigentes.
+
+Parágrafo 1: Cuando se presente alguna de las causales de liquidación previstas anteriormente, la sociedad administradora deberá comunicarla inmediatamente a la Superintendencia Financiera de Colombia. A los inversionistas se les comunicará el acaecimiento de la causal de liquidación del Fondo por los medios previstos en el presente reglamento. Estas comunicaciones deberán realizarse a más tardar al día siguiente de la ocurrencia de la causal.
+
+Cláusula 12.2. Procedimiento
+La liquidación del Fondo se ajustará al siguiente procedimiento:
+1 A partir de la fecha del acaecimiento de la causal de liquidación y mientras esta subsista, el Fondo no podrá constituir nuevas participaciones ni atender redenciones.
+2 Cuando la causal de liquidación sea distinta de las consagradas en los numerales 1 y 2 de la cláusula 12.1 del presente reglamento, la sociedad administradora procederá a convocar
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 49 de 54
+`
+
+### Página 50
+
+**Título Inferido:** Reglamento Fondo Abierto - Proceso de Liquidación
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la empresa Alianza Fiduciaria, compuesto por un triángulo azul y verde claro, junto con el nombre de la empresa y su eslogan.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto verticalmente en el margen inferior izquierdo, leyendo de abajo hacia arriba.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+a la asamblea de inversionistas que deberá celebrarse entre los cinco (5) y diez (10) días comunes siguientes a la fecha de la comunicación de la noticia de liquidación.
+
+3 En caso de que esta asamblea no se realizare por falta de quórum previsto para el efecto, ésta se citará nuevamente para celebrarse entre los tres (3) y seis (6) días comunes siguientes a la asamblea fallida, pudiendo deliberar con cualquier quórum.
+
+4 En el evento de que la liquidación haya ocurrido con base en las causales previstas en los numerales 3°, y 4° de la cláusula 12.1. del presente reglamento, la asamblea de inversionistas podrá decidir si entrega la administración del Fondo a otra sociedad legalmente habilitada para administrar fondos de inversión colectiva, caso en el cual se considerará enervada la respectiva causal de liquidación. En este caso, la asamblea deberá establecer las fechas y condiciones en las que se realizará el traspaso del Fondo al administrador seleccionado.
+
+5 Acaecida la causal de liquidación si la misma no es enervada, la asamblea de inversionistas deberá decidir si la sociedad administradora desarrollará el proceso de liquidación o si se designará un liquidador especial. En caso de que la asamblea no designe una persona, se entenderá que la sociedad administradora adelantará la liquidación.
+
+6 El liquidador deberá obrar con el mismo grado de diligencia, habilidad y cuidado razonables que los exigidos para la sociedad en el presente reglamento.
+
+7 El liquidador procederá inmediatamente a liquidar todas las inversiones que constituyan el portafolio del fondo de inversión colectiva, en un plazo no mayor a un (1) año. Vencido este término, si existieren activos cuya realización no hubiere sido posible, la Asamblea de Inversionistas deberá reunirse en un lapso no mayor a cuatro (4) meses, con el fin de evaluar el informe detallado que deberá presentar el liquidador sobre las gestiones realizadas hasta la fecha, y podrá:
+
+a) Otorgar el plazo adicional que estime conveniente para que el liquidador continúe con la gestión de liquidación de las inversiones pendientes, en cuyo caso deberá acordar las fechas en que el liquidador presentará a los inversionistas de forma individual y/o a la Asamblea de Inversionistas, informes sobre su gestión. La Asamblea de Inversionistas podrá prorrogar hasta por un (1) año el plazo adicional inicialmente otorgado en el evento en que los activos no se hayan podido liquidar en dicho plazo adicional inicial y, en todo caso, mediando informe detallado del liquidador sobre las gestiones realizadas.
+
+b) Solicitar al liquidador que los activos sean entregados en pago a los inversionistas en proporción a sus participaciones. Para realizar esta solicitud, la Asamblea de Inversionistas podrá reunirse en cualquier tiempo.
+
+c) Tomar las decisiones que considere pertinentes para lograr la liquidación de las inversiones y la adecuada protección de los derechos de los inversionistas.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 50 de 54
+`
+
+### Página 51
+
+**Título Inferido:** Procedimiento de liquidación y pago de participaciones
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logotipo corporativo de la entidad financiera Alianza Fiduciaria, compuesto por un triángulo azul y verde, acompañado del nombre de la empresa y su eslogan o grupo empresarial.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana.
+- *Metadata Visual:* Texto dispuesto de forma vertical en el margen inferior izquierdo de la página.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+8 Una vez liquidadas todas las inversiones se procederá de inmediato a cancelar a los inversionistas las participaciones, en un término que no podrá exceder de quince (15) días hábiles siguientes al vencimiento del plazo previsto en el numeral sexto de la presente cláusula.
+
+9 Si vencido el período máximo de pago de las participaciones, existieren sumas pendientes de retiro, se seguirá el siguiente procedimiento:
+
+a) Si el inversionista ha informado a la sociedad administradora, por medio escrito, una cuenta bancaria para realizar depósitos o pagos, el liquidador deberá consignar el valor pendiente de retiro en dicha cuenta.
+
+b) De no ser posible la consignación que hace referencia el numeral anterior, y en caso de que el inversionista haya señalada e identificado, por medio escrito, un mandatario para el pago o un beneficiario, el liquidador realizara el pago de los aportes pendientes a dicha persona.
+
+c) Ante la imposibilidad de realizar el pago de conformidad de alguno de los literales anteriores, se dará aplicación del artículo 249 del Código de Comercio
+
+El liquidador deberá enviar a la Superintendencia Financiera de Colombia y a los inversionistas del Fondo liquidado el informe de finalización de actividades a través de correo electrónico o cualquier otro medio medios electrónico que el liquidador determine.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 51 de 54
+`
+
+### Página 52
+
+**Título Inferido:** Capítulo XIII. Fusión y Cesión del Fondo
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad administradora del fondo, ubicado en la esquina superior izquierda.
+- *Metadata Visual:* Triángulo azul y verde claro, texto en azul oscuro y negro.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (otro):**
+- *Descripción:* Sello o marca de vigilancia de la entidad reguladora colombiana, ubicado en el margen inferior izquierdo en orientación vertical.
+- *Metadata Visual:* Texto vertical en color gris claro.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+Capítulo XIII. Fusión y Cesión del Fondo
+
+Cláusula 13.1. Procedimiento para Fusión
+
+El Fondo abierto “ALIANZA” podrá fusionarse con otro u otros Fondo de Inversión Colectiva para lo cual se deberá atender el siguiente procedimiento.
+
+1. La sociedad administradora elaborará del proyecto de fusión el cual deberá contener siguiente información:
+   a. Los datos financieros y económicos de cada uno de los Fondos de inversión colectiva objeto de la fusión, con sus respectivos soportes, y
+   b. Un anexo explicativo sobre los mecanismos que se utilizarán para nivelar el valor de la unidad de los Fondos de Inversión Colectiva, incluyendo la relación de intercambio.
+
+2. El proyecto de fusión deberá contar con la aprobación de las Juntas Directivas de cada una las sociedades administradoras involucradas en la fusión.
+
+3. Una vez aprobado el compromiso se deberá realizar la publicación en uno de los siguientes diarios de amplia circulación nacional (La República), del resumen del compromiso de fusión y se informará en la página web de la sociedad administradora el diario en el que se publicará. En el evento en el cual el diario de amplia circulación nacional antes mencionado no se encuentre disponible subsidiariamente la Sociedad Administradora podrá hacer la publicación el periódico “El Espectador”.
+
+4. La sociedad administradora convocará a los inversionistas a asamblea mediante comunicación escrita acompañada del compromiso de fusión. La asamblea deberá realizarse luego de transcurridos 15 días al envío de la comunicación a los inversionistas.
+
+5. Los inversionistas que no estén de acuerdo con el compromiso de fusión o los que no asistan a la asamblea en la que se decida la fusión podrán ejercer el derecho consagrado en el presente reglamento (Derecho de Retiro). En este caso, el término de un (1) mes se contará desde el día de la celebración de la asamblea de inversionistas.
+
+6. Una vez aprobado el compromiso de fusión por las asambleas de inversionistas, la sociedad administradora del nuevo fondo o nueva o colectiva o de la absorbente informará a la Superintendencia Financiera de Colombia de dicho compromiso, mediante comunicación escrita a la cual se deberá anexar el proyecto de fusión aprobado y las actas resultantes de las asambleas y reuniones de juntas directivas, y lo dispuesto en el artículo 3.1.2.1.1 del Decreto 2555 de 2010.
+
+Cláusula 13.2. Procedimiento para cesión del Fondo abierto Alianza.
+
+La sociedad administradora podrá ceder la administración del Fondo a otra sociedad administradora legalmente autorizada para administrar este tipo de vehículos de inversión, sin
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 52 de 54
+`
+
+### Página 53
+
+**Título Inferido:** Reglamento Fondo Abierto - Modificaciones y Prevención de Lavado de Activos
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo de Alianza Fiduciaria, indicando que es una empresa de la Organización Delima.
+- *Metadata Visual:* Logo compuesto por un triángulo azul y verde, con el texto 'Alianza Fiduciaria' y 'UNA EMPRESA DE LA ORGANIZACIÓN DELIMA'.
+- *Datos Observados:* N/A
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto vertical 'VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA'.
+- *Datos Observados:* N/A
+
+#### Texto Original (OCR)
+
+`
+Alianza
+Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+perjuicio de la naturaleza jurídica de las mismas, por decisión de su Junta Directiva, para lo cual deberá aplicar el siguiente procedimiento:
+
+1. La cesión deberá ser autorizada por la Superintendencia Financiera de Colombia.
+2. El cesionario debe allegar con la solicitud de autorización la certificación expedida por el representante legal acerca de que la sociedad cumple con los requeriditos establecido en el artículo 3.1.1.3.2. de Decreto 2555 de 2010 y el perfil requerido para las personas que integrarán el comité de inversiones, así como el perfil del gerente del Fondo.
+3. Autorizada la cesión por la Superintendencia Financiera, deberá informarse a los inversionistas participantes, de conformidad con lo establecido en el inciso segundo del capítulo XIV (Modificación al reglamento).
+4. Los inversionistas participantes deberán expresar su rechazo o aceptación dentro de los treinta (30) días siguientes a la fecha de publicación del aviso de cesión. De no recibirse respuesta dentro del término fijado se entenderá aceptada la cesión. Los inversionistas que manifiesten su desacuerdo con la cesión podrán solicitar la redención de su participación, sin que por este hecho se genere sanción ni penalidad de ningún tipo.
+
+Capítulo XIV. Modificaciones al Reglamento
+
+Cláusula 14.1. Modificaciones al Reglamento
+
+Las reformas al presente reglamento deberán ser aprobadas por la Junta Directiva de la Sociedad Administradora y enviadas a la Superintendencia Financiera de Colombia de forma previa a su entrada en vigor. Estas reformas deberán ser comunicadas en el sitio web www.alianza.com.co de la Sociedad Administradora.
+
+Cuando dichas reformas impliquen modificaciones o afectación negativa de los derechos económicos de los inversionistas, deberán contar con un soporte técnico que respalde dicha aprobación y deberán ser informadas a los inversionistas mediante alguno de los siguientes mecanismos: (i) publicación en un diario de amplia circulación, (ii) Publicación en la página web de la Sociedad Administradora, (iii) otro medio de comunicación electrónica o (iv) mediante el envío de una comunicación por medio electrónico dirigida a cada uno de los inversionistas.
+
+En la página web de la Sociedad Administradora se informarán el diario o diarios en donde se publicarán las modificaciones en caso de que opte por esta alternativa.
+
+Capítulo XV. Prevención de lavado de activos y financiación del terrorismo
+
+Cláusula 15.1. Prevención de lavado de activos y financiación del terrorismo
+
+Para los fines previstos en la ley el inversionista se obliga a entregar información veraz y verificable solicitada en el formato de vinculación y a actualizar sus datos por lo menos anualmente, suministrando la totalidad de los soportes documentales e información exigidos por Alianza Fiduciaria S.A al momento de la vinculación. Alianza Fiduciaria S.A queda desde ya
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 53 de 54
+`
+
+### Página 54
+
+**Título Inferido:** Capítulo XVI. Conflictos de Interés
+
+#### Elementos Visuales
+
+**Elemento 1 (imagen):**
+- *Descripción:* Logo corporativo de la entidad financiera Alianza Fiduciaria, compuesto por un triángulo azul y verde.
+- *Metadata Visual:* Ubicado en la esquina superior izquierda.
+- *Datos Observados:* Alianza Fiduciaria, UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+**Elemento 2 (imagen):**
+- *Descripción:* Sello de vigilancia de la Superintendencia Financiera de Colombia.
+- *Metadata Visual:* Texto en orientación vertical ubicado en el margen inferior izquierdo.
+- *Datos Observados:* VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+#### Texto Original (OCR)
+
+`
+Alianza Fiduciaria
+UNA EMPRESA DE LA ORGANIZACIÓN DELIMA
+
+T: (601) 6447700
+Cr. 15 82-99
+Bogotá, Colombia
+
+facultada para dar por terminado el contrato, en caso de desatención a estos deberes por parte del inversionista.
+
+Así mismo, los inversionistas tendrán la obligación de: informar por escrito a Alianza Fiduciaria S.A dentro de los cinco (5 días) hábiles siguientes, cada vez que modifiquen o cambien los datos correspondientes a dirección, domicilio, teléfonos, fax, ocupación, profesión, oficio, razón social, representación legal, lugar de trabajo o residencia y en fin, cualquier circunstancia que varíe de las que reporten a la firma de la constancia de adhesión al presente reglamento, tanto para las personas naturales como jurídicas y fideicomisos, con base en lo dispuesto en las normas que regulan esta materia. Igualmente, se obligan a enviar original del certificado de ingresos y retenciones, declaración de renta, constancia de honorarios o balance del último año según el caso, por cada año de vigencia del presente contrato, dentro de los cinco (5) días hábiles siguientes a que dichos documentos sean expedidos o presentados.
+
+Capítulo XVI. Conflictos de Interés
+
+Con el objetivo de prevenir y gestionar los conflictos de interés, la Sociedad Administradora dará cumplimiento a lo establecido en su Código de Buen Gobierno, en su Código de Ética de la Sociedad Administradora y en el presente reglamento.
+
+Cláusula 16.1. Prohibiciones
+
+La Sociedad Administradora se abstendrá de realizar cualquiera de las actividades señaladas en el Artículo 3.1.1.10.1 del Decreto 2555 de 2010.
+
+Cláusula 16.2. Conflictos de Interés
+
+Se entenderán como situaciones generadoras de conflictos de interés las señaladas en el Artículo 3.1.1.10.2 del Decreto 2555 de 2010.
+
+Advertencia. “Las obligaciones de la sociedad administradora del Fondo relacionadas con la gestión del portafolio son de medio y no de resultado. Los dineros entregados por los inversionistas al Fondo no son depósitos, ni generan para la sociedad administradora las obligaciones propias de una institución de depósito y no están amparadas por el seguro de depósito del Fondo de Garantías de Instituciones Financieras –FOGAFIN-, ni por ninguno otro esquema de dicha naturaleza. La inversión en el Fondo está sujeta a los riesgos de inversión, derivados de la evolución de los precios de los activos que componen el portafolio de la respectivo Fondo”.
+
+VIGILADO SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+
+www.alianza.com.co
+
+Página 54 de 54
+`
+
