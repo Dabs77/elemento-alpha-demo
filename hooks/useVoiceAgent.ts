@@ -52,51 +52,64 @@ function formatLiveCloseError(code?: number, reason?: string): string {
   return `Conexión cerrada (${code ?? "?"}): ${reason || "sin razón"}`;
 }
 
-function sendFundAdvisoryRagChunks(
-  session: LiveVoiceSession,
-  query: string,
-  context: string,
-  provider: "brainbox" | "local" = "local",
-): void {
-  const sourceLabel =
-    provider === "brainbox"
-      ? "BrainBox (búsqueda semántica sobre documentos indexados)"
-      : "JSON digest VLM en /info";
+function sendFundAdvisoryRagThinking(session: LiveVoiceSession): void {
   session.sendClientContent({
     turns: [
       {
         role: "user",
         parts: [
           {
-            text:
-              `[FRAGMENTOS RAG — pregunta: "${query}"]\n\n` +
-              `Fuente: ${sourceLabel}. Responde SOLO con estos extractos; si la respuesta no está aquí, di que no tienes el dato:\n\n${context}`,
+            text: `[🛑 STOP: Ignora lo que ibas a decir. Pregunta detectada que requiere consulta de datos. RESPONDE EXACTAMENTE: "Déjame pensar un momento..." y QUÉDATE EN SILENCIO. NO digas nada más, NO des datos, NO digas "no tengo info". Los fragmentos llegarán en el próximo mensaje del sistema.]`,
           },
         ],
       },
     ],
-    turnComplete: false,
+    turnComplete: true,
   });
 }
 
-async function fetchFundAdvisoryRagContext(
+function sendFundAdvisoryComposedAnswer(
+  session: LiveVoiceSession,
   query: string,
-): Promise<{ context: string; provider: "brainbox" | "local" } | null> {
+  composedText: string,
+  action: "answer" | "clarify" = "answer",
+): void {
+  const instruction =
+    action === "clarify"
+      ? `[INSTRUCCIÓN: Pregunta de aclaración para el usuario sobre "${query}". Di EXACTAMENTE este texto en voz natural, nada más:]\n${composedText}`
+      : `[INSTRUCCIÓN: Respuesta lista para "${query}". Di EXACTAMENTE este texto en voz natural, sin agregar nada, sin decir "según los datos" ni "déjame ver". Solo léelo natural:]\n${composedText}`;
+
+  session.sendClientContent({
+    turns: [
+      {
+        role: "user",
+        parts: [{ text: instruction }],
+      },
+    ],
+    turnComplete: true,
+  });
+}
+
+type ComposedResponse =
+  | { action: "answer"; text: string }
+  | { action: "clarify"; text: string };
+
+async function fetchFundAdvisoryComposedAnswer(
+  query: string,
+): Promise<ComposedResponse | null> {
   try {
-    const res = await fetch("/api/fund-advisory-rag", {
+    const res = await fetch("/api/fund-advisory-compose", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query }),
     });
     if (!res.ok) return null;
-    const data = (await res.json()) as { context?: string; provider?: "brainbox" | "local" };
-    const context = data.context?.trim();
-    if (!context) return null;
-    const provider = data.provider ?? "local";
-    console.log(
-      `[asesoría-voz] RAG búsqueda → ${provider === "brainbox" ? "BrainBox" : "Local"}: "${query.slice(0, 80)}"`,
-    );
-    return { context, provider };
+    const data = (await res.json()) as {
+      action?: "answer" | "clarify";
+      text?: string;
+    };
+    if (!data.text || !data.action) return null;
+    return { action: data.action, text: data.text };
   } catch {
     return null;
   }
@@ -230,16 +243,17 @@ Después responde solo lo que preguntan.`;
 /** Reglas de estilo compartidas para asesoría de fondos por voz. */
 const FUND_ADVISORY_VOICE_STYLE = `
 Estilo de voz:
+- IDIOMA: Responde SIEMPRE en español. NUNCA mezcles idiomas ni uses palabras en inglés. Si los datos contienen términos en inglés (ej. "performance", "drawdown", "yield"), tradúcelos al hablar (ej. "rendimiento", "caída máxima", "rentabilidad").
 - Tutea siempre (tú, te, tu): cercano y profesional, como en una llamada real. Evita "usted", "desee" y tono institucional frío.
 - Habla con naturalidad colombiana: frases cortas, pausas, sin leer listas ni sonar a presentación corporativa.
 - Al leer rentabilidades del contexto, NUNCA digas "EA", "E.A." ni "e punto a". Di siempre "efectivo anual" (ej.: "nueve punto cinco por ciento efectivo anual").
-- Al mencionar el fondo CxC en voz, NUNCA digas "CxC", "c x c" ni "see por see". Di siempre "c por c" de forma conversacional (ej.: "el FIC c por c", "el fondo c por c Alianza").
+- PRONUNCIACIÓN FONDO CxC: Pronúncialo SIEMPRE como "ce por ce" (deletreando las letras). NUNCA digas "kxc", "cxc", "c equis c", ni "see por see". Ejemplos correctos: "el fondo ce por ce", "el FIC ce por ce Alianza".
 - Al iniciar: saludo breve y pregunta de apertura sobre qué quiere saber. No des monólogo ni cifras hasta que pregunte.
 - Al cerrar cada respuesta puedes usar UNA pregunta genérica y abierta, sin mencionar temas concretos: "¿Te interesa algo más?", "¿Tienes otra duda?". Variaciones naturales están bien.
 - PROHIBIDO cerrar sugiriendo un tema o variable específica: no digas "¿Quieres saber sobre el FIC Abierto?", "¿Te gustaría que comparemos liquidez?", "¿Pasamos a comisiones?", "¿Te cuento del prospecto?". No dirijas la conversación; deja que el usuario elija.
 - No encadenes varias preguntas seguidas al final; una sola genérica basta, o calla y espera.
 - Habla como experto que domina el tema: transmite las cifras y hechos con naturalidad, como conocimiento propio. NUNCA digas que estás consultando, revisando, leyendo datos, mirando un documento, un JSON, un extracto, un corpus o "lo que tienes a mano".
-- Evita frases meta como "según los datos", "en la información que tengo", "de acuerdo al prospecto/reglamento", "en los documentos", "veo que aquí dice", "en el contexto". Di directamente el hecho (ej.: "El fondo c por c rindió diez punto siete por ciento en marzo", no "según los datos rindió...").
+- Evita frases meta como "según los datos", "en la información que tengo", "de acuerdo al prospecto/reglamento", "en los documentos", "veo que aquí dice", "en el contexto". Di directamente el hecho (ej.: "El fondo ce por ce rindió diez punto siete por ciento en marzo", no "según los datos rindió...").
 - Si algo no lo sabes, dilo en simple: "No tengo ese dato" o "No estoy seguro de eso" — sin mencionar fuentes, archivos ni sistema. Pero ANTES de decir eso, revisa corpusInicialRag y los [FRAGMENTOS RAG].
 - Responde SOLO con cifras y hechos que aparezcan en corpusInicialRag o [FRAGMENTOS RAG]. PROHIBIDO inventar o usar conocimiento general del modelo si no está en esos textos.
 - Si hay contradicción, prevalece el fragmento JSON más específico a la pregunta.`;
@@ -261,11 +275,11 @@ Reglas:
 - PROHIBIDO inventar rentabilidades, comisiones, AUMs o cualquier dato no presente en los JSON.
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
 - Cuando pregunten por láminas, prospecto, reglamento o comisiones, busca en corpusDocumentalMarkdown.
-- Compara FIC Abierto vs el fondo c por c con naturalidad cuando sea útil.
+- Compara FIC Abierto vs el fondo ce por ce con naturalidad cuando sea útil.
 
 Al conectar (primer turno):
-1) Saluda en una frase corta, tuteando (ej.: "Hola, ¿cómo estás? Soy tu asesor de fondos.").
-2) Pregunta qué te gustaría saber — FIC Abierto, el fondo c por c o una comparativa — y espera.
+1) Saluda en una frase corta, tuteando, y preséntate como asesora especializada de Alianza Fiduciaria (ej.: "Hola, soy tu asesora especializada de Alianza Fiduciaria.").
+2) Pregunta qué te gustaría saber — FIC Abierto, el fondo ce por ce o una comparativa — y espera.
 3) No des datos ni resumen hasta que te pregunten.
 
 En cada turno siguiente: responde lo que te pregunten. Opcionalmente cierra con una pregunta genérica ("¿Te interesa algo más?", "¿Tienes otra duda?"), nunca sugiriendo un tema concreto.`;
@@ -286,26 +300,43 @@ ${FUND_ADVISORY_VOICE_STYLE}
 Tu trabajo es responder por voz sobre FIC Abierto Alianza y FIC CxC Alianza: rentabilidad, riesgo, composición, liquidez, comisiones, prospectos, reglamentos y comparativas.
 NO emitas bloques JSON ni etiquetas técnicas en voz.
 
-MODO RAG: la ÚNICA fuente autorizada son ${sourceDesc}. Recibirás [FRAGMENTOS RAG] por cada pregunta. NO uses cifras de memoria del modelo.
+🚨 REGLA CRÍTICA — PROTOCOLO DE RESPUESTA OBLIGATORIO 🚨
+Cuando el usuario te pregunte sobre CUALQUIER dato específico (rentabilidad, comisiones, composición, AUMs, riesgo, comparativas, prospecto, reglamento, fechas, cifras, características de fondos):
 
-DATOS BASE — metadatos + corpus inicial:
+PASO 1 OBLIGATORIO: Di SOLAMENTE "Déjame pensar..." o "Un momento, déjame revisar..." (UNA frase corta de 2-4 palabras).
+PASO 2 OBLIGATORIO: ESPERA EN SILENCIO. NO digas nada más. NO empieces a responder. NO des información preliminar. NUNCA digas "no tengo esa info".
+PASO 3 OBLIGATORIO: Recibirás un mensaje del sistema con la instrucción "[INSTRUCCIÓN: Respuesta lista para ...]" seguida de un texto YA REDACTADO por un agente experto. Tu trabajo es LEER ESE TEXTO EN VOZ NATURAL, sin agregar nada, sin cambiarlo, sin decir "según los datos" ni "déjame ver". Solo léelo de forma conversacional.
+
+PROHIBIDO ABSOLUTAMENTE:
+- Responder inmediatamente sin decir "déjame pensar" primero.
+- Decir "no tengo esa info" o "no tengo ese dato" en NINGÚN momento. Toda la información existe.
+- Empezar a explicar algo y luego cortarte para decir "déjame pensar".
+- Adelantar información de tu memoria mientras esperas la respuesta lista.
+- Modificar, resumir o complementar el texto que te llega listo. SOLO léelo.
+
+Si el usuario solo saluda o hace conversación trivial (hola, gracias, cómo estás), responde normalmente sin esperar nada.
+
+CADENA DE TRABAJO INTERNA (no la menciones al usuario):
+- Un agente experto consulta una base de conocimiento (BrainBox) con todos los datos oficiales.
+- Otro agente experto redacta la respuesta perfecta.
+- Tú solo la lees en voz natural.
+
+CONTEXTO BASE (referencia, no para responder cifras):
 ---
 ${fundContext}
 ---
 
-Reglas:
-- Responde SOLO con texto de corpusInicialRag o [FRAGMENTOS RAG]. Si la cifra no está ahí, di "No tengo ese dato".
-- PROHIBIDO inventar rentabilidades, comisiones, AUMs o cualquier dato no presente en los fragmentos.
+Reglas adicionales:
+- Cuando recibas "[INSTRUCCIÓN: Respuesta lista...]" lee EXACTAMENTE el texto que viene, en tono conversacional.
+- Cuando recibas "[INSTRUCCIÓN: Pregunta de aclaración...]" léela natural al usuario.
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
-- Cuando pregunten por láminas, prospecto, reglamento o comisiones, busca en los fragmentos RAG y responde con precisión.
-- Compara FIC Abierto vs el fondo c por c con naturalidad cuando sea útil.
 
 Al conectar (primer turno):
-1) Saluda en una frase corta, tuteando.
-2) Pregunta qué te gustaría saber — FIC Abierto, el fondo c por c o una comparativa — y espera.
+1) Saluda en una frase corta, tuteando, y preséntate como asesora especializada de Alianza Fiduciaria (ej.: "Hola, soy tu asesora especializada de Alianza Fiduciaria.").
+2) Pregunta qué te gustaría saber — FIC Abierto, el fondo ce por ce o una comparativa — y espera.
 3) No des monólogo ni cifras hasta que te pregunten.
 
-En cada turno siguiente: responde lo que te pregunten. Opcionalmente cierra con una pregunta genérica ("¿Te interesa algo más?", "¿Tienes otra duda?"), nunca sugiriendo un tema concreto.`;
+En cada turno siguiente: SIEMPRE aplica el protocolo de arriba. Opcionalmente cierra con una pregunta genérica ("¿Te interesa algo más?", "¿Tienes otra duda?"), nunca sugiriendo un tema concreto.`;
 }
 
 function buildFundAdvisoryAdvisorInstructionRulesOnly(): string {
@@ -322,11 +353,11 @@ Reglas:
 - Si algo no está en los JSON recibidos, di "No tengo ese dato" sin mencionar archivos ni sistema.
 - No des asesoría tributaria/legal definitiva ni promesas de rentabilidad.
 - Responde sobre prospecto, reglamento o láminas como conocimiento propio, sin citar "el JSON" ni "el digest".
-- Compara FIC Abierto vs el fondo c por c con naturalidad cuando sea útil.
+- Compara FIC Abierto vs el fondo ce por ce con naturalidad cuando sea útil.
 
 Al recibir la base de conocimiento (primer turno):
-1) Saluda en una frase corta, tuteando.
-2) Pregunta qué te gustaría saber — FIC Abierto, el fondo c por c o una comparativa — y espera.
+1) Saluda en una frase corta, tuteando, y preséntate como asesora especializada de Alianza Fiduciaria.
+2) Pregunta qué te gustaría saber — FIC Abierto, el fondo ce por ce o una comparativa — y espera.
 3) No des monólogo ni cifras hasta que te pregunten.
 
 En cada turno siguiente: responde lo que te pregunten. Opcionalmente cierra con una pregunta genérica ("¿Te interesa algo más?", "¿Tienes otra duda?"), nunca sugiriendo un tema concreto.`;
@@ -634,6 +665,11 @@ export function useVoiceAgent({
   const fundAdvisoryRagProviderRef = useRef(fundAdvisoryRagProvider);
   const lastRagQueryRef = useRef<string>("");
   const ragFetchInFlightRef = useRef(false);
+  const ragDebounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const ragThinkingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingRagQueryRef = useRef<string>("");
+  const thinkingSentRef = useRef(false);
+  const ragQueryCountRef = useRef(0);
 
   useEffect(() => {
     onRecommendationRef.current = onRecommendation;
@@ -710,6 +746,14 @@ export function useVoiceAgent({
 
   // ── Limpieza completa ────────────────────────────────────────────────────
   const cleanup = useCallback(() => {
+    if (ragDebounceTimerRef.current) {
+      clearTimeout(ragDebounceTimerRef.current);
+      ragDebounceTimerRef.current = null;
+    }
+    if (ragThinkingTimerRef.current) {
+      clearTimeout(ragThinkingTimerRef.current);
+      ragThinkingTimerRef.current = null;
+    }
     if (sessionRef.current) {
       void sessionRef.current.then((s) => {
         try {
@@ -752,6 +796,17 @@ export function useVoiceAgent({
     fullInterviewTranscriptRef.current = "";
     lastRagQueryRef.current = "";
     ragFetchInFlightRef.current = false;
+    pendingRagQueryRef.current = "";
+    thinkingSentRef.current = false;
+    ragQueryCountRef.current = 0;
+    if (ragDebounceTimerRef.current) {
+      clearTimeout(ragDebounceTimerRef.current);
+      ragDebounceTimerRef.current = null;
+    }
+    if (ragThinkingTimerRef.current) {
+      clearTimeout(ragThinkingTimerRef.current);
+      ragThinkingTimerRef.current = null;
+    }
 
     try {
       // 1. Contexto de reproducción a 24kHz
@@ -897,24 +952,75 @@ export function useVoiceAgent({
               const raw = message.serverContent as Record<string, unknown> | undefined;
               const inp = raw?.inputTranscription as { text?: string; finished?: boolean } | undefined;
               const query = inp?.text?.trim();
-              if (query && inp?.finished && query !== lastRagQueryRef.current && !ragFetchInFlightRef.current) {
-                lastRagQueryRef.current = query;
-                ragFetchInFlightRef.current = true;
-                void sessionPromise.then(async (session) => {
-                  try {
-                    const ragResult = await fetchFundAdvisoryRagContext(query);
-                    if (ragResult) {
-                      sendFundAdvisoryRagChunks(
-                        session as LiveVoiceSession,
-                        query,
-                        ragResult.context,
-                        ragResult.provider,
-                      );
-                    }
-                  } finally {
-                    ragFetchInFlightRef.current = false;
+              
+              // Filtrar consultas que no necesitan RAG (saludos, respuestas cortas, etc.)
+              const shouldSkipRag = (text: string): boolean => {
+                const lower = text.toLowerCase();
+                const skipPatterns = [
+                  /^hola/,
+                  /^buenos?\s*(días|tardes|noches)/,
+                  /^cómo\s+est[áa]s?/,
+                  /^qué\s+tal/,
+                  /^gracias/,
+                  /^ok(ay)?$/,
+                  /^sí$/,
+                  /^no$/,
+                  /^entiendo/,
+                  /^perfecto/,
+                  /^bien$/,
+                  /^vale$/,
+                  /^claro$/,
+                ];
+                return skipPatterns.some(p => p.test(lower)) || text.length < 10;
+              };
+              
+              // Hacer RAG proactivamente
+              if (query && !shouldSkipRag(query) && query !== pendingRagQueryRef.current) {
+                pendingRagQueryRef.current = query;
+                
+                // Cancelar timers anteriores
+                if (ragThinkingTimerRef.current) {
+                  clearTimeout(ragThinkingTimerRef.current);
+                }
+                if (ragDebounceTimerRef.current) {
+                  clearTimeout(ragDebounceTimerRef.current);
+                }
+                
+                // 1. Enviar "déjame pensar" INMEDIATAMENTE para bloquear al modelo antes de que responda
+                if (!thinkingSentRef.current && !ragFetchInFlightRef.current) {
+                  thinkingSentRef.current = true;
+                  void sessionPromise.then((session) => {
+                    sendFundAdvisoryRagThinking(session as LiveVoiceSession);
+                  });
+                }
+                
+                // 2. Hacer el RAG después de dar tiempo para decir "déjame pensar" (~2 segundos)
+                ragDebounceTimerRef.current = setTimeout(() => {
+                  const finalQuery = pendingRagQueryRef.current;
+                  if (finalQuery && finalQuery !== lastRagQueryRef.current && !ragFetchInFlightRef.current) {
+                    ragQueryCountRef.current += 1;
+                    lastRagQueryRef.current = finalQuery;
+                    ragFetchInFlightRef.current = true;
+                    
+                    fetchFundAdvisoryComposedAnswer(finalQuery).then((composed) => {
+                      if (composed) {
+                        void sessionPromise.then((session) => {
+                          sendFundAdvisoryComposedAnswer(
+                            session as LiveVoiceSession,
+                            finalQuery,
+                            composed.text,
+                            composed.action,
+                          );
+                        });
+                      }
+                      ragFetchInFlightRef.current = false;
+                      thinkingSentRef.current = false;
+                    }).catch(() => {
+                      ragFetchInFlightRef.current = false;
+                      thinkingSentRef.current = false;
+                    });
                   }
-                });
+                }, 2000);
               }
             }
 

@@ -25,9 +25,18 @@ export async function POST(request: NextRequest) {
     const pageNumber = Number(formData.get("pageNumber"));
     const totalPages = Number(formData.get("totalPages"));
     const fileNameRaw = formData.get("fileName");
+    const feedbackRaw = formData.get("feedback");
 
     const fileName =
       typeof fileNameRaw === "string" && fileNameRaw.trim() ? fileNameRaw.trim() : "documento.pdf";
+    const feedback =
+      typeof feedbackRaw === "string" && feedbackRaw.trim() ? feedbackRaw.trim() : undefined;
+    
+    const maxTokensRaw = formData.get("maxTokens");
+    const maxTokens = maxTokensRaw ? Number(maxTokensRaw) : undefined;
+    
+    const paraphraseModeRaw = formData.get("paraphraseMode");
+    const paraphraseMode = paraphraseModeRaw === "true" || paraphraseModeRaw === "1";
 
     if (!(image instanceof Blob) || image.size === 0) {
       return NextResponse.json({ error: "Falta la imagen PNG de la página." }, { status: 400 });
@@ -46,6 +55,9 @@ export async function POST(request: NextRequest) {
       pageNumber,
       totalPages,
       fileName,
+      feedback,
+      maxTokens,
+      paraphraseMode,
     });
 
     return NextResponse.json({ extraction });

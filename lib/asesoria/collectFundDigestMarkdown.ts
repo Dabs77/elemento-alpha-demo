@@ -15,9 +15,9 @@ export function isVlmDigestJson(fileName: string): boolean {
   );
 }
 
-const INFO_DIR = path.join(process.cwd(), "info");
+const INFO_DIR = path.join(process.cwd(), "info2");
 
-/** Lista ordenada de archivos digest VLM en /info (sin duplicados). */
+/** Lista ordenada de archivos digest VLM en /info2 (sin duplicados). */
 export function listVlmDigestJsonFiles(): string[] {
   if (!fs.existsSync(INFO_DIR)) return [];
   return fs
@@ -61,7 +61,7 @@ export type CollectedFullJsonResult = {
 };
 
 /**
- * Lee todos los *.pdf-vlm-digest*.json en /info y concatena su contenido textual.
+ * Lee todos los *.pdf-vlm-digest*.json en /info2 y concatena su contenido textual.
  * Pensado solo para rutas de servidor (no importar desde componentes cliente).
  */
 export function collectAllFundDigestsMarkdown(

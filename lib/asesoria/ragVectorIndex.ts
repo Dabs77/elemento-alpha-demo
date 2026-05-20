@@ -144,21 +144,19 @@ export async function searchByEmbedding(
   query: string,
   opts?: { topK?: number; minScore?: number },
 ): Promise<RagSearchResult[]> {
-  const topK = opts?.topK ?? 8;
-  const minScore = opts?.minScore ?? 0.3;
+  const topK = opts?.topK ?? 12;
+  const minScore = opts?.minScore ?? 0.20;
 
   if (!state.ready) {
-    if (!state.building) {
-      await buildVectorIndex();
-    } else {
+    if (state.building) {
       let waited = 0;
-      while (state.building && waited < 60000) {
+      while (state.building && waited < 30000) {
         await new Promise((r) => setTimeout(r, 500));
         waited += 500;
       }
-      if (!state.ready) {
-        throw new Error("Índice RAG no disponible después de esperar");
-      }
+    }
+    if (!state.ready) {
+      throw new Error("Índice de embeddings no construido. Usa el botón 'Construir índice' primero.");
     }
   }
 

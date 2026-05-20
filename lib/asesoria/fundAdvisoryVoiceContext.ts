@@ -127,7 +127,7 @@ function serializeJsonOnlyPayload(corpusMarkdown: string, excerpts: DigestExcerp
   return JSON.stringify({
     escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
     fuenteUnica:
-      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info. " +
+      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info2. " +
       "NO uses cifras de memoria del modelo ni datos fuera de esos JSON.",
     archivosIndexados: excerpts.map((e) => e.archivo),
     corpusDocumental: excerpts.map((e) => ({
@@ -193,7 +193,7 @@ function buildFullJsonContext(): FundAdvisoryVoiceContextResult {
   const context = JSON.stringify({
     escenario: "Asesoría especializada · FIC Abierto vs FIC CxC (Alianza)",
     fuenteUnica:
-      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info. " +
+      "ÚNICA fuente autorizada: archivos JSON digest VLM en /info2. " +
       "NO uses cifras de memoria del modelo ni datos fuera de esos JSON.",
     archivosIndexados: sourceFiles,
     documentosVlmDigest,
@@ -230,12 +230,15 @@ async function buildRagBaseContext(): Promise<FundAdvisoryVoiceContextResult> {
     buildRagSourceMetaPayload(),
   ]);
   const provider = getFundAdvisoryRagProvider();
-  const notaRag =
-    provider === "brainbox"
-      ? "Corpus indexado en BrainBox (búsqueda semántica). Recibirás [FRAGMENTOS RAG] por pregunta. " +
+  const isBrainbox = provider === "brainbox-chat" || provider === "brainbox-retrieve";
+  const notaRag = isBrainbox
+    ? provider === "brainbox-chat"
+      ? "Usas BrainBox Chat para respuestas directas. Recibirás [RESPUESTA DE BRAINBOX] por pregunta. " +
+        "Parafrasea esa información en tu estilo conversacional; si no está, di que no tienes el dato."
+      : "Corpus indexado en BrainBox (búsqueda semántica). Recibirás [DATOS] por pregunta. " +
         "Responde SOLO con esos extractos; si no está, di que no tienes el dato."
-      : "Corpus indexado desde JSON digest VLM. Recibirás [FRAGMENTOS RAG] por pregunta. " +
-        "Responde SOLO con texto de esos JSON; si no está, di que no tienes el dato.";
+    : "Corpus indexado desde JSON digest VLM. Recibirás [DATOS] por pregunta. " +
+      "Responde SOLO con texto de esos JSON; si no está, di que no tienes el dato.";
 
   const context = JSON.stringify({
     ...meta,
@@ -247,10 +250,6 @@ async function buildRagBaseContext(): Promise<FundAdvisoryVoiceContextResult> {
   const sourceFiles = Array.isArray(meta.archivosIndexados)
     ? (meta.archivosIndexados as string[])
     : listVlmDigestJsonFiles();
-
-  console.log(
-    `[fund-advisory-voice-context] RAG: ${provider === "brainbox" ? "BrainBox" : "Local (JSON /info)"}`,
-  );
 
   return {
     context,

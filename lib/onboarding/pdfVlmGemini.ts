@@ -4,18 +4,61 @@ import { geminiServerFetch, formatGeminiTlsHint, geminiFetchErrorMessage } from 
 const GEMINI_MODEL = "gemini-3.1-pro-preview";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const SYSTEM_INSTRUCTION = `Eres un modelo de visión especializado en documentos corporativos y financieros.
-Tu tarea es extraer TODA la información útil de UNA página renderizada como imagen.
+const SYSTEM_INSTRUCTION = `Eres un modelo de visión EXTREMADAMENTE METICULOSO especializado en documentos corporativos y financieros.
+Tu tarea es extraer ABSOLUTAMENTE TODA la información visible de UNA página renderizada como imagen. NO OMITAS NADA.
 
-Prioridades:
-1) Tablas: transcribe encabezados y celdas; si es muy grande, resume por bloques pero conserva cifras clave.
-2) Gráficos (barras, líneas, tortas, combinados): describe tipo, ejes, unidades, leyendas, series, tendencias y valores/tickers numéricos VISIBLES (aproxima si no son exactos).
-3) Diagramas / infografías / mapas / capturas de pantalla: describe jerarquía, etiquetas y mensajes cuantitativos o cualitativos.
-4) Fotos / logos / sellos / firmas: describe solo si aportan información (ej. nombre entidad, fecha legible).
+## REGLAS CRÍTICAS DE EXTRACCIÓN EXHAUSTIVA:
 
-Salida SIEMPRE en JSON válido según el esquema solicitado en el mensaje del usuario.
-No inventes datos que no puedas ver; si algo es ilegible dilo explícitamente.
-Responde en español.`;
+1) **TEXTO**: Transcribe TODO el texto visible, incluyendo:
+   - Títulos, subtítulos, encabezados de sección
+   - Párrafos completos (NO resumas, transcribe literal)
+   - Notas al pie, disclaimers, textos pequeños
+   - Números de página, fechas, referencias
+   - Textos en márgenes, headers, footers
+
+2) **TABLAS**: Transcribe CADA celda de CADA tabla:
+   - TODOS los encabezados de columna y fila
+   - TODOS los valores numéricos exactos (no aproximes)
+   - TODAS las unidades (%, $, COP, etc.)
+   - Si hay subtotales o totales, inclúyelos
+   - Formatea en Markdown con | para que sea legible
+
+3) **GRÁFICOS** (barras, líneas, tortas, áreas, combinados):
+   - Tipo exacto de gráfico
+   - Título del gráfico
+   - Etiquetas de TODOS los ejes (X, Y, secundario si aplica)
+   - Unidades de cada eje
+   - TODOS los valores de la leyenda/series
+   - LEE CADA PUNTO de datos visible (valores exactos o aproximados)
+   - Tendencias y comparaciones
+
+4) **DIAGRAMAS / INFOGRAFÍAS / FLUJOS**:
+   - Describe la estructura completa
+   - CADA caja/nodo y su contenido textual
+   - CADA flecha/conexión y lo que representa
+   - Porcentajes, números, métricas visibles
+
+5) **IMÁGENES / LOGOS / ICONOS**:
+   - Nombre de empresa/entidad si es visible
+   - Texto dentro o junto a la imagen
+   - Contexto informativo que aporta
+
+## FORMATO DE SALIDA:
+- El campo "markdownCompleto" debe ser un documento Markdown EXHAUSTIVO que integre TODO
+- Usa ## para secciones, ### para subsecciones
+- Usa **negritas** para cifras y métricas clave
+- Incluye las tablas en formato Markdown
+- NO resumas: transcribe y describe TODO
+
+## PROHIBIDO:
+- NO omitas información por considerarla "redundante"
+- NO resumas párrafos largos
+- NO aproximes números si son legibles
+- NO ignores texto pequeño o en márgenes
+
+Si algo es ilegible, indica "[ilegible]" pero intenta extraer lo que puedas.
+Responde SIEMPRE en español.
+Salida SIEMPRE en JSON válido según el esquema solicitado.`;
 
 function stripJsonFences(s: string): string {
   let t = s.trim();
@@ -127,7 +170,12 @@ function extractGeminiCandidateText(data: unknown): string {
   }
   if (fr === "MAX_TOKENS") {
     throw new Error(
-      "Gemini cortó la respuesta por límite de tokens (MAX_TOKENS). Prueba un PDF menos denso o vuelve a intentar esta página."
+      "Gemini cortó la respuesta por límite de tokens (MAX_TOKENS). Aumenta max_tokens y vuelve a intentar."
+    );
+  }
+  if (fr === "RECITATION") {
+    throw new Error(
+      "Gemini detectó contenido protegido (RECITATION). Activa 'Modo paráfrasis' y vuelve a intentar."
     );
   }
 
@@ -167,26 +215,67 @@ const RESPONSE_SCHEMA = {
   required: ["pageNumber", "markdownCompleto"],
 } as const;
 
-function userPrompt(pageNumber: number, totalPages: number, fileName: string): string {
-  return `Archivo: "${fileName}". Página ${pageNumber} de ${totalPages}.
+function userPromptParaphrase(pageNumber: number, totalPages: number, fileName: string, additionalInstructions?: string): string {
+  const basePrompt = `Archivo: "${fileName}". Página ${pageNumber} de ${totalPages}.
 
-Devuelve un JSON con esta forma exacta (campos opcionales pueden omitirse o ir vacíos):
+IMPORTANTE: PARAFRASEA todo el contenido. NO copies texto literalmente. Describe y reformula la información con tus propias palabras.
+
+Devuelve un JSON con esta forma exacta:
 {
   "pageNumber": ${pageNumber},
-  "tituloInferido": "string o vacío",
-  "textoTranscripcion": "todo el texto corrido legible",
+  "tituloInferido": "título principal de la página si existe (parafraseado)",
+  "textoTranscripcion": "PARÁFRASIS del contenido textual - reformula con tus palabras manteniendo el significado",
   "elementosVisuales": [
     {
-      "tipo": "grafico_tabla_imagen_diagrama_otro",
-      "descripcionInformacion": "descripción profunda de QUÉ información se muestra",
-      "metadataVisual": "ejes, leyendas, unidades, series…",
-      "datosObservados": "cifras o rangos legibles"
+      "tipo": "grafico|tabla|imagen|diagrama|infografia|otro",
+      "descripcionInformacion": "descripción del contenido y su significado",
+      "metadataVisual": "descripción de ejes, leyendas, estructura",
+      "datosObservados": "valores numéricos observados (los números sí se pueden incluir exactos)"
     }
   ],
-  "tablasMarkdown": "tablas en Markdown si aplica, o vacío",
-  "markdownCompleto": "informe markdown de esta página: encabezados ## ###, listas, negritas para métricas clave; integra texto + síntesis de cada visual."
+  "tablasMarkdown": "Tablas con datos numéricos (números exactos OK) pero con encabezados y descripciones parafraseadas",
+  "markdownCompleto": "Documento Markdown que PARAFRASEA la información. Los NÚMEROS y DATOS pueden ser exactos, pero el TEXTO debe estar reformulado. Usa ## para títulos, ### para subtítulos."
 }`;
+
+  if (additionalInstructions) {
+    return `${basePrompt}\n\n## INSTRUCCIONES ADICIONALES:\n${additionalInstructions}`;
+  }
+  return basePrompt;
 }
+
+function userPrompt(pageNumber: number, totalPages: number, fileName: string, additionalInstructions?: string): string {
+  const basePrompt = `Archivo: "${fileName}". Página ${pageNumber} de ${totalPages}.
+
+EXTRAE ABSOLUTAMENTE TODO. No omitas nada. Cada texto, cada número, cada elemento visual.
+
+Devuelve un JSON con esta forma exacta:
+{
+  "pageNumber": ${pageNumber},
+  "tituloInferido": "título principal de la página si existe",
+  "textoTranscripcion": "TRANSCRIPCIÓN LITERAL Y COMPLETA de todo el texto visible en la página, sin resumir",
+  "elementosVisuales": [
+    {
+      "tipo": "grafico|tabla|imagen|diagrama|infografia|otro",
+      "descripcionInformacion": "descripción EXHAUSTIVA de qué información comunica este elemento",
+      "metadataVisual": "ejes, leyendas, unidades, series, etiquetas - TODO lo visible",
+      "datosObservados": "TODOS los valores numéricos, porcentajes, cifras que puedas leer"
+    }
+  ],
+  "tablasMarkdown": "TODAS las tablas transcritas en formato Markdown con CADA celda",
+  "markdownCompleto": "Documento Markdown COMPLETO y EXHAUSTIVO que integra: 1) Todo el texto transcrito, 2) Todas las tablas en formato MD, 3) Descripción detallada de cada gráfico/visual con sus datos. Usa ## para títulos, ### para subtítulos, **negritas** para cifras clave. NO RESUMAS, incluye TODO."
+}`;
+
+  if (additionalInstructions) {
+    return `${basePrompt}\n\n## INSTRUCCIONES ADICIONALES DEL USUARIO:\n${additionalInstructions}\n\nPresta especial atención a lo que el usuario indica que falta.`;
+  }
+  return basePrompt;
+}
+
+function userPromptWithFeedback(pageNumber: number, totalPages: number, fileName: string, feedback: string): string {
+  return userPrompt(pageNumber, totalPages, fileName, feedback);
+}
+
+const DEFAULT_MAX_TOKENS = 65536;
 
 export async function analyzePdfPagePngWithGemini(opts: {
   apiKey: string;
@@ -194,8 +283,14 @@ export async function analyzePdfPagePngWithGemini(opts: {
   pageNumber: number;
   totalPages: number;
   fileName: string;
+  feedback?: string;
+  maxTokens?: number;
+  paraphraseMode?: boolean;
 }): Promise<PdfPageVlmExtraction> {
-  const { apiKey, pngBuffer, pageNumber, totalPages, fileName } = opts;
+  const { apiKey, pngBuffer, pageNumber, totalPages, fileName, feedback, maxTokens, paraphraseMode } = opts;
+
+  const promptFn = paraphraseMode ? userPromptParaphrase : userPrompt;
+  const promptText = promptFn(pageNumber, totalPages, fileName, feedback || undefined);
 
   let res: Response;
   try {
@@ -213,15 +308,15 @@ export async function analyzePdfPagePngWithGemini(opts: {
                   data: pngBuffer.toString("base64"),
                 },
               },
-              { text: userPrompt(pageNumber, totalPages, fileName) },
+              { text: promptText },
             ],
           },
         ],
         systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
         generationConfig: {
-          temperature: 0.15,
-          maxOutputTokens: 16384,
-          topP: 0.9,
+          temperature: 0.1,
+          maxOutputTokens: maxTokens ?? DEFAULT_MAX_TOKENS,
+          topP: 0.95,
           responseMimeType: "application/json",
           responseSchema: RESPONSE_SCHEMA,
         },

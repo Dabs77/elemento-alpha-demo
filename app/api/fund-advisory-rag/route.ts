@@ -1,10 +1,5 @@
 import { NextResponse } from "next/server";
-import {
-  getFundAdvisoryRagProvider,
-  searchFundAdvisoryRag,
-  getIndexStats,
-  buildVectorIndex,
-} from "@/lib/asesoria/fundAdvisoryRag";
+import { searchFundAdvisoryRag } from "@/lib/asesoria/fundAdvisoryRag";
 import { BrainboxApiError } from "@/lib/asesoria/brainboxClient";
 
 export async function POST(req: Request) {
@@ -22,7 +17,7 @@ export async function POST(req: Request) {
     console.error("[fund-advisory-rag]", err);
     if (err instanceof BrainboxApiError) {
       return NextResponse.json(
-        { error: err.message, code: err.code, provider: getFundAdvisoryRagProvider() },
+        { error: err.message, code: err.code, provider: "brainbox" },
         { status: err.status ?? 502 },
       );
     }
@@ -31,30 +26,9 @@ export async function POST(req: Request) {
   }
 }
 
-export async function GET(req: Request) {
-  const url = new URL(req.url);
-  const action = url.searchParams.get("action");
-
-  if (action === "build") {
-    try {
-      await buildVectorIndex();
-      const stats = getIndexStats();
-      return NextResponse.json({ success: true, ...stats });
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err);
-      return NextResponse.json({ success: false, error: message }, { status: 500 });
-    }
-  }
-
-  const provider = getFundAdvisoryRagProvider();
-  const stats = getIndexStats();
-  const providerConfig = process.env.FUND_ADVISORY_RAG_PROVIDER?.trim() || "vector (default)";
-
-  console.log(`[fund-advisory-rag] Estado: ${providerConfig} | chunks: ${stats.chunks} | ready: ${stats.ready}`);
-
+export async function GET() {
   return NextResponse.json({
-    provider,
-    providerConfig,
-    vectorIndex: stats,
+    provider: "brainbox",
+    message: "RAG con BrainBox activo",
   });
 }

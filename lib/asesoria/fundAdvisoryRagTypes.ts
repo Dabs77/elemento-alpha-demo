@@ -9,6 +9,7 @@ export type RagChunk = {
   text: string;
   source?: RagProvider;
   score?: number;
+  link?: string;
 };
 
 export type FundAdvisoryRagResult = {
