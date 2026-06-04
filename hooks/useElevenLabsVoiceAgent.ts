@@ -8,6 +8,7 @@ export type UseElevenLabsVoiceAgentOptions = {
   onDisconnect?: () => void;
   onError?: (error: string) => void;
   onMessage?: (message: { role: string; content: string }) => void;
+  tokenEndpoint?: string;
 };
 
 /**
@@ -46,7 +47,7 @@ export function useElevenLabsVoiceAgent(opts: UseElevenLabsVoiceAgentOptions = {
 
     try {
       // Obtener signed URL del backend
-      const tokenResponse = await fetch("/api/elevenlabs-token");
+      const tokenResponse = await fetch(opts.tokenEndpoint ?? "/api/elevenlabs-token");
       if (!tokenResponse.ok) {
         const error = await tokenResponse.json();
         throw new Error(error.error || "Error al obtener token");

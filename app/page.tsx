@@ -10,6 +10,7 @@ import {
   Lock,
   Sparkles,
   LineChart,
+  Calculator,
 } from "lucide-react";
 
 interface TimelineItem {
@@ -104,6 +105,24 @@ const timelineSteps: {
       },
     ],
   },
+  {
+    phase: 5,
+    title: "Asistente de Cálculo",
+    subtitle: "Consultas por voz · ElevenLabs",
+    status: "pending" as const,
+    date: "Fase 5",
+    description:
+      "Asistente conversacional por voz para consultas de cálculo financiero, impulsado por ElevenLabs Conversational AI.",
+    items: [
+      {
+        icon: Calculator,
+        label: "Abrir Asistente de Cálculo",
+        description: "Conversación por voz con el agente de cálculo",
+        link: "Hablar",
+        href: "/asistente-calculo",
+      },
+    ],
+  },
 ];
 
 function StatusIcon({ status }: { status: "active" | "pending" | "locked" }) {
@@ -167,7 +186,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <div className="w-2 h-2 rounded-full bg-[#BBE795] animate-pulse" />
-              <span>Roadmap demo · 4 fases · Asesoría especializada en Fase 4</span>
+              <span>Roadmap demo · 5 fases · Asistente de Cálculo en Fase 5</span>
             </div>
           </div>
         </div>
@@ -185,7 +204,8 @@ export default function Home() {
           <span className="truncate">Onboarding</span>
           <span className="truncate text-center">Front Office</span>
           <span className="truncate text-center">Reporting</span>
-          <span className="truncate text-right">Asesoría esp.</span>
+          <span className="truncate text-center">Asesoría esp.</span>
+          <span className="truncate text-right">Cálculo</span>
         </div>
       </div>
 
