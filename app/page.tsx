@@ -97,11 +97,19 @@ const timelineSteps: {
     items: [
       {
         icon: LineChart,
-        label: "Abrir módulo de asesoría especializada",
+        label: "Asesoría especializada · Antiguo",
         description:
           "FIC Abierto vs FIC CxC, alertas, estrés histórico y asistente por voz",
         link: "Entrar",
-        href: "/asesoria-especializada",
+        href: "/asesoria-especializada/antiguo",
+      },
+      {
+        icon: Sparkles,
+        label: "Asesoría especializada · Nuevo (Journey)",
+        description:
+          "Journey del asesor: ingreso, inicio, comparativa, asistente por voz y vinculación",
+        link: "Entrar",
+        href: "/asesoria-especializada/nuevo",
       },
     ],
   },
