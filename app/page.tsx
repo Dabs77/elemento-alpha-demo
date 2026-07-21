@@ -105,11 +105,11 @@ const timelineSteps: {
       },
       {
         icon: Sparkles,
-        label: "Asesoría especializada · Nuevo (Journey)",
+        label: "Asesoría especializada · V2 (Journey)",
         description:
           "Journey del asesor: ingreso, inicio, comparativa, asistente por voz y vinculación",
         link: "Entrar",
-        href: "/asesoria-especializada/nuevo",
+        href: "/asesoria-especializada/v2",
       },
     ],
   },
