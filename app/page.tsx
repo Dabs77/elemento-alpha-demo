@@ -11,6 +11,7 @@ import {
   Sparkles,
   LineChart,
   Calculator,
+  ClipboardList,
 } from "lucide-react";
 
 interface TimelineItem {
@@ -131,6 +132,24 @@ const timelineSteps: {
       },
     ],
   },
+  {
+    phase: 6,
+    title: "Entrevista de Necesidades",
+    subtitle: "Descubrimiento por voz · Gemini Live",
+    status: "pending" as const,
+    date: "Fase 6",
+    description:
+      "Entrevista por voz a una persona sobre su área dentro de una empresa. El agente conversa mientras una ficha estructurada de necesidades se llena en vivo, detecta qué falta y guía las siguientes preguntas.",
+    items: [
+      {
+        icon: ClipboardList,
+        label: "Iniciar entrevista de necesidades",
+        description: "Ficha de procesos, dolores, herramientas y volumen en tiempo real",
+        link: "Entrevistar",
+        href: "/entrevista",
+      },
+    ],
+  },
 ];
 
 function StatusIcon({ status }: { status: "active" | "pending" | "locked" }) {
@@ -213,7 +232,8 @@ export default function Home() {
           <span className="truncate text-center">Front Office</span>
           <span className="truncate text-center">Reporting</span>
           <span className="truncate text-center">Asesoría esp.</span>
-          <span className="truncate text-right">Cálculo</span>
+          <span className="truncate text-center">Cálculo</span>
+          <span className="truncate text-right">Entrevista</span>
         </div>
       </div>
 
