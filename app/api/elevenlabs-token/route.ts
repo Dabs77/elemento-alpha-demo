@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 
 /**
  * GET /api/elevenlabs-token
- * Genera un signed URL para conectar con el agente de ElevenLabs
- * El frontend usa este endpoint para autenticar la conexión WebRTC
+ * Signed URL para el agente Alianza (asesoría / Journey V2).
  */
 export async function GET() {
   const apiKey = process.env.ELEVENLABS_API_KEY?.trim();

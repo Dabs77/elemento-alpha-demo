@@ -25,7 +25,7 @@ function VozContent({ go }: Props) {
     isMuted,
     setMuted,
   } = useElevenLabsVoiceAgent({
-    tokenEndpoint: "/api/elevenlabs-token-calculo",
+    tokenEndpoint: "/api/elevenlabs-token",
     onConnect: () => setError(null),
     onError: (err) => setError(err),
     onMessage: (m) =>

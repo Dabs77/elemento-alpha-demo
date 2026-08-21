@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
 
-const CALCULO_AGENT_ID = "agent_3901kt72qamsf14rvfr7nhw6egr3";
-
+/**
+ * GET /api/elevenlabs-token-calculo
+ * Signed URL para el agente genérico / cálculo de ElevenLabs.
+ */
 export async function GET() {
   const apiKey = process.env.ELEVENLABS_API_KEY?.trim();
+  const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID_GENERIC?.trim();
 
   if (!apiKey) {
     return NextResponse.json(
@@ -12,9 +15,16 @@ export async function GET() {
     );
   }
 
+  if (!agentId) {
+    return NextResponse.json(
+      { error: "NEXT_PUBLIC_ELEVENLABS_AGENT_ID_GENERIC no configurada en .env.local" },
+      { status: 500 }
+    );
+  }
+
   try {
     const response = await fetch(
-      `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${CALCULO_AGENT_ID}`,
+      `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${agentId}`,
       {
         headers: {
           "xi-api-key": apiKey,
