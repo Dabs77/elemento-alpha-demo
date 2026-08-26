@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { LogoMark, ChevronLeft, ChevronRight, Check } from "./icons";
+import { ChevronLeft, ChevronRight, Check } from "./icons";
+import { useJourneyBrand } from "./brand";
 import { JourneyLogin } from "./JourneyLogin";
 import { JourneyDashboard } from "./JourneyDashboard";
 import { JourneyComparativa } from "./JourneyComparativa";
@@ -12,19 +13,20 @@ import { JourneyVinculacion } from "./JourneyVinculacion";
 const TOTAL = 5;
 const PATHS = ["/ingreso", "/inicio", "/fondos/comparativa", "/asistente/voz", "/vincular/cxc"];
 
-const STEPS = [
-  { title: "Ingreso", sub: "Cédula" },
-  { title: "Inicio", sub: "Clientes y metas" },
-  { title: "Comparativa", sub: "FIC Abierto · CxC" },
-  { title: "Asistente", sub: "Interacción por voz" },
-  { title: "Vinculación", sub: "Link y traslado" },
-];
-
 export function JourneyShell() {
+  const brand = useJourneyBrand();
   const [cur, setCur] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
+
+  const steps = [
+    { title: "Ingreso", sub: "Cédula" },
+    { title: "Inicio", sub: "Clientes y metas" },
+    { title: "Comparativa", sub: brand.comparativaSub },
+    { title: "Asistente", sub: "Interacción por voz" },
+    { title: "Vinculación", sub: "Link y traslado" },
+  ];
 
   const go = useCallback((n: number) => {
     if (n < 0 || n >= TOTAL) return;
@@ -55,10 +57,10 @@ export function JourneyShell() {
       <div className="proto-head">
         <div className="proto-title">
           <div className="logo">
-            <LogoMark />
+            <brand.Logo />
             <div>
-              <span className="name">Alianza Asesor IA</span>
-              <span className="sub">UNA EMPRESA DE LA ORGANIZACIÓN DELIMA</span>
+              <span className="name">{brand.productName}</span>
+              <span className="sub">{brand.tagline}</span>
             </div>
           </div>
           <div style={{ borderLeft: "1px solid var(--line)", paddingLeft: 14 }}>
@@ -74,7 +76,7 @@ export function JourneyShell() {
 
       {/* stepper */}
       <div className="stepper">
-        {STEPS.map((s, i) => (
+        {steps.map((s, i) => (
           <button
             key={s.title}
             className={`step${i === cur ? " active" : ""}${i < cur ? " done" : ""}`}
@@ -100,7 +102,7 @@ export function JourneyShell() {
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 11V7a4 4 0 1 1 8 0v4M5 11h14v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
-              asesor.alianza.com.co
+              {brand.domain}
               <span style={{ color: "var(--ink)", fontWeight: 600 }}>{PATHS[cur]}</span>
             </div>
           </div>

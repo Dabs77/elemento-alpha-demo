@@ -1,16 +1,18 @@
-import { LogoMark, MicIcon, ArrowRight, ChevronRight, BellIcon } from "./icons";
+import { MicIcon, ArrowRight, ChevronRight, BellIcon } from "./icons";
+import { useJourneyBrand } from "./brand";
 
 type Props = { go: (n: number) => void };
 
 export function JourneyDashboard({ go }: Props) {
+  const brand = useJourneyBrand();
   return (
     <>
       <div className="topbar">
         <div className="tb-left">
           <div className="logo">
-            <LogoMark style={{ width: 28, height: 24 }} />
+            <brand.Logo style={{ width: 28, height: 24 }} />
             <span className="name" style={{ fontSize: 16 }}>
-              Alianza Asesor IA
+              {brand.productName}
             </span>
           </div>
           <nav className="tb-nav">
@@ -136,7 +138,7 @@ export function JourneyDashboard({ go }: Props) {
                 </div>
                 <div className="status st-vinc">Vinculada</div>
                 <div className="cmonto">
-                  $1.200 MM<span>FIC CxC</span>
+                  $1.200 MM<span>{brand.fundCxcShort}</span>
                 </div>
                 <ChevronRight className="chev" />
               </div>
@@ -210,8 +212,8 @@ export function JourneyDashboard({ go }: Props) {
                   </svg>
                 </span>
                 <div>
-                  <b>Migrar tesorerías a FIC CxC</b>
-                  <p>2 clientes corporativos con caja &gt;30 días: +140 pbs vs FIC Abierto.</p>
+                  <b>{`Migrar tesorerías a ${brand.fundCxcShort}`}</b>
+                  <p>{`2 clientes corporativos con caja >30 días: +140 pbs vs ${brand.fundAbiertoShort}.`}</p>
                 </div>
               </div>
               <div className="obj">

@@ -11,6 +11,7 @@ import {
   Sparkles,
   LineChart,
   Calculator,
+  Building2,
 } from "lucide-react";
 
 interface TimelineItem {
@@ -110,6 +111,14 @@ const timelineSteps: {
           "Journey del asesor: ingreso, inicio, comparativa, asistente por voz y vinculación",
         link: "Entrar",
         href: "/asesoria-especializada/v2",
+      },
+      {
+        icon: Building2,
+        label: "Iniciar journey Fiduciaria Alpha",
+        description:
+          "Ingreso · Inicio · Comparativa · Asistente · Vinculación",
+        link: "Comenzar",
+        href: "/asesoria-especializada/alpha",
       },
     ],
   },

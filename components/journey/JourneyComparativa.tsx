@@ -1,4 +1,5 @@
 import { MicIcon, ChevronLeft, ArrowRight, CheckCircle, BellIcon } from "./icons";
+import { useJourneyBrand } from "./brand";
 
 type Props = { go: (n: number) => void };
 
@@ -11,6 +12,7 @@ function Win({ side }: { side: "a" | "c" }) {
 }
 
 export function JourneyComparativa({ go }: Props) {
+  const brand = useJourneyBrand();
   return (
     <div className="cmp">
       <div className="cmp-head">
@@ -53,7 +55,7 @@ export function JourneyComparativa({ go }: Props) {
             <b>Sugerencia del asistente</b>
             <p>
               Para <em>Inversiones El Poblado</em> (caja disponible a 90 días,
-              perfil moderado) recomiendo <em>FIC CxC</em>: +140 pbs de
+              perfil moderado) recomiendo <em>{brand.fundCxcShort}</em>: +140 pbs de
               rentabilidad y menos días negativos. ¿Quieres que prepare la
               propuesta?
             </p>
@@ -62,19 +64,17 @@ export function JourneyComparativa({ go }: Props) {
 
         <div className="intro">
           <h3>Comparativa de Fondos</h3>
-          <p>
-            Compare las características, rentabilidades y riesgos de FIC Abierto
-            vs FIC CxC para determinar la mejor opción según el perfil del
-            cliente.
-          </p>
+            <p>
+              {`Compare las características, rentabilidades y riesgos de ${brand.fundAbiertoShort} vs ${brand.fundCxcShort} para determinar la mejor opción según el perfil del cliente.`}
+            </p>
         </div>
 
         <div className="funds">
           <div className="fund a">
             <div className="fh">
               <div>
-                <h3>FIC Abierto Alianza</h3>
-                <p>Fondo de Inversión Colectiva Abierto</p>
+                <h3>{brand.fundAbiertoName}</h3>
+                <p>{brand.fundAbiertoKind}</p>
               </div>
               <span className="badge cons">Conservador</span>
             </div>
@@ -120,8 +120,8 @@ export function JourneyComparativa({ go }: Props) {
           <div className="fund c">
             <div className="fh">
               <div>
-                <h3>FIC CxC Alianza</h3>
-                <p>Fondo con pacto de permanencia 30 días</p>
+                <h3>{brand.fundCxcName}</h3>
+                <p>{brand.fundCxcKind}</p>
               </div>
               <span className="badge mod">Moderado</span>
             </div>
@@ -174,8 +174,8 @@ export function JourneyComparativa({ go }: Props) {
             <thead>
               <tr>
                 <th>Métrica</th>
-                <th className="h-a">FIC Abierto</th>
-                <th className="h-c">FIC CxC</th>
+                <th className="h-a">{brand.fundAbiertoShort}</th>
+                <th className="h-c">{brand.fundCxcShort}</th>
                 <th>Mejor</th>
               </tr>
             </thead>
@@ -198,11 +198,9 @@ export function JourneyComparativa({ go }: Props) {
 
         <div className="block">
           <div className="bh">
-            <h3>Composición FIC CxC · Activos Alternativos</h3>
+            <h3>{`Composición ${brand.fundCxcShort} · Activos Alternativos`}</h3>
             <p>
-              El FIC CxC se diferencia por su exposición a Derechos de Crédito
-              (DCE), incluyendo libranzas y sentencias con cargo al Presupuesto
-              General de la Nación (riesgo cuasi-soberano).
+              {`El ${brand.fundCxcShort} se diferencia por su exposición a Derechos de Crédito (DCE), incluyendo libranzas y sentencias con cargo al Presupuesto General de la Nación (riesgo cuasi-soberano).`}
             </p>
           </div>
           <div className="comp-grid">
@@ -246,7 +244,7 @@ export function JourneyComparativa({ go }: Props) {
           <h3>Recomendación</h3>
           <div className="reco-cols">
             <div className="reco-card a">
-              <h4>FIC Abierto es ideal para:</h4>
+              <h4>{`${brand.fundAbiertoShort} es ideal para:`}</h4>
               <ul>
                 <li>Clientes que requieren liquidez inmediata</li>
                 <li>Perfil conservador que prioriza disponibilidad</li>
@@ -255,7 +253,7 @@ export function JourneyComparativa({ go }: Props) {
               </ul>
             </div>
             <div className="reco-card c">
-              <h4>FIC CxC es ideal para:</h4>
+              <h4>{`${brand.fundCxcShort} es ideal para:`}</h4>
               <ul>
                 <li>Clientes que buscan mayor rentabilidad</li>
                 <li>Perfil moderado con horizonte mínimo 30 días</li>
@@ -272,7 +270,7 @@ export function JourneyComparativa({ go }: Props) {
             Consultar al asistente
           </button>
           <button className="btn green" onClick={() => go(4)}>
-            Vincular cliente a FIC CxC
+            {`Vincular cliente a ${brand.fundCxcShort}`}
             <ArrowRight width={16} />
           </button>
         </div>

@@ -2,15 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { ConversationProvider } from "@elevenlabs/react";
 import { useElevenLabsVoiceAgent } from "@/hooks/useElevenLabsVoiceAgent";
 import { MicIcon } from "./icons";
+import { useJourneyBrand } from "./brand";
 
 type Props = { go: (n: number) => void };
 
 type Msg = { role: "user" | "assistant"; content: string };
 
-const DEFAULT_PROMPT =
-  "Pregúntale al asistente sobre FIC Abierto, FIC CxC, rentabilidades o el pacto de permanencia.";
-
 function VozContent({ go }: Props) {
+  const brand = useJourneyBrand();
   const [error, setError] = useState<string | null>(null);
   const [messages, setMessages] = useState<Msg[]>([]);
   const transcriptRef = useRef<HTMLDivElement>(null);
@@ -25,7 +24,7 @@ function VozContent({ go }: Props) {
     isMuted,
     setMuted,
   } = useElevenLabsVoiceAgent({
-    tokenEndpoint: "/api/elevenlabs-token",
+    tokenEndpoint: brand.tokenEndpoint,
     onConnect: () => setError(null),
     onError: (err) => setError(err),
     onMessage: (m) =>
@@ -87,9 +86,9 @@ function VozContent({ go }: Props) {
               </>
             ) : (
               <>
-                <div className="q">Asistente Alianza</div>
+                <div className="q">{brand.assistantName}</div>
                 <h3 style={{ fontSize: 16, fontWeight: 500, color: "#cfe6f5" }}>
-                  {isConnected ? "Te escucho. Hazme tu consulta." : DEFAULT_PROMPT}
+                  {isConnected ? "Te escucho. Hazme tu consulta." : brand.voicePrompt}
                 </h3>
               </>
             )}
@@ -132,7 +131,7 @@ function VozContent({ go }: Props) {
             <path d="M8 10h8M8 14h5M21 12a9 9 0 0 1-13 8l-5 1 1-5a9 9 0 1 1 17-4z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           Transcripción
-          <span className="src">Fuentes: prospectos Alianza</span>
+          <span className="src">{brand.sourcesLabel}</span>
         </div>
         <div className="transcript" ref={transcriptRef}>
           {messages.length === 0 ? (
@@ -144,7 +143,7 @@ function VozContent({ go }: Props) {
           ) : (
             messages.map((m, i) => (
               <div key={i} className={`msg ${m.role === "user" ? "user" : "bot"}`}>
-                <div className="who">{m.role === "user" ? "Asesor" : "Asistente Alianza"}</div>
+                <div className="who">{m.role === "user" ? "Asesor" : brand.assistantName}</div>
                 {m.content}
               </div>
             ))

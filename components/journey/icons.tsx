@@ -1,16 +1,45 @@
 import type { SVGProps } from "react";
 
+export type LogoMarkProps = SVGProps<SVGSVGElement> & { navy?: string };
+
 /** Marca Alianza (triángulos navy / cyan / lime). */
 export function LogoMark({
   className = "mark",
   navy = "#0E2A4E",
   ...props
-}: SVGProps<SVGSVGElement> & { navy?: string }) {
+}: LogoMarkProps) {
   return (
     <svg className={className} viewBox="0 0 40 34" aria-hidden {...props}>
       <polygon points="20,2 3,32 20,32" fill={navy} />
       <polygon points="20,2 20,32 37,32" fill="#00A0DC" />
       <polygon points="20,20 31,32 20,32" fill="#C3D200" />
+    </svg>
+  );
+}
+
+/** Marca Fiduciaria Alpha (A geométrica, paleta Alianza navy / cyan / lime). */
+export function AlphaLogoMark({
+  className = "mark",
+  navy = "#0E2A4E",
+  ...props
+}: LogoMarkProps) {
+  return (
+    <svg className={className} viewBox="0 0 40 34" aria-hidden {...props}>
+      <rect x="2" y="2" width="36" height="30" rx="7" fill={navy} />
+      <path
+        d="M12 26 L20 8 L28 26"
+        fill="none"
+        stroke="#00A0DC"
+        strokeWidth="3.2"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <path
+        d="M15.2 19.5h9.6"
+        stroke="#C3D200"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

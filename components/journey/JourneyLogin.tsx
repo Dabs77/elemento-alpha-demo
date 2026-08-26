@@ -1,19 +1,21 @@
 import { useState } from "react";
-import { LogoMark, ArrowRight } from "./icons";
+import { ArrowRight } from "./icons";
+import { useJourneyBrand } from "./brand";
 
 type Props = { go: (n: number) => void };
 
 export function JourneyLogin({ go }: Props) {
+  const brand = useJourneyBrand();
   const [cedula, setCedula] = useState("1.037.652.118");
 
   return (
     <div className="login">
       <div className="login-art">
         <div className="logo">
-          <LogoMark navy="#fff" />
+          <brand.Logo navy="#fff" />
           <div>
-            <span className="name">Alianza Asesor IA</span>
-            <span className="sub">UNA EMPRESA DE LA ORGANIZACIÓN DELIMA</span>
+            <span className="name">{brand.productName}</span>
+            <span className="sub">{brand.tagline}</span>
           </div>
         </div>
         <div className="la-mid">
@@ -29,7 +31,7 @@ export function JourneyLogin({ go }: Props) {
                   <path d="M3 12h4l3 8 4-16 3 8h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              Compara FIC Abierto vs Fondo CxC en segundos
+              {brand.loginCompareLine}
             </div>
             <div className="la-feat">
               <span className="ic">
@@ -91,9 +93,7 @@ export function JourneyLogin({ go }: Props) {
           <ArrowRight width={17} />
         </button>
         <p className="legal">
-          Acceso exclusivo para la fuerza comercial de Alianza Fiduciaria S.A. El
-          uso del asistente de IA es de apoyo y no sustituye el criterio del
-          asesor ni el cumplimiento de deberes de idoneidad (Circular 049 SFC).
+          {`Acceso exclusivo para la fuerza comercial de ${brand.legalName} El uso del asistente de IA es de apoyo y no sustituye el criterio del asesor ni el cumplimiento de deberes de idoneidad (Circular 049 SFC).`}
         </p>
       </div>
     </div>

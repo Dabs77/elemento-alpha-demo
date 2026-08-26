@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { MicIcon, ChevronLeft, Check } from "./icons";
+import { useJourneyBrand } from "./brand";
 
 type Props = { go: (n: number) => void; showToast: (msg: string) => void };
 
 const CHANNELS = ["WhatsApp", "Correo", "SMS"] as const;
 
 export function JourneyVinculacion({ go, showToast }: Props) {
+  const brand = useJourneyBrand();
   const [fund, setFund] = useState<"a" | "c">("c");
   const [channel, setChannel] = useState(0);
   const [amount, setAmount] = useState("500.000.000");
@@ -62,14 +64,14 @@ export function JourneyVinculacion({ go, showToast }: Props) {
               <div className="pickrow">
                 <div className={`pick a${fund === "a" ? " sel" : ""}`} onClick={() => setFund("a")}>
                   <div className="pn">
-                    <b>FIC Abierto</b>
+                    <b>{brand.fundAbiertoShort}</b>
                     <span className="check"><Check /></span>
                   </div>
                   <p>Conservador · Liquidez vista</p>
                 </div>
                 <div className={`pick c${fund === "c" ? " sel" : ""}`} onClick={() => setFund("c")}>
                   <div className="pn">
-                    <b>FIC CxC</b>
+                    <b>{brand.fundCxcShort}</b>
                     <span className="check"><Check /></span>
                   </div>
                   <p>Moderado · Pacto 30 días</p>
@@ -88,7 +90,7 @@ export function JourneyVinculacion({ go, showToast }: Props) {
                 </div>
                 <div className="hint-line">
                   <Check width={12} />
-                  Supera el mínimo de apertura del FIC CxC
+                  {`Supera el mínimo de apertura del ${brand.fundCxcShort}`}
                 </div>
               </div>
 
@@ -114,7 +116,7 @@ export function JourneyVinculacion({ go, showToast }: Props) {
 
               <div className="linkbox">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
-                <span>alianza.com.co/vincular/cxc?t=9f2a…b7</span>
+                <span>{`${brand.vinculationHost}/vincular/cxc?t=9f2a…b7`}</span>
                 <button onClick={() => showToast("Link copiado al portapapeles")}>Copiar</button>
               </div>
             </div>
@@ -136,15 +138,11 @@ export function JourneyVinculacion({ go, showToast }: Props) {
               <div className="phone">
                 <div className="ph-top">
                   <div className="logo lg">
-                    <svg className="mark" viewBox="0 0 40 34" style={{ width: 24, height: 21 }}>
-                      <polygon points="20,2 3,32 20,32" fill="#fff" />
-                      <polygon points="20,2 20,32 37,32" fill="#00A0DC" />
-                      <polygon points="20,20 31,32 20,32" fill="#C3D200" />
-                    </svg>
-                    <span className="name" style={{ fontSize: 14 }}>Alianza</span>
+                    <brand.Logo navy="#fff" style={{ width: 24, height: 21 }} />
+                    <span className="name" style={{ fontSize: 14 }}>{brand.shortName}</span>
                   </div>
                   <h4>Hola María Helena 👋</h4>
-                  <p>Carolina te invita a abrir tu inversión en el FIC CxC</p>
+                  <p>{`Carolina te invita a abrir tu inversión en el ${brand.fundCxcShort}`}</p>
                 </div>
                 <div className="ph-body">
                   <div className="ph-step"><span className="n">1</span>Verifica tu identidad</div>

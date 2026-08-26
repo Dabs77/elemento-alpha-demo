@@ -1,7 +1,7 @@
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { JourneyShell } from "@/components/journey/JourneyShell";
-import { ALIANZA_BRAND, JourneyBrandProvider } from "@/components/journey/brand";
-import "./journey.css";
+import { ALPHA_BRAND, JourneyBrandProvider } from "@/components/journey/brand";
+import "../v2/journey.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,15 +14,15 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Journey del Asesor · Alianza Asesor IA",
+  title: "Journey del Asesor · Fiduciaria Alpha",
   description:
-    "Plataforma agéntica para asesoría y ejecución de venta de fondos de Alianza Fiduciaria.",
+    "Plataforma agéntica para asesoría y ejecución de venta de fondos de Fiduciaria Alpha.",
 };
 
-export default function AsesoriaEspecializadaV2Page() {
+export default function AsesoriaEspecializadaAlphaPage() {
   return (
     <div className={`journey-root ${inter.variable} ${jakarta.variable}`}>
-      <JourneyBrandProvider brand={ALIANZA_BRAND}>
+      <JourneyBrandProvider brand={ALPHA_BRAND}>
         <JourneyShell />
       </JourneyBrandProvider>
     </div>
